@@ -1,5 +1,6 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "Z1IiCHInsNk=",
   "success": true,
   "projectFilePath": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\Feed Bridge.csproj",
@@ -117,5 +118,11 @@
     "C:\\Users\\NV_User\\.nuget\\packages\\system.threading.channels\\7.0.0\\system.threading.channels.7.0.0.nupkg.sha512",
     "C:\\Users\\NV_User\\.nuget\\packages\\system.threading.tasks.dataflow\\8.0.0\\system.threading.tasks.dataflow.8.0.0.nupkg.sha512"
   ],
+=======
+  "dgSpecHash": "ezIFmgMI69c=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\mmm\\OneDrive - Mansoura University - Main\\Desktop\\internship ITI\\ITI-Feed-Bridge\\Feed Bridge\\Feed Bridge.csproj",
+  "expectedPackageFiles": [],
+>>>>>>> eb6bd555cbb6a8d9b195359d451937f6a20fcb34
   "logs": []
 }

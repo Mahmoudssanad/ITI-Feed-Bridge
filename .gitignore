@@ -1,1 +1,21 @@
 .vs/
+"obj/" 
+bin/
+
+*.user
+*.suo
+
+# NuGet packages
+*.nupkg
+*.snupkg
+*.nuspec
+*.dll
+*.exe
+
+# Logs
+*.log
+
+# Others
+project.lock.json
+project.fragment.lock.json
+artifacts/
