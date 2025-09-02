@@ -1,0 +1,157 @@
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\jquery\dist\jquery.min.js
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\imgs\payment.svg
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\jquery\dist\jquery.js
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.min.js
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\css\bootstrap.css
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.js
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\jquery\dist\jquery.slim.min.js
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\css\main.css
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\jquery\dist\jquery.min.map
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\jquery\dist\jquery.slim.min.map
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\jquery\LICENSE.txt
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\jquery-validation\dist\additional-methods.min.js
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\favicon.ico
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\jquery-validation\dist\jquery.validate.js
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\jquery-validation\LICENSE.md
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\js\bootstrap.js
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\jquery\dist\jquery.slim.js
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\jquery-validation\dist\additional-methods.js
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\js\site.js
+wwwroot\css\main.css
+wwwroot\favicon.ico
+wwwroot\imgs\1.jpg
+wwwroot\imgs\10.jpg
+wwwroot\imgs\11.jpg
+wwwroot\imgs\12.jpg
+wwwroot\imgs\13.jpg
+wwwroot\imgs\14.jpg
+wwwroot\imgs\15.jpg
+wwwroot\imgs\16.jpg
+wwwroot\imgs\2.jpg
+wwwroot\imgs\3.jpg
+wwwroot\imgs\4.jpg
+wwwroot\imgs\5.jpg
+wwwroot\imgs\6.jpg
+wwwroot\imgs\7.jpg
+wwwroot\imgs\8.jpg
+wwwroot\imgs\9.jpg
+wwwroot\imgs\bridge.png
+wwwroot\imgs\donation.png
+wwwroot\imgs\Empty.png
+wwwroot\imgs\image.png
+wwwroot\imgs\img.png
+wwwroot\imgs\landing background.png
+wwwroot\imgs\logo.png
+wwwroot\imgs\partner background.jpg
+wwwroot\imgs\partner1.png
+wwwroot\imgs\partner2.jpg
+wwwroot\imgs\partner3.png
+wwwroot\imgs\partner4.png
+wwwroot\imgs\payment.svg
+wwwroot\imgs\person.png
+wwwroot\imgs\video.mp4
+wwwroot\js\site.js
+wwwroot\lib\bootstrap\dist\css\bootstrap.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
+wwwroot\lib\bootstrap\LICENSE
+wwwroot\lib\jquery\dist\jquery.js
+wwwroot\lib\jquery\dist\jquery.min.js
+wwwroot\lib\jquery\dist\jquery.min.map
+wwwroot\lib\jquery\dist\jquery.slim.js
+wwwroot\lib\jquery\dist\jquery.slim.min.js
+wwwroot\lib\jquery\dist\jquery.slim.min.map
+wwwroot\lib\jquery\LICENSE.txt
+wwwroot\lib\jquery-validation\dist\additional-methods.js
+wwwroot\lib\jquery-validation\dist\additional-methods.min.js
+wwwroot\lib\jquery-validation\dist\jquery.validate.js
+wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
+wwwroot\lib\jquery-validation\LICENSE.md
+wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.js
+wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.min.js
+wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt

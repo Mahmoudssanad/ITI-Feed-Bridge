@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Feed Bridge.props" />
+</Project>
