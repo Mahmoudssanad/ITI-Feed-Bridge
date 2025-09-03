@@ -21,3 +21,17 @@ sidebar.querySelectorAll("li").forEach((li) => {
   li.addEventListener("click", (e) => handlePageContent(e.currentTarget));
 });
 
+
+// Notifications
+const notificationsContainer = document.querySelector(".notifications-container");
+const notificationsBox = document.querySelector(".notifications-box");
+
+if (notificationsContainer && notificationsBox) {
+  notificationsContainer.addEventListener("mouseover", () => {
+    notificationsBox.style.display = "block";
+  });
+
+  notificationsContainer.addEventListener("mouseleave", () => {
+    notificationsBox.style.display = "none";
+  });
+}

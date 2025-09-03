@@ -26,6 +26,11 @@ a {
     color: inherit;
   }
 }
+.page-items a:link,
+.page-items a:visited {
+  color: var(--main-color);
+  text-decoration: none;
+}
 .btn {
   width: fit-content;
   margin: 10px auto;
@@ -1364,4 +1369,186 @@ header {
       }
     }
   }
+}
+
+/* Add this new CSS to your existing main.css file */
+
+.email-signup-container {
+  min-height: calc(100vh - 80px); /* Adjusts for header and footer */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.email-form-card {
+  width: 90%;
+  max-width: 450px;
+  padding: 30px;
+  text-align: center;
+  background-color: var(--background-color);
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px #00000025;
+}
+
+.email-form-card .form-header {
+  color: var(--main-color);
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.email-form-card p {
+  color: var(--text-color);
+  margin-bottom: 25px;
+}
+
+.email-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.email-form .form-control {
+  text-align: right;
+  margin-bottom: 0;
+}
+
+.email-form .btn {
+  margin-top: 10px;
+  width: 100%;
+}
+
+/* Add this new CSS to your existing main.css file */
+
+.otp-container {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.otp-form-card {
+    width: 90%;
+    max-width: 450px;
+    padding: 30px;
+    text-align: center;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px #00000025;
+}
+
+.otp-form-card .form-header {
+    color: var(--main-color);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.otp-form-card p {
+    color: var(--text-color);
+    margin-bottom: 25px;
+}
+
+.otp-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.otp-form .form-control {
+    text-align: right;
+    margin-bottom: 0;
+}
+
+.otp-form .btn {
+    margin-top: 10px;
+    width: 100%;
+}
+
+/* Add this new CSS to your existing main.css file */
+
+.personal-info-container {
+  min-height: calc(100vh - 80px); /* Adjusts for header and footer */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.personal-info-card {
+  width: 90%;
+  max-width: 500px;
+  padding: 30px;
+  text-align: center;
+  background-color: var(--background-color);
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px #00000025;
+}
+
+.personal-info-card .form-header {
+  color: var(--main-color);
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.personal-info-card p {
+  color: var(--text-color);
+  margin-bottom: 25px;
+}
+
+.personal-info-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.personal-info-form .form-control {
+  text-align: right;
+  margin-bottom: 0;
+}
+
+.personal-info-form .btn {
+  margin-top: 10px;
+  width: 100%;
+}
+
+/* Add this to your existing main.css file */
+
+.success-message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.message-content {
+  background-color: var(--main-color);
+  color: white;
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 400px;
+}
+
+.message-content .check-icon {
+  font-size: 80px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.message-content h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.message-content p {
+  font-size: 1.2rem;
 }

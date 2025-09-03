@@ -11,7 +11,5 @@ namespace Feed_Bridge.Models.Data
         {
             
         }
-        public DbSet<Report> Reports { get; set; }
-        public DbSet<Review> Reviews { get; set; }
     }
 }
