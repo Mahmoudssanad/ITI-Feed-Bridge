@@ -1,4 +1,5 @@
 ﻿using Feed_Bridge.Models.Enums;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Feed_Bridge.Models.Entities
 {
@@ -21,5 +22,9 @@ namespace Feed_Bridge.Models.Entities
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime? UpdatedAt { get; set; }
+
+        [ForeignKey("User")]
+        public string UserId {  get; set; }
+        public ApplicationUser User {  get; set; }
     }
 }

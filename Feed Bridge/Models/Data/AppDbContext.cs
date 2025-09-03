@@ -11,5 +11,21 @@ namespace Feed_Bridge.Models.Data
         {
             
         }
+
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<Cart> Carts { get; set; }
+        public DbSet<Support> Supports { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+
+            // int مش string ك database يتشاف في ال Order Enum عملت كدا عشان ال 
+            builder.Entity<Order>()
+                .Property(x => x.Status)
+                .HasConversion<string>();
+
+        }
     }
 }
