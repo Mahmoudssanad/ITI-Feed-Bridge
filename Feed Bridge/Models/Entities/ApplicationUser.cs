@@ -9,8 +9,10 @@ namespace Feed_Bridge.Models.Entities
         public string Address { get; set; }
 
         public DateOnly BirthDate { get; set; }
+        public StaticPage staticPage { get; set; }
 
         public List<Order> Orders { get; set; }
         public List<Support> Supports { get; set; }
+        public List<Partener> parteners { get; set; }
     }
 }

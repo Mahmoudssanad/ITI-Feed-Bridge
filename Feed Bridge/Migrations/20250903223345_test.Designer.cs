@@ -4,6 +4,7 @@ using Feed_Bridge.Models.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Feed_Bridge.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250903223345_test")]
+    partial class test
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -167,32 +170,6 @@ namespace Feed_Bridge.Migrations
                     b.ToTable("Orders");
                 });
 
-            modelBuilder.Entity("Feed_Bridge.Models.Entities.Partener", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("ImageUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("RedirectUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Parteners");
-                });
-
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Product", b =>
                 {
                     b.Property<int>("Id")
@@ -224,46 +201,6 @@ namespace Feed_Bridge.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Products");
-                });
-
-            modelBuilder.Entity("Feed_Bridge.Models.Entities.StaticPage", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Content1")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Content2")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("HomePageBackgroundImageUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PartenerBackgroundImageUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("VideoUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId")
-                        .IsUnique();
-
-                    b.ToTable("StaticPages");
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Support", b =>
@@ -490,28 +427,6 @@ namespace Feed_Bridge.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Feed_Bridge.Models.Entities.Partener", b =>
-                {
-                    b.HasOne("Feed_Bridge.Models.Entities.ApplicationUser", "User")
-                        .WithMany("parteners")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("Feed_Bridge.Models.Entities.StaticPage", b =>
-                {
-                    b.HasOne("Feed_Bridge.Models.Entities.ApplicationUser", "User")
-                        .WithOne("staticPage")
-                        .HasForeignKey("Feed_Bridge.Models.Entities.StaticPage", "UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Support", b =>
                 {
                     b.HasOne("Feed_Bridge.Models.Entities.ApplicationUser", "User")
@@ -594,11 +509,6 @@ namespace Feed_Bridge.Migrations
                     b.Navigation("Orders");
 
                     b.Navigation("Supports");
-
-                    b.Navigation("parteners");
-
-                    b.Navigation("staticPage")
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Cart", b =>

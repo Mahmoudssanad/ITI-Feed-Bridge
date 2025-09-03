@@ -16,6 +16,8 @@ namespace Feed_Bridge.Models.Data
         public DbSet<Order> Orders { get; set; }
         public DbSet<Cart> Carts { get; set; }
         public DbSet<Support> Supports { get; set; }
+        public DbSet<StaticPage> StaticPages { get; set; }
+        public DbSet<Partener> Parteners { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
