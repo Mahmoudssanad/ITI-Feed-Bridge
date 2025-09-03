@@ -20,6 +20,7 @@ li {
 }
 a {
   text-decoration: none;
+  text-decoration: none;
   outline: none;
   border: none;
   &:visited {
@@ -416,7 +417,7 @@ p {
 .partner-section {
   padding: 20px 0;
   background-color: #333;
-  background-image: url(imgs/partner\ background.jpg);
+  background-image: url(../imgs/partner\ background.jpg);
   background-position: center;
   background-size: cover;
   position: relative;
@@ -499,7 +500,7 @@ p {
   }
 }
 .products-hero {
-  background-image: url(imgs/bridge.png);
+  background-image: url(../imgs/bridge.png);
   background-size: cover;
   display: flex;
   align-items: center;

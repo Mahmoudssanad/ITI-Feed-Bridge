@@ -5498,23 +5498,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mmm\\.nuget\\packages\\": {},
+    "C:\\Users\\NV_User\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mmm\\OneDrive - Mansoura University - Main\\Desktop\\internship ITI\\ITI-Feed-Bridge\\Feed Bridge\\Feed Bridge.csproj",
+      "projectUniqueName": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\Feed Bridge.csproj",
       "projectName": "Feed Bridge",
-      "projectPath": "C:\\Users\\mmm\\OneDrive - Mansoura University - Main\\Desktop\\internship ITI\\ITI-Feed-Bridge\\Feed Bridge\\Feed Bridge.csproj",
-      "packagesPath": "C:\\Users\\mmm\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mmm\\OneDrive - Mansoura University - Main\\Desktop\\internship ITI\\ITI-Feed-Bridge\\Feed Bridge\\obj\\",
+      "projectPath": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\Feed Bridge.csproj",
+      "packagesPath": "C:\\Users\\NV_User\\.nuget\\packages\\",
+      "outputPath": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\mmm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\NV_User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5541,7 +5541,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net9.0": {
@@ -5571,16 +5571,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\mmm\\OneDrive - Mansoura University - Main\\Desktop\\internship ITI\\ITI-Feed-Bridge\\Feed Bridge\\obj\\project.nuget.cache : '<' is an invalid start of a property name. Expected a '\"'. Path: $ | LineNumber: 2 | BytePositionInLine: 0."
-    }
-  ]
+  }
 }
