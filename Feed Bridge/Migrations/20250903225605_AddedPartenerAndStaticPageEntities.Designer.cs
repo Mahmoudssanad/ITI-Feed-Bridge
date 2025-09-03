@@ -4,6 +4,7 @@ using Feed_Bridge.Models.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Feed_Bridge.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250903225605_AddedPartenerAndStaticPageEntities")]
+    partial class AddedPartenerAndStaticPageEntities
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -44,6 +47,10 @@ namespace Feed_Bridge.Migrations
 
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateOnly>("BirthDate")
                         .HasColumnType("date");
@@ -486,6 +493,28 @@ namespace Feed_Bridge.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Feed_Bridge.Models.Entities.Partener", b =>
+                {
+                    b.HasOne("Feed_Bridge.Models.Entities.ApplicationUser", "User")
+                        .WithMany("parteners")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Feed_Bridge.Models.Entities.StaticPage", b =>
+                {
+                    b.HasOne("Feed_Bridge.Models.Entities.ApplicationUser", "User")
+                        .WithOne("staticPage")
+                        .HasForeignKey("Feed_Bridge.Models.Entities.StaticPage", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Support", b =>
                 {
                     b.HasOne("Feed_Bridge.Models.Entities.ApplicationUser", "User")
@@ -568,6 +597,11 @@ namespace Feed_Bridge.Migrations
                     b.Navigation("Orders");
 
                     b.Navigation("Supports");
+
+                    b.Navigation("parteners");
+
+                    b.Navigation("staticPage")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Cart", b =>
