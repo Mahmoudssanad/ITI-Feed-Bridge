@@ -499,7 +499,7 @@ p {
   }
 }
 .products-hero {
-  background-image: url(imgs/bridge.png);
+  background-image: url(../imgs/bridge.png);
   background-size: cover;
   display: flex;
   align-items: center;
