@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 
 <head>
     <meta charset="UTF-8" />
@@ -22,40 +22,39 @@
 </head>
 
 <body>
-
+    <!-- ✅ الهيدر -->
     <header class="header">
-        
-        <div class="header-icons">
-            <a href="cart.html">
-                <span class="material-symbols-outlined"> shopping_cart </span>
-            </a>
-            <span class="material-symbols-outlined dropdown-toggle">
-                account_circle
-            </span>
-        </div>
-
-
-        <ul class="page-items">
-            <li><a href="index.html">الرئيسيه</a></li>
-            <li><a href="products.html">المنتجات</a></li>
-            <li><a href="donate.html">تبرع</a></li>
-            <li><a href="#about">عن الموقع</a></li>
-        </ul>
-
         <div class="header-logo">
             <img src="~/imgs/logo.png" alt="logo" class="logo-img" />
             <p>FeedBridge</p>
         </div>
 
+        <span class="material-symbols-outlined mobile-icon">menu</span>
+
+        <ul class="page-items">
+            <li><a asp-controller="Home" asp-action="Index">الرئيسية</a></li>
+            <li><a asp-controller="Products" asp-action="Index">المنتجات</a></li>
+            <li><a asp-controller="Donation" asp-action="Index">تبرع</a></li>
+            <li><a href="#about">عن الموقع</a></li>
+        </ul>
+
+        <div class="header-icons">
+            <a asp-controller="Cart" asp-action="Index">
+                <span class="material-symbols-outlined">shopping_cart</span>
+            </a>
+            <span class="material-symbols-outlined"> account_circle </span>
+            <a href="login.html">تسجيل الدخول</a>
+        </div>
+
+        
     </header>
 
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+    <!-- ✅ هنا المحتوى بيتغير -->
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
 
-    
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -63,14 +62,6 @@
 
     @* Footer section *@
     @await RenderSectionAsync("FooterSection", required: false)
-
-    @* When you need use FooterSection in any view  you should write in this view => 
-
-            @section FooterSection{
-                @await Html.PartialAsync("_Footer")
-            }
-    *@
-    
 </body>
 
 </html>
