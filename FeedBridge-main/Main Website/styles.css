@@ -1,0 +1,46 @@
+/* Add this new CSS to your existing main.css file */
+
+.email-signup-container {
+  min-height: calc(100vh - 80px); /* Adjusts for header and footer */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.email-form-card {
+  width: 90%;
+  max-width: 450px;
+  padding: 30px;
+  text-align: center;
+  background-color: var(--background-color);
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px #00000025;
+}
+
+.email-form-card .form-header {
+  color: var(--main-color);
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.email-form-card p {
+  color: var(--text-color);
+  margin-bottom: 25px;
+}
+
+.email-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.email-form .form-control {
+  text-align: right;
+  margin-bottom: 0;
+}
+
+.email-form .btn {
+  margin-top: 10px;
+  width: 100%;
+}

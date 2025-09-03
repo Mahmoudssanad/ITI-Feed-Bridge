@@ -24,6 +24,11 @@ a {
     color: inherit;
   }
 }
+.page-items a:link,
+.page-items a:visited {
+  color: var(--main-color);
+  text-decoration: none;
+}
 .special-heading {
   display: block;
   padding: 50px 40px;
@@ -215,13 +220,13 @@ width: 822px;
   color: var(--main-color);
 }
 
-.Admin-orders-Content, .Admin-reports-Content,.Admin-products-Content, .Admin-donors-Content , .Admin-delivery-Content{
+.Admin-orders-Content, .Admin-reports-Content,.Admin-products-Content, .Admin-donors-Content , .Admin-delivery-Content, .Admin-allUsers-Content{
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 
-.Orders_data_table, .reports_data_table,.products_data_table, .donors_data_table, .delivery_data_table{
+.Orders_data_table, .reports_data_table,.products_data_table, .donors_data_table, .delivery_data_table, .allUsers_data_table{
   width: 100%;
   margin-top: 30px;
 }
@@ -234,6 +239,57 @@ width: 822px;
 } */
 
 .Admin-orders-Content .Orders_data_table th, .Admin-reports-Content .reports_data_table th , .Admin-products-Content .products_data_table th
-, .Admin-donors-Content .donors_data_table th, .Admin-delivery-Content .delivery_data_table th{
+, .Admin-donors-Content .donors_data_table th, .Admin-delivery-Content .delivery_data_table th, .Admin-allUsers-Content .allUsers_data_table th{
   color: var(--main-color);
+}
+
+
+.allUsers_data_table .Edit-role{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.notifications-container {
+  position: relative;
+  cursor: pointer;
+}
+
+.notifications-box {
+  position: absolute;
+  top: 100%; /* Position below the icon */
+  left: -50px;
+  width: 250px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  z-index: 1000;
+  display: none; /* Hide the box by default */
+}
+
+.notifications-box h3 {
+  margin-top: 0;
+  color: var(--main-color);
+  font-size: 1.1rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.notifications-box ul {
+  padding: 0;
+  margin: 0;
+}
+
+.notifications-box li {
+  font-size: 0.9rem;
+  padding: 8px 0;
+  border-bottom: 1px solid #f5f5f5;
+  color: var(--text-color);
+}
+
+.notifications-box li:last-child {
+  border-bottom: none;
 }
