@@ -220,13 +220,13 @@ width: 822px;
   color: var(--main-color);
 }
 
-.Admin-orders-Content, .Admin-reports-Content,.Admin-products-Content, .Admin-donors-Content , .Admin-delivery-Content, .Admin-allUsers-Content{
+.Admin-orders-Content, .Admin-reports-Content,.Admin-products-Content, .Admin-donors-Content , .Admin-delivery-Content, .Admin-allUsers-Content, .Admin-allParteners-Content, .Admin-HomeControl-Content{
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
 }
 
-.Orders_data_table, .reports_data_table,.products_data_table, .donors_data_table, .delivery_data_table, .allUsers_data_table{
+.Orders_data_table, .reports_data_table,.products_data_table, .donors_data_table, .delivery_data_table, .allUsers_data_table, .allParteners_data_table, .homeControll_data_table{
   width: 100%;
   margin-top: 30px;
 }
@@ -239,12 +239,12 @@ width: 822px;
 } */
 
 .Admin-orders-Content .Orders_data_table th, .Admin-reports-Content .reports_data_table th , .Admin-products-Content .products_data_table th
-, .Admin-donors-Content .donors_data_table th, .Admin-delivery-Content .delivery_data_table th, .Admin-allUsers-Content .allUsers_data_table th{
+, .Admin-donors-Content .donors_data_table th, .Admin-delivery-Content .delivery_data_table th, .Admin-allUsers-Content .allUsers_data_table th, .Admin-allParteners-Content .allParteners_data_table th{
   color: var(--main-color);
 }
 
 
-.allUsers_data_table .Edit-role{
+.allUsers_data_table .Edit-role, .Edit-image{
   display: flex;
   justify-content: space-between;
 }
@@ -292,4 +292,31 @@ width: 822px;
 
 .notifications-box li:last-child {
   border-bottom: none;
+}
+
+.button-link{
+  width: 20%;
+    padding: 12px;
+    color: white;
+    background-color: var(--main-color);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center; /* Centers the text inside the link */
+    text-decoration: none; /* Removes the underline from the link */
+}
+.button-link:hover{
+  background-color: white;
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+}
+
+.buttons-parent{
+  padding-top: 20px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
