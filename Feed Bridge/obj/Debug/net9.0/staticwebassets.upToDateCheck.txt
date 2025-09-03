@@ -1,0 +1,45 @@
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\imgs\payment.svg
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\css\main.css
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\jquery\LICENSE.txt
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\favicon.ico
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\jquery-validation\LICENSE.md
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\js\site.js
+wwwroot\css\main.css
+wwwroot\favicon.ico
+wwwroot\imgs\1.jpg
+wwwroot\imgs\10.jpg
+wwwroot\imgs\11.jpg
+wwwroot\imgs\12.jpg
+wwwroot\imgs\13.jpg
+wwwroot\imgs\14.jpg
+wwwroot\imgs\15.jpg
+wwwroot\imgs\16.jpg
+wwwroot\imgs\2.jpg
+wwwroot\imgs\3.jpg
+wwwroot\imgs\4.jpg
+wwwroot\imgs\5.jpg
+wwwroot\imgs\6.jpg
+wwwroot\imgs\7.jpg
+wwwroot\imgs\8.jpg
+wwwroot\imgs\9.jpg
+wwwroot\imgs\bridge.png
+wwwroot\imgs\donation.png
+wwwroot\imgs\Empty.png
+wwwroot\imgs\image.png
+wwwroot\imgs\img.png
+wwwroot\imgs\landing background.png
+wwwroot\imgs\logo.png
+wwwroot\imgs\partner background.jpg
+wwwroot\imgs\partner1.png
+wwwroot\imgs\partner2.jpg
+wwwroot\imgs\partner3.png
+wwwroot\imgs\partner4.png
+wwwroot\imgs\payment.svg
+wwwroot\imgs\person.png
+wwwroot\imgs\video.mp4
+wwwroot\js\site.js
+wwwroot\lib\bootstrap\LICENSE
+wwwroot\lib\jquery\LICENSE.txt
+wwwroot\lib\jquery-validation\LICENSE.md
+wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt

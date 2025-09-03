@@ -1,0 +1,6275 @@
+{
+  "Version": 1,
+  "Hash": "ba+fkWoQXySPg/ZG7jSeVR9Xdz6goK+0eEpA2yFPAtw=",
+  "Source": "Feed Bridge",
+  "BasePath": "_content/Feed Bridge",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Feed Bridge\\wwwroot",
+      "Source": "Feed Bridge",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\",
+      "BasePath": "_content/Feed Bridge",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\2076v4oyef-hc82k71o6u.gz",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "imgs/payment#[.{fingerprint=hc82k71o6u}]?.svg.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\payment.svg",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "msapg18hbo",
+      "Integrity": "Gonj5XWo5E+RfVrwy6o0FSb1KSIj5uqel2aiKx87RaQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\payment.svg"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\a6gif75zam-k2w0lhz90m.gz",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "Feed Bridge#[.{fingerprint=k2w0lhz90m}]?.styles.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "CurrentProject",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\scopedcss\\bundle\\Feed Bridge.styles.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "3m5b5qym4x",
+      "Integrity": "1aGR3k+00WCUOeCl9MF6qRZCAwatR9PRBfVl1X/Z/Fg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\scopedcss\\bundle\\Feed Bridge.styles.css"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\abyoyn4khk-omdfbqhazq.gz",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "css/main#[.{fingerprint=omdfbqhazq}]?.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\css\\main.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "jsjmff1dx6",
+      "Integrity": "s2gBANZiaHI8mHoI2Y9ByKHNF3mo1B09ElGtjizv5Gw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\css\\main.css"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\hlus0n19nk-mlv21k5csn.gz",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "lib/jquery/LICENSE#[.{fingerprint=mlv21k5csn}]?.txt.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "rdl0higpfn",
+      "Integrity": "wRqs30CSrwWDvG1bDMUjomAlSqRRTMplLSuLcrgYtHw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\o99lyah6hv-61n19gt1b8.gz",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "favicon#[.{fingerprint=61n19gt1b8}]?.ico.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\favicon.ico",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "lir1p715ud",
+      "Integrity": "jcY0RXFOlcp4VNTCcYQtWVZZBlr+ZY+AOv6/0S5dnF8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\pyc8xw4uci-k2w0lhz90m.gz",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "Feed Bridge#[.{fingerprint=k2w0lhz90m}]!.bundle.scp.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "Reference",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\Feed Bridge.bundle.scp.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "3m5b5qym4x",
+      "Integrity": "1aGR3k+00WCUOeCl9MF6qRZCAwatR9PRBfVl1X/Z/Fg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\Feed Bridge.bundle.scp.css"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\q22d2wo96v-x0q3zqp4vz.gz",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "lib/jquery-validation/LICENSE#[.{fingerprint=x0q3zqp4vz}]?.md.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "tbedkqp182",
+      "Integrity": "yZU1lf/p2dEnCHUXYp8G4roAyod23x5MoR4DehwHfrA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\ve6bqdaq53-356vix0kms.gz",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE#[.{fingerprint=356vix0kms}]?.txt.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "0vtotz30el",
+      "Integrity": "1HkjQSVuV0/ji/X/lGeDTHeagBS0BwopMrHDQuwqgtU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\z6uwehpv4u-xtxxf3hu2r.gz",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "js/site#[.{fingerprint=xtxxf3hu2r}]?.js.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\js\\site.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "fpxp8wntf7",
+      "Integrity": "465WqepNnI4ENLgQJFXrL2gtI20GCfeLK3JAtugOzpA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\scopedcss\\bundle\\Feed Bridge.styles.css",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\scopedcss\\bundle\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "Feed Bridge#[.{fingerprint}]?.styles.css",
+      "AssetKind": "All",
+      "AssetMode": "CurrentProject",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ApplicationBundle",
+      "Fingerprint": "k2w0lhz90m",
+      "Integrity": "pNRYlFtedW2A43GMdHCzCoLnhckhfAVFP5BxMpwCkyg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\scopedcss\\bundle\\Feed Bridge.styles.css"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\Feed Bridge.bundle.scp.css",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "Feed Bridge#[.{fingerprint}]!.bundle.scp.css",
+      "AssetKind": "All",
+      "AssetMode": "Reference",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ProjectBundle",
+      "Fingerprint": "k2w0lhz90m",
+      "Integrity": "pNRYlFtedW2A43GMdHCzCoLnhckhfAVFP5BxMpwCkyg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\Feed Bridge.bundle.scp.css"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\css\\main.css",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "css/main#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "omdfbqhazq",
+      "Integrity": "QOpcHGwVF8ymDOJffUTaw7ip0biLnzvHDc4DKgUVM2s=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\main.css"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\favicon.ico",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "favicon#[.{fingerprint}]?.ico",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "61n19gt1b8",
+      "Integrity": "Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\1.jpg",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "imgs/1#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "qy7suzubx5",
+      "Integrity": "UgHvlZ7DZnUYjcXjYzx8Dp01g44uIpaLQgsogs5g6LU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\1.jpg"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\10.jpg",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "imgs/10#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "y95pia0v06",
+      "Integrity": "Cp8krtCSJLbABDUoTGU6SYRSjASt956vd+XeQ7YMIJg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\10.jpg"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\11.jpg",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "imgs/11#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "q6ussquyv5",
+      "Integrity": "0iuikyq+Fl9+QkDpnON41xKEBSEo+IV0wAowDj6csVQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\11.jpg"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\12.jpg",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "imgs/12#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "adk8k68xd3",
+      "Integrity": "HkX+yrcUI61z6yTeKgGiOibjfvZTgNQaIl5Al4Mjys0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\12.jpg"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\13.jpg",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "imgs/13#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "k13h42razs",
+      "Integrity": "WNrfC00ripmk0GPxb+gQLsXpZZ21VDZW/BjGKZCfkYY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\13.jpg"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\14.jpg",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "imgs/14#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "k3vcv573nw",
+      "Integrity": "cAs0BRojl0U8L39O5f+nYtKu6V1NkOC3V0KShN1JzoU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\14.jpg"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\15.jpg",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "imgs/15#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "3racq03s87",
+      "Integrity": "kbSsou7WEffYKDP5L6CUqJI8loNF7u0qxvybv+AcNGQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\15.jpg"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\16.jpg",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "imgs/16#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "spuwpgm9rq",
+      "Integrity": "gAMvsnV/aL3QJN7WCkuDDZsrtapKs6mnxnoo4EFav8E=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\16.jpg"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\2.jpg",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "imgs/2#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "3sjsky2mby",
+      "Integrity": "I09pCzrZwXwD/sFwrdLFkFwAl6dgcLBlHs/MSSewMhA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\2.jpg"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\3.jpg",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "imgs/3#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tztf0axvpx",
+      "Integrity": "Z4ISMiZGPuC3t0r7/tgvVDWTsMNbDW3eEjKKdQ0lGno=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\3.jpg"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\4.jpg",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "imgs/4#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "xnvif02omx",
+      "Integrity": "MwAEhwJw6g6prJxq44dBX3HifraYIcOF+CCw/IGeKcU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\4.jpg"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\5.jpg",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "imgs/5#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "rx8gc505kz",
+      "Integrity": "P5G7l6RV87IajoKXmgKV+R76AnY0EUdNJEqZaHaxrgw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\5.jpg"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\6.jpg",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "imgs/6#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "hri71w91av",
+      "Integrity": "vUu/Pv9JJI0DC92bsS+M1JZmBuqqXbKW1eVowZBJHuk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\6.jpg"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\7.jpg",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "imgs/7#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ct5pznmn5w",
+      "Integrity": "sMhPxiFDaxhe9M8MxNoekFJNgVuWEONUsvjbOJcqhs4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\7.jpg"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\8.jpg",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "imgs/8#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "zenunxiza1",
+      "Integrity": "C03i2QF+SJoGG1Ie+ykNNq4HDrUSzFkGncyxr3/eSNE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\8.jpg"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\9.jpg",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "imgs/9#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "hblts38qoo",
+      "Integrity": "LZm1NLF0lfEl8L/Q/DCHuc+nWCQ9/VSsN+xV7Nb+Ypg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\9.jpg"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\bridge.png",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "imgs/bridge#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "arupiytg9i",
+      "Integrity": "9lGzvzDoQBIrniqisYEYmxJWmaWGgnNarRxjYgapdLA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\bridge.png"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\donation.png",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "imgs/donation#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "v8604m6tkr",
+      "Integrity": "YaTXFKnqpSKiy0yDjB+QePqvs1JsKaE71CFqmlEkHaU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\donation.png"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\Empty.png",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "imgs/Empty#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "t3jxzn6dgf",
+      "Integrity": "B8LyGKo8MqaX/W9rYrvQmw+TARXa0yGBAawcmvFxIDo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\Empty.png"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\image.png",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "imgs/image#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "54dj1mqjys",
+      "Integrity": "2x2GQ4BpeUPvcPWZfA8klo/VbwxNdVcvUTl4CfuE+fg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\image.png"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\img.png",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "imgs/img#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "e8hejlgsg3",
+      "Integrity": "QkpDDdv/nNaNysuAIsIipaRuqSMvSO69EgxDB61avWg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\img.png"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\landing background.png",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "imgs/landing background#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "oiijzg854k",
+      "Integrity": "gBjTaqIaBFqQ3SUk5GWyRLyCXGS4nsoHxhLJnT0C48A=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\landing background.png"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\logo.png",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "imgs/logo#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "zlcj2kcs2o",
+      "Integrity": "l5grDzimE3I87sTNyDNeeMAIL01noJmAV+AtQeYB92g=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\logo.png"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\partner background.jpg",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "imgs/partner background#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "do8x0xqwz6",
+      "Integrity": "LW5hG+6BBrpXQGuNwAShKdGxyFznjyXV+RqGFMtXpQ8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\partner background.jpg"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\partner1.png",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "imgs/partner1#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "yybfuba107",
+      "Integrity": "WrTRRdQESuFaZIVgXnG35ky+7/RCjj3bbX+TbDnUzdg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\partner1.png"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\partner2.jpg",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "imgs/partner2#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "8915ldi7hf",
+      "Integrity": "nP4Hld4jYS5ln534feCMPxkkVdlRBCsSePGcFRqN6e8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\partner2.jpg"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\partner3.png",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "imgs/partner3#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "5f5l3q4naz",
+      "Integrity": "T2bl/SxVOYqwwljUu1ruuiKeY+5QCjh4FZY59382ld8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\partner3.png"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\partner4.png",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "imgs/partner4#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "dsitlk5yc3",
+      "Integrity": "oyakev5w48b2Wo04p0nSMJqc6FldjfkOkr+e1uWQJb8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\partner4.png"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\payment.svg",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "imgs/payment#[.{fingerprint}]?.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "hc82k71o6u",
+      "Integrity": "wbZPwEEOV3Zo5nPXq/uwsURXvmSHmVhsw6GhmGgmGV8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\payment.svg"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\person.png",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "imgs/person#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "dsd0afvcb8",
+      "Integrity": "zRs5mmu5OiZPNaKiaPPLgKMOouSvWlc4+SUQBBiJkNk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\person.png"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\video.mp4",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "imgs/video#[.{fingerprint}]?.mp4",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "y3xk5h6nig",
+      "Integrity": "ng0YlHcrUx5hD85GcJbpEeWH0NZuKuIse3N/njkLHDs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\video.mp4"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\js\\site.js",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "js/site#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "xtxxf3hu2r",
+      "Integrity": "hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "lib/bootstrap/LICENSE#[.{fingerprint}]?",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "81b7ukuj9c",
+      "Integrity": "ZH6pA6BSx6fuHZvdaKph1DwUJ+VSYilIiEQu8ilnvqk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "lib/jquery/LICENSE#[.{fingerprint}]?.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "mlv21k5csn",
+      "Integrity": "hjIBkvmgxQXbNXK3B9YQ3t06RwLuQSQzC/dpvuB/lMk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "lib/jquery-validation/LICENSE#[.{fingerprint}]?.md",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "x0q3zqp4vz",
+      "Integrity": "geHEkw/WGPdaHQMRq5HuNY9snliNzU/y2OW8ycnhGXw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Identity": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "SourceId": "Feed Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\",
+      "BasePath": "_content/Feed Bridge",
+      "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE#[.{fingerprint}]?.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "356vix0kms",
+      "Integrity": "16aFlqtpsG9RyieKZUUUjkJpqTgcJtWXwT312I4Iz1s=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "css/main.css",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\abyoyn4khk-omdfbqhazq.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000213766567"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4677"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"s2gBANZiaHI8mHoI2Y9ByKHNF3mo1B09ElGtjizv5Gw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 03 Sep 2025 12:59:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"QOpcHGwVF8ymDOJffUTaw7ip0biLnzvHDc4DKgUVM2s=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-QOpcHGwVF8ymDOJffUTaw7ip0biLnzvHDc4DKgUVM2s="
+        }
+      ]
+    },
+    {
+      "Route": "css/main.css",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\css\\main.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "29648"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QOpcHGwVF8ymDOJffUTaw7ip0biLnzvHDc4DKgUVM2s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 03 Sep 2025 12:59:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-QOpcHGwVF8ymDOJffUTaw7ip0biLnzvHDc4DKgUVM2s="
+        }
+      ]
+    },
+    {
+      "Route": "css/main.css.gz",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\abyoyn4khk-omdfbqhazq.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4677"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"s2gBANZiaHI8mHoI2Y9ByKHNF3mo1B09ElGtjizv5Gw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 03 Sep 2025 12:59:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-s2gBANZiaHI8mHoI2Y9ByKHNF3mo1B09ElGtjizv5Gw="
+        }
+      ]
+    },
+    {
+      "Route": "css/main.omdfbqhazq.css",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\abyoyn4khk-omdfbqhazq.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000213766567"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4677"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"s2gBANZiaHI8mHoI2Y9ByKHNF3mo1B09ElGtjizv5Gw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 03 Sep 2025 12:59:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"QOpcHGwVF8ymDOJffUTaw7ip0biLnzvHDc4DKgUVM2s=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "omdfbqhazq"
+        },
+        {
+          "Name": "label",
+          "Value": "css/main.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-QOpcHGwVF8ymDOJffUTaw7ip0biLnzvHDc4DKgUVM2s="
+        }
+      ]
+    },
+    {
+      "Route": "css/main.omdfbqhazq.css",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\css\\main.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "29648"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QOpcHGwVF8ymDOJffUTaw7ip0biLnzvHDc4DKgUVM2s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 03 Sep 2025 12:59:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "omdfbqhazq"
+        },
+        {
+          "Name": "label",
+          "Value": "css/main.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-QOpcHGwVF8ymDOJffUTaw7ip0biLnzvHDc4DKgUVM2s="
+        }
+      ]
+    },
+    {
+      "Route": "css/main.omdfbqhazq.css.gz",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\abyoyn4khk-omdfbqhazq.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4677"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"s2gBANZiaHI8mHoI2Y9ByKHNF3mo1B09ElGtjizv5Gw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 03 Sep 2025 12:59:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "omdfbqhazq"
+        },
+        {
+          "Name": "label",
+          "Value": "css/main.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-s2gBANZiaHI8mHoI2Y9ByKHNF3mo1B09ElGtjizv5Gw="
+        }
+      ]
+    },
+    {
+      "Route": "favicon.61n19gt1b8.ico",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\o99lyah6hv-61n19gt1b8.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000411015208"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2432"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"jcY0RXFOlcp4VNTCcYQtWVZZBlr+ZY+AOv6/0S5dnF8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 10:56:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/x-icon"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "61n19gt1b8"
+        },
+        {
+          "Name": "label",
+          "Value": "favicon.ico"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="
+        }
+      ]
+    },
+    {
+      "Route": "favicon.61n19gt1b8.ico",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\favicon.ico",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5430"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/x-icon"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 10:56:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "61n19gt1b8"
+        },
+        {
+          "Name": "label",
+          "Value": "favicon.ico"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="
+        }
+      ]
+    },
+    {
+      "Route": "favicon.61n19gt1b8.ico.gz",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\o99lyah6hv-61n19gt1b8.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2432"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/x-icon"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"jcY0RXFOlcp4VNTCcYQtWVZZBlr+ZY+AOv6/0S5dnF8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 10:56:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "61n19gt1b8"
+        },
+        {
+          "Name": "label",
+          "Value": "favicon.ico.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-jcY0RXFOlcp4VNTCcYQtWVZZBlr+ZY+AOv6/0S5dnF8="
+        }
+      ]
+    },
+    {
+      "Route": "favicon.ico",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\o99lyah6hv-61n19gt1b8.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000411015208"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2432"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"jcY0RXFOlcp4VNTCcYQtWVZZBlr+ZY+AOv6/0S5dnF8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 10:56:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/x-icon"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="
+        }
+      ]
+    },
+    {
+      "Route": "favicon.ico",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\favicon.ico",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5430"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/x-icon"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 10:56:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="
+        }
+      ]
+    },
+    {
+      "Route": "favicon.ico.gz",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\o99lyah6hv-61n19gt1b8.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2432"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/x-icon"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"jcY0RXFOlcp4VNTCcYQtWVZZBlr+ZY+AOv6/0S5dnF8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 10:56:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-jcY0RXFOlcp4VNTCcYQtWVZZBlr+ZY+AOv6/0S5dnF8="
+        }
+      ]
+    },
+    {
+      "Route": "Feed Bridge.bundle.scp.css",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\pyc8xw4uci-k2w0lhz90m.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001834862385"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "544"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1aGR3k+00WCUOeCl9MF6qRZCAwatR9PRBfVl1X/Z/Fg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 03 Sep 2025 13:01:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"pNRYlFtedW2A43GMdHCzCoLnhckhfAVFP5BxMpwCkyg=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-pNRYlFtedW2A43GMdHCzCoLnhckhfAVFP5BxMpwCkyg="
+        }
+      ]
+    },
+    {
+      "Route": "Feed Bridge.bundle.scp.css",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\Feed Bridge.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1129"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pNRYlFtedW2A43GMdHCzCoLnhckhfAVFP5BxMpwCkyg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 03 Sep 2025 13:01:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-pNRYlFtedW2A43GMdHCzCoLnhckhfAVFP5BxMpwCkyg="
+        }
+      ]
+    },
+    {
+      "Route": "Feed Bridge.bundle.scp.css.gz",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\pyc8xw4uci-k2w0lhz90m.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "544"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1aGR3k+00WCUOeCl9MF6qRZCAwatR9PRBfVl1X/Z/Fg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 03 Sep 2025 13:01:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-1aGR3k+00WCUOeCl9MF6qRZCAwatR9PRBfVl1X/Z/Fg="
+        }
+      ]
+    },
+    {
+      "Route": "Feed Bridge.k2w0lhz90m.bundle.scp.css",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\pyc8xw4uci-k2w0lhz90m.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001834862385"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "544"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1aGR3k+00WCUOeCl9MF6qRZCAwatR9PRBfVl1X/Z/Fg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 03 Sep 2025 13:01:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"pNRYlFtedW2A43GMdHCzCoLnhckhfAVFP5BxMpwCkyg=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "k2w0lhz90m"
+        },
+        {
+          "Name": "label",
+          "Value": "Feed Bridge.bundle.scp.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-pNRYlFtedW2A43GMdHCzCoLnhckhfAVFP5BxMpwCkyg="
+        }
+      ]
+    },
+    {
+      "Route": "Feed Bridge.k2w0lhz90m.bundle.scp.css",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\Feed Bridge.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1129"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pNRYlFtedW2A43GMdHCzCoLnhckhfAVFP5BxMpwCkyg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 03 Sep 2025 13:01:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "k2w0lhz90m"
+        },
+        {
+          "Name": "label",
+          "Value": "Feed Bridge.bundle.scp.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-pNRYlFtedW2A43GMdHCzCoLnhckhfAVFP5BxMpwCkyg="
+        }
+      ]
+    },
+    {
+      "Route": "Feed Bridge.k2w0lhz90m.bundle.scp.css.gz",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\pyc8xw4uci-k2w0lhz90m.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "544"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1aGR3k+00WCUOeCl9MF6qRZCAwatR9PRBfVl1X/Z/Fg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 03 Sep 2025 13:01:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "k2w0lhz90m"
+        },
+        {
+          "Name": "label",
+          "Value": "Feed Bridge.bundle.scp.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-1aGR3k+00WCUOeCl9MF6qRZCAwatR9PRBfVl1X/Z/Fg="
+        }
+      ]
+    },
+    {
+      "Route": "Feed Bridge.k2w0lhz90m.styles.css",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\a6gif75zam-k2w0lhz90m.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001834862385"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "544"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1aGR3k+00WCUOeCl9MF6qRZCAwatR9PRBfVl1X/Z/Fg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 03 Sep 2025 13:01:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"pNRYlFtedW2A43GMdHCzCoLnhckhfAVFP5BxMpwCkyg=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "k2w0lhz90m"
+        },
+        {
+          "Name": "label",
+          "Value": "Feed Bridge.styles.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-pNRYlFtedW2A43GMdHCzCoLnhckhfAVFP5BxMpwCkyg="
+        }
+      ]
+    },
+    {
+      "Route": "Feed Bridge.k2w0lhz90m.styles.css",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\scopedcss\\bundle\\Feed Bridge.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1129"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pNRYlFtedW2A43GMdHCzCoLnhckhfAVFP5BxMpwCkyg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 03 Sep 2025 13:01:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "k2w0lhz90m"
+        },
+        {
+          "Name": "label",
+          "Value": "Feed Bridge.styles.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-pNRYlFtedW2A43GMdHCzCoLnhckhfAVFP5BxMpwCkyg="
+        }
+      ]
+    },
+    {
+      "Route": "Feed Bridge.k2w0lhz90m.styles.css.gz",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\a6gif75zam-k2w0lhz90m.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "544"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1aGR3k+00WCUOeCl9MF6qRZCAwatR9PRBfVl1X/Z/Fg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 03 Sep 2025 13:01:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "k2w0lhz90m"
+        },
+        {
+          "Name": "label",
+          "Value": "Feed Bridge.styles.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-1aGR3k+00WCUOeCl9MF6qRZCAwatR9PRBfVl1X/Z/Fg="
+        }
+      ]
+    },
+    {
+      "Route": "Feed Bridge.styles.css",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\a6gif75zam-k2w0lhz90m.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001834862385"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "544"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1aGR3k+00WCUOeCl9MF6qRZCAwatR9PRBfVl1X/Z/Fg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 03 Sep 2025 13:01:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"pNRYlFtedW2A43GMdHCzCoLnhckhfAVFP5BxMpwCkyg=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-pNRYlFtedW2A43GMdHCzCoLnhckhfAVFP5BxMpwCkyg="
+        }
+      ]
+    },
+    {
+      "Route": "Feed Bridge.styles.css",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\scopedcss\\bundle\\Feed Bridge.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1129"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pNRYlFtedW2A43GMdHCzCoLnhckhfAVFP5BxMpwCkyg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 03 Sep 2025 13:01:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-pNRYlFtedW2A43GMdHCzCoLnhckhfAVFP5BxMpwCkyg="
+        }
+      ]
+    },
+    {
+      "Route": "Feed Bridge.styles.css.gz",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\a6gif75zam-k2w0lhz90m.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "544"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1aGR3k+00WCUOeCl9MF6qRZCAwatR9PRBfVl1X/Z/Fg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 03 Sep 2025 13:01:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-1aGR3k+00WCUOeCl9MF6qRZCAwatR9PRBfVl1X/Z/Fg="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/1.jpg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\1.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "39068"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UgHvlZ7DZnUYjcXjYzx8Dp01g44uIpaLQgsogs5g6LU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-UgHvlZ7DZnUYjcXjYzx8Dp01g44uIpaLQgsogs5g6LU="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/1.qy7suzubx5.jpg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\1.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "39068"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UgHvlZ7DZnUYjcXjYzx8Dp01g44uIpaLQgsogs5g6LU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qy7suzubx5"
+        },
+        {
+          "Name": "label",
+          "Value": "imgs/1.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-UgHvlZ7DZnUYjcXjYzx8Dp01g44uIpaLQgsogs5g6LU="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/10.jpg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\10.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "70934"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Cp8krtCSJLbABDUoTGU6SYRSjASt956vd+XeQ7YMIJg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Cp8krtCSJLbABDUoTGU6SYRSjASt956vd+XeQ7YMIJg="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/10.y95pia0v06.jpg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\10.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "70934"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Cp8krtCSJLbABDUoTGU6SYRSjASt956vd+XeQ7YMIJg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "y95pia0v06"
+        },
+        {
+          "Name": "label",
+          "Value": "imgs/10.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Cp8krtCSJLbABDUoTGU6SYRSjASt956vd+XeQ7YMIJg="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/11.jpg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\11.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "26116"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0iuikyq+Fl9+QkDpnON41xKEBSEo+IV0wAowDj6csVQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0iuikyq+Fl9+QkDpnON41xKEBSEo+IV0wAowDj6csVQ="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/11.q6ussquyv5.jpg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\11.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "26116"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0iuikyq+Fl9+QkDpnON41xKEBSEo+IV0wAowDj6csVQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "q6ussquyv5"
+        },
+        {
+          "Name": "label",
+          "Value": "imgs/11.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0iuikyq+Fl9+QkDpnON41xKEBSEo+IV0wAowDj6csVQ="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/12.adk8k68xd3.jpg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\12.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "41309"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HkX+yrcUI61z6yTeKgGiOibjfvZTgNQaIl5Al4Mjys0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "adk8k68xd3"
+        },
+        {
+          "Name": "label",
+          "Value": "imgs/12.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-HkX+yrcUI61z6yTeKgGiOibjfvZTgNQaIl5Al4Mjys0="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/12.jpg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\12.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "41309"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HkX+yrcUI61z6yTeKgGiOibjfvZTgNQaIl5Al4Mjys0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-HkX+yrcUI61z6yTeKgGiOibjfvZTgNQaIl5Al4Mjys0="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/13.jpg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\13.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "55124"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WNrfC00ripmk0GPxb+gQLsXpZZ21VDZW/BjGKZCfkYY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-WNrfC00ripmk0GPxb+gQLsXpZZ21VDZW/BjGKZCfkYY="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/13.k13h42razs.jpg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\13.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "55124"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WNrfC00ripmk0GPxb+gQLsXpZZ21VDZW/BjGKZCfkYY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "k13h42razs"
+        },
+        {
+          "Name": "label",
+          "Value": "imgs/13.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-WNrfC00ripmk0GPxb+gQLsXpZZ21VDZW/BjGKZCfkYY="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/14.jpg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\14.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12902"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cAs0BRojl0U8L39O5f+nYtKu6V1NkOC3V0KShN1JzoU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-cAs0BRojl0U8L39O5f+nYtKu6V1NkOC3V0KShN1JzoU="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/14.k3vcv573nw.jpg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\14.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12902"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cAs0BRojl0U8L39O5f+nYtKu6V1NkOC3V0KShN1JzoU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "k3vcv573nw"
+        },
+        {
+          "Name": "label",
+          "Value": "imgs/14.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-cAs0BRojl0U8L39O5f+nYtKu6V1NkOC3V0KShN1JzoU="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/15.3racq03s87.jpg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\15.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "35107"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"kbSsou7WEffYKDP5L6CUqJI8loNF7u0qxvybv+AcNGQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3racq03s87"
+        },
+        {
+          "Name": "label",
+          "Value": "imgs/15.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-kbSsou7WEffYKDP5L6CUqJI8loNF7u0qxvybv+AcNGQ="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/15.jpg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\15.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "35107"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"kbSsou7WEffYKDP5L6CUqJI8loNF7u0qxvybv+AcNGQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-kbSsou7WEffYKDP5L6CUqJI8loNF7u0qxvybv+AcNGQ="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/16.jpg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\16.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "47530"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gAMvsnV/aL3QJN7WCkuDDZsrtapKs6mnxnoo4EFav8E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gAMvsnV/aL3QJN7WCkuDDZsrtapKs6mnxnoo4EFav8E="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/16.spuwpgm9rq.jpg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\16.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "47530"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gAMvsnV/aL3QJN7WCkuDDZsrtapKs6mnxnoo4EFav8E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "spuwpgm9rq"
+        },
+        {
+          "Name": "label",
+          "Value": "imgs/16.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-gAMvsnV/aL3QJN7WCkuDDZsrtapKs6mnxnoo4EFav8E="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/2.3sjsky2mby.jpg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\2.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "34589"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"I09pCzrZwXwD/sFwrdLFkFwAl6dgcLBlHs/MSSewMhA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3sjsky2mby"
+        },
+        {
+          "Name": "label",
+          "Value": "imgs/2.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-I09pCzrZwXwD/sFwrdLFkFwAl6dgcLBlHs/MSSewMhA="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/2.jpg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\2.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "34589"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"I09pCzrZwXwD/sFwrdLFkFwAl6dgcLBlHs/MSSewMhA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-I09pCzrZwXwD/sFwrdLFkFwAl6dgcLBlHs/MSSewMhA="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/3.jpg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\3.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "72107"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Z4ISMiZGPuC3t0r7/tgvVDWTsMNbDW3eEjKKdQ0lGno=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Z4ISMiZGPuC3t0r7/tgvVDWTsMNbDW3eEjKKdQ0lGno="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/3.tztf0axvpx.jpg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\3.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "72107"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Z4ISMiZGPuC3t0r7/tgvVDWTsMNbDW3eEjKKdQ0lGno=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tztf0axvpx"
+        },
+        {
+          "Name": "label",
+          "Value": "imgs/3.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Z4ISMiZGPuC3t0r7/tgvVDWTsMNbDW3eEjKKdQ0lGno="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/4.jpg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\4.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "43493"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"MwAEhwJw6g6prJxq44dBX3HifraYIcOF+CCw/IGeKcU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-MwAEhwJw6g6prJxq44dBX3HifraYIcOF+CCw/IGeKcU="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/4.xnvif02omx.jpg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\4.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "43493"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"MwAEhwJw6g6prJxq44dBX3HifraYIcOF+CCw/IGeKcU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xnvif02omx"
+        },
+        {
+          "Name": "label",
+          "Value": "imgs/4.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-MwAEhwJw6g6prJxq44dBX3HifraYIcOF+CCw/IGeKcU="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/5.jpg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\5.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "28416"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"P5G7l6RV87IajoKXmgKV+R76AnY0EUdNJEqZaHaxrgw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-P5G7l6RV87IajoKXmgKV+R76AnY0EUdNJEqZaHaxrgw="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/5.rx8gc505kz.jpg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\5.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "28416"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"P5G7l6RV87IajoKXmgKV+R76AnY0EUdNJEqZaHaxrgw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "rx8gc505kz"
+        },
+        {
+          "Name": "label",
+          "Value": "imgs/5.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-P5G7l6RV87IajoKXmgKV+R76AnY0EUdNJEqZaHaxrgw="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/6.hri71w91av.jpg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\6.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "30798"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vUu/Pv9JJI0DC92bsS+M1JZmBuqqXbKW1eVowZBJHuk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "hri71w91av"
+        },
+        {
+          "Name": "label",
+          "Value": "imgs/6.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-vUu/Pv9JJI0DC92bsS+M1JZmBuqqXbKW1eVowZBJHuk="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/6.jpg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\6.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "30798"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vUu/Pv9JJI0DC92bsS+M1JZmBuqqXbKW1eVowZBJHuk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-vUu/Pv9JJI0DC92bsS+M1JZmBuqqXbKW1eVowZBJHuk="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/7.ct5pznmn5w.jpg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\7.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "23739"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"sMhPxiFDaxhe9M8MxNoekFJNgVuWEONUsvjbOJcqhs4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ct5pznmn5w"
+        },
+        {
+          "Name": "label",
+          "Value": "imgs/7.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-sMhPxiFDaxhe9M8MxNoekFJNgVuWEONUsvjbOJcqhs4="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/7.jpg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\7.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "23739"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"sMhPxiFDaxhe9M8MxNoekFJNgVuWEONUsvjbOJcqhs4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-sMhPxiFDaxhe9M8MxNoekFJNgVuWEONUsvjbOJcqhs4="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/8.jpg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\8.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "53089"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"C03i2QF+SJoGG1Ie+ykNNq4HDrUSzFkGncyxr3/eSNE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-C03i2QF+SJoGG1Ie+ykNNq4HDrUSzFkGncyxr3/eSNE="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/8.zenunxiza1.jpg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\8.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "53089"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"C03i2QF+SJoGG1Ie+ykNNq4HDrUSzFkGncyxr3/eSNE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "zenunxiza1"
+        },
+        {
+          "Name": "label",
+          "Value": "imgs/8.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-C03i2QF+SJoGG1Ie+ykNNq4HDrUSzFkGncyxr3/eSNE="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/9.hblts38qoo.jpg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\9.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "40515"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LZm1NLF0lfEl8L/Q/DCHuc+nWCQ9/VSsN+xV7Nb+Ypg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "hblts38qoo"
+        },
+        {
+          "Name": "label",
+          "Value": "imgs/9.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-LZm1NLF0lfEl8L/Q/DCHuc+nWCQ9/VSsN+xV7Nb+Ypg="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/9.jpg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\9.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "40515"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LZm1NLF0lfEl8L/Q/DCHuc+nWCQ9/VSsN+xV7Nb+Ypg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-LZm1NLF0lfEl8L/Q/DCHuc+nWCQ9/VSsN+xV7Nb+Ypg="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/bridge.arupiytg9i.png",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\bridge.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5256603"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9lGzvzDoQBIrniqisYEYmxJWmaWGgnNarRxjYgapdLA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "arupiytg9i"
+        },
+        {
+          "Name": "label",
+          "Value": "imgs/bridge.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-9lGzvzDoQBIrniqisYEYmxJWmaWGgnNarRxjYgapdLA="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/bridge.png",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\bridge.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5256603"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9lGzvzDoQBIrniqisYEYmxJWmaWGgnNarRxjYgapdLA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-9lGzvzDoQBIrniqisYEYmxJWmaWGgnNarRxjYgapdLA="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/donation.png",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\donation.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3966994"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YaTXFKnqpSKiy0yDjB+QePqvs1JsKaE71CFqmlEkHaU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-YaTXFKnqpSKiy0yDjB+QePqvs1JsKaE71CFqmlEkHaU="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/donation.v8604m6tkr.png",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\donation.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3966994"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YaTXFKnqpSKiy0yDjB+QePqvs1JsKaE71CFqmlEkHaU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "v8604m6tkr"
+        },
+        {
+          "Name": "label",
+          "Value": "imgs/donation.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-YaTXFKnqpSKiy0yDjB+QePqvs1JsKaE71CFqmlEkHaU="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/Empty.png",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\Empty.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1132406"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"B8LyGKo8MqaX/W9rYrvQmw+TARXa0yGBAawcmvFxIDo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-B8LyGKo8MqaX/W9rYrvQmw+TARXa0yGBAawcmvFxIDo="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/Empty.t3jxzn6dgf.png",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\Empty.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1132406"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"B8LyGKo8MqaX/W9rYrvQmw+TARXa0yGBAawcmvFxIDo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "t3jxzn6dgf"
+        },
+        {
+          "Name": "label",
+          "Value": "imgs/Empty.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-B8LyGKo8MqaX/W9rYrvQmw+TARXa0yGBAawcmvFxIDo="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/image.54dj1mqjys.png",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\image.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "23107"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2x2GQ4BpeUPvcPWZfA8klo/VbwxNdVcvUTl4CfuE+fg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "54dj1mqjys"
+        },
+        {
+          "Name": "label",
+          "Value": "imgs/image.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-2x2GQ4BpeUPvcPWZfA8klo/VbwxNdVcvUTl4CfuE+fg="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/image.png",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\image.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "23107"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2x2GQ4BpeUPvcPWZfA8klo/VbwxNdVcvUTl4CfuE+fg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-2x2GQ4BpeUPvcPWZfA8klo/VbwxNdVcvUTl4CfuE+fg="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/img.e8hejlgsg3.png",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\img.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9094"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QkpDDdv/nNaNysuAIsIipaRuqSMvSO69EgxDB61avWg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "e8hejlgsg3"
+        },
+        {
+          "Name": "label",
+          "Value": "imgs/img.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-QkpDDdv/nNaNysuAIsIipaRuqSMvSO69EgxDB61avWg="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/img.png",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\img.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9094"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QkpDDdv/nNaNysuAIsIipaRuqSMvSO69EgxDB61avWg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-QkpDDdv/nNaNysuAIsIipaRuqSMvSO69EgxDB61avWg="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/landing background.oiijzg854k.png",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\landing background.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6081475"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gBjTaqIaBFqQ3SUk5GWyRLyCXGS4nsoHxhLJnT0C48A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "oiijzg854k"
+        },
+        {
+          "Name": "label",
+          "Value": "imgs/landing background.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-gBjTaqIaBFqQ3SUk5GWyRLyCXGS4nsoHxhLJnT0C48A="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/landing background.png",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\landing background.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6081475"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gBjTaqIaBFqQ3SUk5GWyRLyCXGS4nsoHxhLJnT0C48A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gBjTaqIaBFqQ3SUk5GWyRLyCXGS4nsoHxhLJnT0C48A="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/logo.png",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7352"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"l5grDzimE3I87sTNyDNeeMAIL01noJmAV+AtQeYB92g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-l5grDzimE3I87sTNyDNeeMAIL01noJmAV+AtQeYB92g="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/logo.zlcj2kcs2o.png",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7352"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"l5grDzimE3I87sTNyDNeeMAIL01noJmAV+AtQeYB92g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "zlcj2kcs2o"
+        },
+        {
+          "Name": "label",
+          "Value": "imgs/logo.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-l5grDzimE3I87sTNyDNeeMAIL01noJmAV+AtQeYB92g="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/partner background.do8x0xqwz6.jpg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\partner background.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "367742"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LW5hG+6BBrpXQGuNwAShKdGxyFznjyXV+RqGFMtXpQ8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "do8x0xqwz6"
+        },
+        {
+          "Name": "label",
+          "Value": "imgs/partner background.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-LW5hG+6BBrpXQGuNwAShKdGxyFznjyXV+RqGFMtXpQ8="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/partner background.jpg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\partner background.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "367742"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LW5hG+6BBrpXQGuNwAShKdGxyFznjyXV+RqGFMtXpQ8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-LW5hG+6BBrpXQGuNwAShKdGxyFznjyXV+RqGFMtXpQ8="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/partner1.png",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\partner1.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3519"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WrTRRdQESuFaZIVgXnG35ky+7/RCjj3bbX+TbDnUzdg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-WrTRRdQESuFaZIVgXnG35ky+7/RCjj3bbX+TbDnUzdg="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/partner1.yybfuba107.png",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\partner1.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3519"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WrTRRdQESuFaZIVgXnG35ky+7/RCjj3bbX+TbDnUzdg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "yybfuba107"
+        },
+        {
+          "Name": "label",
+          "Value": "imgs/partner1.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-WrTRRdQESuFaZIVgXnG35ky+7/RCjj3bbX+TbDnUzdg="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/partner2.8915ldi7hf.jpg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\partner2.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "24009"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"nP4Hld4jYS5ln534feCMPxkkVdlRBCsSePGcFRqN6e8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "8915ldi7hf"
+        },
+        {
+          "Name": "label",
+          "Value": "imgs/partner2.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-nP4Hld4jYS5ln534feCMPxkkVdlRBCsSePGcFRqN6e8="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/partner2.jpg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\partner2.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "24009"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"nP4Hld4jYS5ln534feCMPxkkVdlRBCsSePGcFRqN6e8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-nP4Hld4jYS5ln534feCMPxkkVdlRBCsSePGcFRqN6e8="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/partner3.5f5l3q4naz.png",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\partner3.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3427"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"T2bl/SxVOYqwwljUu1ruuiKeY+5QCjh4FZY59382ld8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5f5l3q4naz"
+        },
+        {
+          "Name": "label",
+          "Value": "imgs/partner3.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-T2bl/SxVOYqwwljUu1ruuiKeY+5QCjh4FZY59382ld8="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/partner3.png",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\partner3.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3427"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"T2bl/SxVOYqwwljUu1ruuiKeY+5QCjh4FZY59382ld8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-T2bl/SxVOYqwwljUu1ruuiKeY+5QCjh4FZY59382ld8="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/partner4.dsitlk5yc3.png",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\partner4.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15478"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oyakev5w48b2Wo04p0nSMJqc6FldjfkOkr+e1uWQJb8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dsitlk5yc3"
+        },
+        {
+          "Name": "label",
+          "Value": "imgs/partner4.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oyakev5w48b2Wo04p0nSMJqc6FldjfkOkr+e1uWQJb8="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/partner4.png",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\partner4.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15478"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oyakev5w48b2Wo04p0nSMJqc6FldjfkOkr+e1uWQJb8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oyakev5w48b2Wo04p0nSMJqc6FldjfkOkr+e1uWQJb8="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/payment.hc82k71o6u.svg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\2076v4oyef-hc82k71o6u.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000174155347"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5741"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Gonj5XWo5E+RfVrwy6o0FSb1KSIj5uqel2aiKx87RaQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"wbZPwEEOV3Zo5nPXq/uwsURXvmSHmVhsw6GhmGgmGV8=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "hc82k71o6u"
+        },
+        {
+          "Name": "label",
+          "Value": "imgs/payment.svg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-wbZPwEEOV3Zo5nPXq/uwsURXvmSHmVhsw6GhmGgmGV8="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/payment.hc82k71o6u.svg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\payment.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "18461"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wbZPwEEOV3Zo5nPXq/uwsURXvmSHmVhsw6GhmGgmGV8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "hc82k71o6u"
+        },
+        {
+          "Name": "label",
+          "Value": "imgs/payment.svg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-wbZPwEEOV3Zo5nPXq/uwsURXvmSHmVhsw6GhmGgmGV8="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/payment.hc82k71o6u.svg.gz",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\2076v4oyef-hc82k71o6u.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5741"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Gonj5XWo5E+RfVrwy6o0FSb1KSIj5uqel2aiKx87RaQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "hc82k71o6u"
+        },
+        {
+          "Name": "label",
+          "Value": "imgs/payment.svg.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Gonj5XWo5E+RfVrwy6o0FSb1KSIj5uqel2aiKx87RaQ="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/payment.svg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\2076v4oyef-hc82k71o6u.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000174155347"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5741"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Gonj5XWo5E+RfVrwy6o0FSb1KSIj5uqel2aiKx87RaQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"wbZPwEEOV3Zo5nPXq/uwsURXvmSHmVhsw6GhmGgmGV8=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-wbZPwEEOV3Zo5nPXq/uwsURXvmSHmVhsw6GhmGgmGV8="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/payment.svg",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\payment.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "18461"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wbZPwEEOV3Zo5nPXq/uwsURXvmSHmVhsw6GhmGgmGV8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-wbZPwEEOV3Zo5nPXq/uwsURXvmSHmVhsw6GhmGgmGV8="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/payment.svg.gz",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\2076v4oyef-hc82k71o6u.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5741"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Gonj5XWo5E+RfVrwy6o0FSb1KSIj5uqel2aiKx87RaQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Gonj5XWo5E+RfVrwy6o0FSb1KSIj5uqel2aiKx87RaQ="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/person.dsd0afvcb8.png",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\person.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8229"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"zRs5mmu5OiZPNaKiaPPLgKMOouSvWlc4+SUQBBiJkNk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dsd0afvcb8"
+        },
+        {
+          "Name": "label",
+          "Value": "imgs/person.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-zRs5mmu5OiZPNaKiaPPLgKMOouSvWlc4+SUQBBiJkNk="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/person.png",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\person.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8229"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"zRs5mmu5OiZPNaKiaPPLgKMOouSvWlc4+SUQBBiJkNk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-zRs5mmu5OiZPNaKiaPPLgKMOouSvWlc4+SUQBBiJkNk="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/video.mp4",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\video.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8394994"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ng0YlHcrUx5hD85GcJbpEeWH0NZuKuIse3N/njkLHDs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ng0YlHcrUx5hD85GcJbpEeWH0NZuKuIse3N/njkLHDs="
+        }
+      ]
+    },
+    {
+      "Route": "imgs/video.y3xk5h6nig.mp4",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\imgs\\video.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8394994"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ng0YlHcrUx5hD85GcJbpEeWH0NZuKuIse3N/njkLHDs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 20:33:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "y3xk5h6nig"
+        },
+        {
+          "Name": "label",
+          "Value": "imgs/video.mp4"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ng0YlHcrUx5hD85GcJbpEeWH0NZuKuIse3N/njkLHDs="
+        }
+      ]
+    },
+    {
+      "Route": "js/site.js",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\z6uwehpv4u-xtxxf3hu2r.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.005235602094"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "190"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"465WqepNnI4ENLgQJFXrL2gtI20GCfeLK3JAtugOzpA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 10:56:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo="
+        }
+      ]
+    },
+    {
+      "Route": "js/site.js",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\js\\site.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "231"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 10:56:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo="
+        }
+      ]
+    },
+    {
+      "Route": "js/site.js.gz",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\z6uwehpv4u-xtxxf3hu2r.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "190"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"465WqepNnI4ENLgQJFXrL2gtI20GCfeLK3JAtugOzpA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 10:56:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-465WqepNnI4ENLgQJFXrL2gtI20GCfeLK3JAtugOzpA="
+        }
+      ]
+    },
+    {
+      "Route": "js/site.xtxxf3hu2r.js",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\z6uwehpv4u-xtxxf3hu2r.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.005235602094"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "190"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"465WqepNnI4ENLgQJFXrL2gtI20GCfeLK3JAtugOzpA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 10:56:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xtxxf3hu2r"
+        },
+        {
+          "Name": "label",
+          "Value": "js/site.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo="
+        }
+      ]
+    },
+    {
+      "Route": "js/site.xtxxf3hu2r.js",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\js\\site.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "231"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 10:56:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xtxxf3hu2r"
+        },
+        {
+          "Name": "label",
+          "Value": "js/site.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo="
+        }
+      ]
+    },
+    {
+      "Route": "js/site.xtxxf3hu2r.js.gz",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\z6uwehpv4u-xtxxf3hu2r.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "190"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"465WqepNnI4ENLgQJFXrL2gtI20GCfeLK3JAtugOzpA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 10:56:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xtxxf3hu2r"
+        },
+        {
+          "Name": "label",
+          "Value": "js/site.js.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-465WqepNnI4ENLgQJFXrL2gtI20GCfeLK3JAtugOzpA="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/LICENSE",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1153"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZH6pA6BSx6fuHZvdaKph1DwUJ+VSYilIiEQu8ilnvqk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 10:56:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZH6pA6BSx6fuHZvdaKph1DwUJ+VSYilIiEQu8ilnvqk="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/LICENSE.81b7ukuj9c",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1153"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZH6pA6BSx6fuHZvdaKph1DwUJ+VSYilIiEQu8ilnvqk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 10:56:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "81b7ukuj9c"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/bootstrap/LICENSE"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZH6pA6BSx6fuHZvdaKph1DwUJ+VSYilIiEQu8ilnvqk="
+        }
+      ]
+    },
+    {
+      "Route": "lib/jquery/LICENSE.mlv21k5csn.txt",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\hlus0n19nk-mlv21k5csn.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001492537313"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "669"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wRqs30CSrwWDvG1bDMUjomAlSqRRTMplLSuLcrgYtHw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 10:56:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"hjIBkvmgxQXbNXK3B9YQ3t06RwLuQSQzC/dpvuB/lMk=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mlv21k5csn"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/jquery/LICENSE.txt"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-hjIBkvmgxQXbNXK3B9YQ3t06RwLuQSQzC/dpvuB/lMk="
+        }
+      ]
+    },
+    {
+      "Route": "lib/jquery/LICENSE.mlv21k5csn.txt",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1117"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hjIBkvmgxQXbNXK3B9YQ3t06RwLuQSQzC/dpvuB/lMk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 10:56:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mlv21k5csn"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/jquery/LICENSE.txt"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-hjIBkvmgxQXbNXK3B9YQ3t06RwLuQSQzC/dpvuB/lMk="
+        }
+      ]
+    },
+    {
+      "Route": "lib/jquery/LICENSE.mlv21k5csn.txt.gz",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\hlus0n19nk-mlv21k5csn.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "669"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wRqs30CSrwWDvG1bDMUjomAlSqRRTMplLSuLcrgYtHw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 10:56:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mlv21k5csn"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/jquery/LICENSE.txt.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-wRqs30CSrwWDvG1bDMUjomAlSqRRTMplLSuLcrgYtHw="
+        }
+      ]
+    },
+    {
+      "Route": "lib/jquery/LICENSE.txt",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\hlus0n19nk-mlv21k5csn.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001492537313"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "669"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wRqs30CSrwWDvG1bDMUjomAlSqRRTMplLSuLcrgYtHw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 10:56:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"hjIBkvmgxQXbNXK3B9YQ3t06RwLuQSQzC/dpvuB/lMk=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-hjIBkvmgxQXbNXK3B9YQ3t06RwLuQSQzC/dpvuB/lMk="
+        }
+      ]
+    },
+    {
+      "Route": "lib/jquery/LICENSE.txt",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1117"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hjIBkvmgxQXbNXK3B9YQ3t06RwLuQSQzC/dpvuB/lMk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 10:56:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-hjIBkvmgxQXbNXK3B9YQ3t06RwLuQSQzC/dpvuB/lMk="
+        }
+      ]
+    },
+    {
+      "Route": "lib/jquery/LICENSE.txt.gz",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\hlus0n19nk-mlv21k5csn.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "669"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wRqs30CSrwWDvG1bDMUjomAlSqRRTMplLSuLcrgYtHw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 10:56:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-wRqs30CSrwWDvG1bDMUjomAlSqRRTMplLSuLcrgYtHw="
+        }
+      ]
+    },
+    {
+      "Route": "lib/jquery-validation/LICENSE.md",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\q22d2wo96v-x0q3zqp4vz.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001490312966"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "670"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yZU1lf/p2dEnCHUXYp8G4roAyod23x5MoR4DehwHfrA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 10:56:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/markdown"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"geHEkw/WGPdaHQMRq5HuNY9snliNzU/y2OW8ycnhGXw=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-geHEkw/WGPdaHQMRq5HuNY9snliNzU/y2OW8ycnhGXw="
+        }
+      ]
+    },
+    {
+      "Route": "lib/jquery-validation/LICENSE.md",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1117"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/markdown"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"geHEkw/WGPdaHQMRq5HuNY9snliNzU/y2OW8ycnhGXw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 10:56:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-geHEkw/WGPdaHQMRq5HuNY9snliNzU/y2OW8ycnhGXw="
+        }
+      ]
+    },
+    {
+      "Route": "lib/jquery-validation/LICENSE.md.gz",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\q22d2wo96v-x0q3zqp4vz.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "670"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/markdown"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yZU1lf/p2dEnCHUXYp8G4roAyod23x5MoR4DehwHfrA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 10:56:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-yZU1lf/p2dEnCHUXYp8G4roAyod23x5MoR4DehwHfrA="
+        }
+      ]
+    },
+    {
+      "Route": "lib/jquery-validation/LICENSE.x0q3zqp4vz.md",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\q22d2wo96v-x0q3zqp4vz.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001490312966"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "670"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yZU1lf/p2dEnCHUXYp8G4roAyod23x5MoR4DehwHfrA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 10:56:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/markdown"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"geHEkw/WGPdaHQMRq5HuNY9snliNzU/y2OW8ycnhGXw=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "x0q3zqp4vz"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/jquery-validation/LICENSE.md"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-geHEkw/WGPdaHQMRq5HuNY9snliNzU/y2OW8ycnhGXw="
+        }
+      ]
+    },
+    {
+      "Route": "lib/jquery-validation/LICENSE.x0q3zqp4vz.md",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1117"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/markdown"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"geHEkw/WGPdaHQMRq5HuNY9snliNzU/y2OW8ycnhGXw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 10:56:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "x0q3zqp4vz"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/jquery-validation/LICENSE.md"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-geHEkw/WGPdaHQMRq5HuNY9snliNzU/y2OW8ycnhGXw="
+        }
+      ]
+    },
+    {
+      "Route": "lib/jquery-validation/LICENSE.x0q3zqp4vz.md.gz",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\q22d2wo96v-x0q3zqp4vz.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "670"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/markdown"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yZU1lf/p2dEnCHUXYp8G4roAyod23x5MoR4DehwHfrA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 10:56:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "x0q3zqp4vz"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/jquery-validation/LICENSE.md.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-yZU1lf/p2dEnCHUXYp8G4roAyod23x5MoR4DehwHfrA="
+        }
+      ]
+    },
+    {
+      "Route": "lib/jquery-validation-unobtrusive/LICENSE.356vix0kms.txt",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\ve6bqdaq53-356vix0kms.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001468428781"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "680"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1HkjQSVuV0/ji/X/lGeDTHeagBS0BwopMrHDQuwqgtU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 10:56:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"16aFlqtpsG9RyieKZUUUjkJpqTgcJtWXwT312I4Iz1s=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "356vix0kms"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/jquery-validation-unobtrusive/LICENSE.txt"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-16aFlqtpsG9RyieKZUUUjkJpqTgcJtWXwT312I4Iz1s="
+        }
+      ]
+    },
+    {
+      "Route": "lib/jquery-validation-unobtrusive/LICENSE.356vix0kms.txt",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1139"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"16aFlqtpsG9RyieKZUUUjkJpqTgcJtWXwT312I4Iz1s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 10:56:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "356vix0kms"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/jquery-validation-unobtrusive/LICENSE.txt"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-16aFlqtpsG9RyieKZUUUjkJpqTgcJtWXwT312I4Iz1s="
+        }
+      ]
+    },
+    {
+      "Route": "lib/jquery-validation-unobtrusive/LICENSE.356vix0kms.txt.gz",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\ve6bqdaq53-356vix0kms.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "680"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1HkjQSVuV0/ji/X/lGeDTHeagBS0BwopMrHDQuwqgtU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 10:56:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "356vix0kms"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/jquery-validation-unobtrusive/LICENSE.txt.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-1HkjQSVuV0/ji/X/lGeDTHeagBS0BwopMrHDQuwqgtU="
+        }
+      ]
+    },
+    {
+      "Route": "lib/jquery-validation-unobtrusive/LICENSE.txt",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\ve6bqdaq53-356vix0kms.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001468428781"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "680"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1HkjQSVuV0/ji/X/lGeDTHeagBS0BwopMrHDQuwqgtU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 10:56:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"16aFlqtpsG9RyieKZUUUjkJpqTgcJtWXwT312I4Iz1s=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-16aFlqtpsG9RyieKZUUUjkJpqTgcJtWXwT312I4Iz1s="
+        }
+      ]
+    },
+    {
+      "Route": "lib/jquery-validation-unobtrusive/LICENSE.txt",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1139"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"16aFlqtpsG9RyieKZUUUjkJpqTgcJtWXwT312I4Iz1s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 10:56:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-16aFlqtpsG9RyieKZUUUjkJpqTgcJtWXwT312I4Iz1s="
+        }
+      ]
+    },
+    {
+      "Route": "lib/jquery-validation-unobtrusive/LICENSE.txt.gz",
+      "AssetFile": "D:\\Back-end\\MVC Projects\\Hackathon ITI\\Feed Bridge\\Feed Bridge\\obj\\Debug\\net9.0\\compressed\\ve6bqdaq53-356vix0kms.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "680"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1HkjQSVuV0/ji/X/lGeDTHeagBS0BwopMrHDQuwqgtU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Sep 2025 10:56:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-1HkjQSVuV0/ji/X/lGeDTHeagBS0BwopMrHDQuwqgtU="
+        }
+      ]
+    }
+  ]
+}
