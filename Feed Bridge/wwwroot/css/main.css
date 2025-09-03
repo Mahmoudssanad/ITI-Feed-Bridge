@@ -499,15 +499,15 @@ p {
   }
 }
 .products-hero {
-  background-image: url(imgs/bridge.png);
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 450px;
-  padding: 30px 100px;
-  position: relative;
-  &::after {
+    background-image: url('../imgs/bridge.png');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 450px;
+    padding: 30px 100px;
+    position: relative;
+    &::after {
     content: "";
     position: absolute;
     top: 0;
