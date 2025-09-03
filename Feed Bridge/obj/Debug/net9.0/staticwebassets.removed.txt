@@ -1,7 +1,0 @@
-D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\imgs\payment.svg
-D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\css\main.css
-D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\jquery\LICENSE.txt
-D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\favicon.ico
-D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\jquery-validation\LICENSE.md
-D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
-D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\wwwroot\js\site.js
