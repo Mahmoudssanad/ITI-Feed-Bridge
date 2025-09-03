@@ -20,6 +20,7 @@ li {
 }
 a {
   text-decoration: none;
+  text-decoration: none;
   outline: none;
   border: none;
   &:visited {
@@ -344,43 +345,53 @@ header {
   }
 }
 .hero {
-  .hero-container {
-    background-image: url(imgs/landing\ background.png);
+    .hero-container
+
+{
+    background-image: url('../imgs/landing background.png');
     background-size: cover;
     display: flex;
     align-items: center;
     min-height: 450px;
     padding: 30px 100px;
-    .hero-text {
-      width: 50%;
-      h1 {
-        font-size: 3.2rem;
-        font-weight: 600;
-        color: #fff;
-      }
-      p {
-        font-size: 1.2rem;
-        color: #fff;
-      }
-      .hero-btn {
-        background-color: var(--main-color);
-        color: #fff;
-        padding: 10px 60px;
-        margin: 10px 0;
-        border: none;
-        width: fit-content;
-        display: block;
-        font-size: 1.2rem;
-        border-radius: 30px;
-        -webkit-border-radius: 30px;
-        -moz-border-radius: 30px;
-        -ms-border-radius: 30px;
-        -o-border-radius: 30px;
-        font-family: "IBM Plex Sans Arabic", serif;
-      }
-    }
-  }
+    .hero-text
+
+{
+    width: 50%;
+    h1
+
+{
+    font-size: 3.2rem;
+    font-weight: 600;
+    color: #fff;
 }
+
+p {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.hero-btn {
+    background-color: var(--main-color);
+    color: #fff;
+    padding: 10px 60px;
+    margin: 10px 0;
+    border: none;
+    width: fit-content;
+    display: block;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    font-family: "IBM Plex Sans Arabic", serif;
+}
+
+}
+}
+}
+
 .video-section {
   padding: 20px 0;
   .video-container {
@@ -406,7 +417,7 @@ header {
 .partner-section {
   padding: 20px 0;
   background-color: #333;
-  background-image: url(imgs/partner\ background.jpg);
+  background-image: url(../imgs/partner\ background.jpg);
   background-position: center;
   background-size: cover;
   position: relative;
@@ -489,7 +500,7 @@ header {
   }
 }
 .products-hero {
-  background-image: url(imgs/bridge.png);
+  background-image: url(../imgs/bridge.png);
   background-size: cover;
   display: flex;
   align-items: center;
