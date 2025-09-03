@@ -375,20 +375,8 @@ if (confirmOrder) {
       alert("لا توجد عناصر في السلة لتأكيد الطلب.");
       return;
     }
-    const orderData = {
-      items: cartData,
-    };
-    document.querySelector(
-      ".cart-section"
-    ).innerHTML = `<div class="confirm-container">
-        <span class="material-symbols-outlined check-icon"> check_circle </span>
-        <h2>تـــم الطلب بنجاح</h2>
-        <a href="index.html" class="btn">العوده للرئيسيه</a>
-      </div>`;
-
-    cartData = [];
-    localStorage.setItem("cartData", JSON.stringify(cartData));
-    displayCartItems(cartData);
+    // Redirect to the personal info page
+    window.location.href = "personal-info.html";
   });
 }
 
@@ -428,6 +416,38 @@ if (confirmBtn) {
     document.querySelector(".confirm-container").style.display = "flex";
   });
 }
+
+// Personal Info Form Submission
+const personalInfoForm = document.querySelector(".personal-info-form");
+if (personalInfoForm) {
+  personalInfoForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const fullName = document.querySelector("#full-name").value.trim();
+    const mainPhone = document.querySelector("#main-phone").value.trim();
+    const fullAddress = document.querySelector("#full-address").value.trim();
+
+    // Simple validation for required fields
+    if (fullName === "" || mainPhone === "" || fullAddress === "") {
+      alert("الرجاء ملء جميع الحقول المطلوبة.");
+    } else {
+      // Clear cart data from local storage as the order is confirmed
+      localStorage.removeItem("cartData");
+
+      // Hide the form card and show the success message
+      const personalInfoCard = document.querySelector(".personal-info-card");
+      const successMessage = document.querySelector(".success-message");
+      personalInfoCard.style.display = "none";
+      successMessage.style.display = "flex";
+
+      // Redirect to home page after a delay
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 3000); // 3-second delay before redirecting
+    }
+  });
+}
+
 // Close the mobile menu when clicking outside
 document.addEventListener("click", (e) => {
   if (!mobileMenu.contains(e.target) && !pageItems.contains(e.target)) {

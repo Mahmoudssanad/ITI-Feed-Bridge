@@ -8,23 +8,23 @@
     "net9.0": []
   },
   "packageFolders": {
-    "C:\\Users\\mmm\\.nuget\\packages\\": {},
+    "C:\\Users\\Saleh Mostafa\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mmm\\OneDrive - Mansoura University - Main\\Desktop\\internship ITI\\ITI-Feed-Bridge\\Feed Bridge\\Feed Bridge.csproj",
+      "projectUniqueName": "C:\\Users\\Saleh Mostafa\\OneDrive\\Desktop\\ITI Project\\ITI-Feed-Bridge\\Feed Bridge\\Feed Bridge.csproj",
       "projectName": "Feed Bridge",
-      "projectPath": "C:\\Users\\mmm\\OneDrive - Mansoura University - Main\\Desktop\\internship ITI\\ITI-Feed-Bridge\\Feed Bridge\\Feed Bridge.csproj",
-      "packagesPath": "C:\\Users\\mmm\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mmm\\OneDrive - Mansoura University - Main\\Desktop\\internship ITI\\ITI-Feed-Bridge\\Feed Bridge\\obj\\",
+      "projectPath": "C:\\Users\\Saleh Mostafa\\OneDrive\\Desktop\\ITI Project\\ITI-Feed-Bridge\\Feed Bridge\\Feed Bridge.csproj",
+      "packagesPath": "C:\\Users\\Saleh Mostafa\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Saleh Mostafa\\OneDrive\\Desktop\\ITI Project\\ITI-Feed-Bridge\\Feed Bridge\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\mmm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Saleh Mostafa\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -75,7 +75,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
