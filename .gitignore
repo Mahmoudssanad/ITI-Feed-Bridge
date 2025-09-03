@@ -64,3 +64,4 @@ TestResult*/
 
 # NuGet packages
 packages/
+/Feed Bridge/obj/
