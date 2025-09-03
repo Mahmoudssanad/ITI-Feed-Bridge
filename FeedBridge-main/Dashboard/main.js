@@ -35,3 +35,4 @@ if (notificationsContainer && notificationsBox) {
     notificationsBox.style.display = "none";
   });
 }
+
