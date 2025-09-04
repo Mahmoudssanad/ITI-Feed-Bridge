@@ -60,7 +60,6 @@ namespace Feed_Bridge.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("ImgUrl")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("LockoutEnabled")
@@ -81,7 +80,6 @@ namespace Feed_Bridge.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumber")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("PhoneNumberConfirmed")
@@ -204,7 +202,6 @@ namespace Feed_Bridge.Migrations
                         .HasColumnType("date");
 
                     b.Property<string>("ImgURL")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -486,6 +483,28 @@ namespace Feed_Bridge.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Feed_Bridge.Models.Entities.Partener", b =>
+                {
+                    b.HasOne("Feed_Bridge.Models.Entities.ApplicationUser", "User")
+                        .WithMany("parteners")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Feed_Bridge.Models.Entities.StaticPage", b =>
+                {
+                    b.HasOne("Feed_Bridge.Models.Entities.ApplicationUser", "User")
+                        .WithOne("StaticPage")
+                        .HasForeignKey("Feed_Bridge.Models.Entities.StaticPage", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Support", b =>
                 {
                     b.HasOne("Feed_Bridge.Models.Entities.ApplicationUser", "User")
@@ -567,7 +586,12 @@ namespace Feed_Bridge.Migrations
                 {
                     b.Navigation("Orders");
 
+                    b.Navigation("StaticPage")
+                        .IsRequired();
+
                     b.Navigation("Supports");
+
+                    b.Navigation("parteners");
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Cart", b =>

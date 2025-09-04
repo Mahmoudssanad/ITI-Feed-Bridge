@@ -1,17 +1,16 @@
 ﻿using Feed_Bridge.Models.Entities;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 
 namespace Feed_Bridge.Models.Data
 {
-    public class AppDbContext : IdentityDbContext<ApplicationUser>
+    public class AppDbContext : Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityDbContext<ApplicationUser>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options):base(options)
         {
             
         }
-<<<<<<< HEAD
 
         public DbSet<Product> Products { get; set; }
         public DbSet<Order> Orders { get; set; }
@@ -30,7 +29,6 @@ namespace Feed_Bridge.Models.Data
                 .HasConversion<string>();
 
         }
-=======
->>>>>>> 4570d32ee069cf5a2c94847c58f5b8da98aefa16
+
     }
 }
