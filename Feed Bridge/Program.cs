@@ -18,7 +18,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddScoped<IReviewService, ReviewService>();
 
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
-    .AddEntityFrameworkStores<AppDbContext>();
+    .AddEntityFrameworkStores<AppDbContext>().
+    AddDefaultTokenProviders();
+
 
 builder.Services.AddScoped<IDonationService, DonationService>();
 
@@ -34,6 +36,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseRouting();
+app.UseAuthentication();
 
 app.UseAuthorization();
 

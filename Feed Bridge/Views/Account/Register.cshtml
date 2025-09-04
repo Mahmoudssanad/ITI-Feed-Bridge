@@ -1,0 +1,97 @@
+﻿@{
+    ViewData["Title"] = "تسجيل حساب جديد";
+}
+
+    <div class="container">
+        <div class="register">
+            <div class="register-img">
+                <img src="~/imgs/image.png" alt="register-img" />
+                <p>انشاء حساب</p>
+            </div>
+
+            @if (ViewBag.Error != null)
+            {
+                <div class="alert alert-danger">@ViewBag.Error</div>
+            }
+
+            <form asp-action="Register" asp-controller="Account" method="post" class="register-form">
+                <div class="register-form-group">
+                    <div class="form-control">
+                        <label for="username">الاسم</label>
+                        <input type="text" name="username" id="username" required />
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <small></small>
+                    </div>
+                    <div class="form-control">
+                        <label for="age">السن</label>
+                        <input type="number" name="age" id="age" required />
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <small></small>
+                    </div>
+                </div>
+
+                <div class="form-control">
+                    <label for="phone">رقم التليفون</label>
+                    <input type="tel" name="phone" id="phone" dir="rtl" required />
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <i class="fa-solid fa-circle-check"></i>
+                    <small></small>
+                </div>
+
+                <div class="register-form-group">
+                    <div class="form-control">
+                        <label for="country">الدوله</label>
+                        <input type="text" name="country" id="country" required />
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <small></small>
+                    </div>
+                    <div class="form-control">
+                        <label for="city">المدينه</label>
+                        <input type="text" name="city" id="city" required />
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <small></small>
+                    </div>
+                </div>
+
+                <div class="form-control">
+                    <label for="email">الايميل</label>
+                    <input type="email" name="email" id="email" required />
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <i class="fa-solid fa-circle-check"></i>
+                    <small></small>
+                </div>
+
+                <div class="form-control">
+                    <label for="password">كلمه السر</label>
+                    <input type="password" name="password" id="password" required />
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <i class="fa-solid fa-circle-check"></i>
+                    <small></small>
+                </div>
+
+                <div class="form-control">
+                    <label for="confirmPassword">تأكيد كلمه السر</label>
+                    <input type="password" name="confirmPassword" id="confirmPassword" required />
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <i class="fa-solid fa-circle-check"></i>
+                    <small></small>
+                </div>
+
+                <button type="submit" class="submit-btn btn">ارسال</button>
+                <div class="login-links">
+                    <a asp-action="Login" asp-controller="Account">لديك حساب؟ تسجيل الدخول</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="~/js/script.js" asp-append-version="true"></script>
+
+    @section FooterSection {
+        @await Html.PartialAsync("_Footer")
+    }
+
