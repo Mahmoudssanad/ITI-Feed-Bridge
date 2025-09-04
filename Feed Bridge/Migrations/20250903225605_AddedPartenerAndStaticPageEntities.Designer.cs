@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Feed_Bridge.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250904102034_Initail")]
-    partial class Initail
+    [Migration("20250903225605_AddedPartenerAndStaticPageEntities")]
+    partial class AddedPartenerAndStaticPageEntities
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -48,6 +48,10 @@ namespace Feed_Bridge.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateOnly>("BirthDate")
                         .HasColumnType("date");
 
@@ -63,6 +67,7 @@ namespace Feed_Bridge.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("ImgUrl")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("LockoutEnabled")
@@ -83,6 +88,7 @@ namespace Feed_Bridge.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumber")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("PhoneNumberConfirmed")
@@ -205,6 +211,7 @@ namespace Feed_Bridge.Migrations
                         .HasColumnType("date");
 
                     b.Property<string>("ImgURL")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -500,7 +507,7 @@ namespace Feed_Bridge.Migrations
             modelBuilder.Entity("Feed_Bridge.Models.Entities.StaticPage", b =>
                 {
                     b.HasOne("Feed_Bridge.Models.Entities.ApplicationUser", "User")
-                        .WithOne("StaticPage")
+                        .WithOne("staticPage")
                         .HasForeignKey("Feed_Bridge.Models.Entities.StaticPage", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -589,12 +596,12 @@ namespace Feed_Bridge.Migrations
                 {
                     b.Navigation("Orders");
 
-                    b.Navigation("StaticPage")
-                        .IsRequired();
-
                     b.Navigation("Supports");
 
                     b.Navigation("parteners");
+
+                    b.Navigation("staticPage")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Cart", b =>
