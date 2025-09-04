@@ -1,7 +1,10 @@
 ﻿using Feed_Bridge.Models.Entities;
+using Feed_Bridge.Services;
 using Feed_Bridge.ViewModel;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
+using System.Net.Mail;
 
 namespace Feed_Bridge.Controllers
 {
@@ -114,11 +117,44 @@ namespace Feed_Bridge.Controllers
             var token = await _userManager.GeneratePasswordResetTokenAsync(user);
 
             // إنشاء لينك لإعادة تعيين كلمة المرور
-            var resetLink = Url.Action("ResetPassword", "Account", new { token, email = user.Email }, Request.Scheme);
+            var resetLink = Url.Action("ResetPassword", "Account",
+                new { token, email = user.Email }, Request.Scheme);
 
-            // 🔹 تحويل المستخدم مباشرة على صفحة ResetPassword
-            return Redirect(resetLink);
+            // إعدادات الإيميل
+            var fromAddress = new MailAddress("s04495320@gmail.com", "FeedBridge Support");
+            var toAddress = new MailAddress(user.Email);
+            const string fromPassword = "ajdw nbrm pndi zjmy"; // الباسورد اللي جبته من App Password
+            string subject = "إعادة تعيين كلمة المرور - FeedBridge";
+            string body = $"مرحبا {user.UserName},\n\n" +
+                          $"اضغط على الرابط التالي لإعادة تعيين كلمة المرور:\n{resetLink}\n\n" +
+                          $"إذا لم تطلب ذلك، تجاهل هذه الرسالة.";
+
+            using (var smtp = new SmtpClient
+            {
+                Host = "smtp.gmail.com",
+                Port = 587,
+                EnableSsl = true,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+            })
+            {
+                using (var message = new MailMessage(fromAddress, toAddress)
+                {
+                    Subject = subject,
+                    Body = body,
+                    IsBodyHtml = false
+                })
+                {
+                    smtp.Send(message);
+                }
+            }
+
+            ViewBag.Message = "تم إرسال رابط إعادة تعيين كلمة المرور إلى بريدك الإلكتروني.";
+
+            return View();
         }
+
 
 
         [HttpGet]
