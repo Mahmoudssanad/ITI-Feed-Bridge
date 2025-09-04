@@ -1,0 +1,47 @@
+﻿@model Feed_Bridge.ViewModel.DonationViewModel
+
+<div class="donate-container">
+    <div class="donate-img">
+        <img src="~/imgs/donation.png" alt="donate-img" />
+    </div>
+    <div class="donate-form">
+        <form asp-action="Create" asp-controller="Donation" method="post" enctype="multipart/form-data">
+
+            <label asp-for="Image" class="upload-img">
+                <span class="material-symbols-outlined" id="uploadIcon">
+                    upload
+                </span>
+                <p>اضف صوره المنتج</p>
+                <input asp-for="Image" type="file" accept="image/*" />
+            </label>
+
+            <input asp-for="Name" placeholder="الاسم بالكامل ..." class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+
+            <div class="group">
+                <input asp-for="ExpirDate" type="date" class="form-control" />
+                <span asp-validation-for="ExpirDate" class="text-danger"></span>
+
+                <input asp-for="Quantity" type="number" min="1" placeholder="الكمية ..." class="form-control" />
+                <span asp-validation-for="Quantity" class="text-danger"></span>
+            </div>
+
+            <div class="group">
+                <input asp-for="Address" placeholder="العنوان ..." class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+
+                <input asp-for="Phone" placeholder="رقم الهاتف ..." class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+
+            <input asp-for="Description" class="donationDescription form-control" placeholder="وصف التبرع ..." />
+            <span asp-validation-for="Description" class="text-danger"></span>
+
+            <button type="submit" class="btn">تبرع</button>
+        </form>
+    </div>
+</div>
+
+@section FooterSection {
+    @await Html.PartialAsync("_Footer")
+}

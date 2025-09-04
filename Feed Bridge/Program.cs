@@ -1,5 +1,7 @@
+using Feed_Bridge.IServices;
 using Feed_Bridge.Models.Data;
 using Feed_Bridge.Models.Entities;
+using Feed_Bridge.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,8 +15,11 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
+
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>();
+
+builder.Services.AddScoped<IDonationService, DonationService>();
 
 var app = builder.Build();
 
