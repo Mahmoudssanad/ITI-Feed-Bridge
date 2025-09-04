@@ -12,10 +12,7 @@ namespace Feed_Bridge.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        //public HomeController(ILogger<HomeController> logger)
-        //{
-        //    _logger = logger;
-        //}
+       
         private readonly IReviewService _reviewService;
 
         public HomeController(ILogger<HomeController> logger, IReviewService reviewService)
@@ -24,10 +21,7 @@ namespace Feed_Bridge.Controllers
             _reviewService = reviewService;
         }
 
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
+        
 
         public async Task<IActionResult> Index()
         {
@@ -36,24 +30,24 @@ namespace Feed_Bridge.Controllers
         }
        
         [HttpPost]
-        [Authorize] 
-        public async Task<IActionResult> AddReview(Review model)
+        [Authorize]
+       
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> AddReview(string FeedBackMsg, int StarsNumber)
         {
-            if (ModelState.IsValid)
+            var review = new Review
             {
-               
-                model.UserID = User.FindFirstValue(ClaimTypes.NameIdentifier);
-                await _reviewService.AddAsync(model);
-                return RedirectToAction("Index");
-            }
+                FeedBackMsg = FeedBackMsg,
+                StarsNumber = StarsNumber,
+                UserID = User.FindFirstValue(ClaimTypes.NameIdentifier),
+                CreatedAt = DateTime.Now
+            };
+            await _reviewService.AddAsync(review);
+            return RedirectToAction("Index");
+        }
 
-            var reviews = await _reviewService.GetAllAsync();
-            return View("Index", reviews);
-        }
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
