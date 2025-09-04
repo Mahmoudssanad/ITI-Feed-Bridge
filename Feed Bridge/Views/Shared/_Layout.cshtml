@@ -42,23 +42,23 @@
             <a asp-controller="Cart" asp-action="Index">
                 <span class="material-symbols-outlined">shopping_cart</span>
             </a>
-            @if(User.Identity != null && User.Identity.IsAuthenticated)
+            @if (User.Identity != null && User.Identity.IsAuthenticated)
             {
-                <a href="User/Profile" style="color:#1cba7f;">
-                    <span  class="material-symbols-outlined">account_circle</span>
+                <!-- تعديل الرابط ليستخدم asp-controller و asp-action -->
+                <a asp-controller="User" asp-action="Profile" style="color:#1cba7f;">
+                    <span class="material-symbols-outlined">account_circle</span>
                     <span>@User.Identity.Name</span>
-                    
                 </a>
                 <form asp-controller="Account" asp-action="Logout" method="post" style="display:inline;">
-                        <button type="submit" class="btn btn-link p-0">تسجيل خروج</button>
-                    </form>
+                    <button type="submit" class="btn btn-link p-0">تسجيل خروج</button>
+                </form>
             }
             else
             {
                 <!-- المستخدم غير مسجل -->
                 <a asp-controller="Account" asp-action="Login">تسجيل الدخول</a>
             }
-            
+
         </div>
 
     </header>
@@ -67,7 +67,6 @@
     <main role="main" class="pb-3">
         @RenderBody()
     </main>
-
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

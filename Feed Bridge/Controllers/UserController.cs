@@ -26,18 +26,53 @@ namespace Feed_Bridge.Controllers
             return View(user);
         }
 
+        // GET: User/EditProfile
+        [HttpGet]
+        public async Task<IActionResult> EditProfile()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null) return RedirectToAction("Login", "Account");
+
+            var model = new EditProfileViewModel
+            {
+                ImgUrl = user.ImgUrl,
+                BirthDate = user.BirthDate.ToDateTime(TimeOnly.MinValue),
+                FullName = user.UserName,
+                PhoneNumber = user.PhoneNumber
+            };
+
+            return View(model);
+        }
+
+
         // POST: User/EditProfile
         [HttpPost]
-        public async Task<IActionResult> EditProfile(ApplicationUser model)
+        public async Task<IActionResult> EditProfile(EditProfileViewModel model)
         {
+            if (!ModelState.IsValid)
+                return View(model);
+
             var user = await _userManager.GetUserAsync(User);
             if (user == null) return NotFound();
 
             user.ImgUrl = model.ImgUrl;
-            user.BirthDate = model.BirthDate;
+            if (model.BirthDate.HasValue)
+                user.BirthDate = DateOnly.FromDateTime(model.BirthDate.Value);
 
-            await _userManager.UpdateAsync(user);
-            return RedirectToAction("Profile");
+            user.UserName = model.FullName;
+            user.PhoneNumber = model.PhoneNumber;
+
+            var result = await _userManager.UpdateAsync(user);
+
+            if (result.Succeeded)
+                return RedirectToAction("Profile");
+
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError("", error.Description);
+            }
+
+            return View(model);
         }
 
         // POST: User/Delete

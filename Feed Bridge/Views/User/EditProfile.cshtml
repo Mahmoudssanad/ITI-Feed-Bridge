@@ -1,0 +1,51 @@
+﻿@model Feed_Bridge.ViewModel.EditProfileViewModel
+
+@{
+    ViewData["Title"] = "تعديل الملف الشخصي";
+}
+
+<div class="container">
+    <div class="profile-edit">
+        <h2 class="form-header">تعديل الملف الشخصي</h2>
+
+        @if (ViewBag.Error != null)
+        {
+            <div class="alert alert-danger">@ViewBag.Error</div>
+        }
+
+        <form asp-action="EditProfile" asp-controller="User" method="post" class="profile-edit-form">
+            @Html.AntiForgeryToken()
+
+            <div class="form-control">
+                <label for="ImgUrl">رابط الصورة الشخصية</label>
+                <input asp-for="ImgUrl" type="text" class="form-control" placeholder="أدخل رابط الصورة" />
+                <span asp-validation-for="ImgUrl" class="text-danger"></span>
+            </div>
+
+            <div class="form-control">
+                <label for="BirthDate">تاريخ الميلاد</label>
+                <input asp-for="BirthDate" type="date" class="form-control" />
+                <span asp-validation-for="BirthDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-control">
+                <label for="FullName">الاسم الكامل</label>
+                <input asp-for="FullName" type="text" class="form-control" placeholder="أدخل اسمك" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+
+            <div class="form-control">
+                <label for="PhoneNumber">رقم الهاتف</label>
+                <input asp-for="PhoneNumber" type="tel" class="form-control" placeholder="أدخل رقم هاتفك" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">حفظ التغييرات</button>
+            <a asp-action="Profile" class="btn btn-secondary">إلغاء</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

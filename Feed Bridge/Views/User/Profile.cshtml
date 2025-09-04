@@ -8,15 +8,18 @@
 
     <!-- صورة البروفايل -->
     <div class="profile-image text-center">
-        @if (!string.IsNullOrEmpty(Model.ImgUrl))
-        {
-            <img src="@Model.ImgUrl" alt="Profile Image" class="rounded-circle" width="120" height="120" />
-        }
-        else
-        {
-            <img src="~/images/default-user.png" alt="Default Profile" class="rounded-circle" width="120" height="120" />
-        }
+        <img style="border-radius:50%;"
+             src="@(string.IsNullOrEmpty(Model.ImgUrl)
+                              ? Url.Content("~/imgs/anon.jpg") // صورة افتراضية
+                              : (System.IO.Path.HasExtension(Model.ImgUrl)
+                                 ?Url.Content("~/imgs/")+ Model.ImgUrl
+                                 :Url.Content("~/imgs/")+ Model.ImgUrl + ".jpg"))"
+             alt="Profile Image"
+             class="rounded-circle"
+             width="120"
+             height="120" />
     </div>
+
 
     <!-- البيانات الشخصية -->
     <div class="profile-section">
@@ -34,11 +37,6 @@
                 <span class="material-symbols-outlined"> calendar_today </span>
                 <span class="info-label">تاريخ الميلاد:</span>
                 <span class="info-value">@Model.BirthDate.ToString("yyyy/MM/dd")</span>
-            </div>
-            <div class="info-item">
-                <span class="material-symbols-outlined"> person </span>
-                <span class="info-label">ID:</span>
-                <span class="info-value">@Model.Id</span>
             </div>
         </div>
     </div>
