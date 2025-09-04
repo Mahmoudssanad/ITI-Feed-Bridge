@@ -18,6 +18,8 @@ namespace Feed_Bridge.Models.Data
         public DbSet<Support> Supports { get; set; }
         public DbSet<StaticPage> StaticPages { get; set; }
         public DbSet<Partener> Parteners { get; set; }
+        public DbSet<Donation> Donations { get; set; }
+        public DbSet<Notification> Notifications { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

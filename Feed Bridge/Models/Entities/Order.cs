@@ -18,8 +18,9 @@ namespace Feed_Bridge.Models.Entities
 
         [ForeignKey("User")]
         public string UserId { get; set; }
-        public ApplicationUser User { get; set; }
+        public ApplicationUser User { get; set; } = new ApplicationUser();
 
-        public List<Product> Products {  get; set; }
+        public List<Product> Products { get; set; } = new List<Product>();
+        public Notification Notification { get; set; } = new Notification();
     }
 }

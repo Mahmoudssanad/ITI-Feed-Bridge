@@ -4,6 +4,7 @@ using Feed_Bridge.Models.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Feed_Bridge.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250904104826_Test02")]
+    partial class Test02
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -622,28 +625,6 @@ namespace Feed_Bridge.Migrations
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Partener", b =>
                 {
                     b.HasOne("Feed_Bridge.Models.Entities.ApplicationUser", "User")
-                        .WithMany("parteners")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("Feed_Bridge.Models.Entities.StaticPage", b =>
-                {
-                    b.HasOne("Feed_Bridge.Models.Entities.ApplicationUser", "User")
-                        .WithOne("StaticPage")
-                        .HasForeignKey("Feed_Bridge.Models.Entities.StaticPage", "UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("Feed_Bridge.Models.Entities.Partener", b =>
-                {
-                    b.HasOne("Feed_Bridge.Models.Entities.ApplicationUser", "User")
                         .WithMany("Parteners")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -757,12 +738,12 @@ namespace Feed_Bridge.Migrations
 
                     b.Navigation("Orders");
 
+                    b.Navigation("Parteners");
+
                     b.Navigation("StaticPage")
                         .IsRequired();
 
                     b.Navigation("Supports");
-
-                    b.Navigation("parteners");
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Cart", b =>

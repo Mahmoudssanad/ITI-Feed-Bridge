@@ -7,13 +7,12 @@ namespace Feed_Bridge.Models.Entities
         public string? ImgUrl { get; set; }
 
         public DateOnly BirthDate { get; set; }
-<<<<<<< HEAD
-        public StaticPage staticPage { get; set; }
+        public StaticPage StaticPage { get; set; } = new StaticPage();
 
-        public List<Order> Orders { get; set; }
-        public List<Support> Supports { get; set; }
-        public List<Partener> parteners { get; set; }
-=======
->>>>>>> 4570d32ee069cf5a2c94847c58f5b8da98aefa16
+        public List<Order> Orders { get; set; } = new  List<Order> { };
+        public List<Support> Supports { get; set; } = new List<Support> { };
+        public List<Partener> Parteners { get; set; } = new List<Partener> { };
+
+        public List<Notification> Notification { get; set; } = new List<Notification>();
     }
 }
