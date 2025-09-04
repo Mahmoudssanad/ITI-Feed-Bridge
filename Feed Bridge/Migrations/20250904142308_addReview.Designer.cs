@@ -4,6 +4,7 @@ using Feed_Bridge.Models.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Feed_Bridge.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250904142308_addReview")]
+    partial class addReview
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,7 +37,7 @@ namespace Feed_Bridge.Migrations
 
                     b.HasIndex("ProductsId");
 
-                    b.ToTable("CartProduct", (string)null);
+                    b.ToTable("CartProduct");
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.ApplicationUser", b =>
@@ -121,7 +124,7 @@ namespace Feed_Bridge.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Carts", (string)null);
+                    b.ToTable("Carts");
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Donation", b =>
@@ -164,7 +167,7 @@ namespace Feed_Bridge.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Donations", (string)null);
+                    b.ToTable("Donations");
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Notification", b =>
@@ -212,7 +215,7 @@ namespace Feed_Bridge.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Notifications", (string)null);
+                    b.ToTable("Notifications");
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Order", b =>
@@ -249,7 +252,7 @@ namespace Feed_Bridge.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Orders", (string)null);
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Partener", b =>
@@ -275,7 +278,7 @@ namespace Feed_Bridge.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Parteners", (string)null);
+                    b.ToTable("Parteners");
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Product", b =>
@@ -312,7 +315,7 @@ namespace Feed_Bridge.Migrations
 
                     b.HasIndex("DonationId");
 
-                    b.ToTable("Products", (string)null);
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Review", b =>
@@ -341,7 +344,7 @@ namespace Feed_Bridge.Migrations
 
                     b.HasIndex("UserID");
 
-                    b.ToTable("Reviews", (string)null);
+                    b.ToTable("Reviews");
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.StaticPage", b =>
@@ -381,7 +384,7 @@ namespace Feed_Bridge.Migrations
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("StaticPages", (string)null);
+                    b.ToTable("StaticPages");
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Support", b =>
@@ -423,7 +426,7 @@ namespace Feed_Bridge.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Supports", (string)null);
+                    b.ToTable("Supports");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -571,7 +574,7 @@ namespace Feed_Bridge.Migrations
 
                     b.HasIndex("ProductsId");
 
-                    b.ToTable("OrderProduct", (string)null);
+                    b.ToTable("OrderProduct");
                 });
 
             modelBuilder.Entity("CartProduct", b =>

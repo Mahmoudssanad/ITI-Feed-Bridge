@@ -20,7 +20,7 @@ namespace Feed_Bridge.Models.Data
         public DbSet<Partener> Parteners { get; set; }
         public DbSet<Donation> Donations { get; set; }
         public DbSet<Notification> Notifications { get; set; }
-
+        public DbSet<Review> Reviews { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

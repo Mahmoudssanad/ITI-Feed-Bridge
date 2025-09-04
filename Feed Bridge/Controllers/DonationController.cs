@@ -1,6 +1,7 @@
 ﻿using Feed_Bridge.IServices;
 using Feed_Bridge.Models.Entities;
 using Feed_Bridge.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
@@ -18,13 +19,14 @@ namespace Feed_Bridge.Controllers
             _userManager = userManager;
             _env = webHostEnvironment;
         }
-
+        //[Authorize(Roles ="Admin")]
         [HttpGet] // for the admin to display all donations
         public async Task<IActionResult> GetAll()
         {
+            ViewData["ActivePage"] = "Donations";
             var donations = await _donationService.GetAllDonations();
             return View(donations);
-        }
+        } //view Done
         
         [HttpGet]
         public IActionResult Create()
@@ -72,8 +74,31 @@ namespace Feed_Bridge.Controllers
             await _donationService.Add(donation, user.Id);
 
             return RedirectToAction("Index","Home");
-        }
+        } //view Done
 
+        [HttpPost]
+        public async Task<IActionResult> Delete(int id)
+        {
+            await _donationService.DeleteDonation(id);
+            return RedirectToAction("GetAll");
+        }
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            var donation = await _donationService.GetDonationById(id);
+            if (donation == null) return NotFound();
+
+            return View(donation);
+        }//view not done
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(Donation donation)
+        {
+            if (!ModelState.IsValid) return View(donation);
+
+            await _donationService.UpdateDonation(donation);
+            return RedirectToAction("GetAll");
+        }// View not done
 
 
     }
