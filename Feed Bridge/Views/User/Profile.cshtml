@@ -1,67 +1,74 @@
-﻿ @model Feed_Bridge.Models.Entities.ApplicationUser
+﻿@model Feed_Bridge.Models.Entities.ApplicationUser
 
-<form method="post" asp-action="Profile" asp-controller="UserController">
-    <div class="profile-container">
-        <div class="heading">
-            <p class="section-title">بيانات المستخدم</p>
-            <a style="color: white;" href="edit-profile.html" class="edit-button btn">تعديل</a>
+<div class="profile-container">
+    <div class="heading">
+        <p class="section-title">بيانات المستخدم</p>
+        <a style="color: white;" asp-action="EditProfile" asp-controller="User" class="edit-button btn">تعديل</a>
+    </div>
+
+    <!-- صورة البروفايل -->
+    <div class="profile-image text-center">
+        @if (!string.IsNullOrEmpty(Model.ImgUrl))
+        {
+            <img src="@Model.ImgUrl" alt="Profile Image" class="rounded-circle" width="120" height="120" />
+        }
+        else
+        {
+            <img src="~/images/default-user.png" alt="Default Profile" class="rounded-circle" width="120" height="120" />
+        }
+    </div>
+
+    <!-- البيانات الشخصية -->
+    <div class="profile-section">
+        <div class="sub-heading">
+            <span class="material-symbols-outlined"> group </span>
+            <p>البيانات الشخصيه</p>
         </div>
-        <div class="profile-section">
-            <div class="sub-heading">
-                <span class="material-symbols-outlined"> group </span>
-                <p>البيانات الشخصيه</p>
+        <div class="info-container">
+            <div class="info-item">
+                <span class="material-symbols-outlined"> sentiment_satisfied </span>
+                <span class="info-label">الاسم:</span>
+                <span class="info-value">@Model.UserName</span>
             </div>
-            <div class="info-container">
-                <div class="info-item">
-                    <span class="material-symbols-outlined"> sentiment_satisfied </span>
-                    <span class="info-label">الاسم:</span>
-                    <span class="info-value"></span>
-                </div>
-                <div class="info-item">
-                    <span class="material-symbols-outlined"> calendar_today </span>
-                    <span class="info-label">السن:</span>
-                    <span class="info-value"></span>
-                </div>
-                <div class="info-item">
-                    <span class="material-symbols-outlined"> location_on </span>
-                    <span class="info-label">العنوان:</span>
-                    <span class="info-value"></span>
-                </div>
-                <div class="info-item">
-                    <span class="material-symbols-outlined"> person </span>
-                    <span class="info-label"> ID: </span>
-                    <span class="info-value"></span>
-                </div>
+            <div class="info-item">
+                <span class="material-symbols-outlined"> calendar_today </span>
+                <span class="info-label">تاريخ الميلاد:</span>
+                <span class="info-value">@Model.BirthDate.ToString("yyyy/MM/dd")</span>
             </div>
-        </div>
-        <div class="contact-section">
-            <div class="sub-heading">
-                <span class="material-symbols-outlined"> contact_mail </span>
-                <p>بيانات التواصل</p>
+            <div class="info-item">
+                <span class="material-symbols-outlined"> person </span>
+                <span class="info-label">ID:</span>
+                <span class="info-value">@Model.Id</span>
             </div>
-            <div class="info-container">
-                <div class="info-item">
-                    <span class="material-symbols-outlined"> phone </span>
-                    <span class="info-label">رقم الهاتف:</span>
-                    <span class="info-value"></span>
-                </div>
-                <div class="info-item">
-                    <span class="material-symbols-outlined"> email </span>
-                    <span class="info-label">البريد الالكتروني:</span>
-                    <span class="info-value"></span>
-                </div>
-            </div>
-        </div>
-        <div class="change-password-section">
-            <div class="sub-heading">
-                <span class="material-symbols-outlined"> lock_reset </span>
-                <p>تغيير كلمة المرور</p>
-            </div>
-            <a style="color: white;" href="new_password.html" class="btn confirm-btn">تغيير كلمة المرور</a>
         </div>
     </div>
-    <script type="module" src="script.js"></script>
-   
 
-    
-</form>
+    <!-- بيانات التواصل -->
+    <div class="contact-section">
+        <div class="sub-heading">
+            <span class="material-symbols-outlined"> contact_mail </span>
+            <p>بيانات التواصل</p>
+        </div>
+        <div class="info-container">
+            <div class="info-item">
+                <span class="material-symbols-outlined"> phone </span>
+                <span class="info-label">رقم الهاتف:</span>
+                <span class="info-value">@Model.PhoneNumber</span>
+            </div>
+            <div class="info-item">
+                <span class="material-symbols-outlined"> email </span>
+                <span class="info-label">البريد الالكتروني:</span>
+                <span class="info-value">@Model.Email</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- تغيير كلمة المرور -->
+    <div class="change-password-section">
+        <div class="sub-heading">
+            <span class="material-symbols-outlined"> lock_reset </span>
+            <p>تغيير كلمة المرور</p>
+        </div>
+        <a asp-controller="User" asp-action="ChangePassword" class="btn confirm-btn">تغيير كلمة المرور</a>
+    </div>
+</div>

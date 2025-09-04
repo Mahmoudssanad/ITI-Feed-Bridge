@@ -20,7 +20,10 @@ namespace Feed_Bridge.Controllers
         public async Task<IActionResult> Profile()
         {
             var user = await _userManager.GetUserAsync(User);
-            return View();
+            if(user == null)
+                return RedirectToAction("Login", "Account");
+
+            return View(user);
         }
 
         // POST: User/EditProfile
@@ -49,49 +52,51 @@ namespace Feed_Bridge.Controllers
             }
             return RedirectToAction("Index", "Home");
         }
+        // GET: User/ChangePassword
+        [HttpGet]
+        public IActionResult ChangePassword()
+        {
+            return View();
+        }
 
         // POST: User/ChangePassword
-        
         [HttpPost]
-        [HttpPost]
-        public async Task<IActionResult> ChangePassword(ResetPasswordViewModel model)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model)
         {
             if (!ModelState.IsValid) return View(model);
 
             if (model.Password != model.ConfirmPassword)
             {
-                ModelState.AddModelError("", "Passwords do not match");
+                ModelState.AddModelError("", "كلمة المرور الجديدة وتأكيدها غير متطابقين");
                 return View(model);
             }
 
             var user = await _userManager.GetUserAsync(User);
-            if (user == null) return NotFound();
+            if (user == null)
+                return RedirectToAction("Login", "Account");
 
-            var hasPassword = await _userManager.HasPasswordAsync(user);
-            IdentityResult result;
-
-            if (hasPassword)
-            {
-                await _userManager.RemovePasswordAsync(user);
-                result = await _userManager.AddPasswordAsync(user, model.Password);
-            }
-            else
-            {
-                result = await _userManager.AddPasswordAsync(user, model.Password);
-            }
+            // الطريقة الصحيحة لاستخدام Identity
+            var result = await _userManager.ChangePasswordAsync(user, model.CurrentPassword, model.Password);
 
             if (result.Succeeded)
             {
+                await _signInManager.RefreshSignInAsync(user); // يجدد السيشن
                 return RedirectToAction("Profile");
             }
 
-            ModelState.AddModelError("", "Failed to change password");
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError("", error.Description);
+            }
+
             return View(model);
         }
 
 
 
-        
+
+
 
     }
 }

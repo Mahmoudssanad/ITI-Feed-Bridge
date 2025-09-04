@@ -53,34 +53,35 @@ namespace Feed_Bridge.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Register(string email, string password, string confirmPassword)
+        public async Task<IActionResult> Register(RegisterViewModel model)
         {
-            if (password != confirmPassword)
+            if (ModelState.IsValid)
             {
-                ViewBag.Error = "كلمة المرور وتأكيدها غير متطابقين";
-                return View();
+                var user = new ApplicationUser
+                {
+                    UserName = model.UserName,
+                    Email = model.Email,
+                    PhoneNumber = model.PhoneNumber,
+                    BirthDate = model.BirthDate,
+                    ImgUrl = model.ImgUrl
+                };
+
+                var result = await _userManager.CreateAsync(user, model.Password);
+
+                if (result.Succeeded)
+                {
+                    await _signInManager.SignInAsync(user, isPersistent: false);
+                    return RedirectToAction("Index", "Home");
+                }
+
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                }
             }
-
-            var user = new ApplicationUser { UserName = email, Email = email };
-            var result = await _userManager.CreateAsync(user, password);
-
-            if (result.Succeeded)
-            {
-                
-                if (!await _roleManager.RoleExistsAsync("User"))
-                    await _roleManager.CreateAsync(new IdentityRole("User"));
-
-                
-                await _userManager.AddToRoleAsync(user, "User");
-
-                
-                await _signInManager.SignInAsync(user, isPersistent: false);
-                return RedirectToAction("Index", "Home");
-            }
-
-            ViewBag.Error = string.Join(", ", result.Errors.Select(e => e.Description));
-            return View();
+            return View(model);
         }
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]
