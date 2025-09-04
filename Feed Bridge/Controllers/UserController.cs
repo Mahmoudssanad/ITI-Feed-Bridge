@@ -1,4 +1,5 @@
 ﻿using Feed_Bridge.Models.Entities;
+using Feed_Bridge.ViewModel;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -50,37 +51,47 @@ namespace Feed_Bridge.Controllers
         }
 
         // POST: User/ChangePassword
+        
         [HttpPost]
-        public async Task<IActionResult> ChangePassword(string oldPassword, string newPassword)
+        [HttpPost]
+        public async Task<IActionResult> ChangePassword(ResetPasswordViewModel model)
         {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.Password != model.ConfirmPassword)
+            {
+                ModelState.AddModelError("", "Passwords do not match");
+                return View(model);
+            }
+
             var user = await _userManager.GetUserAsync(User);
             if (user == null) return NotFound();
 
-            var result = await _userManager.ChangePasswordAsync(user, oldPassword, newPassword);
+            var hasPassword = await _userManager.HasPasswordAsync(user);
+            IdentityResult result;
+
+            if (hasPassword)
+            {
+                await _userManager.RemovePasswordAsync(user);
+                result = await _userManager.AddPasswordAsync(user, model.Password);
+            }
+            else
+            {
+                result = await _userManager.AddPasswordAsync(user, model.Password);
+            }
 
             if (result.Succeeded)
             {
                 return RedirectToAction("Profile");
             }
+
             ModelState.AddModelError("", "Failed to change password");
-            return View();
+            return View(model);
         }
 
-        // POST: User/ResetPassword
-        [HttpPost]
-        public async Task<IActionResult> ResetPassword(string email, string newPassword, string token)
-        {
-            var user = await _userManager.FindByEmailAsync(email);
-            if (user == null) return NotFound();
 
-            var result = await _userManager.ResetPasswordAsync(user, token, newPassword);
-            if (result.Succeeded)
-            {
-                return RedirectToAction("Login", "Account");
-            }
-            ModelState.AddModelError("", "Failed to reset password");
-            return View();
-        }
-       
+
+        
+
     }
 }
