@@ -7,6 +7,7 @@ namespace Feed_Bridge.Models.Entities
         public int Id { get; set; }
         public string ImageUrl { get; set; }
         public string? RedirectUrl { get; set; }
+
         [ForeignKey("User")]
         public string UserId { get; set; }
         public ApplicationUser User { get; set; }
