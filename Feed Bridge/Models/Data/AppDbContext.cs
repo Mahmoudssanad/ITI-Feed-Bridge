@@ -11,7 +11,6 @@ namespace Feed_Bridge.Models.Data
         {
             
         }
-<<<<<<< HEAD
 
         public DbSet<Product> Products { get; set; }
         public DbSet<Order> Orders { get; set; }
@@ -30,7 +29,6 @@ namespace Feed_Bridge.Models.Data
                 .HasConversion<string>();
 
         }
-=======
->>>>>>> 4570d32ee069cf5a2c94847c58f5b8da98aefa16
+
     }
 }
