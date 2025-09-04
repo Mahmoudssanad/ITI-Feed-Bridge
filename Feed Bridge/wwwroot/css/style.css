@@ -1,0 +1,322 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "IBM Plex Sans Arabic", serif;
+}
+:root {
+  --main-color: #1cba7f;
+  --hover-color: #33c58e;
+  --background-color: #efefef;
+  --text-color: #333;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  &:visited {
+    color: inherit;
+  }
+}
+.page-items a:link,
+.page-items a:visited {
+  color: var(--main-color);
+  text-decoration: none;
+}
+.special-heading {
+  display: block;
+  padding: 50px 40px;
+  h1 {
+    color: var(--main-color);
+    font-weight: 400;
+    position: relative;
+    display: inline-block;
+    &::before {
+      content: "";
+      position: absolute;
+      height: 10px;
+      width: 90%;
+      background-color: #999;
+      border-radius: 6px;
+      -webkit-border-radius: 6px;
+      -moz-border-radius: 6px;
+      -ms-border-radius: 6px;
+      -o-border-radius: 6px;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border: #efefef 3px solid;
+      border-radius: 50%;
+      background-color: #999;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+    }
+  }
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 35px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: var(--main-color);
+  .header-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .logo-img {
+      width: 65px;
+    }
+    p {
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+  }
+  .header-icons {
+    display: flex;
+    gap: 15px;
+    :first-child {
+      color: var(--text-color);
+    }
+    span {
+      font-size: 1.9rem;
+    }
+  }
+}
+
+.page {
+  display: flex;
+  min-height: calc(100vh - 80px);
+  .sidebar {
+    padding: 50px 25px;
+    min-width: 150px;
+    color: var(--text-color);
+    li {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      &.active {
+        color: var(--main-color);
+      }
+      a {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        cursor: pointer;
+        transition: 0.3s ease;
+        -webkit-transition: 0.3s ease;
+        -moz-transition: 0.3s ease;
+        -ms-transition: 0.3s ease;
+        -o-transition: 0.3s ease;
+        &:hover {
+          color: var(--hover-color);
+        }
+      }
+    }
+    .logout {
+      color: #ff3b30;
+      font-size: 1.2rem;
+      a {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        position: absolute;
+        bottom: 30px;
+      }
+    }
+  }
+  .content-page {
+    width: 500px;
+    background-color: var(--background-color);
+    flex: 1;
+    > div.active{
+      display: block;
+    }
+    > div{
+      display: none;
+    }
+  }
+}
+
+.Admin-Dashboard-Content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 300px;
+  position: relative;
+}
+
+.Admin-Dashboard-Content .Hello-Admin{
+  width: 600px;
+  background-color: #E3E3E3;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 4px -4px black;
+  position: relative;
+  left: -110px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Details-Parent{
+display: flex;
+justify-content: space-between;
+width: 822px;
+}
+
+.Details{
+  background-color: white;
+  padding: 20px;
+  width: 170px;
+  border-radius: 16px;
+  box-shadow: 0 4px 4px -4px black;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hello-data{
+  display: flex;
+  width: 30%;
+  align-items: center;
+  justify-content: space-around;
+}
+.hello-data span{
+  color: var(--main-color);
+}
+
+.lgt span{
+  color:#ff3b30;
+}
+
+.Details span{
+  color: var(--main-color);
+}
+
+.Admin-orders-Content, .Admin-reports-Content,.Admin-products-Content, .Admin-donors-Content , .Admin-delivery-Content, .Admin-allUsers-Content, .Admin-allParteners-Content, .Admin-HomeControl-Content{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.Orders_data_table, .reports_data_table,.products_data_table, .donors_data_table, .delivery_data_table, .allUsers_data_table, .allParteners_data_table, .homeControll_data_table{
+  width: 100%;
+  margin-top: 30px;
+}
+/* .Admin-orders-Content button, .Admin-reports-Content button,.Admin-products-Content button{
+  background-color: var(--main-color);
+  color: white;
+  border: 0;
+  padding: 5px 30px 5px 30px;
+  border-radius: 5px;
+} */
+
+.Admin-orders-Content .Orders_data_table th, .Admin-reports-Content .reports_data_table th , .Admin-products-Content .products_data_table th
+, .Admin-donors-Content .donors_data_table th, .Admin-delivery-Content .delivery_data_table th, .Admin-allUsers-Content .allUsers_data_table th, .Admin-allParteners-Content .allParteners_data_table th{
+  color: var(--main-color);
+}
+
+
+.allUsers_data_table .Edit-role, .Edit-image{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.notifications-container {
+  position: relative;
+  cursor: pointer;
+}
+
+.notifications-box {
+  position: absolute;
+  top: 100%; /* Position below the icon */
+  left: -50px;
+  width: 250px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  z-index: 1000;
+  display: none; /* Hide the box by default */
+}
+
+.notifications-box h3 {
+  margin-top: 0;
+  color: var(--main-color);
+  font-size: 1.1rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.notifications-box ul {
+  padding: 0;
+  margin: 0;
+}
+
+.notifications-box li {
+  font-size: 0.9rem;
+  padding: 8px 0;
+  border-bottom: 1px solid #f5f5f5;
+  color: var(--text-color);
+}
+
+.notifications-box li:last-child {
+  border-bottom: none;
+}
+
+.button-link{
+  width: 20%;
+    padding: 12px;
+    color: white;
+    background-color: var(--main-color);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center; /* Centers the text inside the link */
+    text-decoration: none; /* Removes the underline from the link */
+}
+.button-link:hover{
+  background-color: white;
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+}
+
+.buttons-parent{
+  padding-top: 20px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

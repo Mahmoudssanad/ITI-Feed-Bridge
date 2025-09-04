@@ -39,5 +39,31 @@ namespace Feed_Bridge.Services
         {
             return await _context.Donations.SumAsync(d => d.Quantity);
         }
+        public async Task DeleteDonation(int id)
+        {
+            var donation = await _context.Donations.FindAsync(id);
+            if (donation != null)
+            {
+                _context.Donations.Remove(donation);
+                await _context.SaveChangesAsync();
+            }
+        }
+        public async Task UpdateDonation(Donation donation)
+        {
+            var existingDonation = await _context.Donations.FindAsync(donation.Id);
+            if (existingDonation != null)
+            {
+                existingDonation.Name = donation.Name;
+                existingDonation.ImgURL = donation.ImgURL;
+                existingDonation.ExpirDate = donation.ExpirDate;
+                existingDonation.Quantity = donation.Quantity;
+                existingDonation.Address = donation.Address;
+                existingDonation.Phone = donation.Phone;
+                existingDonation.Description = donation.Description;
+
+                _context.Donations.Update(existingDonation);
+                await _context.SaveChangesAsync();
+            }
+        }
     }
 }
