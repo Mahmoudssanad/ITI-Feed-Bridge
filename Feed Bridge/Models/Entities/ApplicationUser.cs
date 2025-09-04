@@ -14,5 +14,6 @@ namespace Feed_Bridge.Models.Entities
         public List<Partener> Parteners { get; set; } = new List<Partener>();
 
         public List<Notification> Notification { get; set; } = new List<Notification>();
+        public List<Review> Reviews { get; set; } = new List<Review>();
     }
 }
