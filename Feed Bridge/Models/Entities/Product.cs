@@ -1,5 +1,4 @@
-﻿using Microsoft.CodeAnalysis.Options;
-
+﻿
 namespace Feed_Bridge.Models.Entities
 {
     public class Product
@@ -8,7 +7,7 @@ namespace Feed_Bridge.Models.Entities
 
         public string Name { get; set; }
 
-        public string ImgURL { get; set; }
+        public string? ImgURL { get; set; }
 
         public decimal Quantity { get; set; }
 
@@ -18,7 +17,7 @@ namespace Feed_Bridge.Models.Entities
 
         public DateTime UpdatedAt { get; set; }
 
-        public List<Cart> Carts {  get; set; }
-        public List<Order> Orders {  get; set; }
+        public List<Cart> Carts { get; set; } = new List<Cart>(); 
+        public List<Order> Orders { get; set; } = new List<Order>(); 
     }
 }
