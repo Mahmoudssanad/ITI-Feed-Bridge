@@ -26,5 +26,8 @@ namespace Feed_Bridge.Models.Entities
         [ForeignKey("User")]
         public string UserId {  get; set; }
         public ApplicationUser User {  get; set; }
+
+        public Notification Notification { get; set; }
+
     }
 }
