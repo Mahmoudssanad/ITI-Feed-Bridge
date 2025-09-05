@@ -140,6 +140,17 @@
 </section>
 
 </section>
+<script>
+    document.querySelectorAll(".stars input").forEach((star, index, stars) => {
+        star.addEventListener("change", () => {
+            const checkedIndex = index;
+            stars.forEach((s, i) => {
+                s.checked = i <= checkedIndex;
+            });
+        });
+    });
+</script>
+
 @section FooterSection{
     @await Html.PartialAsync("_Footer")
 }
