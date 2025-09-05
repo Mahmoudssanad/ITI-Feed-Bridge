@@ -52,7 +52,7 @@ namespace Feed_Bridge.Controllers
 
         // POST: User/ChangePassword
         
-        [HttpPost]
+        
         [HttpPost]
         public async Task<IActionResult> ChangePassword(ResetPasswordViewModel model)
         {
