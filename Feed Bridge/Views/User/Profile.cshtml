@@ -8,16 +8,24 @@
 
     <!-- صورة البروفايل -->
     <div class="profile-image text-center">
-        <img style="border-radius:50%;"
-             src="@(string.IsNullOrEmpty(Model.ImgUrl)
-                              ? Url.Content("~/imgs/anon.jpg") // صورة افتراضية
-                              : (System.IO.Path.HasExtension(Model.ImgUrl)
-                                 ?Url.Content("~/imgs/")+ Model.ImgUrl
-                                 :Url.Content("~/imgs/")+ Model.ImgUrl + ".jpg"))"
-             alt="Profile Image"
-             class="rounded-circle"
-             width="120"
-             height="120" />
+        @if (!string.IsNullOrEmpty(Model.ImgUrl))
+        {
+            <img src="@Url.Content(Model.ImgUrl)"
+                 alt="Profile Image"
+                 class="img-thumbnail mb-2"
+                 height="150"
+                 width="150"
+                 style="border-radius:50%; border:2px solid #1cba7f;" />
+        }
+        else
+        {
+            <img src="@Url.Content("~/imgs/anon.jpg")"
+                 alt="Profile Image"
+                 class="img-thumbnail mb-2"
+                 height="150"
+                 width="150"
+                 style="border-radius:50%; border:2px solid #1cba7f;" />
+        }
     </div>
 
 

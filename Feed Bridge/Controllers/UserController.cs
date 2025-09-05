@@ -35,7 +35,7 @@ namespace Feed_Bridge.Controllers
 
             var model = new EditProfileViewModel
             {
-                ImgUrl = user.ImgUrl,
+                CurrentImgUrl = user.ImgUrl,
                 BirthDate = user.BirthDate.ToDateTime(TimeOnly.MinValue),
                 FullName = user.UserName,
                 PhoneNumber = user.PhoneNumber
@@ -53,14 +53,31 @@ namespace Feed_Bridge.Controllers
                 return View(model);
 
             var user = await _userManager.GetUserAsync(User);
-            if (user == null) return NotFound();
+            if (user == null) return RedirectToAction("Login");
 
-            user.ImgUrl = model.ImgUrl;
+            //user.ImgUrl = model.ImgUrl;
             if (model.BirthDate.HasValue)
                 user.BirthDate = DateOnly.FromDateTime(model.BirthDate.Value);
 
             user.UserName = model.FullName;
             user.PhoneNumber = model.PhoneNumber;
+            if (model.ImgFile != null)
+            {
+                string uploadPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads");
+                if (!Directory.Exists(uploadPath))
+                    Directory.CreateDirectory(uploadPath);
+
+                string fileName = Guid.NewGuid().ToString() + Path.GetExtension(model.ImgFile.FileName);
+                string filePath = Path.Combine(uploadPath, fileName);
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await model.ImgFile.CopyToAsync(stream);
+                }
+
+                // تحديث الصورة
+                user.ImgUrl = "/uploads/" + fileName;
+            }
 
             var result = await _userManager.UpdateAsync(user);
 
