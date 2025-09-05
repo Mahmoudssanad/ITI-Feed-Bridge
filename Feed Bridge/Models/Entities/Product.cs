@@ -19,8 +19,9 @@ namespace Feed_Bridge.Models.Entities
 
         public DateTime? UpdatedAt { get; set; } = DateTime.Now;
 
-        public List<Cart> Carts { get; set; } = new List<Cart>(); 
-        public List<Order> Orders { get; set; } = new List<Order>();
+        public List<ProductCart> ProductCarts { get; set; } = new List<ProductCart>();
+
+        public List<OrderProduct> OrderProducts { get; set; } = new List<OrderProduct>();
 
         [ForeignKey("Donation")]
         public int DonationId { get; set; }
