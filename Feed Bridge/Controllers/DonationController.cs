@@ -71,9 +71,9 @@ namespace Feed_Bridge.Controllers
                 ImgURL = fileName,
                 ExpirDate = model.ExpirDate,
                 Quantity = model.Quantity,
-                Address = model.Address,
+                Address = "Mansoura",
                 Phone = model.Phone,
-                Description = model.Description
+                Description = model.Description,
             };
             await _donationService.Add(donation, user.Id);
 
