@@ -8,5 +8,7 @@ namespace Feed_Bridge.IServices
         Task<IEnumerable<Donation>> GetAllDonations();
         Task<Donation> GetDonationById(int id);
         Task<decimal> GetTotalDonationsAmount();
+        Task DeleteDonation(int id);
+        Task UpdateDonation(Donation donation);
     }
 }

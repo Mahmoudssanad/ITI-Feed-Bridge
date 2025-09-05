@@ -40,7 +40,11 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9uYXRpb25cQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Donation/Index.cshtml]
+[C:/Users/Saleh Mostafa/OneDrive/Desktop/ITI Project/ITI-Feed-Bridge/Feed Bridge/Views/Donation/GetAll.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9uYXRpb25cR2V0QWxsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Saleh Mostafa/OneDrive/Desktop/ITI Project/ITI-Feed-Bridge/Feed Bridge/Views/Donation/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9uYXRpb25cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
@@ -56,7 +60,11 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0XFJlZ2lzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Shared/Error.cshtml]
+[C:/Users/Saleh Mostafa/OneDrive/Desktop/ITI Project/ITI-Feed-Bridge/Feed Bridge/Views/Shared/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXERhc2hib2FyZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Saleh Mostafa/OneDrive/Desktop/ITI Project/ITI-Feed-Bridge/Feed Bridge/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
