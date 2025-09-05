@@ -20,21 +20,59 @@ namespace Feed_Bridge.Controllers
         public async Task<IActionResult> Profile()
         {
             var user = await _userManager.GetUserAsync(User);
-            return View();
+            if(user == null)
+                return RedirectToAction("Login", "Account");
+
+            return View(user);
         }
+
+        // GET: User/EditProfile
+        [HttpGet]
+        public async Task<IActionResult> EditProfile()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null) return RedirectToAction("Login", "Account");
+
+            var model = new EditProfileViewModel
+            {
+                ImgUrl = user.ImgUrl,
+                BirthDate = user.BirthDate.ToDateTime(TimeOnly.MinValue),
+                FullName = user.UserName,
+                PhoneNumber = user.PhoneNumber
+            };
+
+            return View(model);
+        }
+
 
         // POST: User/EditProfile
         [HttpPost]
-        public async Task<IActionResult> EditProfile(ApplicationUser model)
+        public async Task<IActionResult> EditProfile(EditProfileViewModel model)
         {
+            if (!ModelState.IsValid)
+                return View(model);
+
             var user = await _userManager.GetUserAsync(User);
             if (user == null) return NotFound();
 
             user.ImgUrl = model.ImgUrl;
-            user.BirthDate = model.BirthDate;
+            if (model.BirthDate.HasValue)
+                user.BirthDate = DateOnly.FromDateTime(model.BirthDate.Value);
 
-            await _userManager.UpdateAsync(user);
-            return RedirectToAction("Profile");
+            user.UserName = model.FullName;
+            user.PhoneNumber = model.PhoneNumber;
+
+            var result = await _userManager.UpdateAsync(user);
+
+            if (result.Succeeded)
+                return RedirectToAction("Profile");
+
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError("", error.Description);
+            }
+
+            return View(model);
         }
 
         // POST: User/Delete
@@ -49,49 +87,51 @@ namespace Feed_Bridge.Controllers
             }
             return RedirectToAction("Index", "Home");
         }
+        // GET: User/ChangePassword
+        [HttpGet]
+        public IActionResult ChangePassword()
+        {
+            return View();
+        }
 
         // POST: User/ChangePassword
-        
-        
         [HttpPost]
-        public async Task<IActionResult> ChangePassword(ResetPasswordViewModel model)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model)
         {
             if (!ModelState.IsValid) return View(model);
 
             if (model.Password != model.ConfirmPassword)
             {
-                ModelState.AddModelError("", "Passwords do not match");
+                ModelState.AddModelError("", "كلمة المرور الجديدة وتأكيدها غير متطابقين");
                 return View(model);
             }
 
             var user = await _userManager.GetUserAsync(User);
-            if (user == null) return NotFound();
+            if (user == null)
+                return RedirectToAction("Login", "Account");
 
-            var hasPassword = await _userManager.HasPasswordAsync(user);
-            IdentityResult result;
-
-            if (hasPassword)
-            {
-                await _userManager.RemovePasswordAsync(user);
-                result = await _userManager.AddPasswordAsync(user, model.Password);
-            }
-            else
-            {
-                result = await _userManager.AddPasswordAsync(user, model.Password);
-            }
+            // الطريقة الصحيحة لاستخدام Identity
+            var result = await _userManager.ChangePasswordAsync(user, model.CurrentPassword, model.Password);
 
             if (result.Succeeded)
             {
+                await _signInManager.RefreshSignInAsync(user); // يجدد السيشن
                 return RedirectToAction("Profile");
             }
 
-            ModelState.AddModelError("", "Failed to change password");
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError("", error.Description);
+            }
+
             return View(model);
         }
 
 
 
-        
+
+
 
     }
 }

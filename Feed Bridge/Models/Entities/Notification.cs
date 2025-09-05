@@ -18,7 +18,7 @@ namespace Feed_Bridge.Models.Entities
 
         [ForeignKey("Donation")]
         public int? DonationId { get; set; }
-        public Donation Donation { get; set; }
+        public Donation? Donation { get; set; }
 
         [ForeignKey("Support")]
         public int? SupportId { get; set; }

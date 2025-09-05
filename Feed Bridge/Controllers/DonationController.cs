@@ -8,17 +8,23 @@ using System.Security.Claims;
 
 namespace Feed_Bridge.Controllers
 {
+    [Authorize]
     public class DonationController : Controller
     {
         private readonly IDonationService _donationService;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IWebHostEnvironment _env;
-        public DonationController(IDonationService donationService, UserManager<ApplicationUser> userManager,IWebHostEnvironment webHostEnvironment )
+        private readonly IProductService _productService;
+
+        public DonationController(IDonationService donationService,
+            UserManager<ApplicationUser> userManager,IWebHostEnvironment webHostEnvironment, IProductService productService )
         {
             _donationService = donationService;
             _userManager = userManager;
             _env = webHostEnvironment;
+            _productService = productService;
         }
+
         //[Authorize(Roles ="Admin")]
         [HttpGet] // for the admin to display all donations
         public async Task<IActionResult> GetAll()
@@ -68,20 +74,31 @@ namespace Feed_Bridge.Controllers
                 Quantity = model.Quantity,
                 Address = model.Address,
                 Phone = model.Phone,
-                Description = model.Description
+                Description = model.Description,
             };
-
             await _donationService.Add(donation, user.Id);
+
+            var product = new Product
+            {
+                Name = donation.Name,
+                ImgURL = donation.ImgURL,
+                ExpirDate = donation.ExpirDate,
+                Quantity = donation.Quantity,
+                DonationId = donation.Id, // عشان نعرف إن المنتج ده مرتبط بتبرع
+            };
+            await _productService.AddAsync(product);
 
             return RedirectToAction("Index","Home");
         } //view Done
 
+        //[Authorize(Roles ="Admin")]
         [HttpPost]
         public async Task<IActionResult> Delete(int id)
         {
             await _donationService.DeleteDonation(id);
             return RedirectToAction("GetAll");
         }
+
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {

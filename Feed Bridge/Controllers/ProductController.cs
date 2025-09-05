@@ -1,12 +1,22 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Feed_Bridge.IServices;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Feed_Bridge.Controllers
 {
+    [Authorize]
     public class ProductController : Controller
     {
-        public IActionResult Index()
+        private readonly IProductService _productService;
+
+        public ProductController(IProductService productService)
         {
-            return View();
+            _productService = productService;
+        }
+        public async Task<IActionResult> Index()
+        {
+            var allProducts = await _productService.GetAllAsync();
+            return View(allProducts);
         }
     }
 }

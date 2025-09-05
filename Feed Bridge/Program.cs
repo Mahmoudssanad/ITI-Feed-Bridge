@@ -25,6 +25,7 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
 
 
 builder.Services.AddScoped<IDonationService, DonationService>();
+builder.Services.AddScoped<IProductService, ProductService>();
 
 var app = builder.Build();
 

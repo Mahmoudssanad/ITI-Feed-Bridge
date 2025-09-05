@@ -15,15 +15,15 @@ namespace Feed_Bridge.Models.Entities
 
         public DateOnly ExpirDate { get; set; }
 
-        public DateTime CreatedAt { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
 
-        public DateTime UpdatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; } = DateTime.Now;
 
         public List<Cart> Carts { get; set; } = new List<Cart>(); 
         public List<Order> Orders { get; set; } = new List<Order>();
 
         [ForeignKey("Donation")]
         public int DonationId { get; set; }
-        public Donation Donation { get; set; } = new Donation();
+        public Donation Donation { get; set; }
     }
 }
