@@ -952,6 +952,7 @@ p {
       gap: 20px;
       color: var(--main-color);
       .upload-img {
+                      height:110px;
         display: flex;
         justify-content: center;
         align-items: center;

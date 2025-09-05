@@ -73,7 +73,7 @@
             @foreach (var item in Model)
             {
                 <div class="feedback-card">
-                    <img src="~/imgs/person.png" alt="" />
+                    <img src="@item.User.ImgUrl" alt="" style="width:50px; height:50px; border:2px solid #1cba7f" />
                     <p class="feedback-text">@item.FeedBackMsg</p>
                     <div class="feedback-stars">
                         @for (int i = 0; i < item.StarsNumber; i++)
