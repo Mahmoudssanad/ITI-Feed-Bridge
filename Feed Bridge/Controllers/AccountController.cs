@@ -52,9 +52,58 @@ namespace Feed_Bridge.Controllers
             return View();
         }
 
+        //[HttpPost]
+        //[AutoValidateAntiforgeryToken]
+        //[HttpPost]
+        //public async Task<IActionResult> Register(RegisterViewModel model)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        string? fileName = null;
+
+        //        if (model.ImgFile != null)
+        //        {
+        //            string uploadPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads");
+        //            if (!Directory.Exists(uploadPath))
+        //            {
+        //                Directory.CreateDirectory(uploadPath);
+        //            }
+
+        //            fileName = Guid.NewGuid().ToString() + Path.GetExtension(model.ImgFile.FileName);
+        //            string filePath = Path.Combine(uploadPath, fileName);
+        //            using (var stream = new FileStream(filePath, FileMode.Create))
+        //            {
+        //                await model.ImgFile.CopyToAsync(stream);
+        //            }
+        //        }
+
+        //        var user = new ApplicationUser
+        //        {
+        //            UserName = model.UserName,
+        //            Email = model.Email,
+        //            PhoneNumber = model.PhoneNumber,
+        //            BirthDate = model.BirthDate,
+        //            ImgUrl = fileName!= null ? "/uploads/" + fileName : null
+        //        };
+
+        //            // Save the new user in database with hashed password
+        //        var result = await _userManager.CreateAsync(user, model.Password);
+
+        //        if (result.Succeeded)
+        //        {
+        //            await _signInManager.SignInAsync(user, isPersistent: false);
+        //            return RedirectToAction("Index", "Home");
+        //        }
+
+        //        foreach (var error in result.Errors)
+        //        {
+        //            ModelState.AddModelError("", error.Description);
+        //        }
+        //    }
+        //    return View(model);
+        //}
         [HttpPost]
-        [AutoValidateAntiforgeryToken]
-        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
             if (ModelState.IsValid)
@@ -64,17 +113,33 @@ namespace Feed_Bridge.Controllers
                     UserName = model.UserName,
                     Email = model.Email,
                     PhoneNumber = model.PhoneNumber,
-                    BirthDate = model.BirthDate,
-                    ImgUrl = model.ImgUrl
+                    BirthDate = model.BirthDate
                 };
 
-                    // Save the new user in database with hashed password
-                var result = await _userManager.CreateAsync(user, model.Password);
+                // رفع الصورة
+                if (model.ImgFile != null && model.ImgFile.Length > 0)
+                {
+                    var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads");
+                    if (!Directory.Exists(uploadsFolder))
+                        Directory.CreateDirectory(uploadsFolder);
 
+                    var uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(model.ImgFile.FileName);
+                    var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                    using (var fileStream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await model.ImgFile.CopyToAsync(fileStream);
+                    }
+
+                    // خزّن الرابط في الداتابيز
+                    user.ImgUrl = "/uploads/" + uniqueFileName;
+                }
+
+                var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
                     await _signInManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Profile", "User");
                 }
 
                 foreach (var error in result.Errors)
@@ -82,6 +147,7 @@ namespace Feed_Bridge.Controllers
                     ModelState.AddModelError("", error.Description);
                 }
             }
+
             return View(model);
         }
 
