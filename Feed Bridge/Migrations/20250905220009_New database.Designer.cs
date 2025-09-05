@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Feed_Bridge.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250905163128_make notification nallable")]
-    partial class makenotificationnallable
+    [Migration("20250905220009_New database")]
+    partial class Newdatabase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,21 +24,6 @@ namespace Feed_Bridge.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("CartProduct", b =>
-                {
-                    b.Property<int>("CartsId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("CartsId", "ProductsId");
-
-                    b.HasIndex("ProductsId");
-
-                    b.ToTable("CartProduct");
-                });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.ApplicationUser", b =>
                 {
@@ -119,10 +104,14 @@ namespace Feed_Bridge.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<decimal>("Quantity")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
 
                     b.ToTable("Carts");
                 });
@@ -182,14 +171,9 @@ namespace Feed_Bridge.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("DonationId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("OrderId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("SupportId")
-                        .HasColumnType("int");
+                    b.Property<string>("RedirectUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -200,18 +184,6 @@ namespace Feed_Bridge.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("DonationId")
-                        .IsUnique()
-                        .HasFilter("[DonationId] IS NOT NULL");
-
-                    b.HasIndex("OrderId")
-                        .IsUnique()
-                        .HasFilter("[OrderId] IS NOT NULL");
-
-                    b.HasIndex("SupportId")
-                        .IsUnique()
-                        .HasFilter("[SupportId] IS NOT NULL");
 
                     b.HasIndex("UserId");
 
@@ -253,6 +225,24 @@ namespace Feed_Bridge.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("Feed_Bridge.Models.Entities.OrderProduct", b =>
+                {
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Quantity")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("OrderId", "ProductId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("OrderProducts");
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Partener", b =>
@@ -308,7 +298,7 @@ namespace Feed_Bridge.Migrations
                     b.Property<decimal>("Quantity")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<DateTime>("UpdatedAt")
+                    b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
@@ -316,6 +306,32 @@ namespace Feed_Bridge.Migrations
                     b.HasIndex("DonationId");
 
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("Feed_Bridge.Models.Entities.ProductCart", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CartId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Quantity")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CartId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductCarts");
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Review", b =>
@@ -562,34 +578,15 @@ namespace Feed_Bridge.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("OrderProduct", b =>
+            modelBuilder.Entity("Feed_Bridge.Models.Entities.Cart", b =>
                 {
-                    b.Property<int>("OrdersId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("OrdersId", "ProductsId");
-
-                    b.HasIndex("ProductsId");
-
-                    b.ToTable("OrderProduct");
-                });
-
-            modelBuilder.Entity("CartProduct", b =>
-                {
-                    b.HasOne("Feed_Bridge.Models.Entities.Cart", null)
-                        .WithMany()
-                        .HasForeignKey("CartsId")
+                    b.HasOne("Feed_Bridge.Models.Entities.ApplicationUser", "User")
+                        .WithOne("Cart")
+                        .HasForeignKey("Feed_Bridge.Models.Entities.Cart", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Feed_Bridge.Models.Entities.Product", null)
-                        .WithMany()
-                        .HasForeignKey("ProductsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Donation", b =>
@@ -605,29 +602,11 @@ namespace Feed_Bridge.Migrations
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Notification", b =>
                 {
-                    b.HasOne("Feed_Bridge.Models.Entities.Donation", "Donation")
-                        .WithOne("Notification")
-                        .HasForeignKey("Feed_Bridge.Models.Entities.Notification", "DonationId");
-
-                    b.HasOne("Feed_Bridge.Models.Entities.Order", "Order")
-                        .WithOne("Notification")
-                        .HasForeignKey("Feed_Bridge.Models.Entities.Notification", "OrderId");
-
-                    b.HasOne("Feed_Bridge.Models.Entities.Support", "Support")
-                        .WithOne("Notification")
-                        .HasForeignKey("Feed_Bridge.Models.Entities.Notification", "SupportId");
-
                     b.HasOne("Feed_Bridge.Models.Entities.ApplicationUser", "User")
                         .WithMany("Notification")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Donation");
-
-                    b.Navigation("Order");
-
-                    b.Navigation("Support");
 
                     b.Navigation("User");
                 });
@@ -651,6 +630,25 @@ namespace Feed_Bridge.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Feed_Bridge.Models.Entities.OrderProduct", b =>
+                {
+                    b.HasOne("Feed_Bridge.Models.Entities.Order", "Order")
+                        .WithMany("OrderProducts")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Feed_Bridge.Models.Entities.Product", "Product")
+                        .WithMany("OrderProducts")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Partener", b =>
                 {
                     b.HasOne("Feed_Bridge.Models.Entities.ApplicationUser", "User")
@@ -671,6 +669,25 @@ namespace Feed_Bridge.Migrations
                         .IsRequired();
 
                     b.Navigation("Donation");
+                });
+
+            modelBuilder.Entity("Feed_Bridge.Models.Entities.ProductCart", b =>
+                {
+                    b.HasOne("Feed_Bridge.Models.Entities.Cart", "Cart")
+                        .WithMany("ProductCarts")
+                        .HasForeignKey("CartId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Feed_Bridge.Models.Entities.Product", "Product")
+                        .WithMany("ProductCarts")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Cart");
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Review", b =>
@@ -757,23 +774,11 @@ namespace Feed_Bridge.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("OrderProduct", b =>
-                {
-                    b.HasOne("Feed_Bridge.Models.Entities.Order", null)
-                        .WithMany()
-                        .HasForeignKey("OrdersId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Feed_Bridge.Models.Entities.Product", null)
-                        .WithMany()
-                        .HasForeignKey("ProductsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("Feed_Bridge.Models.Entities.ApplicationUser", b =>
                 {
+                    b.Navigation("Cart")
+                        .IsRequired();
+
                     b.Navigation("Notification");
 
                     b.Navigation("Orders");
@@ -790,25 +795,25 @@ namespace Feed_Bridge.Migrations
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Cart", b =>
                 {
                     b.Navigation("Orders");
+
+                    b.Navigation("ProductCarts");
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Donation", b =>
                 {
-                    b.Navigation("Notification");
-
                     b.Navigation("Product");
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Order", b =>
                 {
-                    b.Navigation("Notification")
-                        .IsRequired();
+                    b.Navigation("OrderProducts");
                 });
 
-            modelBuilder.Entity("Feed_Bridge.Models.Entities.Support", b =>
+            modelBuilder.Entity("Feed_Bridge.Models.Entities.Product", b =>
                 {
-                    b.Navigation("Notification")
-                        .IsRequired();
+                    b.Navigation("OrderProducts");
+
+                    b.Navigation("ProductCarts");
                 });
 #pragma warning restore 612, 618
         }

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Feed_Bridge.Migrations
 {
     /// <inheritdoc />
-    public partial class Initail : Migration
+    public partial class Newdatabase : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -50,37 +50,6 @@ namespace Feed_Bridge.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Carts",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Quantity = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Carts", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Products",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ImgURL = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Quantity = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    ExpirDate = table.Column<DateOnly>(type: "date", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Products", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -190,6 +159,73 @@ namespace Feed_Bridge.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Carts",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Carts", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Carts_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Donations",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ImgURL = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ExpirDate = table.Column<DateOnly>(type: "date", nullable: false),
+                    Quantity = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Donations", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Donations_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.NoAction);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Notifications",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    RedirectUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Notifications", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Notifications_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.NoAction);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Parteners",
                 columns: table => new
                 {
@@ -205,6 +241,28 @@ namespace Feed_Bridge.Migrations
                     table.ForeignKey(
                         name: "FK_Parteners_AspNetUsers_UserId",
                         column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.NoAction);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Reviews",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FeedBackMsg = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    StarsNumber = table.Column<int>(type: "int", nullable: false),
+                    UserID = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Reviews", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Reviews_AspNetUsers_UserID",
+                        column: x => x.UserID,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -231,7 +289,7 @@ namespace Feed_Bridge.Migrations
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -257,7 +315,7 @@ namespace Feed_Bridge.Migrations
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -281,58 +339,87 @@ namespace Feed_Bridge.Migrations
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_Orders_Carts_CartId",
                         column: x => x.CartId,
                         principalTable: "Carts",
                         principalColumn: "Id",
+                        onDelete: ReferentialAction.NoAction);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Products",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ImgURL = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Quantity = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    ExpirDate = table.Column<DateOnly>(type: "date", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DonationId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Products", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Products_Donations_DonationId",
+                        column: x => x.DonationId,
+                        principalTable: "Donations",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "CartProduct",
+                name: "OrderProducts",
                 columns: table => new
                 {
-                    CartsId = table.Column<int>(type: "int", nullable: false),
-                    ProductsId = table.Column<int>(type: "int", nullable: false)
+                    OrderId = table.Column<int>(type: "int", nullable: false),
+                    ProductId = table.Column<int>(type: "int", nullable: false),
+                    Quantity = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CartProduct", x => new { x.CartsId, x.ProductsId });
+                    table.PrimaryKey("PK_OrderProducts", x => new { x.OrderId, x.ProductId });
                     table.ForeignKey(
-                        name: "FK_CartProduct_Carts_CartsId",
-                        column: x => x.CartsId,
-                        principalTable: "Carts",
+                        name: "FK_OrderProducts_Orders_OrderId",
+                        column: x => x.OrderId,
+                        principalTable: "Orders",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_CartProduct_Products_ProductsId",
-                        column: x => x.ProductsId,
+                        name: "FK_OrderProducts_Products_ProductId",
+                        column: x => x.ProductId,
                         principalTable: "Products",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "OrderProduct",
+                name: "ProductCarts",
                 columns: table => new
                 {
-                    OrdersId = table.Column<int>(type: "int", nullable: false),
-                    ProductsId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Quantity = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    CartId = table.Column<int>(type: "int", nullable: false),
+                    ProductId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_OrderProduct", x => new { x.OrdersId, x.ProductsId });
+                    table.PrimaryKey("PK_ProductCarts", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_OrderProduct_Orders_OrdersId",
-                        column: x => x.OrdersId,
-                        principalTable: "Orders",
+                        name: "FK_ProductCarts_Carts_CartId",
+                        column: x => x.CartId,
+                        principalTable: "Carts",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_OrderProduct_Products_ProductsId",
-                        column: x => x.ProductsId,
+                        name: "FK_ProductCarts_Products_ProductId",
+                        column: x => x.ProductId,
                         principalTable: "Products",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -378,14 +465,25 @@ namespace Feed_Bridge.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CartProduct_ProductsId",
-                table: "CartProduct",
-                column: "ProductsId");
+                name: "IX_Carts_UserId",
+                table: "Carts",
+                column: "UserId",
+                unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_OrderProduct_ProductsId",
-                table: "OrderProduct",
-                column: "ProductsId");
+                name: "IX_Donations_UserId",
+                table: "Donations",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Notifications_UserId",
+                table: "Notifications",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_OrderProducts_ProductId",
+                table: "OrderProducts",
+                column: "ProductId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Orders_CartId",
@@ -401,6 +499,26 @@ namespace Feed_Bridge.Migrations
                 name: "IX_Parteners_UserId",
                 table: "Parteners",
                 column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ProductCarts_CartId",
+                table: "ProductCarts",
+                column: "CartId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ProductCarts_ProductId",
+                table: "ProductCarts",
+                column: "ProductId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Products_DonationId",
+                table: "Products",
+                column: "DonationId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Reviews_UserID",
+                table: "Reviews",
+                column: "UserID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_StaticPages_UserId",
@@ -433,13 +551,19 @@ namespace Feed_Bridge.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "CartProduct");
+                name: "Notifications");
 
             migrationBuilder.DropTable(
-                name: "OrderProduct");
+                name: "OrderProducts");
 
             migrationBuilder.DropTable(
                 name: "Parteners");
+
+            migrationBuilder.DropTable(
+                name: "ProductCarts");
+
+            migrationBuilder.DropTable(
+                name: "Reviews");
 
             migrationBuilder.DropTable(
                 name: "StaticPages");
@@ -457,10 +581,13 @@ namespace Feed_Bridge.Migrations
                 name: "Products");
 
             migrationBuilder.DropTable(
-                name: "AspNetUsers");
+                name: "Carts");
 
             migrationBuilder.DropTable(
-                name: "Carts");
+                name: "Donations");
+
+            migrationBuilder.DropTable(
+                name: "AspNetUsers");
         }
     }
 }
