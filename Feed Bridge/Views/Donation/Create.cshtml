@@ -11,13 +11,13 @@
     </div>
     <div class="donate-form">
         <form asp-action="Create" asp-controller="Donation" method="post" enctype="multipart/form-data">
-            <div asp-validation-summary="All" class="text-denger"></div>
+            
 
             <div id="imagePreviewContainer" style="display: none; ">
                 <img id="imagePreview" src="#" alt="Image Preview" style="width: 100%; height: 300px;" />
             </div>
 
-			<label @* asp-for="Image"  *@class="upload-img" for="imageInput">
+			<label class="upload-img" for="imageInput">
                 <span class="material-symbols-outlined" id="uploadIcon">
                     upload
                 </span>
@@ -28,27 +28,27 @@
             
 
             <input asp-for="Name" placeholder="الاسم بالكامل ..." class="form-control" />
-            <span asp-validation-for="Name" class="text-danger"></span>
+            <span asp-validation-for="Name" class="text-danger" style="color:red;"></span>
 
             <div class="group">
                 <input asp-for="ExpirDate" type="date" class="form-control" />
-                <span asp-validation-for="ExpirDate" class="text-danger"></span>
+                <span asp-validation-for="ExpirDate" class="text-danger" style="color:red;"></span>
 
                 <input asp-for="Quantity" type="number" min="1" placeholder="الكمية ..." class="form-control" />
-                <span asp-validation-for="Quantity" class="text-danger"></span>
+                <span asp-validation-for="Quantity" class="text-danger" style="color:red;"></span>
             </div>
 
             <div class="group">
                 <input asp-for="Address" placeholder="العنوان ..." class="form-control" />
-                <span asp-validation-for="Address" class="text-danger"></span>
+                <span asp-validation-for="Address" class="text-danger" style="color:red;"></span>
 
                 <input asp-for="Phone" placeholder="رقم الهاتف ..." class="form-control" />
-                <span asp-validation-for="Phone" class="text-danger"></span>
+                <span asp-validation-for="Phone" class="text-danger " style="color:red;"></span>
             </div>
 
             <input asp-for="Description" class="donationDescription form-control" placeholder="وصف التبرع ..." />
-            <span asp-validation-for="Description" class="text-danger"></span>
-
+            <span asp-validation-for="Description" class="text-danger" ></span>
+            <div asp-validation-summary="All" class="text-denger" style="color:red;"></div>
             <button type="submit" class="btn">تبرع</button>
         </form>
     </div>
