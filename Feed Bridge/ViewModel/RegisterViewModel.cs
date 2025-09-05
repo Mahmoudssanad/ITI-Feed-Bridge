@@ -31,7 +31,7 @@ namespace Feed_Bridge.ViewModel
         [Display(Name = "تاريخ الميلاد")]
         public DateOnly BirthDate { get; set; }
 
-        [Display(Name = "(صوره شخصيه(اختياري")]
-        public string? ImgUrl { get; set; }
+        [Display(Name = "الصورة الشخصية")]
+        public IFormFile? ImgFile { get; set; }
     }
 }
