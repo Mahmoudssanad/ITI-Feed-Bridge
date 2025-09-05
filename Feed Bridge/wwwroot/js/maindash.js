@@ -35,4 +35,11 @@ if (notificationsContainer && notificationsBox) {
     notificationsBox.style.display = "none";
   });
 }
+window.addEventListener("DOMContentLoaded", () => {
+    const activeLi = sidebar.querySelector("li.active");
+    if (activeLi) {
+        handlePageContent(activeLi);
+    }
+});
+
 

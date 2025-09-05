@@ -67,86 +67,6 @@
     </div>
 </section>
 
-@* <section class="feedback-section">
- *@   
- @* <div class="feedback-container"> *@
-       @*  <div class="feedback-card">
-            <img src="~/imgs/person.png" alt="" />
-            <p class="feedback-text">تجربه ممتازه انصح بهذا الموقع!</p>
-            <div class="feedback-stars">
-                <span class="material-symbols-outlined">star</span>
-                <span class="material-symbols-outlined">star</span>
-                <span class="material-symbols-outlined">star</span>
-                <span class="material-symbols-outlined">star</span>
-                <span class="material-symbols-outlined">star</span>
-            </div>
-        </div>
-        <div class="feedback-card">
-            <img src="~/imgs/person.png" alt="" />
-            <p class="feedback-text">تجربه ممتازه انصح بهذا الموقع!</p>
-            <div class="feedback-stars">
-                <span class="material-symbols-outlined">star</span>
-                <span class="material-symbols-outlined">star</span>
-                <span class="material-symbols-outlined">star</span>
-                <span class="material-symbols-outlined">star</span>
-                <span class="material-symbols-outlined">star</span>
-            </div>
-        </div>
-    </div>
-    <div class="feedback-form">
-        <form>
-            <textarea placeholder="اكتب تقييمك ..." required></textarea>
-            <div class="stars">
-                <input type="checkbox" name="star" id="star1" />
-                <label for="star1" class="material-symbols-outlined"> star </label>
-                <input type="checkbox" name="star" id="star2" />
-                <label for="star2" class="material-symbols-outlined"> star </label>
-                <input type="checkbox" name="star" id="star3" />
-                <label for="star3" class="material-symbols-outlined"> star </label>
-                <input type="checkbox" name="star" id="star4" />
-                <label for="star4" class="material-symbols-outlined"> star </label>
-                <input type="checkbox" name="star" id="star5" />
-                <label for="star5" class="material-symbols-outlined"> star </label>
-            </div>
-            <button type="submit" class="btn">إرسال</button>
-        </form> *@
-
-       @*  <div class="feedback-container">
-            @foreach (var item in Model ?? new List<Review>())
-            {
-                <div class="feedback-card">
-                    <img src="~/imgs/person.png" alt="" />
-                    <p class="feedback-text">@item.FeedBackMsg</p>
-                    <div class="feedback-stars">
-                        @for (int i = 0; i < item.StarsNumber; i++)
-                        {
-                            <span class="material-symbols-outlined">star</span>
-                        }
-                    </div>
-                </div>
-            }
-
-            @if (Model == null || Model.Count == 0)
-            {
-                <div class="feedback-card">
-                    <p class="feedback-text">لا توجد تقييمات بعد</p>
-                </div>
-            }
-        </div>
-
-        <div class="feedback-form">
-            <form asp-action="AddReview" method="post">
-                <textarea name="FeedBackMsg" placeholder="اكتب تقييمك ..." required></textarea>
-                <div class="stars">
-                    <input type="number" name="StarsNumber" min="1" max="5" required />
-                </div>
-                <button type="submit" class="btn">إرسال</button>
-            </form>
-        </div>
-
-
-    </div> *@
-
 <section class="feedback-section">
     <div class="feedback-container">
         @if (Model != null && Model.Count > 0)
@@ -161,12 +81,6 @@
                         {
                             <span class="material-symbols-outlined">star</span>
                         }
-                        @* لو عايزة تملئي باقي النجوم اللي مش موجودة ممكن تعملي كده:
-                        @for (int i = item.StarsNumber; i < 5; i++)
-                        {
-                            <span class="material-symbols-outlined">star</span>
-                        }
-                        *@
                     </div>
                 </div>
             }
@@ -198,15 +112,31 @@
         }
     </div>
 
+    
+
     <div class="feedback-form">
         <form asp-action="AddReview" method="post">
             <textarea name="FeedBackMsg" placeholder="اكتب تقييمك ..." required></textarea>
             <div class="stars">
-                <input type="number" name="StarsNumber" min="1" max="5" required />
+                <input type="checkbox" name="StarsNumber" value="1" id="star1" />
+                <label for="star1" class="material-symbols-outlined"> star </label>
+
+                <input type="checkbox" name="StarsNumber" value="2" id="star2" />
+                <label for="star2" class="material-symbols-outlined"> star </label>
+
+                <input type="checkbox" name="StarsNumber" value="3" id="star3" />
+                <label for="star3" class="material-symbols-outlined"> star </label>
+
+                <input type="checkbox" name="StarsNumber" value="4" id="star4" />
+                <label for="star4" class="material-symbols-outlined"> star </label>
+
+                <input type="checkbox" name="StarsNumber" value="5" id="star5" />
+                <label for="star5" class="material-symbols-outlined"> star </label>
             </div>
             <button type="submit" class="btn">إرسال</button>
         </form>
     </div>
+
 </section>
 
 </section>

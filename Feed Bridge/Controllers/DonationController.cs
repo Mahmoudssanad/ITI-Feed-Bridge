@@ -23,6 +23,7 @@ namespace Feed_Bridge.Controllers
         [HttpGet] // for the admin to display all donations
         public async Task<IActionResult> GetAll()
         {
+            ViewData["ActivePage"] = "Donations";
             var donations = await _donationService.GetAllDonations();
             return View(donations);
         } //view Done
