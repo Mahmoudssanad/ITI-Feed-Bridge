@@ -9,11 +9,10 @@ namespace Feed_Bridge.Services
     public class DonationService : IDonationService
     {
         private readonly AppDbContext _context;
-        public DonationService(AppDbContext appDbContext, IWebHostEnvironment env)
+        public DonationService(AppDbContext appDbContext)
         {
             _context = appDbContext;
         }
-
 
         public async Task Add(Donation donation, string userId)
         {
@@ -22,8 +21,6 @@ namespace Feed_Bridge.Services
             await _context.Donations.AddAsync(donation);
             await _context.SaveChangesAsync();
         }
-
-
 
         public async Task<IEnumerable<Donation>> GetAllDonations()
         {
@@ -39,6 +36,7 @@ namespace Feed_Bridge.Services
         {
             return await _context.Donations.SumAsync(d => d.Quantity);
         }
+
         public async Task DeleteDonation(int id)
         {
             var donation = await _context.Donations.FindAsync(id);
@@ -48,6 +46,7 @@ namespace Feed_Bridge.Services
                 await _context.SaveChangesAsync();
             }
         }
+
         public async Task UpdateDonation(Donation donation)
         {
             var existingDonation = await _context.Donations.FindAsync(donation.Id);

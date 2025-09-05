@@ -6,6 +6,7 @@
     </div>
     <div class="donate-form">
         <form asp-action="Create" asp-controller="Donation" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="All" class="text-denger"></div>
 
             <label asp-for="Image" class="upload-img">
                 <span class="material-symbols-outlined" id="uploadIcon">
@@ -44,4 +45,8 @@
 
 @section FooterSection {
     @await Html.PartialAsync("_Footer")
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
 }

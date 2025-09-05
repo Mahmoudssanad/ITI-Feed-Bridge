@@ -1,9 +1,13 @@
-﻿namespace Feed_Bridge.ViewModel
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Feed_Bridge.ViewModel
 {
     public class DonationViewModel
     {
         public string Name { get; set; }
         public IFormFile? Image { get; set; }
+
+        //[Display(Name="تاريخ انتهاء الصلاحيه")]
         public DateOnly ExpirDate { get; set; }
         public decimal Quantity { get; set; }
         public string Address { get; set; }
