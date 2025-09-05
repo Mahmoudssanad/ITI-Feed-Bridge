@@ -8,6 +8,7 @@ using System.Security.Claims;
 
 namespace Feed_Bridge.Controllers
 {
+    [Authorize]
     public class DonationController : Controller
     {
         private readonly IDonationService _donationService;
@@ -71,7 +72,7 @@ namespace Feed_Bridge.Controllers
                 ImgURL = fileName,
                 ExpirDate = model.ExpirDate,
                 Quantity = model.Quantity,
-                Address = "Mansoura",
+                Address = model.Address,
                 Phone = model.Phone,
                 Description = model.Description,
             };
