@@ -156,9 +156,9 @@ header {
     > div.active{
       display: block;
     }
-    > div{
-      display: none;
-    }
+> div {
+    display: block;
+}
   }
 }
 

@@ -23,6 +23,8 @@ namespace Feed_Bridge.Models.Data
         public DbSet<Partener> Parteners { get; set; }
         public DbSet<Donation> Donations { get; set; }
         public DbSet<Notification> Notifications { get; set; }
+      //  public DbSet<Delivery> Deliveries { get; set; }
+        public DbSet<Report> Reports { get; set; }
         public DbSet<Review> Reviews { get; set; }
         public DbSet<OrderProduct> OrderProducts { get; set; }
         public DbSet<ProductCart> ProductCarts { get; set; }

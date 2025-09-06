@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Feed_Bridge.Models.Entities.Order>
+
+@{
+    ViewData["Title"] = "الطلبات";
+    ViewData["ActivePage"] = "Orders";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1 class="mb-4">قائمة الطلبات</h1>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>رقم الطلب</th>
+            <th>المستخدم</th>
+            <th>الحالة</th>
+            <th>المنتجات</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var order in Model)
+            {
+                <tr>
+                    <td>@order.Id</td>
+                    <td>@order.User?.UserName</td>
+                    <td>@order.Status</td>
+                    <td>
+                        <ul>
+                            @foreach (var op in order.OrderProducts)
+                            {
+                                <li>@op.Product?.Name (x@op.Quantity)</li>
+                            }
+                        </ul>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="4" class="text-center">لا توجد طلبات حالياً</td>
+            </tr>
+        }
+    </tbody>
+</table>

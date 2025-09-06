@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Feed_Bridge.Models.Entities.Partener>
+
+@{
+    ViewData["Title"] = "الشراكات";
+    ViewData["ActivePage"] = "AllParteners";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1 class="mb-4">قائمة الشراكات</h1>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>اسم الشريك</th>
+            <th>صورة الشريك</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Any())
+        {
+            foreach (var partner in Model)
+            {
+                <tr>
+                    <td>@partner.ImageUrl</td>
+                    <td>
+                        <img src="@partner.ImageUrl" alt="@partner.ImageUrl" style="width:100px; height:auto;" />
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="2" class="text-center">لا توجد شراكات</td>
+            </tr>
+        }
+    </tbody>
+</table>

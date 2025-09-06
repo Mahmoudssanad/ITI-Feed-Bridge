@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Feed_Bridge.Models.Entities.ApplicationUser>
+
+@{
+    ViewData["Title"] = "المستخدمين";
+    ViewData["ActivePage"] = "AllUsers";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1 class="mb-4">قائمة المستخدمين</h1>
+
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>اسم المستخدم</th>
+            <th>البريد الإلكتروني</th>
+            <th>الدور</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Any())
+        {
+            foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.Id</td>
+                    <td>@user.UserName</td>
+                    <td>@user.Email</td>
+                    <td>@user.ImgUrl</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="3" class="text-center">لا يوجد مستخدمين</td>
+            </tr>
+        }
+    </tbody>
+</table>
