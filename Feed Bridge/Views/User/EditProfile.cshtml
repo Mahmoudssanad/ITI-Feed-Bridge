@@ -68,7 +68,7 @@
                     <input asp-for="ImgFile" type="file" accept="image/*" hidden />
                 </label>
 
-                <span asp-validation-for="ImgFile" class="text-danger"></span>
+                <span asp-validation-for="ImgFile" class="text-danger" style="color:red;"></span>
             </div>
             <div class="form-control mb-3" id="newImageSection" style="display:none;">
                 <label class="form-label">الصورة الجديدة</label><br />
@@ -78,19 +78,19 @@
             <div class="form-control mb-3">
                 <label asp-for="BirthDate" class="form-label">تاريخ الميلاد</label>
                 <input asp-for="BirthDate" type="date" class="form-control" />
-                <span asp-validation-for="BirthDate" class="text-danger"></span>
+                <span asp-validation-for="BirthDate" class="text-danger" style="color:red;"></span>
             </div>
 
             <div class="form-control mb-3">
                 <label asp-for="FullName" class="form-label">الاسم الكامل</label>
                 <input asp-for="FullName" type="text" class="form-control" placeholder="أدخل اسمك" />
-                <span asp-validation-for="FullName" class="text-danger"></span>
+                <span asp-validation-for="FullName" class="text-danger" style="color:red;"></span>
             </div>
 
             <div class="form-control mb-3">
                 <label asp-for="PhoneNumber" class="form-label">رقم الهاتف</label>
                 <input asp-for="PhoneNumber" type="tel" class="form-control" placeholder="أدخل رقم هاتفك" />
-                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                <span asp-validation-for="PhoneNumber" class="text-danger" style="color:red;"></span>
             </div>
 
             <button type="submit" class="btn btn-primary">حفظ التغييرات</button>

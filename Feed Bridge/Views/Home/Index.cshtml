@@ -66,7 +66,6 @@
         </div>
     </div>
 </section>
-
 <section class="feedback-section">
     <div class="feedback-container">
         @if (Model != null && Model.Count > 0)
@@ -74,7 +73,7 @@
             @foreach (var item in Model)
             {
                 <div class="feedback-card">
-                    <img src="~/imgs/person.png" alt="" />
+                    <img src="@item.User.ImgUrl" alt="" style="width:50px; height:50px; border:2px solid #1cba7f" />
                     <p class="feedback-text">@item.FeedBackMsg</p>
                     <div class="feedback-stars">
                         @for (int i = 0; i < item.StarsNumber; i++)
@@ -112,41 +111,48 @@
         }
     </div>
 
-    
-
     <div class="feedback-form">
         <form asp-action="AddReview" method="post">
             <textarea name="FeedBackMsg" placeholder="اكتب تقييمك ..." required></textarea>
             <div class="stars">
-                <input type="checkbox" name="StarsNumber" value="1" id="star1" />
+                <input type="checkbox" value="1" id="star1" />
                 <label for="star1" class="material-symbols-outlined"> star </label>
 
-                <input type="checkbox" name="StarsNumber" value="2" id="star2" />
+                <input type="checkbox" value="2" id="star2" />
                 <label for="star2" class="material-symbols-outlined"> star </label>
 
-                <input type="checkbox" name="StarsNumber" value="3" id="star3" />
+                <input type="checkbox" value="3" id="star3" />
                 <label for="star3" class="material-symbols-outlined"> star </label>
 
-                <input type="checkbox" name="StarsNumber" value="4" id="star4" />
+                <input type="checkbox" value="4" id="star4" />
                 <label for="star4" class="material-symbols-outlined"> star </label>
 
-                <input type="checkbox" name="StarsNumber" value="5" id="star5" />
+                <input type="checkbox" value="5" id="star5" />
                 <label for="star5" class="material-symbols-outlined"> star </label>
             </div>
+            <input type="hidden" name="StarsNumber" id="StarsNumber" />
             <button type="submit" class="btn">إرسال</button>
         </form>
     </div>
 
 </section>
 
-</section>
 <script>
-    document.querySelectorAll(".stars input").forEach((star, index, stars) => {
-        star.addEventListener("change", () => {
-            const checkedIndex = index;
-            stars.forEach((s, i) => {
-                s.checked = i <= checkedIndex;
+    const checkboxes = document.querySelectorAll(".stars input[type=checkbox]");
+    const hiddenInput = document.getElementById("StarsNumber");
+
+    checkboxes.forEach((cb) => {
+        cb.addEventListener("change", () => {
+            let maxValue = 0;
+            const checkedIndex = Array.from(checkboxes).indexOf(cb);
+
+            checkboxes.forEach((c, i) => {
+                c.checked = i <= checkedIndex;
+                if (c.checked) {
+                    maxValue = Math.max(maxValue, parseInt(c.value));
+                }
             });
+            hiddenInput.value = maxValue;
         });
     });
 </script>

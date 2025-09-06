@@ -1,5 +1,11 @@
 ﻿@model Feed_Bridge.Models.Entities.ApplicationUser
-
+<style>
+    .change-password-section{
+        display: flex;
+		justify-content: space-around;
+    }
+    
+</style>
 <div class="profile-container">
     <div class="heading">
         <p class="section-title">بيانات المستخدم</p>
@@ -73,8 +79,17 @@
     <div class="change-password-section">
         <div class="sub-heading">
             <span class="material-symbols-outlined"> lock_reset </span>
-            <p>تغيير كلمة المرور</p>
+			<p>تغيير كلمة المرور</p>
+            <a asp-controller="User" asp-action="ChangePassword" class="btn confirm-btn">تغيير كلمة المرور</a>
         </div>
-        <a asp-controller="User" asp-action="ChangePassword" class="btn confirm-btn">تغيير كلمة المرور</a>
+        
+
+        <div class="sub-heading">
+            <span class="material-symbols-outlined" style="color:red;"> Delete</span>
+			<p>حذف الحساب</p>
+			<a asp-controller="User" asp-action="DeleteAccount" class="btn confirm-btn" style="background-color:red;">حذف الحساب</a>
+        </div>
     </div>
+
+    
 </div>

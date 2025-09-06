@@ -91,16 +91,32 @@ namespace Feed_Bridge.Controllers
 
             return View(model);
         }
+        [HttpGet]
+        public IActionResult DeleteAccount()
+        {
+            return View();
+        }
 
         // POST: User/Delete
         [HttpPost]
-        public async Task<IActionResult> DeleteAccount()
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteAccountConfirmed()
         {
             var user = await _userManager.GetUserAsync(User);
             if (user != null)
             {
                 await _signInManager.SignOutAsync();
-                await _userManager.DeleteAsync(user);
+                var result = await _userManager.DeleteAsync(user);
+                if (result.Succeeded)
+                    return RedirectToAction("Index", "Home");
+                else
+                {
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError("", error.Description);
+                    }
+                    return View("DeleteAccount");
+                }
             }
             return RedirectToAction("Index", "Home");
         }

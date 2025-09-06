@@ -69,7 +69,7 @@ namespace Feed_Bridge.Controllers
             {
                 var user = new ApplicationUser
                 {
-                    UserName = model.UserName,
+                    UserName = model.UserName.Replace(" ", "_"),
                     Email = model.Email,
                     PhoneNumber = model.PhoneNumber,
                     BirthDate = model.BirthDate
@@ -98,7 +98,7 @@ namespace Feed_Bridge.Controllers
                 if (result.Succeeded)
                 {
                     await _signInManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("Profile", "User");
+                    return RedirectToAction("Index", "Home");
                 }
 
                 foreach (var error in result.Errors)

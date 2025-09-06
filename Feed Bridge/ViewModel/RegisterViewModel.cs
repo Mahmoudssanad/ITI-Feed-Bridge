@@ -7,6 +7,7 @@ namespace Feed_Bridge.ViewModel
     {
         [Required(ErrorMessage = "الاسم مطلوب")]
         [Display(Name = "الاسم")]
+
         public string UserName { get; set; }
 
         [Display(Name = "البريد الالكتروني")]
