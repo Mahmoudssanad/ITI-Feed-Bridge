@@ -5,28 +5,8 @@
     ViewData["Title"] = "سلة المنتجات";
 }
 
-@if (TempData["Success"] != null)
-{
-    <div class="alert alert-success text-center fixed-top mt-3 w-50 mx-auto shadow">
-        @TempData["Success"]
-    </div>
-}
-@if (TempData["Error"] != null)
-{
-    <div class="alert alert-danger text-center fixed-top mt-3 w-50 mx-auto shadow">
-        @TempData["Error"]
-    </div>
-}
-<script>
-    setTimeout(function () {
-        let alerts = document.querySelectorAll('.alert');
-        alerts.forEach(a => a.remove());
-    }, 3000); // يختفي بعد 3 ثواني
-</script>
-
 <div class="container mt-5">
     <h2 class="cart-header text-center mb-4">🛒 سلة المنتجات</h2>
-
 
     <div class="cart-container">
         @if (Model == null || Model.ProductCarts == null || !Model.ProductCarts.Any())
@@ -69,16 +49,12 @@
                                 </td>
                                 <td>@item.Product.ExpirDate.ToString("yyyy/MM/dd")</td>
                                 <td>
-                                    <form asp-controller="Cart" asp-action="DecreaseQuantity" method="post">
-                                        <input type="hidden" name="productId" value="@item.ProductId" />
-                                        <button type="submit" class="btn btn-sm btn-outline-warning">➖</button>
-                                    </form>
+                                    <button class="btn btn-sm btn-outline-warning decrease-btn" data-product-id="@item.ProductId">➖</button>
+
                                 </td>
                                 <td>
-                                    <form asp-controller="Cart" asp-action="IncreaseQuantity" method="post">
-                                        <input type="hidden" name="productId" value="@item.ProductId" />
-                                        <button type="submit" class="btn btn-sm btn-outline-success">➕</button>
-                                    </form>
+                                    <button class="btn btn-sm btn-outline-success increase-btn" data-product-id="@item.ProductId">➕</button>
+
                                 </td>
                                 <td>
                                     <button class="btn btn-danger remove-btn" data-product-id="@item.ProductId">إزالة</button>
@@ -101,71 +77,122 @@
 </div>
 
 
-
-
 @section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    
     <script>
+        // إعداد Toast زي صفحة المنتجات بالمللي
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer);
+                toast.addEventListener('mouseleave', Swal.resumeTimer);
+            }
+        });
+
+        // دالة عرض التنبيه
         function showAlert(message, type = "success") {
-            let alertBox = `<div class="alert alert-${type} text-center">${message}</div>`;
-            $(".cart-section").prepend(alertBox);
-            setTimeout(() => $(".alert").fadeOut(), 2500);
+            Toast.fire({
+                icon: type === "success" ? "success" : "error",
+                title: message
+            });
         }
 
-        // زيادة الكمية
-        $(document).on("click", ".increase-btn", function () {
+        // إزالة المنتج
+        $(document).on("click", ".remove-btn", function(e) {
+            e.preventDefault();
             let btn = $(this);
             let productId = btn.data("product-id");
             let row = btn.closest("tr");
 
-            $.post("/Cart/IncreaseQuantity", { productId }, function (res) {
+            $.post("/Cart/Remove", { productId }, function(res) {
+    if (res.success) {
+        row.remove();
+        showAlert(res.message, "success");
+
+        // لو مافيش أي row متبقية
+        if ($(".cart-container tbody tr").length === 0) {
+            $(".cart-container").html(`
+                <p class="text-center text-muted fs-5 mt-4">
+                    السلة فارغة حالياً
+                </p>
+                <div class="text-center mt-3">
+                    <a href="/Product/Index" class="btn btn-primary">
+                        ⬅️ عودة للمنتجات
+                    </a>
+                </div>
+            `);
+        }
+
+    } else {
+        showAlert(res.message, "error");
+    }
+});
+
+        });
+
+        // زيادة الكمية
+        $(document).on("click", ".increase-btn", function(e) {
+            e.preventDefault();
+            let btn = $(this);
+            let productId = btn.data("product-id");
+            let row = btn.closest("tr");
+
+            $.post("/Cart/IncreaseQuantity", { productId }, function(res) {
                 if (res.success) {
                     let qtySpan = row.find(".quantity");
                     qtySpan.text(parseInt(qtySpan.text()) + 1);
                     showAlert(res.message, "success");
                 } else {
-                    showAlert(res.message, "danger");
+                    showAlert(res.message, "error");
                 }
             });
         });
 
         // تقليل الكمية
-        $(document).on("click", ".decrease-btn", function () {
-            let btn = $(this);
-            let productId = btn.data("product-id");
-            let row = btn.closest("tr");
+$(document).on("click", ".decrease-btn", function(e) {
+    e.preventDefault();
+    let btn = $(this);
+    let productId = btn.data("product-id");
+    let row = btn.closest("tr");
 
-            $.post("/Cart/DecreaseQuantity", { productId }, function (res) {
-                if (res.success) {
-                    let qtySpan = row.find(".quantity");
-                    let newQty = parseInt(qtySpan.text()) - 1;
-                    if (newQty > 0) {
-                        qtySpan.text(newQty);
-                    } else {
-                        row.remove();
-                    }
-                    showAlert(res.message, "success");
-                } else {
-                    showAlert(res.message, "danger");
-                }
-            });
-        });
+    $.post("/Cart/DecreaseQuantity", { productId }, function(res) {
+        if (res.success) {
+            let qtySpan = row.find(".quantity");
+            let newQty = parseInt(qtySpan.text()) - 1;
 
-        // إزالة المنتج
-        $(document).on("click", ".remove-btn", function () {
-            let btn = $(this);
-            let productId = btn.data("product-id");
-            let row = btn.closest("tr");
+            if (newQty > 0) {
+                qtySpan.text(newQty);
+            } else {
+                row.remove();
+            }
 
-            $.post("/Cart/Remove", { productId }, function (res) {
-                if (res.success) {
-                    row.remove();
-                    showAlert(res.message, "success");
-                } else {
-                    showAlert(res.message, "danger");
-                }
-            });
-        });
+            showAlert(res.message, "success");
+
+            // لو مافيش أي row متبقية بعد إزالة أو تقليل الكمية
+            if ($(".cart-container tbody tr").length === 0) {
+                $(".cart-container").html(`
+                    <p class="text-center text-muted fs-5 mt-4">
+                        السلة فارغة حالياً
+                    </p>
+                    <div class="text-center mt-3">
+                        <a href="/Product/Index" class="btn btn-primary">
+                            ⬅️ عودة للمنتجات
+                        </a>
+                    </div>
+                `);
+            }
+
+        } else {
+            showAlert(res.message, "error");
+        }
+    });
+});
+
     </script>
 }
