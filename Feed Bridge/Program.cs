@@ -28,6 +28,8 @@ builder.Services.AddScoped<IDonationService, DonationService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ICartService, CartService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<ISupportService, SupportService>();
+
 
 var app = builder.Build();
 

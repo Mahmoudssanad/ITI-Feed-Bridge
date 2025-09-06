@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Feed Bridge")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+041e852f9bb492468a538f4a8ec66bc5a0cb16d8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6f2bb6d5d1f91103657ce4c6dff1425099ab0759")]
 [assembly: System.Reflection.AssemblyProductAttribute("Feed Bridge")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Feed Bridge")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

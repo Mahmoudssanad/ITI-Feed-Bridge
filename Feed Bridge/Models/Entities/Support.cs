@@ -11,22 +11,20 @@ namespace Feed_Bridge.Models.Entities
 
         public DateTime PaymentDate { get; set; }
 
-        // "CreditCard", "PayPal", "Cash"
+        // Card
         public string PaymentMethod { get; set; }
 
         // البوابه اللي بتعامل معاه هي اللي هتبعته ودا بيكون رقم العمليه 
         public string TransactionId { get; set; }
 
-        // Success, Pending, Failed, Refunded(لو عاوز يرجع في العمليه)
+        // Success, Pending, Failed, Refunded
         public PaymentStatus Status { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime? UpdatedAt { get; set; }
 
         [ForeignKey("User")]
-        public string UserId {  get; set; }
-        public ApplicationUser User {  get; set; }
-
-
+        public string UserId { get; set; }
+        public ApplicationUser User { get; set; }
     }
 }
