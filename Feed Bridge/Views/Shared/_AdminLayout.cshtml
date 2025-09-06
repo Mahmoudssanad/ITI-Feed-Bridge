@@ -81,6 +81,12 @@
                         <p>التبرعات</p>
                     </a>
                 </li>
+                <li class="@(ViewData["ActivePage"] as string == "Supports" ? "active" : "")">
+                    <a asp-controller="Admin" asp-action="GetAllSupports">
+                        <span class="material-symbols-outlined"> favorite </span>
+                        <p>الدعم المالي</p>
+                    </a>
+                </li>
                 <li class="@(ViewData["ActivePage"] as string == "Delivery" ? "active" : "")">
                     <a asp-controller="Admin" asp-action="Delivery">
                         <span class="material-symbols-outlined"> local_shipping </span>
@@ -94,7 +100,7 @@
                     </a>
                 </li>
                 <li class="@(ViewData["ActivePage"] as string == "AllParteners" ? "active" : "")">
-                    <a asp-controller="Admin" asp-action="AllParteners">
+                    <a asp-controller="Admin" asp-action="AllPartners">
                         <span class="material-symbols-outlined"> groups </span>
                         <p>كل الشراكات</p>
                     </a>
@@ -106,10 +112,12 @@
                     </a>
                 </li>
                 <li>
-                    <a asp-controller="Account" asp-action="Logout">
-                        <span style="color: #ff3b30;" class="material-symbols-outlined"> logout </span>
-                        <p class="logout">تسجيل الخروج</p>
-                    </a>
+                    <form asp-controller="Account" asp-action="Logout" method="post" class="d-flex align-items-center">
+                        <button type="submit" class="btn btn-link text-danger text-decoration-none d-flex align-items-center" style="padding:0;">
+                            <span class="material-symbols-outlined me-1">logout</span>
+                            الخروج
+                        </button>
+                    </form>
                 </li>
             </ul>
         </div>

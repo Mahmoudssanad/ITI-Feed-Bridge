@@ -30,20 +30,23 @@
         <!-- الإحصائيات -->
         <!-- الإحصائيات -->
         <div class="row text-center">
-            <div class="col-md-4 mb-3">
-                <div class="p-3 bg-white shadow rounded">
-                    <span class="material-symbols-outlined fs-1 text-success">groups</span>
-                    <p class="mt-2">
-                        إجمالي المتبرعين<br>
-                        <span class="fw-bold">@ViewData["TotalDonors"]</span>
-                    </p>
+                <div class="col-md-4 mb-3">
+                    <div class="p-3 bg-white shadow rounded">
+                        <span class="material-symbols-outlined fs-1 text-success">groups</span>
+                        <p class="mt-2">
+
+                        <a asp-action="AllUsers" asp-controller="Admin">إجمالي المتبرعين</a>
+                        <br />
+                            <span class="fw-bold">@ViewData["TotalDonors"]</span>
+                        </p>
+                    </div>
                 </div>
-            </div>
             <div class="col-md-4 mb-3">
                 <div class="p-3 bg-white shadow rounded">
                     <span class="material-symbols-outlined fs-1 text-danger">favorite</span>
                     <p class="mt-2">
-                        إجمالي التبرعات<br>
+                        <a asp-action="Donate" asp-controller="Admin">إجمالي التبرعات</a>
+                        <br />
                         <span class="fw-bold">@ViewData["TotalDonations"]</span>
                     </p>
                 </div>
@@ -52,7 +55,8 @@
                 <div class="p-3 bg-white shadow rounded">
                     <span class="material-symbols-outlined fs-1 text-warning">attach_money</span>
                     <p class="mt-2">
-                        إجمالي المساعدات المالية<br>
+                        <a asp-action="GetAllSupports" asp-controller="Admin">إجمالي المساعدات المالية</a>
+                        <br />
                         <span class="fw-bold">@ViewData["TotalSupports"]</span>
                     </p>
                 </div>
