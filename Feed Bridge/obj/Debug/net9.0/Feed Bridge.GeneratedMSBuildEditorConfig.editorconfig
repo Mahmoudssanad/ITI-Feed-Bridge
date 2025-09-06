@@ -44,8 +44,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Admin/Admin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRtaW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Cart/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Delivery/Delivery.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVsaXZlcnlcRGVsaXZlcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Donation/Create.cshtml]
@@ -62,6 +70,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Order/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Order/History.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcSGlzdG9yeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Product/Index.cshtml]
@@ -90,6 +106,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/User/changepassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxjaGFuZ2VwYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/User/DeleteAccount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxEZWxldGVBY2NvdW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/User/EditProfile.cshtml]
