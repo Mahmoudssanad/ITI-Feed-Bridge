@@ -1,7 +1,26 @@
-﻿@using Feed_Bridge.Models.Entities
+﻿@model Feed_Bridge.ViewModel.HomeViewModel
 @{
     ViewData["Title"] = "الرئيسية";
 }
+
+<style>
+    .hidden-review {
+        display: none;
+    }
+
+    .feedback-card {
+        width: 600px;
+    }
+
+    .feedback-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .hidden-rev .feedback-card{
+		margin-bottom: 50px;
+    }
+</style>
 
 <section class="hero">
     <div class="hero-container">
@@ -14,7 +33,6 @@
                 الطعام الي من يحتاجه, معا نصنع فرقا و نبني جسور العطاء.
             </p>
             <a asp-controller="Supports" asp-action="Donate" class="hero-btn">ادعمنا</a>
-
         </div>
     </div>
 </section>
@@ -40,10 +58,19 @@
     <div class="partner-container">
         <h2>شركاؤنا</h2>
         <div class="partner-logos">
-            <div><img src="~/imgs/partner1.png" alt="partner1" /></div>
-            <div><img src="~/imgs/partner2.jpg" alt="partner2" /></div>
-            <div><img src="~/imgs/partner4.png" alt="partner4" /></div>
-            <div><img src="~/imgs/partner3.png" alt="partner3" /></div>
+            @if (Model.Partners != null && Model.Partners.Any())
+            {
+                foreach (var partner in Model.Partners.Take(4))
+                {
+                    <div>
+                        <img src="@Url.Content(partner.ImageUrl)" alt="@partner.Name" style="width:150px; height:150px; background-color:white;" />
+                    </div>
+                }
+            }
+            else
+            {
+                <p>لا يوجد شركاء بعد</p>
+            }
         </div>
     </div>
 </section>
@@ -67,14 +94,18 @@
         </div>
     </div>
 </section>
+
 <section class="feedback-section">
     <div class="feedback-container">
-        @if (Model != null && Model.Count > 0)
+        @if (Model != null && Model.Reviews.Any())
         {
-            @foreach (var item in Model)
+            var displayedReviews = Model.Reviews.Take(4);
+            var hiddenReviews = Model.Reviews.Skip(4);
+
+            @foreach (var item in displayedReviews)
             {
                 <div class="feedback-card">
-                    <img src="@item.User.ImgUrl" alt="" style="width:50px; height:50px; border:2px solid #1cba7f" />
+                    <img src="@Url.Content(item.User.ImgUrl)" alt="@item.User.UserName" style="width:50px; height:50px; border:2px solid #1cba7f" />
                     <p class="feedback-text">@item.FeedBackMsg</p>
                     <div class="feedback-stars">
                         @for (int i = 0; i < item.StarsNumber; i++)
@@ -83,6 +114,31 @@
                         }
                     </div>
                 </div>
+            }
+
+            @if (hiddenReviews.Any())
+            {
+                <div class="hidden-rev" id="hiddenReviewsContainer" style="display: none;">
+                    @foreach (var item in hiddenReviews)
+                    {
+                        <div class="feedback-card">
+                            <img src="@Url.Content(item.User.ImgUrl)"  style="width:50px; height:50px; border:2px solid #1cba7f" />
+                            <p class="feedback-text">@item.FeedBackMsg</p>
+                            <div class="feedback-stars">
+                                @for (int i = 0; i < item.StarsNumber; i++)
+                                {
+                                    <span class="material-symbols-outlined">star</span>
+                                }
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+
+            @if (Model.Reviews.Count() > 4)
+            {
+                <a href="#" id="readMoreLink" class="btn">اقرأ المزيد</a>
+                <a href="#" id="readLessLink" class="btn" style="display: none;">اقرأ أقل</a>
             }
         }
         else
@@ -156,8 +212,30 @@
             hiddenInput.value = maxValue;
         });
     });
+
+    const readMoreLink = document.getElementById("readMoreLink");
+    const readLessLink = document.getElementById("readLessLink");
+    const hiddenReviewsContainer = document.getElementById("hiddenReviewsContainer");
+
+    if (readMoreLink && hiddenReviewsContainer) {
+        readMoreLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            hiddenReviewsContainer.style.display = "block";
+            readMoreLink.style.display = "none";
+            readLessLink.style.display = "block";
+        });
+    }
+
+    if (readLessLink && hiddenReviewsContainer) {
+        readLessLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            hiddenReviewsContainer.style.display = "none";
+            readLessLink.style.display = "none";
+            readMoreLink.style.display = "block";
+        });
+    }
 </script>
 
-@section FooterSection{
+@section FooterSection {
     @await Html.PartialAsync("_Footer")
 }

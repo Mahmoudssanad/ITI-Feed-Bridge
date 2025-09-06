@@ -28,6 +28,7 @@ namespace Feed_Bridge.Models.Data
         public DbSet<Review> Reviews { get; set; }
         public DbSet<OrderProduct> OrderProducts { get; set; }
         public DbSet<ProductCart> ProductCarts { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
