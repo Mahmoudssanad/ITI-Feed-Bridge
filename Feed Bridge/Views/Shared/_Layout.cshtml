@@ -32,16 +32,41 @@
         <span class="material-symbols-outlined mobile-icon">menu</span>
 
         <ul class="page-items">
-            <li><a asp-controller="Home" asp-action="Index">الرئيسية</a></li>
-            <li><a asp-controller="Product" asp-action="Index">المنتجات</a></li>
-            <li><a asp-controller="Donation" asp-action="Create">تبرع</a></li>
-            <li><a asp-controller="Home" asp-action="Index" asp-fragment="about">عن الموقع</a></li>
+            @if (User.Identity != null && User.Identity.IsAuthenticated)
+            {
+                if (User.IsInRole("Admin"))
+                {
+                    <li><a asp-controller="Admin" asp-action="Admin">لوحة التحكم</a></li>
+                }
+                else if (User.IsInRole("Delivery"))
+                {
+                    <li><a asp-controller="Delivery" asp-action="Delivery">لوحة التوصيل</a></li>
+                    <li><a asp-controller="Home" asp-action="Index">الرئيسية</a></li>
+                    <li><a asp-controller="Product" asp-action="Index">المنتجات</a></li>
+                }
+                else
+                {
+                    <li><a asp-controller="Home" asp-action="Index">الرئيسية</a></li>
+                    <li><a asp-controller="Product" asp-action="Index">المنتجات</a></li>
+                    <li><a asp-controller="Donation" asp-action="Create">تبرع</a></li>
+                    <li><a asp-controller="Home" asp-action="Index" asp-fragment="about">عن الموقع</a></li>
+                }
+            }
+            else
+            {
+                <li><a asp-controller="Home" asp-action="Index">الرئيسية</a></li>
+                <li><a asp-controller="Product" asp-action="Index">المنتجات</a></li>
+                <li><a asp-controller="Donation" asp-action="Create">تبرع</a></li>
+                <li><a asp-controller="Home" asp-action="Index" asp-fragment="about">عن الموقع</a></li>
+            }
         </ul>
 
         <div class="header-icons">
+
             <a asp-controller="Cart" asp-action="Index">
                 <span class="material-symbols-outlined">shopping_cart</span>
             </a>
+
             @if (User.Identity != null && User.Identity.IsAuthenticated)
             {
                 <!-- تعديل الرابط ليستخدم asp-controller و asp-action -->
