@@ -74,7 +74,14 @@ namespace Feed_Bridge.Controllers
             var donations = await _donationService.GetAllDonations();
             return View(donations);
         } //view Done
-
+        [HttpGet]
+        public async Task<IActionResult> GetAllSupports()
+        {
+            var supports = await _context.Supports
+                .Include(s => s.User)
+                .ToListAsync();
+            return View(supports);
+        }
         // Reports
         [HttpGet]
         public async Task<IActionResult> Reports()
@@ -116,13 +123,6 @@ namespace Feed_Bridge.Controllers
         {
             
             var partners = await _context.Parteners.ToListAsync();
-
-            
-            if (partners == null || !partners.Any())
-            {
-                return NotFound();
-            }
-
             return View(partners);
         }
 
