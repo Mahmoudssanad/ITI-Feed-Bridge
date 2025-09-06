@@ -1,6 +1,9 @@
 ﻿using Feed_Bridge.IServices;
 using Feed_Bridge.Models.Data;
+using Feed_Bridge.Models.Entities;
+using Feed_Bridge.Services;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Protocols;
@@ -20,6 +23,7 @@ namespace Feed_Bridge.Controllers
         }
 
         // Dashboard
+
         [HttpGet]
         public async Task<IActionResult> Dashboard()
         {
@@ -132,5 +136,14 @@ namespace Feed_Bridge.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public async Task<IActionResult> AllDonations()
+        {
+            var donations = await _donationService.GetAllDonations(); // جلب كل التبرعات
+            ViewData["ActivePage"] = "Donors"; // عشان sidebar highlight
+            return View(donations.ToList());
+        }
+
+
     }
 }
