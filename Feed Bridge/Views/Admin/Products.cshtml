@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Feed_Bridge.Models.Entities.Product>
+
+@{
+    ViewData["Title"] = "المنتجات";
+    ViewData["ActivePage"] = "Products";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1 class="mb-4">قائمة المنتجات</h1>
+
+<table class="table table-hover table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>الاسم</th>د
+            <th>تاريخ التبرع</th>
+            <th>تاريخ الانتهاء</th>
+            <th>الكمية</th>
+            <th>الصورة</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Any())
+        {
+            foreach (var product in Model)
+            {
+                <tr>
+                    
+                    <td>@product.Name</td>
+                    <td>@product.CreatedAt.ToShortDateString()</td>
+                    <td>@product.ExpirDate.ToShortDateString()</td>
+                    <td>@product.Quantity</td>
+                    <td>
+                        <img src="@product.ImgURL" alt="@product.Name" style="width:50px;height:50px;" />
+                    </td>
+                    
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="5" class="text-center">لا توجد منتجات</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
