@@ -1,11 +1,66 @@
-﻿@{
+﻿@using System.Linq
+@using Feed_Bridge.Models.Entities
+@model Cart
+@{
     ViewData["Title"] = "سلة المنتجات";
 }
 
+
 <div class="cart-section">
-    <h2 class="cart-header">سله المنتجات</h2>
+    <h2 class="cart-header">سلة المنتجات</h2>
+
     <div class="cart-container">
-        <!-- هنا هيتضاف الداتا بتاعة المنتجات من السكريبت -->
+        @if (Model == null || Model.ProductCarts == null || !Model.ProductCarts.Any())
+        {
+            <p style="text-align:center; font-size:18px; margin:20px;">
+                 السلة فارغة حالياً
+            </p>
+            <div style="text-align:center; margin-top:20px;">
+                <a asp-controller="Product" asp-action="Index" class="btn">
+                    ⬅️ عودة للمنتجات
+                </a>
+            </div>
+        }
+        else
+        {
+            <table class="table table-bordered text-center">
+                <thead>
+                    <tr>
+                        <th>الصورة</th>
+                        <th>اسم المنتج</th>
+                        <th>الكمية</th>
+                        <th>تاريخ الانتهاء</th>
+                        <th>حذف</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.ProductCarts)
+                    {
+                        <tr>
+                            <td>
+                                <img src="~/uploads/@(item.Product.ImgURL ?? "img.png")" 
+                                     alt="@item.Product.Name" width="80" height="80" />
+                            </td>
+                            <td>@item.Product.Name</td>
+                            <td>@item.Quantity</td>
+                            <td>@item.Product.ExpirDate.ToString("yyyy/MM/dd")</td>
+                            <td>
+                                <form asp-controller="Cart" asp-action="Remove" method="post">
+                                    <input type="hidden" name="productId" value="@item.ProductId" />
+                                    <button type="submit" class="btn btn-danger"> إزالة</button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <div style="text-align:center; margin-top:20px;">
+                <form asp-controller="Order" asp-action="Confirm" method="post">
+                    <button type="submit" class="btn confirm-order"> تأكيد الطلب</button>
+                </form>
+            </div>
+        }
     </div>
-    <button class="btn confirm-order">تأكيد الطلب</button>
 </div>
+
