@@ -20,6 +20,11 @@ namespace Feed_Bridge.Controllers
             _signInManager = signInManager;
             _roleManager = roleManager;
         }
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
+        }
 
         [HttpPost]
         public async Task<IActionResult> Login(string email, string password)
