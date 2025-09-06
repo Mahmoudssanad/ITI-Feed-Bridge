@@ -21,22 +21,23 @@ namespace Feed_Bridge.Controllers
             _roleManager = roleManager;
         }
 
-        [HttpGet]
-        public IActionResult Login()
-        {
-            return View();
-        }
         [HttpPost]
         public async Task<IActionResult> Login(string email, string password)
         {
             var user = await _userManager.FindByEmailAsync(email);
             if (user != null)
             {
-                var result = await _signInManager.PasswordSignInAsync(user, password, isPersistent: false, lockoutOnFailure: false);
+                var result = await _signInManager.PasswordSignInAsync(
+                    user, password, isPersistent: false, lockoutOnFailure: false);
+
                 if (result.Succeeded)
                 {
                     if (await _userManager.IsInRoleAsync(user, "Admin"))
-                        return RedirectToAction("GetAll", "Donations");
+                        return RedirectToAction("Admin", "Admin");
+
+                    else if (await _userManager.IsInRoleAsync(user, "Delivery"))
+                        return RedirectToAction("Delivery", "Delivery");
+
                     else
                         return RedirectToAction("Index", "Home");
                 }
@@ -45,6 +46,7 @@ namespace Feed_Bridge.Controllers
             ViewBag.Error = "البريد الإلكتروني أو كلمة المرور غير صحيحة";
             return View();
         }
+
 
         [HttpGet]
         public IActionResult Register()
@@ -67,7 +69,7 @@ namespace Feed_Bridge.Controllers
             {
                 var user = new ApplicationUser
                 {
-                    UserName = model.UserName,
+                    UserName = model.UserName.Replace(" ", "_"),
                     Email = model.Email,
                     PhoneNumber = model.PhoneNumber,
                     BirthDate = model.BirthDate
@@ -96,7 +98,7 @@ namespace Feed_Bridge.Controllers
                 if (result.Succeeded)
                 {
                     await _signInManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("Profile", "User");
+                    return RedirectToAction("Index", "Home");
                 }
 
                 foreach (var error in result.Errors)

@@ -5,6 +5,7 @@
     }
 </style>
 
+
 <div class="donate-container">
     <div class="donate-img">
         <img src="~/imgs/donation.png" alt="donate-img" />
@@ -27,7 +28,7 @@
 
             
 
-            <input asp-for="Name" placeholder="الاسم بالكامل ..." class="form-control" />
+            <input asp-for="Name" placeholder="اسم المنتج  ..." class="form-control" />
             <span asp-validation-for="Name" class="text-danger" style="color:red;"></span>
 
             <div class="group">
@@ -63,13 +64,13 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // كود معاينة الصورة...
             const imageInput = document.getElementById('imageInput');
             const imagePreviewContainer = document.getElementById('imagePreviewContainer');
             const imagePreview = document.getElementById('imagePreview');
 
             imageInput.addEventListener('change', function (event) {
                 const file = event.target.files[0];
-
                 if (file) {
                     const reader = new FileReader();
                     reader.onload = function (e) {
@@ -82,6 +83,19 @@
                     imagePreviewContainer.style.display = 'none';
                 }
             });
+            // نهاية كود معاينة الصورة
+
+            // كود SweetAlert2 للإشعار
+            var successMessage = '@Html.Raw(TempData["SuccessMessage"])';
+            if (successMessage) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'تم بنجاح!',
+                    text: successMessage,
+                    showConfirmButton: false,
+                    timer: 3000
+                });
+            }
         });
     </script>
 }

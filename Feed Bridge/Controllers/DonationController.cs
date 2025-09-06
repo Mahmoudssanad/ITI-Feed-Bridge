@@ -87,8 +87,9 @@ namespace Feed_Bridge.Controllers
                 DonationId = donation.Id, // عشان نعرف إن المنتج ده مرتبط بتبرع
             };
             await _productService.AddAsync(product);
+            TempData["SuccessMessage"] = "تمت التبرع بنجاح";
 
-            return RedirectToAction("Index","Home");
+            return RedirectToAction("Create");
         } //view Done
 
         //[Authorize(Roles ="Admin")]

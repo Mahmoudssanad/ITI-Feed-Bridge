@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+<!DOCTYPE html>
 <html lang="en" dir="rtl">
 
 <head>
@@ -11,14 +14,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <title>FeedBridge</title>
-    <link rel="stylesheet" href="~/css/style.css" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
     <!-- Dashboard Header -->
     <header>
         <div class="header-logo">
-            <img src="~/imgs/logo.png" alt="logo" class="logo-img" />
+            <img src="imgs/logo.png" alt="logo" class="logo-img" />
             <p>FeedBridge</p>
         </div>
         <div class="header-icons">
@@ -43,63 +46,63 @@
     <div class="page">
         <div class="sidebar">
             <ul>
-                <li class="@(ViewData["ActivePage"]?.ToString() == "Dashboard" ? "active" : "")">
+                <li class="active">
                     <a href="dashboard.html">
                         <span class="material-symbols-outlined"> settings </span>
                         <p style="display: none;">Dashboard</p>
                         <p>لوحة التحكم</p>
                     </a>
                 </li>
-                <li lass="@(ViewData["ActivePage"]?.ToString() == "Orders" ? "active" : "")">
+                <li>
                     <a href="#">
                         <span class="material-symbols-outlined"> add_circle </span>
                         <p style="display: none;">Orders</p>
                         <p>الطلبات</p>
                     </a>
                 </li>
-                <li lass="@(ViewData["ActivePage"]?.ToString() == "Reports" ? "active" : "")">
+                <li>
                     <a href="#">
                         <span class="material-symbols-outlined"> mail </span>
                         <p style="display: none;">Reports</p>
                         <p>التقارير</p>
                     </a>
                 </li>
-                <li class="@(ViewData["ActivePage"]?.ToString() == "Products" ? "active" : "")">
+                <li>
                     <a href="#">
                         <span class="material-symbols-outlined"> star </span>
                         <p style="display: none;">Products</p>
                         <p>المنتجات</p>
                     </a>
                 </li>
-                <li class="@(ViewData["ActivePage"]?.ToString() == "Donations" ? "active" : "")">
+                <li>
                     <a href="#">
                         <span class="material-symbols-outlined"> favorite </span>
                         <p style="display: none;">Donors</p>
-                        <p>التبرعات</p>
+                        <p>المتبرعين</p>
                     </a>
                 </li>
-                <li class="@(ViewData["ActivePage"]?.ToString() == "Delivery" ? "active" : "")">
+                <li>
                     <a href="#">
                         <span class="material-symbols-outlined"> local_shipping </span>
                         <p style="display: none;">Delivery</p>
                         <p>التوصيل</p>
                     </a>
                 </li>
-                <li class="@(ViewData["ActivePage"]?.ToString() == "AllUsers" ? "active" : "")">
+                <li>
                     <a href="#">
                         <span class="material-symbols-outlined"> groups </span>
                         <p style="display: none;">AllUsers</p>
                         <p>كل المشتركين</p>
                     </a>
                 </li>
-                <li class="@(ViewData["ActivePage"]?.ToString() == "AllParteners" ? "active" : "")">
+                <li>
                     <a href="#">
                         <span class="material-symbols-outlined"> groups </span>
                         <p style="display: none;">AllParteners</p>
                         <p>كل الشراكات</p>
                     </a>
                 </li>
-                <li class="@(ViewData["ActivePage"]?.ToString() == "HomeControl" ? "active" : "")">
+                <li>
                     <a href="#">
                         <span class="material-symbols-outlined"> groups </span>
                         <p style="display: none;">HomeControl</p>
@@ -116,8 +119,7 @@
 
         </div>
         <div class="content-page">
-            @RenderBody()
-           @*  <div class="dashboard-page active">
+            <div class="dashboard-page active">
                 <div class="special-heading">
                     <h1>لوحة التحكم</h1>
                 </div>
@@ -416,9 +418,9 @@
                         </div>
                     </div>
                 </div>
-            </div> *@
+            </div>
         </div>
-        <script src="~/js/maindash.js"></script>
+        <script src="main.js"></script>
 </body>
 
 </html>
