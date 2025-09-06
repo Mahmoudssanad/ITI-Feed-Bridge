@@ -1,4 +1,4 @@
-const sidebar = document.querySelector(".sidebar ul");
+﻿const sidebar = document.querySelector(".sidebar ul");
 const pageContent = document.querySelector(".content-page");
 
 // Handling the page content

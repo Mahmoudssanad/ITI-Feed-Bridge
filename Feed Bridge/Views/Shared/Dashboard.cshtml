@@ -47,7 +47,7 @@
         <div class="sidebar">
             <ul>
                 <li class="@(ViewData["ActivePage"] as string == "Dashboard" ? "active" : "")">
-                    <a href="dashboard.html">
+                    <a href="#">
                         <span class="material-symbols-outlined"> settings </span>
                         <p style="display: none;">Dashboard</p>
                         <p>لوحة التحكم</p>
@@ -75,7 +75,7 @@
                     </a>
                 </li>
                 <li class="@(ViewData["ActivePage"] as string == "Donors" ? "active" : "")">
-                    <a href="#">
+                    <a href="@Url.Action("AllDonations", "Admin")">
                         <span class="material-symbols-outlined"> favorite </span>
                         <p style="display: none;">Donors</p>
                         <p>التبرعات</p>
@@ -121,6 +121,7 @@
         <div class="content-page">
 			@RenderBody()
             
+        </div>
         </div>
         <script src="~/js/maindash.js"></script>
 </body>
