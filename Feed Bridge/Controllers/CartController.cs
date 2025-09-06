@@ -38,5 +38,49 @@ namespace Feed_Bridge.Controllers
 
             return Json(new { success = result.Success, message = result.Message });
         }
+
+        //[HttpPost]
+        //public async Task<IActionResult> IncreaseQuantity(int productId)
+        //{
+        //    var user = await _userManager.GetUserAsync(User);
+        //    var (ok, msg) = await _cartService.IncreaseQuantity(user.Id, productId);
+
+        //    return Json(new { success = ok, message = msg });
+        //}
+
+        //[HttpPost]
+        //public async Task<IActionResult> DecreaseQuantity(int productId)
+        //{
+        //    var user = await _userManager.GetUserAsync(User);
+        //    var (ok, msg) = await _cartService.DecreaseQuantity(user.Id, productId);
+
+        //    return Json(new { success = ok, message = msg });
+        //}
+
+        [HttpPost]
+        public async Task<IActionResult> Remove(int productId)
+        {
+            var user = await _userManager.GetUserAsync(User);
+            var (ok, msg) = await _cartService.Remove(user.Id, productId);
+
+            return Json(new { success = ok, message = msg });
+        }
+
+        public async Task<IActionResult> IncreaseQuantity(int productId)
+        {
+            var user = await _userManager.GetUserAsync(User);
+            var (ok, msg) = await _cartService.IncreaseQuantity(user.Id, productId);
+            TempData[ok ? "Success" : "Error"] = msg;
+            return RedirectToAction("Index", "Cart");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DecreaseQuantity(int productId)
+        {
+            var user = await _userManager.GetUserAsync(User);
+            var (ok, msg) = await _cartService.DecreaseQuantity(user.Id, productId);
+            TempData[ok ? "Success" : "Error"] = msg;
+            return RedirectToAction("Index", "Cart");
+        }
     }
 }

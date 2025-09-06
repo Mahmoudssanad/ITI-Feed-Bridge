@@ -15,6 +15,9 @@
     </div> 
     </section>
 
+<!-- مكان التنبيه -->
+<div id="cart-alert" style="display:none; margin:15px; padding:10px; border-radius:6px; font-weight:bold;"></div>
+
 <section class="products-cards">
     <h2 class="products-header">المنتجات</h2>
     <div class="products-cards-container">
@@ -53,8 +56,7 @@
     </div>
 </section>
 
-<!-- مكان التنبيه -->
-<div id="cart-alert" style="display:none; margin:15px; padding:10px; border-radius:6px; font-weight:bold;"></div>
+
 
 
 @section Scripts {
@@ -65,7 +67,7 @@
 
             let productId = $(this).data("product-id");
 
-            $.post("/Cart/AddToCartAjax", { productId: productId, quantity: 1 }, function (data) {
+            $.post("/Cart/Add", { productId: productId, quantity: 1 }, function (data) {
                 let alertBox = $("#cart-alert");
                 alertBox.text(data.message);
 

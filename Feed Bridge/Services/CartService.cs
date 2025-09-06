@@ -65,7 +65,6 @@ namespace Feed_Bridge.Services
             return (true, "تمت إضافة المنتج إلى السلة بنجاح.");
         }
 
-
         public async Task<Cart> GetUserCart(string userId)
         {
             return await _context.Carts
@@ -74,15 +73,55 @@ namespace Feed_Bridge.Services
                 .FirstOrDefaultAsync(c => c.UserId == userId);
         }
 
-        //public async Task RemoveFromCart(int cartId)
-        //{
-        //    var cartItem = await _context.Carts.FindAsync(cartId);
-        //    if (cartItem != null)
-        //    {
-        //        _context.Carts.Remove(cartItem);
-        //        await _context.SaveChangesAsync();
-        //    }
-        //}
+        public async Task<(bool ok, string message)> IncreaseQuantity(string userId, int productId)
+        {
+            var cart = await GetUserCart(userId);
+            if (cart == null) return (false, "لا توجد سلة");
+
+            var item = cart.ProductCarts.FirstOrDefault(pc => pc.ProductId == productId);
+            if (item == null) return (false, "المنتج غير موجود في السلة");
+
+            var product = item.Product ?? await _context.Products.FindAsync(productId);
+            if (product == null) return (false, "المنتج غير موجود");
+
+            if (item.Quantity + 1 > product.Quantity)
+                return (false, $"لا يمكن الزيادة. المتاح: {product.Quantity}");
+
+            item.Quantity += 1;
+            await _context.SaveChangesAsync();
+            return (true, "تم تعديل الكمية");
+        }
+
+        public async Task<(bool ok, string message)> DecreaseQuantity(string userId, int productId)
+        {
+            var cart = await GetUserCart(userId);
+            if (cart == null) return (false, "لا توجد سلة");
+
+            var item = cart.ProductCarts.FirstOrDefault(pc => pc.ProductId == productId);
+            if (item == null) return (false, "المنتج غير موجود في السلة");
+
+            if (item.Quantity <= 1)
+                cart.ProductCarts.Remove(item);
+            else
+                item.Quantity -= 1;
+
+            await _context.SaveChangesAsync();
+            return (true, "تم تعديل الكمية");
+        }
+
+        public async Task<(bool ok, string message)> Remove(string userId, int productId)
+        {
+            var cart = await GetUserCart(userId);
+            if (cart == null) return (false, "لا توجد سلة");
+
+            var item = cart.ProductCarts.FirstOrDefault(pc => pc.ProductId == productId);
+            if (item == null) return (false, "المنتج غير موجود في السلة");
+
+            cart.ProductCarts.Remove(item);
+            await _context.SaveChangesAsync();
+            return (true, "تمت إزالة المنتج من السلة");
+        }
+
 
         //public async Task ClearCart(string userId)
         //{
