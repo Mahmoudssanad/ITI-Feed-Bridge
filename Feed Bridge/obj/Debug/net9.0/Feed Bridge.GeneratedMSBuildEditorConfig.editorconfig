@@ -17,121 +17,129 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Feed_Bridge
 build_property.RootNamespace = Feed_Bridge
-build_property.ProjectDir = D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge\
+build_property.ProjectDir = C:\Users\mmm\OneDrive - Mansoura University - Main\Desktop\internship ITI\ITI-Feed-Bridge\Feed Bridge\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Back-end\MVC Projects\Hackathon ITI\Feed Bridge\Feed Bridge
+build_property.MSBuildProjectDirectory = C:\Users\mmm\OneDrive - Mansoura University - Main\Desktop\internship ITI\ITI-Feed-Bridge\Feed Bridge
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Account/ForgotPassword.cshtml]
+[C:/Users/mmm/OneDrive - Mansoura University - Main/Desktop/internship ITI/ITI-Feed-Bridge/Feed Bridge/Views/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Account/Login.cshtml]
+[C:/Users/mmm/OneDrive - Mansoura University - Main/Desktop/internship ITI/ITI-Feed-Bridge/Feed Bridge/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Account/Register.cshtml]
+[C:/Users/mmm/OneDrive - Mansoura University - Main/Desktop/internship ITI/ITI-Feed-Bridge/Feed Bridge/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Account/ResetPassword.cshtml]
+[C:/Users/mmm/OneDrive - Mansoura University - Main/Desktop/internship ITI/ITI-Feed-Bridge/Feed Bridge/Views/Account/ResetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Admin/Admin.cshtml]
+[C:/Users/mmm/OneDrive - Mansoura University - Main/Desktop/internship ITI/ITI-Feed-Bridge/Feed Bridge/Views/Admin/Admin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRtaW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Cart/Index.cshtml]
+[C:/Users/mmm/OneDrive - Mansoura University - Main/Desktop/internship ITI/ITI-Feed-Bridge/Feed Bridge/Views/Cart/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Delivery/Delivery.cshtml]
+[C:/Users/mmm/OneDrive - Mansoura University - Main/Desktop/internship ITI/ITI-Feed-Bridge/Feed Bridge/Views/Delivery/Delivery.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVsaXZlcnlcRGVsaXZlcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Donation/Create.cshtml]
+[C:/Users/mmm/OneDrive - Mansoura University - Main/Desktop/internship ITI/ITI-Feed-Bridge/Feed Bridge/Views/Donation/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9uYXRpb25cQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Donation/GetAll.cshtml]
+[C:/Users/mmm/OneDrive - Mansoura University - Main/Desktop/internship ITI/ITI-Feed-Bridge/Feed Bridge/Views/Donation/GetAll.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9uYXRpb25cR2V0QWxsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Donation/Index.cshtml]
+[C:/Users/mmm/OneDrive - Mansoura University - Main/Desktop/internship ITI/ITI-Feed-Bridge/Feed Bridge/Views/Donation/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9uYXRpb25cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Home/Index.cshtml]
+[C:/Users/mmm/OneDrive - Mansoura University - Main/Desktop/internship ITI/ITI-Feed-Bridge/Feed Bridge/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Order/Details.cshtml]
+[C:/Users/mmm/OneDrive - Mansoura University - Main/Desktop/internship ITI/ITI-Feed-Bridge/Feed Bridge/Views/Order/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Order/History.cshtml]
+[C:/Users/mmm/OneDrive - Mansoura University - Main/Desktop/internship ITI/ITI-Feed-Bridge/Feed Bridge/Views/Order/History.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcSGlzdG9yeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Product/Index.cshtml]
+[C:/Users/mmm/OneDrive - Mansoura University - Main/Desktop/internship ITI/ITI-Feed-Bridge/Feed Bridge/Views/Product/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Regist/Regist.cshtml]
+[C:/Users/mmm/OneDrive - Mansoura University - Main/Desktop/internship ITI/ITI-Feed-Bridge/Feed Bridge/Views/Regist/Regist.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0XFJlZ2lzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Shared/Dashboard.cshtml]
+[C:/Users/mmm/OneDrive - Mansoura University - Main/Desktop/internship ITI/ITI-Feed-Bridge/Feed Bridge/Views/Shared/Dashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXERhc2hib2FyZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Shared/Error.cshtml]
+[C:/Users/mmm/OneDrive - Mansoura University - Main/Desktop/internship ITI/ITI-Feed-Bridge/Feed Bridge/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Shared/_Footer.cshtml]
+[C:/Users/mmm/OneDrive - Mansoura University - Main/Desktop/internship ITI/ITI-Feed-Bridge/Feed Bridge/Views/Shared/_Footer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Gb290ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/mmm/OneDrive - Mansoura University - Main/Desktop/internship ITI/ITI-Feed-Bridge/Feed Bridge/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/User/changepassword.cshtml]
+[C:/Users/mmm/OneDrive - Mansoura University - Main/Desktop/internship ITI/ITI-Feed-Bridge/Feed Bridge/Views/Supports/Donate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VwcG9ydHNcRG9uYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mmm/OneDrive - Mansoura University - Main/Desktop/internship ITI/ITI-Feed-Bridge/Feed Bridge/Views/Supports/Success.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VwcG9ydHNcU3VjY2Vzcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mmm/OneDrive - Mansoura University - Main/Desktop/internship ITI/ITI-Feed-Bridge/Feed Bridge/Views/User/changepassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxjaGFuZ2VwYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/User/DeleteAccount.cshtml]
+[C:/Users/mmm/OneDrive - Mansoura University - Main/Desktop/internship ITI/ITI-Feed-Bridge/Feed Bridge/Views/User/DeleteAccount.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxEZWxldGVBY2NvdW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/User/EditProfile.cshtml]
+[C:/Users/mmm/OneDrive - Mansoura University - Main/Desktop/internship ITI/ITI-Feed-Bridge/Feed Bridge/Views/User/EditProfile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxFZGl0UHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/User/GetAllUsers.cshtml]
+[C:/Users/mmm/OneDrive - Mansoura University - Main/Desktop/internship ITI/ITI-Feed-Bridge/Feed Bridge/Views/User/GetAllUsers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxHZXRBbGxVc2Vycy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/User/Profile.cshtml]
+[C:/Users/mmm/OneDrive - Mansoura University - Main/Desktop/internship ITI/ITI-Feed-Bridge/Feed Bridge/Views/User/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/_ViewImports.cshtml]
+[C:/Users/mmm/OneDrive - Mansoura University - Main/Desktop/internship ITI/ITI-Feed-Bridge/Feed Bridge/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/_ViewStart.cshtml]
+[C:/Users/mmm/OneDrive - Mansoura University - Main/Desktop/internship ITI/ITI-Feed-Bridge/Feed Bridge/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Shared/_Layout.cshtml]
+[C:/Users/mmm/OneDrive - Mansoura University - Main/Desktop/internship ITI/ITI-Feed-Bridge/Feed Bridge/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-x3f10eifmf
