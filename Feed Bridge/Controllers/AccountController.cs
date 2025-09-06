@@ -12,19 +12,20 @@ namespace Feed_Bridge.Controllers
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
-
         private readonly RoleManager<IdentityRole> _roleManager;
-        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<IdentityRole> roleManager)
+
+        public AccountController(
+            UserManager<ApplicationUser> userManager,
+            SignInManager<ApplicationUser> signInManager,
+            RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _roleManager = roleManager;
         }
+
         [HttpGet]
-        public IActionResult Login()
-        {
-            return View();
-        }
+        public IActionResult Login() => View();
 
         [HttpPost]
         public async Task<IActionResult> Login(string email, string password)
@@ -37,14 +38,16 @@ namespace Feed_Bridge.Controllers
 
                 if (result.Succeeded)
                 {
-                    if (await _userManager.IsInRoleAsync(user, "Admin"))
+                    // جلب أدوار المستخدم
+                    var roles = await _userManager.GetRolesAsync(user);
+
+                    if (roles.Contains("Admin"))
                         return RedirectToAction("Admin", "Admin");
-
-                    else if (await _userManager.IsInRoleAsync(user, "Delivery"))
-                        return RedirectToAction("Delivery", "Delivery");
-
+                    else if (roles.Contains("Delivery"))
+                        return RedirectToAction("Index", "DeliveryDashboard");
                     else
                         return RedirectToAction("Index", "Home");
+
                 }
             }
 
@@ -54,22 +57,19 @@ namespace Feed_Bridge.Controllers
 
 
         [HttpGet]
-        public IActionResult Register()
-        {
-            return View();
-        }
+        public IActionResult Register() => View();
 
-        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
-            var exsitingUser = await _userManager.FindByEmailAsync(model.Email);
-            if (exsitingUser != null)
+            var existingUser = await _userManager.FindByEmailAsync(model.Email);
+            if (existingUser != null)
             {
                 ModelState.AddModelError("Email", "هذا البريد الإلكتروني مستخدم بالفعل");
                 return View(model);
             }
+
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser
@@ -87,34 +87,31 @@ namespace Feed_Bridge.Controllers
                     if (!Directory.Exists(uploadsFolder))
                         Directory.CreateDirectory(uploadsFolder);
 
-                    var uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(model.ImgFile.FileName);
+                    var uniqueFileName = Guid.NewGuid() + Path.GetExtension(model.ImgFile.FileName);
                     var filePath = Path.Combine(uploadsFolder, uniqueFileName);
 
                     using (var fileStream = new FileStream(filePath, FileMode.Create))
-                    {
                         await model.ImgFile.CopyToAsync(fileStream);
-                    }
 
-                    // خزّن الرابط في الداتابيز
                     user.ImgUrl = "/uploads/" + uniqueFileName;
                 }
 
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    // أي مستخدم جديد بياخد Role "User" تلقائي
+                    await _userManager.AddToRoleAsync(user, "User");
+
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     return RedirectToAction("Index", "Home");
                 }
 
                 foreach (var error in result.Errors)
-                {
                     ModelState.AddModelError("", error.Description);
-                }
             }
 
             return View(model);
         }
-
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -124,12 +121,8 @@ namespace Feed_Bridge.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-
         [HttpGet]
-        public IActionResult ForgotPassword()
-        {
-            return View();
-        }
+        public IActionResult ForgotPassword() => View();
 
         [HttpPost]
         public async Task<IActionResult> ForgotPassword(string email)
@@ -154,104 +147,76 @@ namespace Feed_Bridge.Controllers
             var resetLink = Url.Action("ResetPassword", "Account",
                 new { token, email = user.Email }, Request.Scheme);
 
-            // إعدادات الإيميل
+            // إعداد الإيميل
             var fromAddress = new MailAddress("s04495320@gmail.com", "FeedBridge Support");
             var toAddress = new MailAddress(user.Email);
-            const string fromPassword = "ajdw nbrm pndi zjmy"; // الباسورد اللي جبته من App Password
+            const string fromPassword = "ajdw nbrm pndi zjmy";
             string subject = "إعادة تعيين كلمة المرور - FeedBridge";
-            //string body = $"مرحبا {user.UserName},\n\n" +
-            //              $"اضغط على الرابط التالي لإعادة تعيين كلمة المرور:\n{resetLink}\n\n" +
-            //              $"إذا لم تطلب ذلك، تجاهل هذه الرسالة.";
+
             string body = $@"
-                            <!DOCTYPE html>
-                            <html lang='ar'>
-                            <head>
-                              <meta charset='UTF-8'>
-                              <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-                              <style>
-                                body {{
-                                  font-family: 'Arial', sans-serif;
-                                  background-color: #f5f5f5;
-                                  padding: 20px;
-                                  direction: rtl;
-                                  text-align: center;
-                                  margin: 0;
-                                }}
-                                .container {{
-                                  max-width: 600px;
-                                  margin: 0 auto;
-                                  background-color: #ffffff;
-                                  border-radius: 12px;
-                                  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-                                  overflow: hidden;
-                                  text-align: center;
-                                }}
-                                .card-header {{
-                                  background-color: #1cba7f;
-                                  color: #fff;
-                                  padding: 30px;
-                                  border-top-left-radius: 12px;
-                                  border-top-right-radius: 12px;
-                                }}
-                                .card-header h2 {{
-                                  margin: 0;
-                                  font-size: 24px;
-                                  text-align: center;
-                                }}
-                                .card-body {{
-                                  padding: 30px;
-                                  color: #333;
-                                  line-height: 1.8;
-                                  text-align: center;
-                                }}
-                                .card-body p {{
-                                  margin: 0 0 15px 0;
-                                  text-align: center;
-                                }}
-                                .btn-wrapper {{
-                                  padding: 0 30px 30px;
-                                  text-align: center;
-                                }}
-                                .btn {{
-                                  display: inline-block;
-                                  padding: 12px 24px;
-                                  font-size: 16px;
-                                  color: #fff !important;
-                                  background-color: #1cba7f;
-                                  border-radius: 8px;
-                                  text-decoration: none;
-                                  transition: background-color 0.3s ease;
-                                }}
-                                .btn:hover {{
-                                  background-color: #169363;
-                                }}
-                                .disclaimer {{
-                                  margin-top: 20px;
-                                  font-size: 12px;
-                                  color: #777;
-                                  text-align: center;
-                                }}
-                              </style>
-                            </head>
-                            <body>
-                              <div class='container'>
-                                <div class='card-header'>
-                                  <h2>إعادة تعيين كلمة المرور</h2>
-                                </div>
-                                <div class='card-body'>
-                                  <p>مرحباً <b>{user.UserName}</b>،</p>
-                                  <p>اضغط على الزر أدناه لإعادة تعيين كلمة المرور الخاصة بك:</p>
-                                  <div class='btn-wrapper'>
-                                    <a href='{resetLink}' class='btn'>إعادة التعيين الآن</a>
-                                  </div>
-                                  <p class='disclaimer'>إذا لم تطلب ذلك، تجاهل هذه الرسالة.</p>
-                                </div>
-                              </div>
-                            </body>
-                            </html>";
-
-
-
+            <!DOCTYPE html>
+            <html lang='ar'>
+            <head>
+              <meta charset='UTF-8'>
+              <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+              <style>
+                body {{
+                  font-family: 'Arial', sans-serif;
+                  background-color: #f5f5f5;
+                  padding: 20px;
+                  direction: rtl;
+                  text-align: center;
+                  margin: 0;
+                }}
+                .container {{
+                  max-width: 600px;
+                  margin: 0 auto;
+                  background-color: #ffffff;
+                  border-radius: 12px;
+                  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                  overflow: hidden;
+                  text-align: center;
+                }}
+                .card-header {{
+                  background-color: #1cba7f;
+                  color: #fff;
+                  padding: 30px;
+                  border-top-left-radius: 12px;
+                  border-top-right-radius: 12px;
+                }}
+                .card-header h2 {{ margin: 0; font-size: 24px; text-align: center; }}
+                .card-body {{ padding: 30px; color: #333; line-height: 1.8; text-align: center; }}
+                .btn-wrapper {{ padding: 0 30px 30px; text-align: center; }}
+                .btn {{
+                  display: inline-block;
+                  padding: 12px 24px;
+                  font-size: 16px;
+                  color: #fff !important;
+                  background-color: #1cba7f;
+                  border-radius: 8px;
+                  text-decoration: none;
+                  transition: background-color 0.3s ease;
+                }}
+                .btn:hover {{ background-color: #169363; }}
+                .disclaimer {{ margin-top: 20px; font-size: 12px; color: #777; text-align: center; }}
+              </style>
+            </head>
+            <body>
+              <div class='container'>
+                <div class='card-header'>
+                  <h2>إعادة تعيين كلمة المرور</h2>
+                </div>
+                <div class='card-body'>
+                  <p>مرحباً <b>{user.UserName}</b>،</p>
+                  <p>اضغط على الزر أدناه لإعادة تعيين كلمة المرور الخاصة بك:</p>
+                  <div class='btn-wrapper'>
+                    <a href='{resetLink}' class='btn'>إعادة التعيين الآن</a>
+                  </div>
+                  <p class='disclaimer'>إذا لم تطلب ذلك، تجاهل هذه الرسالة.</p>
+                </div>
+              </div>
+            </body>
+            </html>";
 
             using (var smtp = new SmtpClient
             {
@@ -262,20 +227,17 @@ namespace Feed_Bridge.Controllers
                 UseDefaultCredentials = false,
                 Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
             })
+            using (var message = new MailMessage(fromAddress, toAddress)
             {
-                using (var message = new MailMessage(fromAddress, toAddress)
-                {
-                    Subject = subject,
-                    Body = body,
-                    IsBodyHtml = true
-                })
-                {
-                    smtp.Send(message);
-                }
+                Subject = subject,
+                Body = body,
+                IsBodyHtml = true
+            })
+            {
+                smtp.Send(message);
             }
 
             ViewBag.Message = "تم إرسال رابط إعادة تعيين كلمة المرور إلى بريدك الإلكتروني.";
-
             return View();
         }
 
@@ -295,8 +257,7 @@ namespace Feed_Bridge.Controllers
         [HttpPost]
         public async Task<IActionResult> ResetPassword(ResetPasswordViewModel model)
         {
-            if (!ModelState.IsValid)
-                return View(model);
+            if (!ModelState.IsValid) return View(model);
 
             var user = await _userManager.FindByEmailAsync(model.Email);
             if (user == null)
@@ -315,6 +276,5 @@ namespace Feed_Bridge.Controllers
             ViewBag.Error = string.Join(", ", result.Errors.Select(e => e.Description));
             return View(model);
         }
-
     }
 }
