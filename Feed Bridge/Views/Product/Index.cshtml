@@ -15,6 +15,9 @@
     </div> 
     </section>
 
+<!-- مكان التنبيه -->
+<div id="cart-alert" style="display:none; margin:15px; padding:10px; border-radius:6px; font-weight:bold;"></div>
+
 <section class="products-cards">
     <h2 class="products-header">المنتجات</h2>
     <div class="products-cards-container">
@@ -26,13 +29,20 @@
                     <img src="~/uploads/@(product.ImgURL ?? "img.png")" alt="food" />
                     <div class="product-card-text">
                         <h2>@product.Name</h2>
-                        @* <p>@(string.IsNullOrEmpty(product.Description) ? "لا يوجد وصف" : product.Description)</p> *@
+                        <p>الكمية المتاحة: @product.Quantity</p>
                         <span class="exp-date" style="color: red;">تاريخ الانتهاء : </span>
                         <span>@product.ExpirDate.ToString("yyyy/MM/dd")</span>
-                        <form asp-controller="Cart" asp-action="Add" method="post">
-                            <input type="hidden" name="productId" value="@product.Id" />
-                            <button type="submit" class="btn add-to-cart-btn">اضف الي السله</button>
-                        </form>
+
+                        @if (product.Quantity > 0)
+                        {
+                            <form class="add-to-cart-form" data-product-id="@product.Id">
+                                <button type="submit" class="btn add-to-cart-btn">اضف الي السلة</button>
+                            </form>
+                        }
+                        else
+                        {
+                            <span style="color: gray; font-weight: bold;">المنتج خلصان</span>
+                        }
                     </div>
                 </div>
             }
@@ -47,6 +57,32 @@
 </section>
 
 
-@section FooterSection {
-    @await Html.PartialAsync("_Footer")
+
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).on("submit", ".add-to-cart-form", function (e) {
+            e.preventDefault();
+
+            let productId = $(this).data("product-id");
+
+            $.post("/Cart/Add", { productId: productId, quantity: 1 }, function (data) {
+                let alertBox = $("#cart-alert");
+                alertBox.text(data.message);
+
+                if (data.success) {
+                    alertBox.css({ "background": "#d4edda", "color": "#155724", "border": "1px solid #c3e6cb" });
+                } else {
+                    alertBox.css({ "background": "#f8d7da", "color": "#721c24", "border": "1px solid #f5c6cb" });
+                }
+
+                alertBox.fadeIn().delay(2500).fadeOut();
+            });
+        });
+    </script>
 }
+
+@section FooterSection { 
+     @await Html.PartialAsync("_Footer") 
+ }
