@@ -1,0 +1,22 @@
+﻿@model List<Feed_Bridge.Models.Entities.Notification>
+
+<div class="notifications-container">
+    <span class="material-symbols-outlined notifications-icon">
+        notifications
+    </span>
+    <span class="badge bg-danger">@ViewData["NewNotificationsCount"]</span>
+    <div class="notifications-box">
+        <h3>الاشعارات</h3>
+        <ul>
+            @foreach (var notif in Model.Take(5))
+            {
+                <li>
+                    <strong>@notif.User?.UserName:</strong> @notif.Description
+                    <br />
+                    <small>@notif.CreatedAt.ToString("dd/MM/yyyy HH:mm")</small>
+                </li>
+            }
+        </ul>
+        <a href="/Admin/Notifications" class="button-link mt-2">مشاهدة كل الاشعارات</a>
+    </div>
+</div>

@@ -33,6 +33,8 @@ builder.Services.AddScoped<IParteerService, Partnerservice>();
 builder.Services.AddScoped<IReportService, ReportService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddScoped<IStaticPageService, StaticPageService>();
+builder.Services.AddScoped<INotificationService, NotificationService>();
+
 
 
 
