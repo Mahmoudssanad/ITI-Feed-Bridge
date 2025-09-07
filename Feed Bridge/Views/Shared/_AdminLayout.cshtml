@@ -44,10 +44,13 @@
 <body>
     <!-- Dashboard Header -->
     <header>
-        <div class="header-logo">
-            <img src="~/imgs/logo.png" alt="logo" class="logo-img" />
-            <p>FeedBridge</p>
-        </div>
+        <a asp-controller="Home" asp-action="Index" class="text-decoration-none">
+            <div class="header-logo">
+                <img src="~/imgs/logo.png" alt="logo" class="logo-img" />
+                <p>FeedBridge</p>
+            </div>
+        </a>
+
         @* <div class="header-icons">
             <div class="notifications-container">
                 <span class="material-symbols-outlined notifications-icon"> notifications </span>
@@ -65,19 +68,23 @@
 
         @await Component.InvokeAsync("AdminNotifications")
 
-            @if (User.Identity != null && User.Identity.IsAuthenticated)
+        @if (User.Identity != null && User.Identity.IsAuthenticated)
+        {
+            @* رابط البروفايل للـ Admin فقط *@
+            @if (User.IsInRole("Admin"))
             {
-                <!-- تعديل الرابط ليستخدم asp-controller و asp-action -->
-                <a asp-controller="User" asp-action="Profile" >
+                <a asp-controller="User" asp-action="Profile" asp-route-id="@User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value">
                     <span class="material-symbols-outlined" style="color:#1cba7f;">account_circle</span>
-                    @* <span>@User.Identity.Name</span> *@
                 </a>
-                <form asp-controller="Account" asp-action="Logout" method="post" style="display:inline;">
-                    <button type="submit" class="btn btn-primary" style="background-color:#1cba7f;border:none;color:white;">
-                        تسجيل خروج
-                    </button>
-                </form>
             }
+
+            <form asp-controller="Account" asp-action="Logout" method="post" style="display:inline;">
+                <button type="submit" class="btn btn-primary" style="background-color:#1cba7f;border:none;color:white;">
+                    تسجيل خروج
+                </button>
+            </form>
+        }
+
             else
             {
                 <!-- المستخدم غير مسجل -->

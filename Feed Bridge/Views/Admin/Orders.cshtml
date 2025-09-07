@@ -22,7 +22,12 @@
             foreach (var order in Model)
             {
                 <tr>
-                    <td>@order.User?.UserName</td>
+                    <td>
+                        <a asp-controller="User" asp-action="Profile" asp-route-id="@order.User?.Id">
+                            @order.User?.UserName
+                        </a>
+                    </td>
+
                     <td>@order.Status</td>
                     <td>
                         <ul>

@@ -41,8 +41,12 @@
 </div>
 
 <!-- إحصائيات التبرعات -->
-<div class="p-3 bg-light rounded shadow-sm text-center">
-    <span class="material-symbols-outlined fs-1 text-info">favorite</span>
-    <h3 class="mt-2">@ViewData["TotalDonations"]</h3>
-    <p class="mb-0">إجمالي التبرعات</p>
-</div>
+<a asp-controller="Delivery" asp-action="Donations" class="text-decoration-none">
+    <div class="p-3 bg-light rounded shadow-sm text-center">
+        <span class="material-symbols-outlined fs-1 text-info">favorite</span>
+        <h3 class="mt-2">@ViewData["TotalDonations"]</h3>
+        <p class="mb-0">إجمالي التبرعات</p>
+    </div>
+</a>
+
+

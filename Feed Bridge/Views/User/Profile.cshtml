@@ -85,10 +85,16 @@
         
 
         <div class="sub-heading">
-            <span class="material-symbols-outlined" style="color:red;"> Delete</span>
-			<p>حذف الحساب</p>
-			<a asp-controller="User" asp-action="DeleteAccount" class="btn confirm-btn" style="background-color:red;">حذف الحساب</a>
+            @if (User.IsInRole("User"))
+            {
+                <span class="material-symbols-outlined" style="color:red;"> Delete</span>
+                <p>حذف الحساب</p>
+                <a asp-controller="User" asp-action="DeleteAccount" class="btn confirm-btn" style="background-color:red;">
+                    حذف الحساب
+                </a>
+            }
         </div>
+
     </div>
 
     
