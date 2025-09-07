@@ -21,6 +21,24 @@
 
     <title>@ViewData["Title"] - FeedBridge Admin</title>
     <link rel="stylesheet" href="~/css/style.css" />
+    <style>
+        /* sidebar default color */
+        .sidebar ul li a {
+            color: black; /* اللون الافتراضي */
+            text-decoration: none;
+        }
+
+            /* hover ما يغيرش اللون */
+            .sidebar ul li a:hover {
+                color: black;
+            }
+
+        /* العنصر الحالي (active) */
+        .sidebar ul li.active a {
+            color: #1cba7f;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -44,7 +62,24 @@
                     </ul>
                 </div>
             </div>
-            <span class="material-symbols-outlined"> account_circle </span>
+            @if (User.Identity != null && User.Identity.IsAuthenticated)
+            {
+                <!-- تعديل الرابط ليستخدم asp-controller و asp-action -->
+                <a asp-controller="User" asp-action="Profile" >
+                    <span class="material-symbols-outlined" style="color:#1cba7f;">account_circle</span>
+                    @* <span>@User.Identity.Name</span> *@
+                </a>
+                <form asp-controller="Account" asp-action="Logout" method="post" style="display:inline;">
+                    <button type="submit" class="btn btn-primary" style="background-color:#1cba7f;border:none;color:white;">
+                        تسجيل خروج
+                    </button>
+                </form>
+            }
+            else
+            {
+                <!-- المستخدم غير مسجل -->
+                <a asp-controller="Account" asp-action="Login">تسجيل الدخول</a>
+            }
         </div>
     </header>
 
@@ -88,12 +123,6 @@
                         <p>الدعم المالي</p>
                     </a>
                 </li>
-                <li class="@(ViewData["ActivePage"] as string == "Delivery" ? "active" : "")">
-                    <a asp-controller="Admin" asp-action="Delivery">
-                        <span class="material-symbols-outlined"> local_shipping </span>
-                        <p>التوصيل</p>
-                    </a>
-                </li>
                 <li class="@(ViewData["ActivePage"] as string == "AllUsers" ? "active" : "")">
                     <a asp-controller="Admin" asp-action="AllUsers">
                         <span class="material-symbols-outlined"> groups </span>
@@ -107,7 +136,7 @@
                     </a>
                 </li>
                 <li class="@(ViewData["ActivePage"] as string == "HomeControl" ? "active" : "")">
-                    <a asp-controller="Admin" asp-action="HomeControl">
+                    <a asp-controller="Admin" asp-action="EditHome">
                         <span class="material-symbols-outlined"> groups </span>
                         <p>التحكم في الواجهه </p>
                     </a>

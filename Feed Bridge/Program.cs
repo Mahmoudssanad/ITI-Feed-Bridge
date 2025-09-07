@@ -32,6 +32,8 @@ builder.Services.AddScoped<ISupportService, SupportService>();
 builder.Services.AddScoped<IParteerService, Partnerservice>();
 builder.Services.AddScoped<IReportService, ReportService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddScoped<IStaticPageService, StaticPageService>();
+
 
 
 var app = builder.Build();

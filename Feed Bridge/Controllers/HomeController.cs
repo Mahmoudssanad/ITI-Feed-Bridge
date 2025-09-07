@@ -1,4 +1,4 @@
-using Feed_Bridge.IServices;
+﻿using Feed_Bridge.IServices;
 using Feed_Bridge.Models;
 using Feed_Bridge.Models.Entities;
 using Feed_Bridge.Services;
@@ -14,16 +14,19 @@ namespace Feed_Bridge.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IParteerService _partnerService;
+        private readonly IStaticPageService _staticPageService;
+
 
 
 
         private readonly IReviewService _reviewService;
 
-        public HomeController(ILogger<HomeController> logger, IReviewService reviewService, IParteerService partnerService)
+        public HomeController(ILogger<HomeController> logger, IReviewService reviewService, IParteerService partnerService, IStaticPageService staticPageService)
         {
             _logger = logger;
             _reviewService = reviewService;
             _partnerService = partnerService;
+            _staticPageService = staticPageService;
         }
 
         
@@ -32,11 +35,16 @@ namespace Feed_Bridge.Controllers
         {
             var reviews = await _reviewService.GetAllAsync();
             var partners = await _partnerService.GetAllAsync();
+            var staticpage = await _staticPageService.GetContent(); // جلب محتوى الادمن
+
 
             var vm = new HomeViewModel
             {
                 Reviews = reviews,
-                Partners = partners
+                Partners = partners,
+                Content1 = staticpage?.Content1,
+                Content2 = staticpage?.Content2,
+                VideoUrl = staticpage?.VideoUrl
             };
 
             return View(vm);

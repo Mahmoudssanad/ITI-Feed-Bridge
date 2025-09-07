@@ -12,9 +12,9 @@ namespace Feed_Bridge.ViewModel
         [Required(ErrorMessage = "المحتوى مطلوب")]
         public string Content { get; set; }
 
-        [Required(ErrorMessage = "البريد الإلكتروني مطلوب")]
-        [EmailAddress(ErrorMessage = "بريد إلكتروني غير صالح")]
-        public string Email { get; set; }
+        //[Required(ErrorMessage = "البريد الإلكتروني مطلوب")]
+        //[EmailAddress(ErrorMessage = "بريد إلكتروني غير صالح")]
+        //public string Email { get; set; }
 
         [Required(ErrorMessage = "المتبرع مطلوب")]
         public string? SelectedUserId { get; set; } // هنخزن الـ UserId

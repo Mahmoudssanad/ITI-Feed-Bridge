@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Protocols;
+using System.Security.Claims;
 
 namespace Feed_Bridge.Controllers
 {
@@ -16,13 +17,15 @@ namespace Feed_Bridge.Controllers
         private readonly AppDbContext _context;
         private readonly IDonationService _donationService;
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly IStaticPageService _staticPageService;
 
 
-        public AdminController(AppDbContext context,IDonationService donationService, UserManager<ApplicationUser> userManager)
+        public AdminController(AppDbContext context,IDonationService donationService, UserManager<ApplicationUser> userManager, IStaticPageService staticPageService)
         {
             _context = context;
             _donationService = donationService;
             _userManager = userManager;
+            _staticPageService = staticPageService;
         }
 
         // Dashboard
@@ -45,6 +48,8 @@ namespace Feed_Bridge.Controllers
             ViewData["TotalDonors"] = totalDonors;
             ViewData["TotalDonations"] = totalDonations;
             ViewData["TotalSupports"] = totalSupports;
+            ViewData["ActivePage"] = "Dashboard";
+
 
             return View();
         }
@@ -166,11 +171,53 @@ namespace Feed_Bridge.Controllers
             return RedirectToAction("AllUsers");
         }
 
-        // Home Control
-        [HttpGet]
-        public IActionResult HomeControl()
+        //// Home Control
+        //[HttpGet]
+        //public IActionResult HomeControl()
+        //{
+        //    return View();
+        //}
+        public async Task<IActionResult> EditHome()
         {
-            return View();
+            var content = await _staticPageService.GetContent() ?? new StaticPage();
+            return View(content);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditHome(StaticPage model, IFormFile VideoFile)
+        {
+            if (!ModelState.IsValid)
+                return View(model);
+
+            if (VideoFile != null && VideoFile.Length > 0)
+            {
+                var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads/videos");
+
+                // لو المجلد مش موجود ينشئه
+                if (!Directory.Exists(uploadsFolder))
+                {
+                    Directory.CreateDirectory(uploadsFolder);
+                }
+
+                var fileName = Path.GetFileName(VideoFile.FileName);
+                var filePath = Path.Combine(uploadsFolder, fileName);
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await VideoFile.CopyToAsync(stream);
+                }
+
+                model.VideoUrl = "/uploads/videos/" + fileName; // حفظ رابط الفيديو في الداتا بيز
+            }
+
+            model.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            await _staticPageService.UpdateContent(model);
+
+            return RedirectToAction("Index", "Home");
+        }
+
+
     }
 }

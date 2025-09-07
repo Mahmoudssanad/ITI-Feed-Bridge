@@ -35,7 +35,7 @@ namespace Feed_Bridge.Controllers
             var donors = await _userManager.Users
         .Where(u => u.Supports.Any()) // اللي تبرعوا بس
         .ToListAsync();
-
+            
             var vm = new ReportViewModel
             {
                 Donors = donors
@@ -66,12 +66,67 @@ namespace Feed_Bridge.Controllers
                 };
 
                 await _reportService.Create(report);
-
+                var emailBody = $@"
+<!DOCTYPE html>
+<html lang='ar' dir='rtl'>
+<head>
+    <meta charset='UTF-8'>
+    <style>
+        body {{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            padding: 20px;
+        }}
+        .container {{
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }}
+        .header {{
+            background: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 20px;
+        }}
+        .content {{
+            padding: 20px;
+            line-height: 1.6;
+        }}
+        .footer {{
+            background: #f1f1f1;
+            text-align: center;
+            padding: 10px;
+            font-size: 12px;
+            color: #777;
+        }}
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <div class='header'>
+            تقرير جديد من فريق FeedBridge
+        </div>
+        <div class='content'>
+            <h2>{model.Title}</h2>
+            <p>{model.Content}</p>
+            <p>📅 <strong>تاريخ الإنشاء:</strong> {DateTime.Now:dd/MM/yyyy HH:mm}</p>
+        </div>
+        <div class='footer'>
+            &copy; {DateTime.Now.Year} FeedBridge - جميع الحقوق محفوظة
+        </div>
+    </div>
+</body>
+</html>";
                 // إرسال الإيميل للمتبرع
                 await _emailService.SendEmailAsync(
                     donor.Email,
                     model.Title,
-                    model.Content
+                    emailBody
                 );
 
                 TempData["SuccessMessage"] = "تم إرسال التقرير للمتبرع بنجاح";
