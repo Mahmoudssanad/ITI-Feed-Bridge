@@ -48,7 +48,7 @@
             <img src="~/imgs/logo.png" alt="logo" class="logo-img" />
             <p>FeedBridge</p>
         </div>
-        <div class="header-icons">
+        @* <div class="header-icons">
             <div class="notifications-container">
                 <span class="material-symbols-outlined notifications-icon"> notifications </span>
                 <div class="notifications-box">
@@ -61,7 +61,10 @@
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div> *@
+
+        @await Component.InvokeAsync("AdminNotifications")
+
             @if (User.Identity != null && User.Identity.IsAuthenticated)
             {
                 <!-- تعديل الرابط ليستخدم asp-controller و asp-action -->
