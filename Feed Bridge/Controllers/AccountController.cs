@@ -32,6 +32,7 @@ namespace Feed_Bridge.Controllers
         [HttpGet]
         public IActionResult Login() => View();
 
+
         [HttpPost]
         public async Task<IActionResult> Login(string email, string password)
         {
