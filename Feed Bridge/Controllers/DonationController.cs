@@ -15,14 +15,16 @@ namespace Feed_Bridge.Controllers
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IWebHostEnvironment _env;
         private readonly IProductService _productService;
+        private readonly INotificationService _notificationService;
 
         public DonationController(IDonationService donationService,
-            UserManager<ApplicationUser> userManager,IWebHostEnvironment webHostEnvironment, IProductService productService )
+            UserManager<ApplicationUser> userManager,IWebHostEnvironment webHostEnvironment, IProductService productService, INotificationService notificationService)
         {
             _donationService = donationService;
             _userManager = userManager;
             _env = webHostEnvironment;
             _productService = productService;
+            _notificationService = notificationService;
         }
 
         //[Authorize(Roles ="Admin")]
@@ -87,6 +89,15 @@ namespace Feed_Bridge.Controllers
                 DonationId = donation.Id, // عشان نعرف إن المنتج ده مرتبط بتبرع
             };
             await _productService.AddAsync(product);
+            var notification = new Notification
+            {
+                Title = "تبرع جديد",
+                Description = $"{user.UserName} تبرع بـ {donation.Quantity} من {donation.Name}",
+                RedirectUrl = "/Admin/Donations",
+                UserId = user.Id
+            };
+            await _notificationService.AddNotificationAsync(notification);
+
             TempData["SuccessMessage"] = "تمت التبرع بنجاح";
 
             return RedirectToAction("Create");
