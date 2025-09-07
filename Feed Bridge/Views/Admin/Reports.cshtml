@@ -6,14 +6,20 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1 class="mb-4">قائمة التقارير</h1>
-
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="mb-4">قائمة التقارير</h1>
+    <a asp-action="Create" asp-controller="Report" class="btn btn-primary">
+        <i class="bi bi-plus-circle"></i> إضافة تقرير جديد
+    </a>
+</div>
+<div asp-validation-summary="All"></div>
 <table class="table table-bordered">
     <thead class="table-dark">
         <tr>
             <th>رقم التقرير</th>
             <th>العنوان</th>
             <th>الوصف</th>
+            <th>الايميل</th>
             <th>التاريخ</th>
         </tr>
     </thead>
