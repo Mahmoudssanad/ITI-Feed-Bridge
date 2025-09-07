@@ -1,7 +1,9 @@
 ﻿using Feed_Bridge.Models.Entities;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using System.Data;
 using System.Reflection.Emit;
 
 namespace Feed_Bridge.Models.Data
@@ -21,9 +23,12 @@ namespace Feed_Bridge.Models.Data
         public DbSet<Partener> Parteners { get; set; }
         public DbSet<Donation> Donations { get; set; }
         public DbSet<Notification> Notifications { get; set; }
+      //  public DbSet<Delivery> Deliveries { get; set; }
+        public DbSet<Report> Reports { get; set; }
         public DbSet<Review> Reviews { get; set; }
         public DbSet<OrderProduct> OrderProducts { get; set; }
         public DbSet<ProductCart> ProductCarts { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -48,6 +53,17 @@ namespace Feed_Bridge.Models.Data
 
             builder.Entity<OrderProduct>().HasOne(x => x.Product)
                 .WithMany(x => x.OrderProducts).HasForeignKey(x => x.ProductId);
+
+
+            // Seed Roles
+            builder.Entity<IdentityRole>().HasData(
+                new IdentityRole { Id = "1", Name = "Admin", NormalizedName = "ADMIN" },
+                new IdentityRole { Id = "2", Name = "Delivery", NormalizedName = "DELIVERY" },
+                new IdentityRole { Id = "3", Name = "User", NormalizedName = "USER" }
+            );
+
+            
+
         }
 
     }

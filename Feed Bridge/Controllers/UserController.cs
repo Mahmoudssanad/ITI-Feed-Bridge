@@ -2,6 +2,7 @@
 using Feed_Bridge.ViewModel;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Feed_Bridge.Controllers
 {
@@ -44,6 +45,34 @@ namespace Feed_Bridge.Controllers
             return View(model);
         }
 
+        public async Task<IActionResult> GetAllUsers()
+        {
+            var currentUser = await _userManager.GetUserAsync(User);
+
+            var users = await _userManager.Users
+                .Include(x => x.Orders)
+                .Include(x => x.Supports)
+                .Where(x => x.Id != currentUser.Id)
+                .ToListAsync();
+
+            var userWithRoles = new List<UserWithRolesViewModel>();
+
+            foreach (var u in users)
+            {
+                var roles = await _userManager.GetRolesAsync(u);
+                userWithRoles.Add(new UserWithRolesViewModel
+                {
+                    Id = u.Id,
+                    UserName = u.UserName,
+                    Email = u.Email,
+                    Roles = roles,
+                    OrdersCount = u.Orders?.Count ?? 0,
+                    SupportsCount = u.Supports?.Count ?? 0
+                });
+            }
+
+            return View(userWithRoles);
+        }
 
         // POST: User/EditProfile
         [HttpPost]
@@ -160,11 +189,5 @@ namespace Feed_Bridge.Controllers
 
             return View(model);
         }
-
-
-
-
-
-
     }
 }
