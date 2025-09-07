@@ -104,6 +104,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/mmm/OneDrive - Mansoura University - Main/Desktop/internship ITI/ITI-Feed-Bridge/Feed Bridge/Views/Supports/Donate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VwcG9ydHNcRG9uYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mmm/OneDrive - Mansoura University - Main/Desktop/internship ITI/ITI-Feed-Bridge/Feed Bridge/Views/Supports/Success.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VwcG9ydHNcU3VjY2Vzcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/mmm/OneDrive - Mansoura University - Main/Desktop/internship ITI/ITI-Feed-Bridge/Feed Bridge/Views/User/changepassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxjaGFuZ2VwYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -114,6 +122,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/mmm/OneDrive - Mansoura University - Main/Desktop/internship ITI/ITI-Feed-Bridge/Feed Bridge/Views/User/EditProfile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxFZGl0UHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mmm/OneDrive - Mansoura University - Main/Desktop/internship ITI/ITI-Feed-Bridge/Feed Bridge/Views/User/GetAllUsers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxHZXRBbGxVc2Vycy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/mmm/OneDrive - Mansoura University - Main/Desktop/internship ITI/ITI-Feed-Bridge/Feed Bridge/Views/User/Profile.cshtml]
