@@ -14,11 +14,14 @@ namespace Feed_Bridge.Controllers
     {
         private readonly ISupportService _supportService;
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly INotificationService _notificationService;
 
-        public SupportsController(ISupportService supportService, UserManager<ApplicationUser> userManager)
+
+        public SupportsController(ISupportService supportService, UserManager<ApplicationUser> userManager, INotificationService notificationService)
         {
             _supportService = supportService;
             _userManager = userManager;
+            _notificationService = notificationService;
         }
 
         // GET: Supports/Donate
@@ -56,6 +59,20 @@ namespace Feed_Bridge.Controllers
             };
 
             await _supportService.AddSupportAsync(support);
+            var admins = await _userManager.GetUsersInRoleAsync("Admin");
+            var user = await _userManager.FindByIdAsync(userId);
+            foreach (var admin in admins)
+            {
+                var notification = new Notification
+                {
+                    Title = "دعم مالي جديد",
+                    Description = $"قام {user.UserName} بدعم مالي بقيمة {donationAmount} جنيه",
+                    RedirectUrl = Url.Action("GetAllSupports", "Admin"),
+                    UserId = admin.Id
+                };
+
+                await _notificationService.AddNotificationAsync(notification);
+            }
 
             return View("Success");
         }

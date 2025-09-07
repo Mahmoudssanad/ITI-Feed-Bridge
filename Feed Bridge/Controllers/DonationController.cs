@@ -94,7 +94,7 @@ namespace Feed_Bridge.Controllers
             {
                 Title = "تبرع جديد",
                 Description = $"{user.UserName} تبرع بـ {donation.Quantity} من {donation.Name}",
-                RedirectUrl = "/Admin/Donations",
+                RedirectUrl = Url.Action("Donate", "Admin"),
                 UserId = user.Id
             };
             await _notificationService.AddNotificationAsync(notification);

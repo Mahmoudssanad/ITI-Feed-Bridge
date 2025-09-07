@@ -3,6 +3,7 @@ using Feed_Bridge.Services;
 using Feed_Bridge.ViewModel;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Net;
 using System.Net.Mail;
 
@@ -26,7 +27,6 @@ namespace Feed_Bridge.Controllers
 
         [HttpGet]
         public IActionResult Login() => View();
-
         [HttpPost]
         public async Task<IActionResult> Login(string email, string password)
         {
@@ -54,6 +54,37 @@ namespace Feed_Bridge.Controllers
             ViewBag.Error = "البريد الإلكتروني أو كلمة المرور غير صحيحة";
             return View();
         }
+
+        [HttpPost]
+        public async Task<IActionResult> GetAllUsers()
+        {
+            var currentUser = await _userManager.GetUserAsync(User);
+
+            var users = await _userManager.Users
+                .Where(u => u.Id != currentUser.Id) // استبعد المستخدم الحالي (الأدمن)
+                .ToListAsync();
+
+            var model = new List<UserWithRoleVM>();
+
+            foreach (var user in users)
+            {
+                var roles = await _userManager.GetRolesAsync(user);
+
+                model.Add(new UserWithRoleVM
+                {
+                    UserId = user.Id,
+                    UserName = user.UserName,
+                    Email = user.Email,
+                    ImgUrl = user.ImgUrl,
+                    Roles = roles,
+                    IsFrozen = user.IsFrozen // ✅ ربط الحالة من قاعدة البيانات
+                });
+            }
+
+            return View(model);
+        }
+
+
 
 
         [HttpGet]

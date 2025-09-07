@@ -17,15 +17,20 @@ namespace Feed_Bridge.Controllers
             _signInManager = signInManager;
         }
 
-        // GET: User/Profile
-        public async Task<IActionResult> Profile()
+       
+        // GET: User/Profile/5
+        public async Task<IActionResult> Profile(string id)
         {
-            var user = await _userManager.GetUserAsync(User);
-            if(user == null)
-                return RedirectToAction("Login", "Account");
+            if (string.IsNullOrEmpty(id))
+                return RedirectToAction("Index", "Home");
+
+            var user = await _userManager.FindByIdAsync(id);
+            if (user == null)
+                return NotFound();
 
             return View(user);
         }
+
 
         // GET: User/EditProfile
         [HttpGet]
