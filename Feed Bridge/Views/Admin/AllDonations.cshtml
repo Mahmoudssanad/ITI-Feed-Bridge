@@ -9,8 +9,8 @@
 <div class="allusers-page">
     <h2>كل المشتركين</h2>
 
-    <table class="table table-bordered">
-        <thead>
+    <table class="table table-bordered text-center">
+        <thead class="table-dark">
             <tr>
                 <th>الاسم</th>
                 <th>العنوان</th>
@@ -22,11 +22,15 @@
             @foreach (var donation in Model)
             {
                 <tr>
-
                     <td>@donation.Name</td>
                     <td>@donation.Address</td>
                     <td>@donation.Quantity</td>
-                    <td>@donation.User.UserName</td>
+                    <td>
+                        <a asp-controller="Admin" asp-action="Profile" asp-route-id="@donation.User?.Id">
+                            @donation.User?.UserName
+                        </a>
+                    </td>
+
                 </tr>
             }
         </tbody>

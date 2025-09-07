@@ -252,6 +252,34 @@ namespace Feed_Bridge.Controllers
 
             return Ok();
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteProduct(int id)
+        {
+            var product = await _context.Products.FindAsync(id);
+            if (product == null)
+            {
+                TempData["ErrorMessage"] = "❌ المنتج غير موجود";
+                return RedirectToAction("Products");
+            }
+
+            _context.Products.Remove(product);
+            await _context.SaveChangesAsync();
+
+            TempData["SuccessMessage"] = "✅ تم حذف المنتج بنجاح";
+            return RedirectToAction("Products");
+        }
+        [HttpGet]
+        public async Task<IActionResult> UserProfile(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+            if (user == null)
+                return NotFound();
+
+            return View(user); // هتعمل View تعرض بياناته
+        }
+
+
 
 
     }

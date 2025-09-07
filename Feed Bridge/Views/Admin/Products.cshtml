@@ -8,7 +8,7 @@
 
 <h1 class="mb-4">قائمة المنتجات</h1>
 
-<table class="table table-hover table-bordered">
+<table class="table table-hover table-bordered text-center">
     <thead class="table-dark">
         <tr>
             <th>الاسم</th>
@@ -16,7 +16,7 @@
             <th>تاريخ الانتهاء</th>
             <th>الكمية</th>
             <th>الصورة</th>
-           
+            <th>الإجراءات</th>
         </tr>
     </thead>
     <tbody>
@@ -25,7 +25,6 @@
             foreach (var product in Model)
             {
                 <tr>
-                    
                     <td>@product.Name</td>
                     <td>@product.CreatedAt.ToShortDateString()</td>
                     <td>@product.ExpirDate.ToShortDateString()</td>
@@ -43,18 +42,24 @@
                                  alt="صورة افتراضية"
                                  style="width:50px;height:50px;object-fit:cover;" />
                         }
-
                     </td>
-                    
+                    <td>
+                        <form asp-action="DeleteProduct" asp-controller="Admin" method="post" style="display:inline">
+                            <input type="hidden" name="id" value="@product.Id" />
+                            <button type="submit" class="btn btn-danger btn-sm"
+                                    onclick="return confirm('هل أنت متأكد من حذف هذا المنتج؟')">
+                                🗑️ حذف
+                            </button>
+                        </form>
+                    </td>
                 </tr>
             }
         }
         else
         {
             <tr>
-                <td colspan="5" class="text-center">لا توجد منتجات</td>
+                <td colspan="6" class="text-center">لا توجد منتجات</td>
             </tr>
         }
     </tbody>
 </table>
-
