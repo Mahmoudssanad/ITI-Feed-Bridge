@@ -29,6 +29,7 @@ namespace Feed_Bridge.Controllers
         }
 
         // Dashboard
+
         [HttpGet]
         public async Task<IActionResult> Dashboard()
         {

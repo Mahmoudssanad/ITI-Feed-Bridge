@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Feed_Bridge.Models.Entities.Order>
+
+@{
+    Layout = "_DeliveryLayout";
+    ViewData["Title"] = "الطلبات";
+}
+
+<h1 class="mb-3">الطلبات للتوصيل</h1>
+
+<div class="Orders_data_table">
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>رقم الطلب</th>
+                <th>اسم المستخدم</th>
+                <th>المنتجات</th>
+                <th>الكمية</th>
+                <th>الحالة</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Model ?? Enumerable.Empty<Feed_Bridge.Models.Entities.Order>())
+            {
+                <tr>
+                    <td>@order.Id</td>
+                    <td>@(order.User?.UserName ?? "غير محدد")</td>
+                    <td>
+                        <ul>
+                            @foreach (var op in order.OrderProducts ?? Enumerable.Empty<Feed_Bridge.Models.Entities.OrderProduct>())
+                            {
+                                <li>@(op.Product?.Name ?? "غير محدد")</li>
+                            }
+                        </ul>
+                    </td>
+                    <td>@order.Quantity</td>
+                    <td>@order.Status.ToString()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
