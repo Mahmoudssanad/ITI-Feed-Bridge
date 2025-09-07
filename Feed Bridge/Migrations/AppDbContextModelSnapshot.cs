@@ -254,6 +254,10 @@ namespace Feed_Bridge.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("RedirectUrl")
                         .HasColumnType("nvarchar(max)");
 
@@ -331,6 +335,40 @@ namespace Feed_Bridge.Migrations
                     b.ToTable("ProductCarts");
                 });
 
+            modelBuilder.Entity("Feed_Bridge.Models.Entities.Report", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Reports");
+                });
+
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Review", b =>
                 {
                     b.Property<int>("Id")
@@ -377,25 +415,22 @@ namespace Feed_Bridge.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("HomePageBackgroundImageUrl")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PartenerBackgroundImageUrl")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("VideoUrl")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("UserId")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[UserId] IS NOT NULL");
 
                     b.ToTable("StaticPages");
                 });
@@ -707,6 +742,17 @@ namespace Feed_Bridge.Migrations
                     b.Navigation("Product");
                 });
 
+            modelBuilder.Entity("Feed_Bridge.Models.Entities.Report", b =>
+                {
+                    b.HasOne("Feed_Bridge.Models.Entities.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Review", b =>
                 {
                     b.HasOne("Feed_Bridge.Models.Entities.ApplicationUser", "User")
@@ -722,9 +768,7 @@ namespace Feed_Bridge.Migrations
                 {
                     b.HasOne("Feed_Bridge.Models.Entities.ApplicationUser", "User")
                         .WithOne("StaticPage")
-                        .HasForeignKey("Feed_Bridge.Models.Entities.StaticPage", "UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("Feed_Bridge.Models.Entities.StaticPage", "UserId");
 
                     b.Navigation("User");
                 });

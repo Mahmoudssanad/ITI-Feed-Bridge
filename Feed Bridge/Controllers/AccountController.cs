@@ -42,9 +42,9 @@ namespace Feed_Bridge.Controllers
                     var roles = await _userManager.GetRolesAsync(user);
 
                     if (roles.Contains("Admin"))
-                        return RedirectToAction("Admin", "Admin");
+                        return RedirectToAction("Dashboard", "Admin");
                     else if (roles.Contains("Delivery"))
-                        return RedirectToAction("Delivery", "Delivery");
+                        return RedirectToAction("Index", "DeliveryDashboard");
                     else
                         return RedirectToAction("Index", "Home");
 
