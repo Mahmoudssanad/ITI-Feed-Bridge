@@ -110,7 +110,7 @@ namespace Feed_Bridge.Migrations
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("Carts");
+                    b.ToTable("Carts", (string)null);
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Donation", b =>
@@ -153,7 +153,7 @@ namespace Feed_Bridge.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Donations");
+                    b.ToTable("Donations", (string)null);
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Notification", b =>
@@ -190,7 +190,7 @@ namespace Feed_Bridge.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Notifications");
+                    b.ToTable("Notifications", (string)null);
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Order", b =>
@@ -227,7 +227,7 @@ namespace Feed_Bridge.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.OrderProduct", b =>
@@ -245,7 +245,7 @@ namespace Feed_Bridge.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("OrderProducts");
+                    b.ToTable("OrderProducts", (string)null);
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Partener", b =>
@@ -275,7 +275,7 @@ namespace Feed_Bridge.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Parteners");
+                    b.ToTable("Parteners", (string)null);
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Product", b =>
@@ -312,7 +312,7 @@ namespace Feed_Bridge.Migrations
 
                     b.HasIndex("DonationId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.ProductCart", b =>
@@ -338,7 +338,7 @@ namespace Feed_Bridge.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductCarts");
+                    b.ToTable("ProductCarts", (string)null);
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Report", b =>
@@ -372,7 +372,7 @@ namespace Feed_Bridge.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Reports");
+                    b.ToTable("Reports", (string)null);
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Review", b =>
@@ -401,7 +401,7 @@ namespace Feed_Bridge.Migrations
 
                     b.HasIndex("UserID");
 
-                    b.ToTable("Reviews");
+                    b.ToTable("Reviews", (string)null);
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.StaticPage", b =>
@@ -438,7 +438,7 @@ namespace Feed_Bridge.Migrations
                         .IsUnique()
                         .HasFilter("[UserId] IS NOT NULL");
 
-                    b.ToTable("StaticPages");
+                    b.ToTable("StaticPages", (string)null);
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Support", b =>
@@ -480,7 +480,7 @@ namespace Feed_Bridge.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Supports");
+                    b.ToTable("Supports", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
