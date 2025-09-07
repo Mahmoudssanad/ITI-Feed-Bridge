@@ -17,7 +17,7 @@
     <WebStackScaffolding_DbContextTypeFullName>Feed_Bridge.Models.Data.AppDbContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
     <WebStackScaffolding_IsViewGenerationSelected>True</WebStackScaffolding_IsViewGenerationSelected>
-    <NameOfLastUsedPublishProfile>C:\Users\mmm\OneDrive - Mansoura University - Main\Desktop\internship ITI\ITI-Feed-Bridge\Feed Bridge\Properties\PublishProfiles\site35869-WebDeploy.pubxml</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>C:\Users\mmm\OneDrive - Mansoura University - Main\Desktop\internship ITI\ITI-Feed-Bridge\Feed Bridge\Properties\PublishProfiles\site35869-WebDeploy1.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
