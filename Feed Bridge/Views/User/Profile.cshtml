@@ -7,11 +7,13 @@
     
 </style>
 <div class="profile-container">
-    <div class="heading">
-        <p class="section-title">بيانات المستخدم</p>
-        <a style="color: white;" asp-action="EditProfile" asp-controller="User" class="edit-button btn">تعديل</a>
-    </div>
-
+    @if (User.IsInRole("User"))
+    {
+        <div class="heading">
+            <p class="section-title">بيانات المستخدم</p>
+            <a style="color: white;" asp-action="EditProfile" asp-controller="User" class="edit-button btn">تعديل</a>
+        </div>
+    }
     <!-- صورة البروفايل -->
     <div class="profile-image text-center">
         @if (!string.IsNullOrEmpty(Model.ImgUrl))
@@ -77,18 +79,27 @@
 
     <!-- تغيير كلمة المرور -->
     <div class="change-password-section">
-        <div class="sub-heading">
-            <span class="material-symbols-outlined"> lock_reset </span>
-			<p>تغيير كلمة المرور</p>
-            <a asp-controller="User" asp-action="ChangePassword" class="btn confirm-btn">تغيير كلمة المرور</a>
-        </div>
-        
+        @if (User.IsInRole("User"))
+        {
+            <div class="sub-heading">
+                <span class="material-symbols-outlined"> lock_reset </span>
+                <p>تغيير كلمة المرور</p>
+                <a asp-controller="User" asp-action="ChangePassword" class="btn confirm-btn">تغيير كلمة المرور</a>
+            </div>
+        }
+
 
         <div class="sub-heading">
-            <span class="material-symbols-outlined" style="color:red;"> Delete</span>
-			<p>حذف الحساب</p>
-			<a asp-controller="User" asp-action="DeleteAccount" class="btn confirm-btn" style="background-color:red;">حذف الحساب</a>
+            @if (User.IsInRole("User"))
+            {
+                <span class="material-symbols-outlined" style="color:red;"> Delete</span>
+                <p>حذف الحساب</p>
+                <a asp-controller="User" asp-action="DeleteAccount" class="btn confirm-btn" style="background-color:red;">
+                    حذف الحساب
+                </a>
+            }
         </div>
+
     </div>
 
     

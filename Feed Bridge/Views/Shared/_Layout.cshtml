@@ -24,10 +24,13 @@
 <body>
     <!-- ✅ الهيدر -->
     <header class="header">
-        <div class="header-logo">
-            <img src="~/imgs/logo.png" alt="logo" class="logo-img" />
-            <p>FeedBridge</p>
-        </div>
+        <a asp-controller="Home" asp-action="Index" class="text-decoration-none">
+            <div class="header-logo">
+                <img src="~/imgs/logo.png" alt="logo" class="logo-img" />
+                <p>FeedBridge</p>
+            </div>
+        </a>
+
 
         <span class="material-symbols-outlined mobile-icon">menu</span>
 
@@ -42,7 +45,6 @@
                 {
                     <li><a asp-controller="Delivery" asp-action="Dashboard">لوحة التوصيل</a></li>
                     <li><a asp-controller="Home" asp-action="Index">الرئيسية</a></li>
-                    <li><a asp-controller="Product" asp-action="Index">المنتجات</a></li>
                 }
                 else
                 {
@@ -63,16 +65,20 @@
 
         <div class="header-icons">
 
-            <a asp-controller="Cart" asp-action="Index">
-                <span class="material-symbols-outlined">shopping_cart</span>
-            </a>
+
+            @if (User.IsInRole("User"))
+            {
+                <a asp-controller="Cart" asp-action="Index">
+                    <span class="material-symbols-outlined">shopping_cart</span>
+                </a>
+            }
+
 
             @if (User.Identity != null && User.Identity.IsAuthenticated)
             {
                 <!-- تعديل الرابط ليستخدم asp-controller و asp-action -->
-                <a asp-controller="User" asp-action="Profile" style="color:#1cba7f;">
-                    <span class="material-symbols-outlined">account_circle</span>
-                    @* <span>@User.Identity.Name</span> *@
+                <a asp-controller="User" asp-action="Profile" asp-route-id="@User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value">
+                    <span class="material-symbols-outlined" style="color:#1cba7f;">account_circle</span>
                 </a>
                 <form asp-controller="Account" asp-action="Logout" method="post" style="display:inline;">
                     <button type="submit" class="btn btn-link p-0">تسجيل خروج</button>
