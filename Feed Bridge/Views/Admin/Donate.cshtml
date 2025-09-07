@@ -11,7 +11,8 @@
 <table class="table table-striped table-bordered">
     <thead>
         <tr>
-            <th>الاسم</th>
+            <th>اسم المنتج</th>
+            <th>اسم المتبرع</th>
             <th>تاريخ الانتهاء</th>
             <th>الكمية</th>
             <th>الوصف</th>
@@ -23,6 +24,7 @@
         {
             <tr>
                 <td>@donation.Name</td>
+                <td>@donation.User.UserName</td>
                 <td>@donation.ExpirDate.ToString("yyyy/MM/dd")</td>
                 <td>@donation.Quantity</td>
                 <td>@donation.Description</td>

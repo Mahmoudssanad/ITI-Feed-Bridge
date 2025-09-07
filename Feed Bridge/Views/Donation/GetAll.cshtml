@@ -24,6 +24,7 @@
                         @foreach (var donation in Model)
                         {
                             <tr>
+                                <td>@donation.User?.UserName</td>
                                 <td>@donation.Name</td>
                                 <td>@donation.ExpirDate.ToString("yyyy/MM/dd")</td>
                                 <td>@donation.Quantity</td>
