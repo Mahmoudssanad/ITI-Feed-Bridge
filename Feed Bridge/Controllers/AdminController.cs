@@ -237,6 +237,9 @@ namespace Feed_Bridge.Controllers
                 ? "تم تجميد الحساب بنجاح"
                 : "تم إلغاء التجميد بنجاح";
 
+            return RedirectToAction("GetAllUsers");
+        }
+
         [HttpPost]
         public async Task<IActionResult> MarkNotificationAsRead(int id)
         {
@@ -251,7 +254,5 @@ namespace Feed_Bridge.Controllers
         }
 
 
-            return RedirectToAction("GetAllUsers");
-        }
     }
 }
