@@ -103,15 +103,15 @@ namespace Feed_Bridge.Controllers
         }
 
         // Delivery
-        //[HttpGet]
-        //public async Task<IActionResult> Delivery()
-        //{
-        //    var deliveries = await _context.Deliveries
-        //        .Include(d => d.Order)
-        //        .ToListAsync();
+        [HttpGet]
+        public async Task<IActionResult> Delivery()
+        {
+            var deliveries = await _context.Deliveries
+                .Include(d => d.Order)
+                .ToListAsync();
 
-        //    return View(deliveries);
-        //}
+            return View(deliveries);
+        }
 
         // All Users
         [HttpGet]
