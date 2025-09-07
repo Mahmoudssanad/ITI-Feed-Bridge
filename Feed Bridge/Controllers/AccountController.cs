@@ -44,7 +44,7 @@ namespace Feed_Bridge.Controllers
                     if (roles.Contains("Admin"))
                         return RedirectToAction("Dashboard", "Admin");
                     else if (roles.Contains("Delivery"))
-                        return RedirectToAction("Index", "DeliveryDashboard");
+                        return RedirectToAction("Dashboard", "Delivery");
                     else
                         return RedirectToAction("Index", "Home");
 
