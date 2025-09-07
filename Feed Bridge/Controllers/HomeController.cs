@@ -1,6 +1,8 @@
 using Feed_Bridge.IServices;
 using Feed_Bridge.Models;
 using Feed_Bridge.Models.Entities;
+using Feed_Bridge.Services;
+using Feed_Bridge.ViewModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -11,14 +13,17 @@ namespace Feed_Bridge.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IParteerService _partnerService;
 
-       
+
+
         private readonly IReviewService _reviewService;
 
-        public HomeController(ILogger<HomeController> logger, IReviewService reviewService)
+        public HomeController(ILogger<HomeController> logger, IReviewService reviewService, IParteerService partnerService)
         {
             _logger = logger;
             _reviewService = reviewService;
+            _partnerService = partnerService;
         }
 
         
@@ -26,7 +31,15 @@ namespace Feed_Bridge.Controllers
         public async Task<IActionResult> Index()
         {
             var reviews = await _reviewService.GetAllAsync();
-            return View(reviews); 
+            var partners = await _partnerService.GetAllAsync();
+
+            var vm = new HomeViewModel
+            {
+                Reviews = reviews,
+                Partners = partners
+            };
+
+            return View(vm);
         }
        
         [HttpPost]

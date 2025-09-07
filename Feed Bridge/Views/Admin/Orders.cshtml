@@ -10,8 +10,7 @@
 
 <table class="table table-bordered table-striped">
     <thead class="table-dark">
-        <tr>
-            <th>رقم الطلب</th>
+        <tr >
             <th>المستخدم</th>
             <th>الحالة</th>
             <th>المنتجات</th>
@@ -23,14 +22,13 @@
             foreach (var order in Model)
             {
                 <tr>
-                    <td>@order.Id</td>
                     <td>@order.User?.UserName</td>
                     <td>@order.Status</td>
                     <td>
                         <ul>
                             @foreach (var op in order.OrderProducts)
                             {
-                                <li>@op.Product?.Name (x@op.Quantity)</li>
+                                <li>@op.Product?.Name (@op.Quantity)</li>
                             }
                         </ul>
                     </td>

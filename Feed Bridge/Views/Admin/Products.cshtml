@@ -31,7 +31,19 @@
                     <td>@product.ExpirDate.ToShortDateString()</td>
                     <td>@product.Quantity</td>
                     <td>
-                        <img src="~/uploads/@product.ImgURL" alt="@product.Name" style="width:50px;height:50px;" />
+                        @if (!string.IsNullOrEmpty(product.ImgURL))
+                        {
+                            <img src="@Url.Content("~/uploads/" + product.ImgURL)"
+                                 alt="@product.Name"
+                                 style="width:50px;height:50px;object-fit:cover;" />
+                        }
+                        else
+                        {
+                            <img src="~/imgs/Empty.png"
+                                 alt="صورة افتراضية"
+                                 style="width:50px;height:50px;object-fit:cover;" />
+                        }
+
                     </td>
                     
                 </tr>

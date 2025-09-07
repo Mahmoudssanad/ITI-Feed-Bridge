@@ -1,6 +1,9 @@
 ﻿using Feed_Bridge.IServices;
 using Feed_Bridge.Models.Data;
+using Feed_Bridge.Models.Entities;
+using Feed_Bridge.ViewModel;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Protocols;
@@ -12,11 +15,14 @@ namespace Feed_Bridge.Controllers
     {
         private readonly AppDbContext _context;
         private readonly IDonationService _donationService;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public AdminController(AppDbContext context,IDonationService donationService)
+
+        public AdminController(AppDbContext context,IDonationService donationService, UserManager<ApplicationUser> userManager)
         {
             _context = context;
             _donationService = donationService;
+            _userManager = userManager;
         }
 
         // Dashboard
@@ -113,8 +119,24 @@ namespace Feed_Bridge.Controllers
         [HttpGet]
         public async Task<IActionResult> AllUsers()
         {
-            var users = await _context.Users.ToListAsync();
-            return View(users);
+            var users = _userManager.Users.ToList();
+
+            var userList = new List<UserWithRoleVM>();
+
+            foreach (var user in users)
+            {
+                var roles = await _userManager.GetRolesAsync(user);
+                userList.Add(new UserWithRoleVM
+                {
+                    UserId = user.Id,
+                    UserName = user.UserName,
+                    Email = user.Email,
+                    ImgUrl = user.ImgUrl,
+                    Roles = roles
+                });
+            }
+
+            return View(userList);
         }
 
         // All Partners
@@ -124,6 +146,24 @@ namespace Feed_Bridge.Controllers
             
             var partners = await _context.Parteners.ToListAsync();
             return View(partners);
+        }
+        [HttpPost]
+        public async Task<IActionResult> ChangeUserRole(string userId, string newRole)
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+                return NotFound();
+
+            var roles = await _userManager.GetRolesAsync(user);
+
+            // Remove old roles
+            await _userManager.RemoveFromRolesAsync(user, roles);
+
+            // Add new role
+            await _userManager.AddToRoleAsync(user, newRole);
+
+            TempData["Success"] = $"تم تحديث دور المستخدم {user.UserName} بنجاح إلى {newRole}.";
+            return RedirectToAction("AllUsers");
         }
 
         // Home Control

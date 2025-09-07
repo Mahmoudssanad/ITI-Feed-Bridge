@@ -14,7 +14,7 @@
         <!-- الجزء الخاص بالترحيب -->
         <div class="d-flex justify-content-between align-items-center p-3 bg-light rounded shadow-sm mb-4">
             <div class="d-flex align-items-center">
-                <span class="material-symbols-outlined fs-1 me-2 text-primary">person</span>
+                <span class="material-symbols-outlined fs-1 me-2 " style="color:#1cba7f;">person</span>
                 <p class="mb-0">مرحبًا<br><span class="fw-bold">@User.Identity.Name</span></p>
             </div>
             <form asp-controller="Account" asp-action="Logout" method="post" class="d-flex align-items-center">
@@ -32,7 +32,7 @@
         <div class="row text-center">
                 <div class="col-md-4 mb-3">
                     <div class="p-3 bg-white shadow rounded">
-                        <span class="material-symbols-outlined fs-1 text-success">groups</span>
+                    <span class="material-symbols-outlined fs-1 " style="color:#1cba7f;">groups</span>
                         <p class="mt-2">
 
                         <a asp-action="AllUsers" asp-controller="Admin">إجمالي المتبرعين</a>
@@ -43,7 +43,7 @@
                 </div>
             <div class="col-md-4 mb-3">
                 <div class="p-3 bg-white shadow rounded">
-                    <span class="material-symbols-outlined fs-1 text-danger">favorite</span>
+                    <span class="material-symbols-outlined fs-1 " style="color:#1cba7f;">favorite</span>
                     <p class="mt-2">
                         <a asp-action="Donate" asp-controller="Admin">إجمالي التبرعات</a>
                         <br />
@@ -53,7 +53,7 @@
             </div>
             <div class="col-md-4 mb-3">
                 <div class="p-3 bg-white shadow rounded">
-                    <span class="material-symbols-outlined fs-1 text-warning">attach_money</span>
+                    <span class="material-symbols-outlined fs-1 " style="color:#1cba7f;">attach_money</span>
                     <p class="mt-2">
                         <a asp-action="GetAllSupports" asp-controller="Admin">إجمالي المساعدات المالية</a>
                         <br />
