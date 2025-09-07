@@ -247,6 +247,9 @@ namespace Feed_Bridge.Controllers
             });
         }
 
+            return RedirectToAction("GetAllUsers");
+        }
+
         [HttpPost]
         public async Task<IActionResult> MarkNotificationAsRead(int id)
         {

@@ -34,8 +34,9 @@ namespace Feed_Bridge.Controllers
             ViewData["ActivePage"] = "Donors";
             var donations = await _donationService.GetAllDonations();
             return View(donations);
-        } //view Done
-        
+        }
+
+
         [HttpGet]
         public IActionResult Create()
         {

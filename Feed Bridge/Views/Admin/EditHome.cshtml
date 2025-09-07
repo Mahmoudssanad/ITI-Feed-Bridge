@@ -1,6 +1,11 @@
 ﻿@using Feed_Bridge.Models.Entities
-@model StaticPage
 
+@model StaticPage
+@{
+    ViewData["Title"] = "التحكم في الواجهة";
+    ViewData["ActivePage"] = "EditHome";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
 <form asp-action="EditHome" method="post" enctype="multipart/form-data">
     <input type="hidden" asp-for="Id" />
 

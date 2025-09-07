@@ -14,6 +14,9 @@
             <th>المستخدم</th>
             <th>الحالة</th>
             <th>المنتجات</th>
+            <th>كل الطلبات </th>
+            
+            
         </tr>
     </thead>
     <tbody>
@@ -37,6 +40,13 @@
                             }
                         </ul>
                     </td>
+                    <td>
+                        <a asp-action="History" asp-controller="Order" asp-route-userId="@order.UserId">
+                            كل الطلبات 
+
+                        </a>
+                    </td>
+                    
                 </tr>
             }
         }
