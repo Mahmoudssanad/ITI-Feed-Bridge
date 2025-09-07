@@ -8,6 +8,10 @@
 
 <h1 class="mb-4">قائمة المستخدمين</h1>
 
+<form id="antiForgeryForm">
+    @Html.AntiForgeryToken()
+</form>
+
 <table class="table table-striped">
     <thead class="table-dark">
         <tr>
@@ -17,7 +21,6 @@
             <th>صورة الملف الشخصي</th>
             <th>تغيير الدور</th>
              <th>الحالة</th>
-
         </tr>
     </thead>
     <tbody>
@@ -36,8 +39,7 @@
                                                              : Url.Content(user.ImgUrl))"
                      alt="@user.UserName"
                      style="width:50px;height:50px;object-fit:cover;" />
-            </td>
-
+                    </td>
                     <td>
                 @if (!(user.Roles.Contains("Admin") || user.Roles.Contains("Delivery")))
                         {
@@ -67,22 +69,11 @@
                         }
                         else
                         {
-                            <form asp-action="ToggleFreeze" asp-controller="Admin" method="post">
-                                <input type="hidden" name="userId" value="@user.UserId" />
-
-                                @* @if (user.IsFrozen) *@
-                                @* { *@
-                                @*     <button type="submit" class="btn btn-sm btn-success"> *@
-                                @*         إلغاء التجميد *@
-                                @*     </button> *@
-                                @* } *@
-                                @* else *@
-                                @* { *@
-                                @*     <button type="submit" class="btn btn-sm btn-danger"> *@
-                                @*         تجميد *@
-                                @*     </button> *@
-                                @* } *@
-                            </form>
+                            <button type="button"
+                                    class="btn btn-sm @(user.IsFrozen ? "btn-success" : "btn-danger") toggle-freeze-btn"
+                                    data-user-id="@user.UserId">
+                                @(user.IsFrozen ? "إلغاء التجميد" : "تجميد")
+                            </button>
                         }
                     </td>
                 </tr>
@@ -97,7 +88,10 @@
     </tbody>
 </table>
 
+
+
 @section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         const successMessage = "@TempData["SuccessMessage"]";
         if (successMessage && successMessage.trim() !== "") {
@@ -121,4 +115,60 @@
             });
         }
     </script>
+    <script>
+                $(document).on("click", ".toggle-freeze-btn", function () {
+            var button = $(this);
+            var userId = button.data("user-id");
+
+            // هات التوكين
+            var token = $('#antiForgeryForm input[name="__RequestVerificationToken"]').val();
+
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("ToggleFreeze", "Admin")",
+                data: {
+                    userId: userId,
+                    __RequestVerificationToken: token  // لازم يتبعت
+                },
+                success: function (response) {
+                    if (response.success) {
+                        if (response.isFrozen) {
+                            button.removeClass("btn-danger").addClass("btn-success");
+                            button.text("إلغاء التجميد");
+                        } else {
+                            button.removeClass("btn-success").addClass("btn-danger");
+                            button.text("تجميد");
+                        }
+
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'نجاح!',
+                            text: response.message,
+                            showConfirmButton: false,
+                            timer: 2000
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'خطأ!',
+                            text: response.message,
+                            showConfirmButton: false,
+                            timer: 2000
+                        });
+                    }
+                },
+                error: function () {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'خطأ في الاتصال',
+                        text: 'تعذر تنفيذ العملية حالياً',
+                        showConfirmButton: false,
+                        timer: 2000
+                    });
+                }
+            });
+        });
+
+    </script>
 }
+
