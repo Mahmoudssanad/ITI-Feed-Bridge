@@ -16,6 +16,8 @@
             <th>الدور</th>
             <th>صورة الملف الشخصي</th>
             <th>تغيير الدور</th>
+             <th>الحالة</th>
+
         </tr>
     </thead>
     <tbody>
@@ -56,6 +58,31 @@
                         else
                         {
                             <span class="text-muted">غير قابل للتغيير</span>
+                        }
+                    </td>
+                    <td>
+                        @if (user.Roles.Contains("Admin"))
+                        {
+                            <span class="text-muted">غير قابل للتجميد</span>
+                        }
+                        else
+                        {
+                            <form asp-action="ToggleFreeze" asp-controller="Admin" method="post">
+                                <input type="hidden" name="userId" value="@user.UserId" />
+
+                                @* @if (user.IsFrozen) *@
+                                @* { *@
+                                @*     <button type="submit" class="btn btn-sm btn-success"> *@
+                                @*         إلغاء التجميد *@
+                                @*     </button> *@
+                                @* } *@
+                                @* else *@
+                                @* { *@
+                                @*     <button type="submit" class="btn btn-sm btn-danger"> *@
+                                @*         تجميد *@
+                                @*     </button> *@
+                                @* } *@
+                            </form>
                         }
                     </td>
                 </tr>
