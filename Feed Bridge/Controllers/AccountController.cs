@@ -56,36 +56,39 @@ namespace Feed_Bridge.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> GetAllUsers()
+        public async Task<IActionResult> Login(string email, string password)
         {
-            var currentUser = await _userManager.GetUserAsync(User);
+            var user = await _userManager.FindByEmailAsync(email);
 
-            var users = await _userManager.Users
-                .Where(u => u.Id != currentUser.Id) // استبعد المستخدم الحالي (الأدمن)
-                .ToListAsync();
-
-            var model = new List<UserWithRoleVM>();
-
-            foreach (var user in users)
+            if (user != null)
             {
-                var roles = await _userManager.GetRolesAsync(user);
-
-                model.Add(new UserWithRoleVM
+                // ✅ تحقق أولاً هل الحساب مجمد
+                if (user.IsFrozen)
                 {
-                    UserId = user.Id,
-                    UserName = user.UserName,
-                    Email = user.Email,
-                    ImgUrl = user.ImgUrl,
-                    Roles = roles,
-                    IsFrozen = user.IsFrozen // ✅ ربط الحالة من قاعدة البيانات
-                });
+                    ViewBag.Error = "حسابك مجمد من قبل الإدارة. برجاء التواصل مع الدعم.";
+                    return View();
+                }
+
+                var result = await _signInManager.PasswordSignInAsync(
+                    user, password, isPersistent: false, lockoutOnFailure: false);
+
+                if (result.Succeeded)
+                {
+                    // جلب أدوار المستخدم 
+                    var roles = await _userManager.GetRolesAsync(user);
+
+                    if (roles.Contains("Admin"))
+                        return RedirectToAction("Dashboard", "Admin");
+                    else if (roles.Contains("Delivery"))
+                        return RedirectToAction("Dashboard", "Delivery");
+                    else
+                        return RedirectToAction("Index", "Home");
+                }
             }
 
-            return View(model);
+            ViewBag.Error = "البريد الإلكتروني أو كلمة المرور غير صحيحة";
+            return View();
         }
-
-
-
 
         [HttpGet]
         public IActionResult Register() => View();

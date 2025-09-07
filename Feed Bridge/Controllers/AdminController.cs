@@ -125,24 +125,30 @@ namespace Feed_Bridge.Controllers
         [HttpGet]
         public async Task<IActionResult> AllUsers()
         {
-            var users = _userManager.Users.ToList();
+            var currentUser = await _userManager.GetUserAsync(User);
 
-            var userList = new List<UserWithRoleVM>();
+            var users = await _userManager.Users
+                .Where(u => u.Id != currentUser.Id) // استبعد المستخدم الحالي (الأدمن)
+                .ToListAsync();
+
+            var model = new List<UserWithRoleVM>();
 
             foreach (var user in users)
             {
                 var roles = await _userManager.GetRolesAsync(user);
-                userList.Add(new UserWithRoleVM
+
+                model.Add(new UserWithRoleVM
                 {
                     UserId = user.Id,
                     UserName = user.UserName,
                     Email = user.Email,
                     ImgUrl = user.ImgUrl,
-                    Roles = roles
+                    Roles = roles,
+                    IsFrozen = user.IsFrozen // ✅ ربط الحالة من قاعدة البيانات
                 });
             }
 
-            return View(userList);
+            return View(model);
         }
 
         // All Partners
@@ -219,23 +225,27 @@ namespace Feed_Bridge.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        [HttpPost]
+        
         [Authorize(Roles = "Admin")]
+        [ValidateAntiForgeryToken] // لو مستخدم
         public async Task<IActionResult> ToggleFreeze(string userId)
         {
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null)
             {
-                TempData["ErrorMessage"] = "المستخدم غير موجود";
-                return RedirectToAction("GetAllUsers");
+                return Json(new { success = false, message = "المستخدم غير موجود" });
             }
 
-            user.IsFrozen = !user.IsFrozen; // عكس الحالة
+            user.IsFrozen = !user.IsFrozen;
             await _userManager.UpdateAsync(user);
 
-            TempData["SuccessMessage"] = user.IsFrozen
-                ? "تم تجميد الحساب بنجاح"
-                : "تم إلغاء التجميد بنجاح";
+            return Json(new
+            {
+                success = true,
+                isFrozen = user.IsFrozen,
+                message = user.IsFrozen ? "تم تجميد الحساب بنجاح" : "تم إلغاء التجميد بنجاح"
+            });
+        }
 
             return RedirectToAction("GetAllUsers");
         }
