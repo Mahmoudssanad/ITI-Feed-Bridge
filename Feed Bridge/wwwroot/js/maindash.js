@@ -42,4 +42,14 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-
+document.querySelectorAll(".notif-link").forEach(link => {
+    link.addEventListener("click", function (e) {
+        e.preventDefault();
+        const notifId = this.dataset.id;
+        fetch(`/Admin/MarkNotificationAsRead?id=${notifId}`, { method: "POST" })
+            .then(() => {
+                // نقل المستخدم للرابط بعد التعليم كمقروء
+                window.location.href = this.href;
+            });
+    });
+});

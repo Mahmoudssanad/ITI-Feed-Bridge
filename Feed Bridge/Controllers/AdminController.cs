@@ -220,5 +220,19 @@ namespace Feed_Bridge.Controllers
         }
 
 
+        [HttpPost]
+        public async Task<IActionResult> MarkNotificationAsRead(int id)
+        {
+            var notif = await _context.Notifications.FindAsync(id);
+            if (notif == null)
+                return NotFound();
+
+            notif.IsRead = true;
+            await _context.SaveChangesAsync();
+
+            return Ok();
+        }
+
+
     }
 }
