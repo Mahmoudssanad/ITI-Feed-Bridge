@@ -8,7 +8,7 @@
 
 <div class="d-flex justify-content-between align-items-center mb-4">
     <h1 class="mb-0">قائمة الشراكات</h1>
-    <a asp-action="Create" asp-controller="Partner" class="btn btn-primary">
+    <a asp-action="Create" asp-controller="Partner" class="btn btn-primary" style="background-color:#1cba7f;">
         <i class="bi bi-plus-circle"></i> إضافة شريك جديد
     </a>
 </div>
@@ -19,6 +19,8 @@
             <th>اسم الشريك</th>
             <th>صورة الشريك</th>
             <th>رابط التوجيه</th>
+            <th>حذف</th>
+
         </tr>
     </thead>
     <tbody>
@@ -29,9 +31,18 @@
                 <tr>
                     <td>@partner.Name</td>
                     <td>
-                        <img src="@Url.Content(partner.ImageUrl)" alt="@partner.ImageUrl" style="width:100px; height:auto;" />
+                        <img src="@Url.Content(partner.ImageUrl)" alt="@partner.ImageUrl" style="width:150px; height:150px;" />
                     </td>
-                    <td>@partner.RedirectUrl</td>
+                    <td><a href="@partner.RedirectUrl">زيارة الصفحة</a></td>
+                    <td>
+                        <form asp-action="Delete" asp-controller="Partner" method="post" style="display:inline;">
+                            <input type="hidden" name="id" value="@partner.Id" />
+                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('هل أنت متأكد من الحذف؟');">
+                                <i class="bi bi-trash"></i> حذف
+                            </button>
+                        </form>
+                    </td>
+
                 </tr>
             }
         }

@@ -14,6 +14,7 @@ namespace Feed_Bridge.Models.Entities
         public Cart Cart { get; set; }
 
         public List<Support> Supports { get; set; } = new List<Support>();
+        //public List<Donation> Donnations { get; set; } = new List<Donation>();
 
         public List<Partener> Parteners { get; set; } = new List<Partener>();
 

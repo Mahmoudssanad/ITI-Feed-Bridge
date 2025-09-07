@@ -65,5 +65,20 @@ namespace Feed_Bridge.Controllers
              await _partenerService.Create(partener);
             return RedirectToAction("AllPartners","Admin");
         }
-    }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(int id)
+        {
+            if (id <= 0)
+            {
+                return BadRequest();
+            }
+
+            await _partenerService.Delete(id);
+
+            return RedirectToAction("AllPartners", "Admin");
+        }
+    
+
+}
 }

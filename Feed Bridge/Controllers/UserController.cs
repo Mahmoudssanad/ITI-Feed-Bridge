@@ -47,14 +47,31 @@ namespace Feed_Bridge.Controllers
 
         public async Task<IActionResult> GetAllUsers()
         {
-            var user = await _userManager.GetUserAsync(User);
-            var allUsers = await _userManager.Users
-                .Include(x =>x.Orders)
+            var currentUser = await _userManager.GetUserAsync(User);
+
+            var users = await _userManager.Users
+                .Include(x => x.Orders)
                 .Include(x => x.Supports)
-                .Where(x => x.Id != user.Id)
+                .Where(x => x.Id != currentUser.Id)
                 .ToListAsync();
 
-            return View(allUsers);
+            var userWithRoles = new List<UserWithRolesViewModel>();
+
+            foreach (var u in users)
+            {
+                var roles = await _userManager.GetRolesAsync(u);
+                userWithRoles.Add(new UserWithRolesViewModel
+                {
+                    Id = u.Id,
+                    UserName = u.UserName,
+                    Email = u.Email,
+                    Roles = roles,
+                    OrdersCount = u.Orders?.Count ?? 0,
+                    SupportsCount = u.Supports?.Count ?? 0
+                });
+            }
+
+            return View(userWithRoles);
         }
 
         // POST: User/EditProfile
