@@ -15,15 +15,18 @@
                 <th>الاسم</th>
                 <th>العنوان</th>
                 <th>الكمية</th>
+                <th>اسم المتبرع</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var user in Model)
+            @foreach (var donation in Model)
             {
                 <tr>
-                    <td>@user.Name</td>
-                    <td>@user.Address</td>
-                    <td>@user.Quantity</td>
+
+                    <td>@donation.Name</td>
+                    <td>@donation.Address</td>
+                    <td>@donation.Quantity</td>
+                    <td>@donation.User.UserName</td>
                 </tr>
             }
         </tbody>

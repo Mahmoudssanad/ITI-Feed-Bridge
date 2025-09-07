@@ -48,15 +48,23 @@ namespace Feed_Bridge.Controllers
             return View(order);
         }
 
-        public async Task<IActionResult> History()
+        public async Task<IActionResult> History(string? userId)
         {
-            var user = await _userManager.GetUserAsync(User);
-            if (user == null)
+            // لو الأدمن مرر userId من اللينك
+            if (!string.IsNullOrEmpty(userId))
+            {
+                var ordersForUser = await _orderService.GetUserOrdersAsync(userId);
+                return View(ordersForUser);
+            }
+
+            // لو مفيش userId في الراوت → نستخدم اليوزر الحالي (مستخدم عادي)
+            var currentUser = await _userManager.GetUserAsync(User);
+            if (currentUser == null)
                 return RedirectToAction("Login", "Account");
 
-            var orders = await _orderService.GetUserOrdersAsync(user.Id);
-
+            var orders = await _orderService.GetUserOrdersAsync(currentUser.Id);
             return View(orders);
         }
+
     }
 }

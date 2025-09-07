@@ -21,11 +21,17 @@ namespace Feed_Bridge.Services
             await _context.Donations.AddAsync(donation);
             await _context.SaveChangesAsync();
         }
-
         public async Task<IEnumerable<Donation>> GetAllDonations()
         {
-            return await  _context.Donations.ToListAsync();
+            return await _context.Donations
+                .Include(d => d.User) // هنا بنعمل Include علشان يجيب بيانات اليوزر
+                .ToListAsync();
         }
+
+        //public async Task<IEnumerable<Donation>> GetAllDonations()
+        //{
+        //    return await  _context.Donations.ToListAsync();
+        //}
 
         public async Task< Donation> GetDonationById(int id)
         {
