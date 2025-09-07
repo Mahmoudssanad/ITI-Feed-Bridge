@@ -3,6 +3,7 @@ using Feed_Bridge.Services;
 using Feed_Bridge.ViewModel;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Net;
 using System.Net.Mail;
 
@@ -28,32 +29,35 @@ namespace Feed_Bridge.Controllers
         public IActionResult Login() => View();
 
         [HttpPost]
-        public async Task<IActionResult> Login(string email, string password)
+        public async Task<IActionResult> GetAllUsers()
         {
-            var user = await _userManager.FindByEmailAsync(email);
-            if (user != null)
+            var currentUser = await _userManager.GetUserAsync(User);
+
+            var users = await _userManager.Users
+                .Where(u => u.Id != currentUser.Id) // استبعد المستخدم الحالي (الأدمن)
+                .ToListAsync();
+
+            var model = new List<UserWithRoleVM>();
+
+            foreach (var user in users)
             {
-                var result = await _signInManager.PasswordSignInAsync(
-                    user, password, isPersistent: false, lockoutOnFailure: false);
+                var roles = await _userManager.GetRolesAsync(user);
 
-                if (result.Succeeded)
+                model.Add(new UserWithRoleVM
                 {
-                    // جلب أدوار المستخدم
-                    var roles = await _userManager.GetRolesAsync(user);
-
-                    if (roles.Contains("Admin"))
-                        return RedirectToAction("Dashboard", "Admin");
-                    else if (roles.Contains("Delivery"))
-                        return RedirectToAction("Dashboard", "Delivery");
-                    else
-                        return RedirectToAction("Index", "Home");
-
-                }
+                    UserId = user.Id,
+                    UserName = user.UserName,
+                    Email = user.Email,
+                    ImgUrl = user.ImgUrl,
+                    Roles = roles,
+                    IsFrozen = user.IsFrozen // ✅ ربط الحالة من قاعدة البيانات
+                });
             }
 
-            ViewBag.Error = "البريد الإلكتروني أو كلمة المرور غير صحيحة";
-            return View();
+            return View(model);
         }
+
+
 
 
         [HttpGet]

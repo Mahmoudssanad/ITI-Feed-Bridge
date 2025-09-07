@@ -219,6 +219,23 @@ namespace Feed_Bridge.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        [HttpPost]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> ToggleFreeze(string userId)
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                TempData["ErrorMessage"] = "المستخدم غير موجود";
+                return RedirectToAction("GetAllUsers");
+            }
+
+            user.IsFrozen = !user.IsFrozen; // عكس الحالة
+            await _userManager.UpdateAsync(user);
+
+            TempData["SuccessMessage"] = user.IsFrozen
+                ? "تم تجميد الحساب بنجاح"
+                : "تم إلغاء التجميد بنجاح";
 
         [HttpPost]
         public async Task<IActionResult> MarkNotificationAsRead(int id)
@@ -234,5 +251,7 @@ namespace Feed_Bridge.Controllers
         }
 
 
+            return RedirectToAction("GetAllUsers");
+        }
     }
 }
