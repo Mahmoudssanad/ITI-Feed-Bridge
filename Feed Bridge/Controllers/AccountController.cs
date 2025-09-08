@@ -3,7 +3,6 @@ using Feed_Bridge.Services;
 using Feed_Bridge.ViewModel;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using System.Net;
 using System.Net.Mail;
 
@@ -14,20 +13,25 @@ namespace Feed_Bridge.Controllers
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly IConfiguration _config;
 
         public AccountController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
-            RoleManager<IdentityRole> roleManager)
+            RoleManager<IdentityRole> roleManager,
+            IConfiguration config)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _roleManager = roleManager;
+            _config = config;
         }
 
+        // ---------------- Login ----------------
         [HttpGet]
         public IActionResult Login() => View();
-        
+
+
         [HttpPost]
         public async Task<IActionResult> Login(string email, string password)
         {
@@ -35,7 +39,7 @@ namespace Feed_Bridge.Controllers
 
             if (user != null)
             {
-                // ✅ تحقق أولاً هل الحساب مجمد
+                // تحقق هل الحساب مجمد
                 if (user.IsFrozen)
                 {
                     ViewBag.Error = "حسابك مجمد من قبل الإدارة. برجاء التواصل مع الدعم.";
@@ -47,7 +51,6 @@ namespace Feed_Bridge.Controllers
 
                 if (result.Succeeded)
                 {
-                    // جلب أدوار المستخدم 
                     var roles = await _userManager.GetRolesAsync(user);
 
                     if (roles.Contains("Admin"))
@@ -63,6 +66,7 @@ namespace Feed_Bridge.Controllers
             return View();
         }
 
+        // ---------------- Register ----------------
         [HttpGet]
         public IActionResult Register() => View();
 
@@ -87,10 +91,10 @@ namespace Feed_Bridge.Controllers
                     BirthDate = model.BirthDate
                 };
 
-                // رفع الصورة
+                // رفع صورة البروفايل
                 if (model.ImgFile != null && model.ImgFile.Length > 0)
                 {
-                    var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads");
+                    var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads", "profiles");
                     if (!Directory.Exists(uploadsFolder))
                         Directory.CreateDirectory(uploadsFolder);
 
@@ -100,7 +104,7 @@ namespace Feed_Bridge.Controllers
                     using (var fileStream = new FileStream(filePath, FileMode.Create))
                         await model.ImgFile.CopyToAsync(fileStream);
 
-                    user.ImgUrl = "/uploads/" + uniqueFileName;
+                    user.ImgUrl = "/uploads/profiles/" + uniqueFileName;
                 }
 
                 var result = await _userManager.CreateAsync(user, model.Password);
@@ -120,6 +124,7 @@ namespace Feed_Bridge.Controllers
             return View(model);
         }
 
+        // ---------------- Logout ----------------
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
@@ -128,6 +133,7 @@ namespace Feed_Bridge.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        // ---------------- Forgot Password ----------------
         [HttpGet]
         public IActionResult ForgotPassword() => View();
 
@@ -147,17 +153,17 @@ namespace Feed_Bridge.Controllers
                 return View();
             }
 
-            // توليد رمز إعادة التعيين
             var token = await _userManager.GeneratePasswordResetTokenAsync(user);
 
-            // إنشاء لينك لإعادة تعيين كلمة المرور
             var resetLink = Url.Action("ResetPassword", "Account",
                 new { token, email = user.Email }, Request.Scheme);
 
-            // إعداد الإيميل
-            var fromAddress = new MailAddress("s04495320@gmail.com", "FeedBridge Support");
+            // إعداد الإيميل من appsettings.json
+            var smtpEmail = _config["Smtp:Email"];
+            var smtpPassword = _config["Smtp:Password"];
+
+            var fromAddress = new MailAddress(smtpEmail, "FeedBridge Support");
             var toAddress = new MailAddress(user.Email);
-            const string fromPassword = "ajdw nbrm pndi zjmy";
             string subject = "إعادة تعيين كلمة المرور - FeedBridge";
 
             string body = $@"
@@ -232,7 +238,7 @@ namespace Feed_Bridge.Controllers
                 EnableSsl = true,
                 DeliveryMethod = SmtpDeliveryMethod.Network,
                 UseDefaultCredentials = false,
-                Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+                Credentials = new NetworkCredential(fromAddress.Address, smtpPassword)
             })
             using (var message = new MailMessage(fromAddress, toAddress)
             {
@@ -248,6 +254,7 @@ namespace Feed_Bridge.Controllers
             return View();
         }
 
+        // ---------------- Reset Password ----------------
         [HttpGet]
         public IActionResult ResetPassword(string token, string email)
         {

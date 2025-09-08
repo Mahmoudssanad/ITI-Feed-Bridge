@@ -22,9 +22,18 @@
     <tbody>
         @foreach (var donation in Model)
         {
-            <tr>
-                <td>@donation.Name</td>
-                <td>@donation.User.UserName</td>
+              <tr>
+                  <td>@donation.Name</td>
+                 <td>
+                  <a asp-controller="User"
+                     asp-action="Profile"
+                     asp-route-id="@donation.User?.Id"
+                     class="text-primary fw-bold">
+                     @donation.User?.UserName
+                   </a>
+                 </td>
+          
+               
                 <td>@donation.ExpirDate.ToString("yyyy/MM/dd")</td>
                 <td>@donation.Quantity</td>
                 <td>@donation.Description</td>

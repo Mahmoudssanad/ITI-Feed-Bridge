@@ -97,16 +97,6 @@ header {
       font-size: 1.2rem;
     }
   }
-  .header-icons {
-    display: flex;
-    gap: 15px;
-    :first-child {
-      color: var(--text-color);
-    }
-    span {
-      font-size: 1.9rem;
-    }
-  }
 }
 
 .page {
@@ -230,13 +220,13 @@ width: 822px;
   width: 100%;
   margin-top: 30px;
 }
-/* .Admin-orders-Content button, .Admin-reports-Content button,.Admin-products-Content button{
+ .Admin-orders-Content button, .Admin-reports-Content button,.Admin-products-Content button{
   background-color: var(--main-color);
   color: white;
   border: 0;
   padding: 5px 30px 5px 30px;
   border-radius: 5px;
-} */
+} 
 
 .Admin-orders-Content .Orders_data_table th, .Admin-reports-Content .reports_data_table th , .Admin-products-Content .products_data_table th
 , .Admin-donors-Content .donors_data_table th, .Admin-delivery-Content .delivery_data_table th, .Admin-allUsers-Content .allUsers_data_table th, .Admin-allParteners-Content .allParteners_data_table th{
@@ -257,7 +247,7 @@ width: 822px;
 
 .notifications-box {
     position: absolute;
-    top: 100%; /* تحت الأيقونة */
+    top: 100%;  تحت الأيقونة 
     left: -50px;
     width: 250px;
     background-color: white;
@@ -267,8 +257,8 @@ width: 822px;
     padding: 15px;
     z-index: 1000;
     display: none;
-    /* تحديد الارتفاع وجعل الباقي scroll */
-    max-height: 300px; /* تقريبًا 5 إشعارات */
+     تحديد الارتفاع وجعل الباقي scroll 
+    max-height: 300px;  تقريبًا 5 إشعارات 
     overflow-y: auto;
 }
     .notifications-box::-webkit-scrollbar {
@@ -315,8 +305,8 @@ width: 822px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    text-align: center; /* Centers the text inside the link */
-    text-decoration: none; /* Removes the underline from the link */
+    text-align: center;  Centers the text inside the link 
+    text-decoration: none;  Removes the underline from the link 
 }
 .button-link:hover{
   background-color: white;
@@ -330,4 +320,284 @@ width: 822px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+/* 🛒 Cart Page Styles 
+.cart-header {
+    background-color: var(--main-color);  بدل الأسود بالأخضر 
+    color: white;
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding: 10px;
+    text-align: center;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.cart-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+     Table Styling 
+    .cart-container table {
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1px solid #eee;
+    }
+
+    .cart-container thead {
+        background-color: var(--main-color) !important;  أخضر 
+        color: white;
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .cart-container tbody td {
+        font-size: 0.85rem;
+        text-align: center;
+        vertical-align: middle;
+        border-top: 1px solid #f0f0f0;
+    }
+
+    .cart-container tbody tr:hover {
+        background-color: #f9f9f9;
+    }
+
+    .cart-container img {
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        object-fit: cover;
+        width: 40px;
+        height: 40px;
+    }
+
+ Buttons 
+.decrease-btn,
+.increase-btn,
+.remove-btn {
+    border-radius: 6px;
+    font-size: 0.75rem;
+    padding: 3px 7px;
+    transition: all 0.3s ease;
+}
+
+.decrease-btn {
+    border-color: #ffc107;
+    color: #ffc107;
+}
+
+    .decrease-btn:hover {
+        background-color: #ffc107;
+        color: white;
+    }
+
+.increase-btn {
+    border-color: #28a745;
+    color: #28a745;
+}
+
+    .increase-btn:hover {
+        background-color: #28a745;
+        color: white;
+    }
+
+.remove-btn {
+    background-color: #ff3b30;
+    border: none;
+    font-size: 0.75rem;
+    padding: 4px 9px;
+}
+
+    .remove-btn:hover {
+        background-color: #d32f2f;
+    }
+
+ Confirm Order Button 
+.cart-container .btn-success {
+    background-color: var(--main-color);
+    border: none;
+    padding: 10px 25px;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+    .cart-container .btn-success:hover {
+        background-color: var(--hover-color);
+    }*/
+
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "IBM Plex Sans Arabic", serif;
+}
+
+:root {
+    --main-color: #1cba7f;
+    --hover-color: #33c58e;
+    --background-color: #efefef;
+    --text-color: #333;
+}
+
+li {
+    list-style: none;
+}
+
+/* ✅ خلى تأثير اللينكات عام لكن بدون ما يبوظ الأيقونات */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.page-items a {
+    color: var(--main-color);
+}
+
+/* ----------------- Cart Page ----------------- */
+.cart-header {
+    background-color: var(--main-color);
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 12px;
+    text-align: center;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    letter-spacing: 0.5px;
+}
+
+.cart-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+    /* Table Styling */
+    .cart-container table {
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1px solid #eee;
+        width: 100%;
+        text-align: center;
+    }
+
+    .cart-container thead {
+        background-color: var(--main-color);
+        color: white;
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+
+    .cart-container tbody td {
+        font-size: 0.85rem;
+        vertical-align: middle;
+        border-top: 1px solid #f0f0f0;
+        padding: 8px;
+    }
+
+    .cart-container tbody tr:hover {
+        background-color: #f9f9f9;
+    }
+
+    .cart-container img {
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        object-fit: cover;
+        width: 45px;
+        height: 45px;
+    }
+
+/* Buttons */
+.decrease-btn,
+.increase-btn,
+.remove-btn {
+    border-radius: 6px;
+    font-size: 0.75rem;
+    padding: 4px 9px;
+    transition: all 0.3s ease;
+}
+
+.decrease-btn {
+    border: 1px solid #ffc107;
+    color: #ffc107;
+}
+
+    .decrease-btn:hover {
+        background-color: #ffc107;
+        color: white;
+    }
+
+.increase-btn {
+    border: 1px solid #28a745;
+    color: #28a745;
+}
+
+    .increase-btn:hover {
+        background-color: #28a745;
+        color: white;
+    }
+
+.remove-btn {
+    background-color: #ff3b30;
+    border: none;
+}
+
+    .remove-btn:hover {
+        background-color: #d32f2f;
+    }
+
+/* Confirm Order Button */
+.cart-container .btn-success {
+    background-color: var(--main-color);
+    border: none;
+    padding: 10px 25px;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+    .cart-container .btn-success:hover {
+        background-color: var(--hover-color);
+    }
+
+
+
+    /*order details*/
+
+.order-card {
+    background: #fff;
+    border: 1px solid #e1e1e1;
+    border-radius: 12px;
+    max-width: 800px;
+    margin: auto;
+}
+
+    .order-card h2 {
+        color: #1cba7f;
+    }
+
+.status-text {
+    color: #1cba7f;
+    font-weight: 600;
+}
+
+.product-img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
 }

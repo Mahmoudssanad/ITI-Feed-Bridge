@@ -1,41 +1,47 @@
 ﻿@model Feed_Bridge.Models.Entities.Order
 
 <div class="container mt-5">
-    <h2 class="text-center mb-4">📝 تفاصيل الطلب رقم @Model.Id</h2>
+    <div class="order-card shadow-sm p-4 rounded">
+        <!-- Order Header -->
+        <div class="text-center mb-4">
+            <h2 class="fw-bold text-success">📝 تفاصيل الطلب رقم @Model.Id</h2>
+            <p><strong>الحالة:</strong> <span class="status-text">@Model.Status</span></p>
+            <p><strong>تاريخ الإنشاء:</strong> @Model.CreatedAt.ToString("yyyy/MM/dd HH:mm")</p>
+        </div>
 
-    <p><strong>الحالة:</strong> @Model.Status</p>
-    <p><strong>تاريخ الإنشاء:</strong> @Model.CreatedAt.ToString("yyyy/MM/dd HH:mm")</p>
-
-    <table class="table table-striped text-center mt-4">
-        <thead class="table-dark">
-            <tr>
-                <th>الصورة</th>
-                <th>اسم المنتج</th>
-                <th>الكمية</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model.OrderProducts)
-            {
+        <!-- Order Products Table -->
+        <table class="table table-hover text-center align-middle">
+            <thead class="table-success">
                 <tr>
-                    <td>
-                        <img src="~/uploads/@(item.Product?.ImgURL ?? "img.png")"
-                             alt="@item.Product?.Name"
-                             style="width:70px;height:70px;" />
-                    </td>
-                    <td>@item.Product?.Name</td>
-                    <td>@item.Quantity</td>
+                    <th>الصورة</th>
+                    <th>اسم المنتج</th>
+                    <th>الكمية</th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.OrderProducts)
+                {
+                    <tr>
+                        <td>
+                            <img src="~/uploads/@(item.Product?.ImgURL ?? "img.png")"
+                                 alt="@item.Product?.Name"
+                                 class="product-img" />
+                        </td>
+                        <td>@item.Product?.Name</td>
+                        <td class="fw-bold">@item.Quantity</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
 
-    <div class="text-center mt-4">
-        <a asp-controller="Product" asp-action="Index" class="btn btn-primary">
-            ⬅️ عودة للمنتجات
-        </a>
-        <a asp-controller="Order" asp-action="History" class="btn btn-secondary">
-            📜 عرض طلباتي
-        </a>
+        <!-- Buttons -->
+        <div class="text-center mt-4">
+            <a asp-controller="Product" asp-action="Index" class="btn btn-success px-4 me-2">
+                ⬅️ عودة للمنتجات
+            </a>
+            <a asp-controller="Order" asp-action="History" class="btn btn-outline-success px-4">
+                📜 عرض طلباتي
+            </a>
+        </div>
     </div>
 </div>

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using System.Collections.Generic;
 using System.Data;
 using System.Reflection.Emit;
 
@@ -10,9 +11,9 @@ namespace Feed_Bridge.Models.Data
 {
     public class AppDbContext : Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityDbContext<ApplicationUser>
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options):base(options)
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
-            
+
         }
 
         public DbSet<Product> Products { get; set; }
@@ -23,7 +24,7 @@ namespace Feed_Bridge.Models.Data
         public DbSet<Partener> Parteners { get; set; }
         public DbSet<Donation> Donations { get; set; }
         public DbSet<Notification> Notifications { get; set; }
-      //  public DbSet<Delivery> Deliveries { get; set; }
+        //  public DbSet<Delivery> Deliveries { get; set; }
         public DbSet<Report> Reports { get; set; }
         public DbSet<Review> Reviews { get; set; }
         public DbSet<OrderProduct> OrderProducts { get; set; }
@@ -67,7 +68,7 @@ namespace Feed_Bridge.Models.Data
                 new IdentityRole { Id = "3", Name = "User", NormalizedName = "USER" }
             );
 
-            
+
 
         }
 
