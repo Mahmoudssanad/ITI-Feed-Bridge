@@ -239,6 +239,8 @@ namespace Feed_Bridge.Controllers
             user.IsFrozen = !user.IsFrozen;
             await _userManager.UpdateAsync(user);
 
+            await _userManager.UpdateSecurityStampAsync(user);
+
             return Json(new
             {
                 success = true,
@@ -247,9 +249,7 @@ namespace Feed_Bridge.Controllers
             });
         }
 
-            return RedirectToAction("GetAllUsers");
-        }
-
+            
         [HttpPost]
         public async Task<IActionResult> MarkNotificationAsRead(int id)
         {

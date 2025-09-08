@@ -54,7 +54,12 @@ namespace Feed_Bridge.Models.Data
             builder.Entity<OrderProduct>().HasOne(x => x.Product)
                 .WithMany(x => x.OrderProducts).HasForeignKey(x => x.ProductId);
 
-
+            builder.Entity<Order>()
+                .HasOne(o => o.User)
+                .WithMany(u => u.Orders)
+                .HasForeignKey(o => o.UserId)
+                .OnDelete(DeleteBehavior.SetNull);
+ 
             // Seed Roles
             builder.Entity<IdentityRole>().HasData(
                 new IdentityRole { Id = "1", Name = "Admin", NormalizedName = "ADMIN" },

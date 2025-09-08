@@ -1,4 +1,5 @@
 using Feed_Bridge.IServices;
+using Feed_Bridge.Middleware;
 using Feed_Bridge.Models.Data;
 using Feed_Bridge.Models.Entities;
 using Feed_Bridge.Services;
@@ -59,6 +60,7 @@ app.UseRouting();
 app.UseAuthentication();
 
 app.UseAuthorization();
+app.UseMiddleware<FreezeAccountMiddleware>();
 
 app.MapStaticAssets();
 

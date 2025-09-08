@@ -125,6 +125,7 @@ namespace Feed_Bridge.Controllers
 
             return View(model);
         }
+
         [HttpGet]
         public IActionResult DeleteAccount()
         {
@@ -154,14 +155,13 @@ namespace Feed_Bridge.Controllers
             }
             return RedirectToAction("Index", "Home");
         }
-        // GET: User/ChangePassword
+
         [HttpGet]
         public IActionResult ChangePassword()
         {
             return View();
         }
 
-        // POST: User/ChangePassword
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model)

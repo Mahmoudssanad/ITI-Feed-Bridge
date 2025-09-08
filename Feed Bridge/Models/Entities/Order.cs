@@ -17,8 +17,8 @@ namespace Feed_Bridge.Models.Entities
         public Cart Cart { get; set; }
 
         [ForeignKey("User")]
-        public string UserId { get; set; }
-        public ApplicationUser User { get; set; }
+        public string? UserId { get; set; }
+        public ApplicationUser? User { get; set; }
 
         public List<OrderProduct> OrderProducts { get; set; } = new List<OrderProduct>();
     }

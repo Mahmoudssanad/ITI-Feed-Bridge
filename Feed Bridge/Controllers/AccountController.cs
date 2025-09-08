@@ -27,34 +27,7 @@ namespace Feed_Bridge.Controllers
 
         [HttpGet]
         public IActionResult Login() => View();
-        [HttpPost]
-        public async Task<IActionResult> Login(string email, string password)
-        {
-            var user = await _userManager.FindByEmailAsync(email);
-            if (user != null)
-            {
-                var result = await _signInManager.PasswordSignInAsync(
-                    user, password, isPersistent: false, lockoutOnFailure: false);
-
-                if (result.Succeeded)
-                {
-                    // جلب أدوار المستخدم
-                    var roles = await _userManager.GetRolesAsync(user);
-
-                    if (roles.Contains("Admin"))
-                        return RedirectToAction("Dashboard", "Admin");
-                    else if (roles.Contains("Delivery"))
-                        return RedirectToAction("Dashboard", "Delivery");
-                    else
-                        return RedirectToAction("Index", "Home");
-
-                }
-            }
-
-            ViewBag.Error = "البريد الإلكتروني أو كلمة المرور غير صحيحة";
-            return View();
-        }
-
+        
         [HttpPost]
         public async Task<IActionResult> Login(string email, string password)
         {
