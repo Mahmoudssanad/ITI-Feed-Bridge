@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Protocols;
 using System.Security.Claims;
 
 namespace Feed_Bridge.Controllers
@@ -247,8 +246,7 @@ namespace Feed_Bridge.Controllers
             });
         }
 
-            return RedirectToAction("GetAllUsers");
-        }
+       
 
         [HttpPost]
         public async Task<IActionResult> MarkNotificationAsRead(int id)
