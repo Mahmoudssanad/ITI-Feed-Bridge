@@ -90,14 +90,29 @@ namespace Feed_Bridge.Controllers
                 DonationId = donation.Id, // عشان نعرف إن المنتج ده مرتبط بتبرع
             };
             await _productService.AddAsync(product);
-            var notification = new Notification
+            var admins = await _userManager.GetUsersInRoleAsync("Admin");
+            foreach (var admin in admins)
             {
-                Title = "تبرع جديد",
-                Description = $"{user.UserName} تبرع بـ {donation.Quantity} من {donation.Name}",
-                RedirectUrl = Url.Action("Donate", "Admin"),
-                UserId = user.Id
-            };
-            await _notificationService.AddNotificationAsync(notification);
+                await _notificationService.AddNotificationAsync(new Notification
+                {
+                    Title = "تبرع جديد",
+                    Description = $"{user.UserName} تبرع بمنتج {donation.Name}",
+                    RedirectUrl = Url.Action("Donate", "Admin"),
+                    UserId = admin.Id
+                });
+            }
+
+            var deliveries = await _userManager.GetUsersInRoleAsync("Delivery");
+            foreach (var delivery in deliveries)
+            {
+                await _notificationService.AddNotificationAsync(new Notification
+                {
+                    Title = "تبرع جديد للتوصيل",
+                    Description = $"{user.UserName} تبرع بمنتج {donation.Name}",
+                    RedirectUrl = Url.Action("Donations", "Delivery"),
+                    UserId = delivery.Id
+                });
+            }
 
             TempData["SuccessMessage"] = "تمت التبرع بنجاح";
 
