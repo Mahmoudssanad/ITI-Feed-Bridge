@@ -1,10 +1,10 @@
 ﻿@model Feed_Bridge.Models.Entities.ApplicationUser
 <style>
     .change-password-section{
-        display: flex;
-		justify-content: space-around;
+    display: flex;
+    justify-content: space-around;
     }
-    
+
 </style>
 <div class="profile-container">
 
@@ -36,10 +36,13 @@
             <a style="color: white;" asp-action="EditProfile" asp-controller="User" class="edit-button btn">تعديل</a>
         </div>
     }
-
-    <div class="heading">
-        <a style="color: white;" asp-action="History" asp-controller="Order" asp-route-userId="@Model.Id" class="edit-button btn">طلباتي</a>
-    </div>
+    @if (User.IsInRole("User"))
+    {
+        <div class="heading">
+            <a style="color: white;" asp-action="History" asp-controller="Order" asp-route-userId="@Model.Id" class="edit-button btn">طلباتي</a>
+        </div>
+    }
+    
 
     <!-- صورة البروفايل -->
     <div class="profile-image text-center">
