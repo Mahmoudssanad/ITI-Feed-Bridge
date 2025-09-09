@@ -25,7 +25,9 @@
             {
                 <tr>
                     <td>@donation.Id</td>
-                    <td>@(donation.User?.UserName ?? "غير محدد")</td>
+                    <td>
+                        <a asp-action="Profile" asp-controller="User" asp-route-id="@donation.UserId">@donation.User.UserName</a>
+                    </td>
                     <td>
                         <ul>
                             @foreach (var product in donation.Product ?? Enumerable.Empty<Feed_Bridge.Models.Entities.Product>())

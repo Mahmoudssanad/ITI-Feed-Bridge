@@ -41,7 +41,6 @@ namespace Feed_Bridge.Controllers
             return View();
         }
 
-
         // صفحة الطلبات للتوصيل
         [HttpGet]
         public async Task<IActionResult> Orders()
@@ -50,11 +49,12 @@ namespace Feed_Bridge.Controllers
                 .Include(o => o.User)
                 .Include(o => o.OrderProducts)
                     .ThenInclude(op => op.Product)
-                .Where(o => o.Status == OrderStatus.Processing || o.Status == OrderStatus.Completed)
+                    .Where(x => !x.User.IsDeleted)
+                //.Where(o => o.Status == OrderStatus.Processing || o.Status == OrderStatus.Completed)
                 .ToListAsync();
 
             ViewData["ActivePage"] = "Orders";
-            return View();
+            return View(orders);
         }
 
 
@@ -64,7 +64,7 @@ namespace Feed_Bridge.Controllers
         {
             var donations = await _donationService.GetAllDonations();
             ViewData["ActivePage"] = "Donations";
-            return View(); 
+            return View(donations); 
         }
     }
 }
