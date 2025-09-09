@@ -89,7 +89,9 @@ namespace Feed_Bridge.Controllers
                     UserName = model.UserName.Replace(" ", "_"),
                     Email = model.Email,
                     PhoneNumber = model.PhoneNumber,
-                    BirthDate = model.BirthDate
+                    BirthDate = model.BirthDate,
+                    Address = model.Address
+
                 };
 
                 // رفع صورة البروفايل

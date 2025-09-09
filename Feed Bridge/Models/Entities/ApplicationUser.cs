@@ -10,8 +10,10 @@ namespace Feed_Bridge.Models.Entities
         public bool IsFrozen { get; set; } = false;
         public bool IsDeleted { get; set; } = false;
         public string? DeletedBy { get; set; }
+        public string? Address { get; set; }
 
         public StaticPage? StaticPage { get; set; }
+
 
         public List<Order> Orders { get; set; } = new  List<Order>();
         public Cart Cart { get; set; }
