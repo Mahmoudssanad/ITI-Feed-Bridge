@@ -1,11 +1,13 @@
 ﻿using Feed_Bridge.Models.Entities;
 using Feed_Bridge.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace Feed_Bridge.Controllers
 {
+    [Authorize]
     public class UserController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
@@ -17,8 +19,7 @@ namespace Feed_Bridge.Controllers
             _signInManager = signInManager;
         }
 
-       
-        // GET: User/Profile/5
+        [HttpGet]
         public async Task<IActionResult> Profile(string id)
         {
             if (string.IsNullOrEmpty(id))
@@ -31,25 +32,7 @@ namespace Feed_Bridge.Controllers
             return View(user);
         }
 
-
-        // GET: User/EditProfile
         [HttpGet]
-        public async Task<IActionResult> EditProfile()
-        {
-            var user = await _userManager.GetUserAsync(User);
-            if (user == null) return RedirectToAction("Login", "Account");
-
-            var model = new EditProfileViewModel
-            {
-                CurrentImgUrl = user.ImgUrl,
-                BirthDate = user.BirthDate.ToDateTime(TimeOnly.MinValue),
-                FullName = user.UserName,
-                PhoneNumber = user.PhoneNumber
-            };
-
-            return View(model);
-        }
-
         public async Task<IActionResult> GetAllUsers()
         {
             var currentUser = await _userManager.GetUserAsync(User);
@@ -57,7 +40,7 @@ namespace Feed_Bridge.Controllers
             var users = await _userManager.Users
                 .Include(x => x.Orders)
                 .Include(x => x.Supports)
-                .Where(x => x.Id != currentUser.Id)
+                .Where(x => x.Id != currentUser.Id && x.IsDeleted != true)
                 .ToListAsync();
 
             var userWithRoles = new List<UserWithRolesViewModel>();
@@ -79,8 +62,25 @@ namespace Feed_Bridge.Controllers
             return View(userWithRoles);
         }
 
-        // POST: User/EditProfile
+        [HttpGet]
+        public async Task<IActionResult> EditProfile()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null) return RedirectToAction("Login", "Account");
+
+            var model = new EditProfileViewModel
+            {
+                CurrentImgUrl = user.ImgUrl,
+                BirthDate = user.BirthDate.ToDateTime(TimeOnly.MinValue),
+                FullName = user.UserName,
+                PhoneNumber = user.PhoneNumber
+            };
+
+            return View(model);
+        }
+
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditProfile(EditProfileViewModel model)
         {
             if (!ModelState.IsValid)
@@ -132,7 +132,6 @@ namespace Feed_Bridge.Controllers
             return View();
         }
 
-        // POST: User/Delete
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteAccountConfirmed()
@@ -141,7 +140,19 @@ namespace Feed_Bridge.Controllers
             if (user != null)
             {
                 await _signInManager.SignOutAsync();
-                var result = await _userManager.DeleteAsync(user);
+
+                // بحتفظ بايميل غير قابل للاستخدام في الداتابيز عشان لو المستخدم حب انه يسجل تاني بنفس اليميل والباسورد بس هيعمله حساب جديد
+                user.Email = user.Email + ".deleted." + Guid.NewGuid();
+                user.NormalizedEmail = user.Email.ToUpper();
+                user.UserName = user.UserName + ".deleted." + Guid.NewGuid();
+                user.NormalizedUserName = user.UserName.ToUpper();
+                user.IsDeleted = true;
+                user.DeletedBy = "User";
+
+                await _userManager.UpdateSecurityStampAsync(user);
+
+                var result = await _userManager.UpdateAsync(user);
+
                 if (result.Succeeded)
                     return RedirectToAction("Index", "Home");
                 else
@@ -168,6 +179,12 @@ namespace Feed_Bridge.Controllers
         {
             if (!ModelState.IsValid) return View(model);
 
+            if(model.CurrentPassword == model.Password)
+            {
+                ModelState.AddModelError("", "كلمة المرور الجديدة يجب ان تكون مختلفه عن كلمه المرور القديمه");
+                return View(model);
+            }
+
             if (model.Password != model.ConfirmPassword)
             {
                 ModelState.AddModelError("", "كلمة المرور الجديدة وتأكيدها غير متطابقين");
@@ -184,7 +201,7 @@ namespace Feed_Bridge.Controllers
             if (result.Succeeded)
             {
                 await _signInManager.RefreshSignInAsync(user); // يجدد السيشن
-                return RedirectToAction("Profile");
+                return RedirectToAction("Login", "Account");
             }
 
             foreach (var error in result.Errors)

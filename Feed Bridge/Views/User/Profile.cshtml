@@ -7,6 +7,26 @@
     
 </style>
 <div class="profile-container">
+
+    <!-- شريط التحذير لو الحساب محذوف -->
+    @if (Model.IsDeleted)
+    {
+        <div class="deleted-banner">
+            @if (Model.DeletedBy == "User")
+            {
+                <span> هذا الحساب تم حذفه بواسطة صاحبه</span>
+            }
+            else if (Model.DeletedBy == "Admin")
+            {
+                <span>هذا الحساب تم حذفه بواسطة الإدارة</span>
+            }
+            else
+            {
+                <span>هذا الحساب محذوف</span>
+            }
+        </div>
+    }
+
     @if (User.IsInRole("User"))
     {
         <div class="heading">

@@ -16,6 +16,13 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
+// Check for SecurityStamp (delete or not)
+builder.Services.Configure<SecurityStampValidatorOptions>(options =>
+{
+    options.ValidationInterval = TimeSpan.Zero;
+});
+
+
 builder.Services.AddScoped<IReviewService, ReviewService>();
 builder.Services.AddScoped<EmailSender>();
 

@@ -1,6 +1,7 @@
 ﻿using Feed_Bridge.Models.Entities;
 using Feed_Bridge.Services;
 using Feed_Bridge.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
@@ -31,13 +32,13 @@ namespace Feed_Bridge.Controllers
         [HttpGet]
         public IActionResult Login() => View();
 
-
         [HttpPost]
+        [AutoValidateAntiforgeryToken]
         public async Task<IActionResult> Login(string email, string password)
         {
             var user = await _userManager.FindByEmailAsync(email);
 
-            if (user != null)
+            if (user != null && !user.IsDeleted)
             {
                 // تحقق هل الحساب مجمد
                 if (user.IsFrozen)
@@ -127,6 +128,7 @@ namespace Feed_Bridge.Controllers
         // ---------------- Logout ----------------
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();

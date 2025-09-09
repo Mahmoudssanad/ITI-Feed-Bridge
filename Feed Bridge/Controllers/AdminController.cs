@@ -67,16 +67,6 @@ namespace Feed_Bridge.Controllers
             return View(orders);
         }
 
-        // Donors
-        //[HttpGet]
-        //public async Task<IActionResult> Donate()
-        //{
-        //    var donate = await _context.Donations
-        //        .Include(d => d.User)
-        //        .ToListAsync();
-
-        //    return View(donate);
-        //}
 
         [HttpGet] // for the admin to display all donations
         public async Task<IActionResult> Donate()
@@ -109,18 +99,6 @@ namespace Feed_Bridge.Controllers
             return View(products);
         }
 
-        // Delivery
-        //[HttpGet]
-        //public async Task<IActionResult> Delivery()
-        //{
-        //    var deliveries = await _context.Deliveries
-        //        .Include(d => d.Order)
-        //        .ToListAsync();
-
-        //    return View(deliveries);
-        //}
-
-        // All Users
         [HttpGet]
         public async Task<IActionResult> AllUsers()
         {
@@ -143,7 +121,9 @@ namespace Feed_Bridge.Controllers
                     Email = user.Email,
                     ImgUrl = user.ImgUrl,
                     Roles = roles,
-                    IsFrozen = user.IsFrozen // ✅ ربط الحالة من قاعدة البيانات
+                    IsFrozen = user.IsFrozen, // ✅ ربط الحالة من قاعدة البيانات
+                    IsDeleted = user.IsDeleted, // ✅ ربط الحالة من قاعدة البيانات
+                    DeletedBy = user.DeletedBy // ✅ ربط الحالة من قاعدة البيانات
                 });
             }
 
@@ -158,7 +138,9 @@ namespace Feed_Bridge.Controllers
             var partners = await _context.Parteners.ToListAsync();
             return View(partners);
         }
+
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> ChangeUserRole(string userId, string newRole)
         {
             var user = await _userManager.FindByIdAsync(userId);
@@ -177,12 +159,7 @@ namespace Feed_Bridge.Controllers
             return RedirectToAction("AllUsers");
         }
 
-        //// Home Control
-        //[HttpGet]
-        //public IActionResult HomeControl()
-        //{
-        //    return View();
-        //}
+        [HttpGet]
         public async Task<IActionResult> EditHome()
         {
             var content = await _staticPageService.GetContent() ?? new StaticPage();
@@ -250,6 +227,7 @@ namespace Feed_Bridge.Controllers
 
             
         [HttpPost]
+        [ValidateAntiForgeryToken] // لو مستخدم
         public async Task<IActionResult> MarkNotificationAsRead(int id)
         {
             var notif = await _context.Notifications.FindAsync(id);
@@ -261,6 +239,28 @@ namespace Feed_Bridge.Controllers
 
             return Ok();
         }
-       
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken] // لو مستخدم
+        public async Task<IActionResult> DeleteUser(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+            if (user == null) return NotFound();
+
+            user.Email = user.Email + ".deleted." + Guid.NewGuid();
+            user.NormalizedEmail = user.Email.ToUpper();
+            user.UserName = user.UserName + ".deleted." + Guid.NewGuid();
+            user.NormalizedUserName = user.UserName.ToUpper();
+            user.IsDeleted = true;
+            user.DeletedBy = "Admin";
+
+            await _userManager.UpdateSecurityStampAsync(user);
+
+            await _userManager.UpdateAsync(user);
+
+            return RedirectToAction("AllUsers");
+        }
+
     }
 }
