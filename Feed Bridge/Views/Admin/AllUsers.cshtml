@@ -30,7 +30,7 @@
             foreach (var user in Model.Where(u => !u.Roles.Contains("Admin")))
             {
                 <tr>
-                    <td>@user.UserName</td>
+                    <a asp-action="Profile" asp-controller="User" asp-route-userId="@user.UserId">@user.UserName</a>
                     <td>@user.Email</td>
                     <td>@(user.Roles.Any() ? string.Join(", ", user.Roles) : "User")</td>
 

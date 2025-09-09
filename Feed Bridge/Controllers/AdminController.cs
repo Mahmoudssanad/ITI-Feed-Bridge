@@ -19,15 +19,14 @@ namespace Feed_Bridge.Controllers
         private readonly IStaticPageService _staticPageService;
 
 
-        public AdminController(AppDbContext context,IDonationService donationService, UserManager<ApplicationUser> userManager, IStaticPageService staticPageService)
+        public AdminController(AppDbContext context,IDonationService donationService, 
+            UserManager<ApplicationUser> userManager, IStaticPageService staticPageService)
         {
             _context = context;
             _donationService = donationService;
             _userManager = userManager;
             _staticPageService = staticPageService;
         }
-
-        // Dashboard
 
         [HttpGet]
         public async Task<IActionResult> Dashboard()
@@ -67,14 +66,14 @@ namespace Feed_Bridge.Controllers
             return View(orders);
         }
 
-
-        [HttpGet] // for the admin to display all donations
+        [HttpGet] 
         public async Task<IActionResult> Donate()
         {
             ViewData["ActivePage"] = "Donors";
             var donations = await _donationService.GetAllDonations();
             return View(donations);
-        } //view Done
+        } 
+
         [HttpGet]
         public async Task<IActionResult> GetAllSupports()
         {
@@ -83,7 +82,7 @@ namespace Feed_Bridge.Controllers
                 .ToListAsync();
             return View(supports);
         }
-        // Reports
+
         [HttpGet]
         public async Task<IActionResult> Reports()
         {
@@ -91,7 +90,6 @@ namespace Feed_Bridge.Controllers
             return View(reports);
         }
 
-        // Products
         [HttpGet]
         public async Task<IActionResult> Products()
         {
@@ -105,7 +103,7 @@ namespace Feed_Bridge.Controllers
             var currentUser = await _userManager.GetUserAsync(User);
 
             var users = await _userManager.Users
-                .Where(u => u.Id != currentUser.Id) // استبعد المستخدم الحالي (الأدمن)
+                .Where(u => u.Id != currentUser.Id && !u.IsDeleted) // استبعد المستخدم الحالي (الأدمن)
                 .ToListAsync();
 
             var model = new List<UserWithRoleVM>();
@@ -130,7 +128,6 @@ namespace Feed_Bridge.Controllers
             return View(model);
         }
 
-        // All Partners
         [HttpGet]
         public async Task<IActionResult> AllPartners()
         {
@@ -203,7 +200,7 @@ namespace Feed_Bridge.Controllers
 
         
         [Authorize(Roles = "Admin")]
-        [ValidateAntiForgeryToken] // لو مستخدم
+        [ValidateAntiForgeryToken] 
         public async Task<IActionResult> ToggleFreeze(string userId)
         {
             var user = await _userManager.FindByIdAsync(userId);
@@ -227,7 +224,7 @@ namespace Feed_Bridge.Controllers
 
             
         [HttpPost]
-        [ValidateAntiForgeryToken] // لو مستخدم
+        [ValidateAntiForgeryToken] 
         public async Task<IActionResult> MarkNotificationAsRead(int id)
         {
             var notif = await _context.Notifications.FindAsync(id);
@@ -242,7 +239,7 @@ namespace Feed_Bridge.Controllers
 
 
         [HttpPost]
-        [ValidateAntiForgeryToken] // لو مستخدم
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteUser(string id)
         {
             var user = await _userManager.FindByIdAsync(id);

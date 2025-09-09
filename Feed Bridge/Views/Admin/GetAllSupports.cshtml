@@ -20,7 +20,7 @@
         @foreach (var donation in Model)
         {
             <tr>
-                <td>@donation.User.UserName</td>
+                <a asp-action="Profile" asp-controller="User" asp-route-userId="@donation.UserId">@donation.User.UserName</a>
                 <td>@donation.Amount</td>
                 <td>@donation.CreatedAt.ToString("yyyy/MM/dd")</td>
             </tr>

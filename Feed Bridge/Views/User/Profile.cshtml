@@ -11,10 +11,10 @@
     <!-- شريط التحذير لو الحساب محذوف -->
     @if (Model.IsDeleted)
     {
-        <div class="deleted-banner">
+        <div class="alert alert-danger text-center fw-bold fs-5" role="alert" style="margin-bottom:20px;">
             @if (Model.DeletedBy == "User")
             {
-                <span> هذا الحساب تم حذفه بواسطة صاحبه</span>
+                <span>هذا الحساب تم حذفه بواسطة صاحبه</span>
             }
             else if (Model.DeletedBy == "Admin")
             {
@@ -27,13 +27,19 @@
         </div>
     }
 
-    @if (User.IsInRole("User"))
+
+    @if (User.Identity.IsAuthenticated &&
+    User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value == Model.Id)
     {
         <div class="heading">
             <p class="section-title">بيانات المستخدم</p>
             <a style="color: white;" asp-action="EditProfile" asp-controller="User" class="edit-button btn">تعديل</a>
         </div>
     }
+
+    <div class="heading">
+        <a style="color: white;" asp-action="History" asp-controller="Order" asp-route-userId="@Model.Id" class="edit-button btn">طلباتي</a>
+    </div>
 
     <!-- صورة البروفايل -->
     <div class="profile-image text-center">
@@ -101,7 +107,8 @@
     <!-- تغيير كلمة المرور -->
     <div class="change-password-section">
 
-        @if (User.IsInRole("User"))
+        @if (User.Identity.IsAuthenticated &&
+        User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value == Model.Id)
         {
             <div class="sub-heading">
 
@@ -111,7 +118,8 @@
 
 
         <div class="sub-heading">
-            @if (User.IsInRole("User"))
+            @if (User.Identity.IsAuthenticated &&
+            User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value == Model.Id)
             {
                 <a asp-controller="User" asp-action="DeleteAccount" class="btn confirm-btn" style="background-color:red;">
                     حذف الحساب

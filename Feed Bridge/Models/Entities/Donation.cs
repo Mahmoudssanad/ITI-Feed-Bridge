@@ -12,6 +12,8 @@ namespace Feed_Bridge.Models.Entities
         public string Address { get; set; }
         public string Phone { get; set; }
         public string? Description { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime? updatedAt { get; set; } = DateTime.UtcNow;
 
         [ForeignKey("User")]
         public string UserId { get; set; }
