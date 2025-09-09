@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Protocols;
 using System.Security.Claims;
 
 namespace Feed_Bridge.Controllers
@@ -20,15 +19,14 @@ namespace Feed_Bridge.Controllers
         private readonly IStaticPageService _staticPageService;
 
 
-        public AdminController(AppDbContext context,IDonationService donationService, UserManager<ApplicationUser> userManager, IStaticPageService staticPageService)
+        public AdminController(AppDbContext context,IDonationService donationService, 
+            UserManager<ApplicationUser> userManager, IStaticPageService staticPageService)
         {
             _context = context;
             _donationService = donationService;
             _userManager = userManager;
             _staticPageService = staticPageService;
         }
-
-        // Dashboard
 
         [HttpGet]
         public async Task<IActionResult> Dashboard()
@@ -68,24 +66,14 @@ namespace Feed_Bridge.Controllers
             return View(orders);
         }
 
-        // Donors
-        //[HttpGet]
-        //public async Task<IActionResult> Donate()
-        //{
-        //    var donate = await _context.Donations
-        //        .Include(d => d.User)
-        //        .ToListAsync();
-
-        //    return View(donate);
-        //}
-
-        [HttpGet] // for the admin to display all donations
+        [HttpGet] 
         public async Task<IActionResult> Donate()
         {
             ViewData["ActivePage"] = "Donors";
             var donations = await _donationService.GetAllDonations();
             return View(donations);
-        } //view Done
+        } 
+
         [HttpGet]
         public async Task<IActionResult> GetAllSupports()
         {
@@ -94,7 +82,7 @@ namespace Feed_Bridge.Controllers
                 .ToListAsync();
             return View(supports);
         }
-        // Reports
+
         [HttpGet]
         public async Task<IActionResult> Reports()
         {
@@ -102,7 +90,6 @@ namespace Feed_Bridge.Controllers
             return View(reports);
         }
 
-        // Products
         [HttpGet]
         public async Task<IActionResult> Products()
         {
@@ -110,25 +97,13 @@ namespace Feed_Bridge.Controllers
             return View(products);
         }
 
-        // Delivery
-        //[HttpGet]
-        //public async Task<IActionResult> Delivery()
-        //{
-        //    var deliveries = await _context.Deliveries
-        //        .Include(d => d.Order)
-        //        .ToListAsync();
-
-        //    return View(deliveries);
-        //}
-
-        // All Users
         [HttpGet]
         public async Task<IActionResult> AllUsers()
         {
             var currentUser = await _userManager.GetUserAsync(User);
 
             var users = await _userManager.Users
-                .Where(u => u.Id != currentUser.Id) // استبعد المستخدم الحالي (الأدمن)
+                .Where(u => u.Id != currentUser.Id && !u.IsDeleted) // استبعد المستخدم الحالي (الأدمن)
                 .ToListAsync();
 
             var model = new List<UserWithRoleVM>();
@@ -144,14 +119,15 @@ namespace Feed_Bridge.Controllers
                     Email = user.Email,
                     ImgUrl = user.ImgUrl,
                     Roles = roles,
-                    IsFrozen = user.IsFrozen // ✅ ربط الحالة من قاعدة البيانات
+                    IsFrozen = user.IsFrozen, // ✅ ربط الحالة من قاعدة البيانات
+                    IsDeleted = user.IsDeleted, // ✅ ربط الحالة من قاعدة البيانات
+                    DeletedBy = user.DeletedBy // ✅ ربط الحالة من قاعدة البيانات
                 });
             }
 
             return View(model);
         }
 
-        // All Partners
         [HttpGet]
         public async Task<IActionResult> AllPartners()
         {
@@ -159,7 +135,9 @@ namespace Feed_Bridge.Controllers
             var partners = await _context.Parteners.ToListAsync();
             return View(partners);
         }
+
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> ChangeUserRole(string userId, string newRole)
         {
             var user = await _userManager.FindByIdAsync(userId);
@@ -178,12 +156,7 @@ namespace Feed_Bridge.Controllers
             return RedirectToAction("AllUsers");
         }
 
-        //// Home Control
-        //[HttpGet]
-        //public IActionResult HomeControl()
-        //{
-        //    return View();
-        //}
+        [HttpGet]
         public async Task<IActionResult> EditHome()
         {
             var content = await _staticPageService.GetContent() ?? new StaticPage();
@@ -227,7 +200,7 @@ namespace Feed_Bridge.Controllers
 
         
         [Authorize(Roles = "Admin")]
-        [ValidateAntiForgeryToken] // لو مستخدم
+        [ValidateAntiForgeryToken] 
         public async Task<IActionResult> ToggleFreeze(string userId)
         {
             var user = await _userManager.FindByIdAsync(userId);
@@ -239,6 +212,8 @@ namespace Feed_Bridge.Controllers
             user.IsFrozen = !user.IsFrozen;
             await _userManager.UpdateAsync(user);
 
+            await _userManager.UpdateSecurityStampAsync(user);
+
             return Json(new
             {
                 success = true,
@@ -247,10 +222,9 @@ namespace Feed_Bridge.Controllers
             });
         }
 
-        //    return RedirectToAction("GetAllUsers");
-        //}
-
+            
         [HttpPost]
+        [ValidateAntiForgeryToken] 
         public async Task<IActionResult> MarkNotificationAsRead(int id)
         {
             var notif = await _context.Notifications.FindAsync(id);
@@ -262,35 +236,28 @@ namespace Feed_Bridge.Controllers
 
             return Ok();
         }
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteProduct(int id)
-        {
-            var product = await _context.Products.FindAsync(id);
-            if (product == null)
-            {
-                TempData["ErrorMessage"] = "❌ المنتج غير موجود";
-                return RedirectToAction("Products");
-            }
-
-            _context.Products.Remove(product);
-            await _context.SaveChangesAsync();
-
-            TempData["SuccessMessage"] = "✅ تم حذف المنتج بنجاح";
-            return RedirectToAction("Products");
-        }
-        [HttpGet]
-        public async Task<IActionResult> UserProfile(string id)
+        public async Task<IActionResult> DeleteUser(string id)
         {
             var user = await _userManager.FindByIdAsync(id);
-            if (user == null)
-                return NotFound();
+            if (user == null) return NotFound();
 
-            return View(user); // هتعمل View تعرض بياناته
+            user.Email = user.Email + ".deleted." + Guid.NewGuid();
+            user.NormalizedEmail = user.Email.ToUpper();
+            user.UserName = user.UserName + ".deleted." + Guid.NewGuid();
+            user.NormalizedUserName = user.UserName.ToUpper();
+            user.IsDeleted = true;
+            user.DeletedBy = "Admin";
+
+            await _userManager.UpdateSecurityStampAsync(user);
+
+            await _userManager.UpdateAsync(user);
+
+            return RedirectToAction("AllUsers");
         }
-
-
-
 
     }
 }

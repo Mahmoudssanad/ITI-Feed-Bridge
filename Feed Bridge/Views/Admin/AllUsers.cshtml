@@ -20,7 +20,8 @@
             <th>الدور</th>
             <th>صورة الملف الشخصي</th>
             <th>تغيير الدور</th>
-             <th>الحالة</th>
+            <th>الحالة</th>
+            <th>حذف</th>
         </tr>
     </thead>
     <tbody>
@@ -29,7 +30,7 @@
             foreach (var user in Model.Where(u => !u.Roles.Contains("Admin")))
             {
                 <tr>
-                    <td>@user.UserName</td>
+                    <a asp-action="Profile" asp-controller="User" asp-route-userId="@user.UserId">@user.UserName</a>
                     <td>@user.Email</td>
                     <td>@(user.Roles.Any() ? string.Join(", ", user.Roles) : "User")</td>
 
@@ -37,11 +38,11 @@
                         <img src="@(string.IsNullOrEmpty(user.ImgUrl)
                                                              ? Url.Content("~/imgs/person.png")
                                                              : Url.Content(user.ImgUrl))"
-                     alt="@user.UserName"
-                     style="width:50px;height:50px;object-fit:cover;" />
+                        alt="@user.UserName"
+                        style="width:50px;height:50px;object-fit:cover;" />
                     </td>
                     <td>
-                @if (!(user.Roles.Contains("Admin") ))
+                        @if (!(user.Roles.Contains("Admin") ))
                         {
                             <form asp-action="ChangeUserRole" asp-controller="Admin" method="post" class="d-flex">
                                 <input type="hidden" name="userId" value="@user.UserId" />
@@ -70,10 +71,29 @@
                         else
                         {
                             <button type="button"
-                                    class="btn btn-sm @(user.IsFrozen ? "btn-success" : "btn-danger") toggle-freeze-btn"
-                                    data-user-id="@user.UserId">
+                            class="btn btn-sm @(user.IsFrozen ? "btn-success" : "btn-danger") toggle-freeze-btn"
+                            data-user-id="@user.UserId">
                                 @(user.IsFrozen ? "إلغاء التجميد" : "تجميد")
                             </button>
+                        }
+                    </td>
+                    <td>
+                        @if (user.IsDeleted)
+                        {
+                            if (user.DeletedBy == "User")
+                            {
+                                 <span class="badge bg-success">تم حذف الحساب بواسطة المستخدم</span> 
+                            }
+                            else if (user.DeletedBy == "Admin")
+                            {
+                                <span class="badge bg-danger">تم حذف الحساب بواسطة الإدارة</span>
+                            }
+                        }
+                        else
+                        {
+                            <form asp-action="DeleteUser" asp-controller="Admin" asp-route-id="@user.UserId" method="post">
+                                <button type="submit" class="btn btn-sm btn-danger">حذف</button>
+                            </form>
                         }
                     </td>
                 </tr>

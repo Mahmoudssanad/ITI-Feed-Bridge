@@ -16,7 +16,8 @@ namespace Feed_Bridge.Services
 
         public async Task<IEnumerable<Product>> GetAllAsync()
         {
-            return await _context.Products.ToListAsync();
+            var today = DateOnly.FromDateTime(DateTime.Now);
+            return await _context.Products.Where(x => x.ExpirDate > today).ToListAsync();
         }
 
         public async Task<Product?> GetByIdAsync(int id)
