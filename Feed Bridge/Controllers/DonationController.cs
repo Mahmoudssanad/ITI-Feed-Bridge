@@ -4,6 +4,7 @@ using Feed_Bridge.ViewModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 
 namespace Feed_Bridge.Controllers
@@ -126,20 +127,16 @@ namespace Feed_Bridge.Controllers
             await _donationService.DeleteDonation(id);
             return RedirectToAction("GetAll");
         }
-
+        // -------- GET: Edit --------
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
-            // جلب المنتج
             var product = await _productService.GetByIdAsync(id);
             if (product == null) return NotFound();
 
-            // جلب التبرع المرتبط بالمنتج
             var donation = product.Donation;
-            if (donation == null)
-                return BadRequest("هذا المنتج غير مرتبط بتبرع");
+            if (donation == null) return BadRequest("هذا المنتج غير مرتبط بتبرع");
 
-            // تحويل البيانات ل ViewModel
             var viewModel = new EditProductViewModel
             {
                 Id = product.Id,
@@ -152,33 +149,34 @@ namespace Feed_Bridge.Controllers
                 ExistingImageUrl = product.ImgURL
             };
 
-            return View(viewModel);
+            return View(viewModel); // يفتح نفس الفيو Edit.cshtml
         }
 
+        // -------- POST: Edit --------
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(EditProductViewModel model)
         {
-            if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid)
+                return View(model); // لو فيه خطأ يرجع لنفس الفيو
 
             var product = await _productService.GetByIdAsync(model.Id);
             if (product == null) return NotFound();
 
             var donation = product.Donation;
-            if (donation == null)
-                return BadRequest("هذا المنتج غير مرتبط بتبرع");
+            if (donation == null) return BadRequest("هذا المنتج غير مرتبط بتبرع");
 
-            // تحديث بيانات المنتج
+            // تحديث المنتج
             product.Name = model.Name;
             product.ExpirDate = model.ExpirDate;
             product.Quantity = model.Quantity;
 
-            // تحديث بيانات التبرع
+            // تحديث التبرع
             donation.Address = model.Address;
             donation.Phone = model.Phone;
             donation.Description = model.Description;
 
-            // لو المستخدم رفع صورة جديدة
+            // رفع صورة جديدة لو فيه
             if (model.Image != null)
             {
                 var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads");
@@ -199,12 +197,14 @@ namespace Feed_Bridge.Controllers
             // حفظ التعديلات
             await _productService.UpdateAsync(product);
 
-            TempData["SuccessMessage"] = "تم تعديل المنتج بنجاح ✅";
-            return RedirectToAction("Index");
+            TempData["SuccessMessage"] = "تم تعديل المنتج بنجاح";
+
+            return View(model);
         }
-        
-
-
-
     }
+
+
+
+
 }
+

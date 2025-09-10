@@ -21,28 +21,37 @@ namespace Feed_Bridge.Controllers
             var allProducts = await _productService.GetAllAsync();
             return View(allProducts);
         }
-        //ttpGet]
-        //public async Task<IActionResult> Edit( int Id)
-        //{
-        //    var product = await _productService.GetByIdAsync( Id);
-        //    if (product == null) return NotFound();
+        // GET: Delete
+        [HttpGet]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var product = await _productService.GetByIdAsync(id);
+            if (product == null)
+                return NotFound();
 
-        //    var viewModel = new EditProductViewModel
-        //    {
-        //        Id = product.Id,
-        //        Name = product.Name,
-        //        ExpirDate = product.ExpirDate,
-        //        Quantity = product.Quantity,
-        //        Address = product.Donation?.Address,
-        //        Phone = product.Donation?.Phone,
-        //        Description = product.Donation?.Description,
+            return View(product);
+        }
 
-        //        ExistingImageUrl = product.ImgURL
-        //    };
+        // POST: Delete
+        [HttpPost, ActionName("Delete")] // هنا بقول للـ routing اعتبرها Delete برضه
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            try
+            {
+                await _productService.DeleteAsync(id);
+                TempData["SuccessMessage"] = "تم حذف المنتج بنجاح";
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = "حصل خطأ أثناء الحذف: " + ex.Message;
+            }
 
-        //    return View(viewModel);
-        //}
-      
+            return RedirectToAction("Products", "Admin");
+        }
+
 
 
     }

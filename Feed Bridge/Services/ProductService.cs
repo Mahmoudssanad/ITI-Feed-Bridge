@@ -19,11 +19,18 @@ namespace Feed_Bridge.Services
             var today = DateOnly.FromDateTime(DateTime.Now);
             return await _context.Products.Where(x => x.ExpirDate > today).ToListAsync();
         }
-
         public async Task<Product?> GetByIdAsync(int id)
         {
-            return await _context.Products.FindAsync(id);
+            return await _context.Products
+                                 .Include(p => p.Donation) // هات مع المنتج التبرع المرتبط
+                                 .FirstOrDefaultAsync(p => p.Id == id);
         }
+
+
+        //public async Task<Product?> GetByIdAsync(int id)
+        //{
+        //    return await _context.Products.FindAsync(id);
+        //}
 
         public async Task AddAsync(Product product)
         {
