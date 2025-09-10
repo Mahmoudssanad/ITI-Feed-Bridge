@@ -16,8 +16,8 @@
             <th>تاريخ الانتهاء</th>
             <th>الكمية</th>
             <th>الصورة</th>
-           <th>تعديل</th>
-           <th>حذف</th>
+           <th> حذف </th>
+           <th>تعديل </th>
         </tr>
     </thead>
     <tbody>
@@ -53,7 +53,13 @@
                             </button>
                         </form>
                     </td>
-                    <td>محتاجه تتهندل</td>
+                    <td>
+                        <a asp-action="Edit" asp-controller="Donation" asp-route-id="@product.Id" ">
+''
+       class="btn btn-warning btn-sm">
+        ✏️ تعديل
+    </a>
+</td>
                     <td>محتاجه تتهندل</td>                    
                 </tr>
             }

@@ -115,20 +115,80 @@ namespace Feed_Bridge.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
-            var donation = await _donationService.GetDonationById(id);
-            if (donation == null) return NotFound();
+            // جلب المنتج
+            var product = await _productService.GetByIdAsync(id);
+            if (product == null) return NotFound();
 
-            return View(donation);
-        }//view not done
+            // جلب التبرع المرتبط بالمنتج
+            var donation = product.Donation;
+            if (donation == null)
+                return BadRequest("هذا المنتج غير مرتبط بتبرع");
+
+            // تحويل البيانات ل ViewModel
+            var viewModel = new EditProductViewModel
+            {
+                Id = product.Id,
+                Name = product.Name,
+                ExpirDate = product.ExpirDate,
+                Quantity = product.Quantity,
+                Address = donation.Address,
+                Phone = donation.Phone,
+                Description = donation.Description,
+                ExistingImageUrl = product.ImgURL
+            };
+
+            return View(viewModel);
+        }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(Donation donation)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(EditProductViewModel model)
         {
-            if (!ModelState.IsValid) return View(donation);
+            if (!ModelState.IsValid) return View(model);
 
-            await _donationService.UpdateDonation(donation);
-            return RedirectToAction("GetAll");
-        }// View not done
+            var product = await _productService.GetByIdAsync(model.Id);
+            if (product == null) return NotFound();
+
+            var donation = product.Donation;
+            if (donation == null)
+                return BadRequest("هذا المنتج غير مرتبط بتبرع");
+
+            // تحديث بيانات المنتج
+            product.Name = model.Name;
+            product.ExpirDate = model.ExpirDate;
+            product.Quantity = model.Quantity;
+
+            // تحديث بيانات التبرع
+            donation.Address = model.Address;
+            donation.Phone = model.Phone;
+            donation.Description = model.Description;
+
+            // لو المستخدم رفع صورة جديدة
+            if (model.Image != null)
+            {
+                var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads");
+                if (!Directory.Exists(uploadsFolder))
+                    Directory.CreateDirectory(uploadsFolder);
+
+                var uniqueFileName = Guid.NewGuid() + Path.GetExtension(model.Image.FileName);
+                var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await model.Image.CopyToAsync(stream);
+                }
+
+                product.ImgURL = uniqueFileName;
+            }
+
+            // حفظ التعديلات
+            await _productService.UpdateAsync(product);
+
+            TempData["SuccessMessage"] = "تم تعديل المنتج بنجاح ✅";
+            return RedirectToAction("Index");
+        }
+        
+
 
 
     }
