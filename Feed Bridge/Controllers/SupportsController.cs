@@ -59,21 +59,18 @@ namespace Feed_Bridge.Controllers
             };
 
             await _supportService.AddSupportAsync(support);
-            var admins = await _userManager.GetUsersInRoleAsync("Admin");
             var user = await _userManager.FindByIdAsync(userId);
+            var admins = await _userManager.GetUsersInRoleAsync("Admin");
             foreach (var admin in admins)
             {
-                var notification = new Notification
+                await _notificationService.AddNotificationAsync(new Notification
                 {
                     Title = "دعم مالي جديد",
-                    Description = $"قام {user.UserName} بدعم مالي بقيمة {donationAmount} جنيه",
+                    Description = $"{user.UserName} قدم دعم مالي بقيمة {support.Amount} جنيه",
                     RedirectUrl = Url.Action("GetAllSupports", "Admin"),
                     UserId = admin.Id
-                };
-
-                await _notificationService.AddNotificationAsync(notification);
+                });
             }
-
             return View("Success");
         }
     }

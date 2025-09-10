@@ -14,8 +14,10 @@
             <th>المستخدم</th>
             <th>الحالة</th>
             <th>المنتجات</th>
+            <th>وقت الطلب</th>
             <th>كل الطلبات </th>
-            
+            <th>العنوان</th>
+            <th>رقم التلفون</th>
             
         </tr>
     </thead>
@@ -30,7 +32,6 @@
                             @order.User?.UserName
                         </a>
                     </td>
-
                     <td>@order.Status</td>
                     <td>
                         <ul>
@@ -40,13 +41,15 @@
                             }
                         </ul>
                     </td>
+                    <td>@order.CreatedAt.ToString("yyyy/MM/dd")</td>
                     <td>
                         <a asp-action="History" asp-controller="Order" asp-route-userId="@order.UserId">
                             كل الطلبات 
 
                         </a>
                     </td>
-                    
+                    <td> @order.User?.Address</td>
+                    <td>@order.User?.PhoneNumber</td>
                 </tr>
             }
         }

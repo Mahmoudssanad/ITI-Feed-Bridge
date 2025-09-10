@@ -25,13 +25,10 @@ namespace Feed_Bridge.Services
         {
             return await _context.Donations
                 .Include(d => d.User) // هنا بنعمل Include علشان يجيب بيانات اليوزر
+                .Include(x => x.Product)
+                .Where(x => !x.User.IsDeleted)
                 .ToListAsync();
         }
-
-        //public async Task<IEnumerable<Donation>> GetAllDonations()
-        //{
-        //    return await  _context.Donations.ToListAsync();
-        //}
 
         public async Task< Donation> GetDonationById(int id)
         {

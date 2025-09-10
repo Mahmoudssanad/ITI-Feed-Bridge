@@ -53,7 +53,8 @@
 
       
 
-        @await Component.InvokeAsync("AdminNotifications")
+        @await Component.InvokeAsync("Notifications")
+
 
         @if (User.Identity != null && User.Identity.IsAuthenticated)
         {

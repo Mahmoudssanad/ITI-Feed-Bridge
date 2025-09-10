@@ -30,11 +30,17 @@ namespace Feed_Bridge.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateOnly>("BirthDate")
                         .HasColumnType("date");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DeletedBy")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
@@ -46,6 +52,9 @@ namespace Feed_Bridge.Migrations
 
                     b.Property<string>("ImgUrl")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
 
                     b.Property<bool>("IsFrozen")
                         .HasColumnType("bit");
@@ -113,7 +122,7 @@ namespace Feed_Bridge.Migrations
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("Carts", (string)null);
+                    b.ToTable("Carts");
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Donation", b =>
@@ -127,6 +136,9 @@ namespace Feed_Bridge.Migrations
                     b.Property<string>("Address")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
@@ -152,11 +164,14 @@ namespace Feed_Bridge.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<DateTime?>("updatedAt")
+                        .HasColumnType("datetime2");
+
                     b.HasKey("Id");
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Donations", (string)null);
+                    b.ToTable("Donations");
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Notification", b =>
@@ -193,7 +208,7 @@ namespace Feed_Bridge.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Notifications", (string)null);
+                    b.ToTable("Notifications");
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Order", b =>
@@ -221,7 +236,6 @@ namespace Feed_Bridge.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("UserId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
@@ -230,7 +244,7 @@ namespace Feed_Bridge.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Orders", (string)null);
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.OrderProduct", b =>
@@ -248,7 +262,7 @@ namespace Feed_Bridge.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("OrderProducts", (string)null);
+                    b.ToTable("OrderProducts");
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Partener", b =>
@@ -278,7 +292,7 @@ namespace Feed_Bridge.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Parteners", (string)null);
+                    b.ToTable("Parteners");
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Product", b =>
@@ -315,7 +329,7 @@ namespace Feed_Bridge.Migrations
 
                     b.HasIndex("DonationId");
 
-                    b.ToTable("Products", (string)null);
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.ProductCart", b =>
@@ -341,7 +355,7 @@ namespace Feed_Bridge.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductCarts", (string)null);
+                    b.ToTable("ProductCarts");
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Report", b =>
@@ -375,7 +389,7 @@ namespace Feed_Bridge.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Reports", (string)null);
+                    b.ToTable("Reports");
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Review", b =>
@@ -404,7 +418,7 @@ namespace Feed_Bridge.Migrations
 
                     b.HasIndex("UserID");
 
-                    b.ToTable("Reviews", (string)null);
+                    b.ToTable("Reviews");
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.StaticPage", b =>
@@ -441,7 +455,7 @@ namespace Feed_Bridge.Migrations
                         .IsUnique()
                         .HasFilter("[UserId] IS NOT NULL");
 
-                    b.ToTable("StaticPages", (string)null);
+                    b.ToTable("StaticPages");
                 });
 
             modelBuilder.Entity("Feed_Bridge.Models.Entities.Support", b =>
@@ -483,7 +497,7 @@ namespace Feed_Bridge.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Supports", (string)null);
+                    b.ToTable("Supports");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -683,8 +697,7 @@ namespace Feed_Bridge.Migrations
                     b.HasOne("Feed_Bridge.Models.Entities.ApplicationUser", "User")
                         .WithMany("Orders")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.Navigation("Cart");
 

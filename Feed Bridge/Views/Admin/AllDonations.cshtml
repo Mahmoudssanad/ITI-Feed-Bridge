@@ -9,24 +9,30 @@
 <div class="allusers-page">
     <h2>كل المشتركين</h2>
 
-    <table class="table table-bordered">
-        <thead>
+    <table class="table table-bordered text-center">
+        <thead class="table-dark">
             <tr>
                 <th>الاسم</th>
                 <th>العنوان</th>
                 <th>الكمية</th>
                 <th>اسم المتبرع</th>
+                <th>وقت التبرع</th>
+                <th>صوره المنتج</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var donation in Model)
             {
                 <tr>
-
                     <td>@donation.Name</td>
                     <td>@donation.Address</td>
                     <td>@donation.Quantity</td>
-                    <td>@donation.User.UserName</td>
+                    <td>
+                        <a asp-action="Profile" asp-controller="User" asp-route-id="@donation.UserId">@donation.User.UserName</a>
+                    </td>
+                    <td>@donation.Phone</td>
+                    <td>@donation.CreatedAt.ToString("yyyy/MM/dd")</td>
+                    <td>@Url.Action("~/uploads/" + (donation.ImgURL))</td>
                 </tr>
             }
         </tbody>

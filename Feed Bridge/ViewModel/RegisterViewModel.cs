@@ -34,5 +34,10 @@ namespace Feed_Bridge.ViewModel
 
         [Display(Name = "الصورة الشخصية")]
         public IFormFile? ImgFile { get; set; }
+
+        [Display(Name = "العنوان ")]
+        public string? Address { get; set; }
+
+
     }
 }

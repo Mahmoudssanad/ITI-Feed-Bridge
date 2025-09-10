@@ -1,4 +1,4 @@
-# Feed Bridge
+# Feed Bridge Project
 
 ## Project Resources
 

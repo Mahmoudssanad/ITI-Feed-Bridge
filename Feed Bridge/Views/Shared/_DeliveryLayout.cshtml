@@ -32,6 +32,8 @@
                 <p>FeedBridge</p>
             </div>
         </a>
+        <a asp-controller="Home" asp-action="Index">الرئيسية</a>
+        @await Component.InvokeAsync("Notifications")
 
         <div class="header-icons">
            @*  <div class="notifications-container">
@@ -45,6 +47,7 @@
                     </ul>
                 </div>
             </div> *@
+            
 
             @if (User.Identity != null && User.Identity.IsAuthenticated)
             {
@@ -78,12 +81,11 @@
                         <p>التبرعات</p>
                     </a>
                 </li>
-                <li>
-                    <a asp-controller="Account" asp-action="Logout">
-                        <span style="color: #ff3b30;" class="material-symbols-outlined"> logout </span>
-                        <p class="logout">تسجيل الخروج</p>
-                    </a>
-                </li>
+                <form asp-controller="Account" asp-action="Logout" method="post" style="display:inline;">
+                    <button type="submit" class="btn btn-primary" style="background-color:#1cba7f;border:none;color:white;">
+                        تسجيل خروج
+                    </button>
+                </form>
             </ul>
         </div>
 
