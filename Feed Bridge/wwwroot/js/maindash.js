@@ -46,7 +46,8 @@ document.querySelectorAll(".notif-link").forEach(link => {
     link.addEventListener("click", function (e) {
         e.preventDefault();
         const notifId = this.dataset.id;
-        fetch(`/Admin/MarkNotificationAsRead?id=${notifId}`, { method: "POST" })
+        const role = document.body.dataset.role; // خلي في الـ body data-role="Admin" أو "Delivery"
+        fetch(`/${role}/MarkNotificationAsRead?id=${notifId}`, { method: "POST" })
             .then(() => {
                 // نقل المستخدم للرابط بعد التعليم كمقروء
                 window.location.href = this.href;

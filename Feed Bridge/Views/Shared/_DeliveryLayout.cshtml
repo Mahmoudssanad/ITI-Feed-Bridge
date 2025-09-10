@@ -32,6 +32,8 @@
                 <p>FeedBridge</p>
             </div>
         </a>
+        <a asp-controller="Home" asp-action="Index">الرئيسية</a>
+        @await Component.InvokeAsync("Notifications")
 
         <div class="header-icons">
            @*  <div class="notifications-container">
@@ -45,6 +47,7 @@
                     </ul>
                 </div>
             </div> *@
+            
 
             @if (User.Identity != null && User.Identity.IsAuthenticated)
             {
