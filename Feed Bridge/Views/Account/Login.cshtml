@@ -2,7 +2,14 @@
     ViewData["Title"] = "تسجيل الدخول";
 }
 
+<head>
+	<style>
+        .login .login-links a {
+            margin: 0 20px; 
+        }
 
+    </style>
+</head>
 
     <div class="container">
         <div class="login">
@@ -38,7 +45,7 @@
         </div>
     </div>
 
-    @* <script type="module" src="~/js/script.js"></script> *@
+    <script type="module" src="~/js/script.js"></script> 
 
 @section FooterSection {
     @await Html.PartialAsync("_Footer")
