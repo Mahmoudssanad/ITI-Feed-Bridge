@@ -31,6 +31,12 @@
 
             <input asp-for="Name" placeholder="اسم المنتج  ..." class="form-control" />
             <span asp-validation-for="Name" class="text-danger" style="color:red;"></span>
+            <!-- 🟢 Dropdown لاختيار الكاتيجوري -->
+            <div class="form-group mt-2 mb-2">
+                <label asp-for="Category">اختر التصنيف</label>
+                <select asp-for="Category" asp-items="Html.GetEnumSelectList<Feed_Bridge.Models.Enums.ProductCategory>()" class="form-control"></select>
+                <span asp-validation-for="Category" class="text-danger"></span>
+            </div>
 
             <div class="group">
                 <input asp-for="ExpirDate" type="date" class="form-control" />

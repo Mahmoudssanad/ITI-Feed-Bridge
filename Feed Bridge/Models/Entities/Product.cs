@@ -1,4 +1,5 @@
 ﻿
+using Feed_Bridge.Models.Enums;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Feed_Bridge.Models.Entities
@@ -18,6 +19,7 @@ namespace Feed_Bridge.Models.Entities
         public DateTime CreatedAt { get; set; } = DateTime.Now;
 
         public DateTime? UpdatedAt { get; set; } = DateTime.Now;
+        public ProductCategory Category { get; set; }
 
         public List<ProductCart> ProductCarts { get; set; } = new List<ProductCart>();
 
