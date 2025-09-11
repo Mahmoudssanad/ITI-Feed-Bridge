@@ -36,7 +36,7 @@
                  </td>
                <td>@donation.Phone</td>
                 <td>@donation.Name</td>
-                <td>@Url.Action("~/uploads/" + donation.ImgURL)</td>
+                <td><img src="~/uploads/@donation.ImgURL" alt="donation Image" width="80" height="80" /></td>
                 <td>@donation.ExpirDate.ToString("yyyy/MM/dd")</td>
                 <td>@donation.Quantity</td>
                 <td>@donation.Description</td>

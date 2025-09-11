@@ -12,12 +12,12 @@
     <thead class="table-dark">
         <tr>
             <th>الاسم</th>
-            <th>تاريخ التبرع</th>
+            <th>تاريخ اضافه المنتج</th>
             <th>تاريخ الانتهاء</th>
             <th>الكمية</th>
             <th>الصورة</th>
-           <th>تعديل</th>
-           <th>حذف</th>
+            <th>تعديل</th>
+            <th>حذف</th>
         </tr>
     </thead>
     <tbody>
@@ -44,17 +44,17 @@
                                  style="width:50px;height:50px;object-fit:cover;" />
                         }
                     </td>
+                    <td>محتاجه تتهندل</td>
+
                     <td>
-                        <form asp-action="DeleteProduct" asp-controller="Admin" method="post" style="display:inline">
+                        <form asp-action="DeleteProduct" asp-controller="Admin" asp-route-id ="@product.Id" method="post" style="display:inline">
                             <input type="hidden" name="id" value="@product.Id" />
                             <button type="submit" class="btn btn-danger btn-sm"
                                     onclick="return confirm('هل أنت متأكد من حذف هذا المنتج؟')">
-                                🗑️ حذف
+                                حذف
                             </button>
                         </form>
                     </td>
-                    <td>محتاجه تتهندل</td>
-                    <td>محتاجه تتهندل</td>                    
                 </tr>
             }
         }

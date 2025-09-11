@@ -122,7 +122,7 @@
 
         <div class="sub-heading">
             @if (User.Identity.IsAuthenticated &&
-            User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value == Model.Id)
+            User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value == Model.Id && !User.IsInRole("Admin"))
             {
                 <a asp-controller="User" asp-action="DeleteAccount" class="btn confirm-btn" style="background-color:red;">
                     حذف الحساب

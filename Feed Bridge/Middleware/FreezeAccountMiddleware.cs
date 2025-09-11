@@ -17,13 +17,24 @@ namespace Feed_Bridge.Middleware
             if (context.User.Identity.IsAuthenticated)
             {
                 var user = await userManager.GetUserAsync(context.User);
-                if (user != null && user.IsFrozen)
+
+                if (user != null)
                 {
-                    await signInManager.SignOutAsync();
-                    context.Response.Redirect("/Account/Login?message=تم تجميد حسابك من قبل الإدارة");
-                    return;
+                    if (user.IsDeleted)
+                    {
+                        await signInManager.SignOutAsync();
+                        context.Response.Redirect("/Account/Login?message=تم حذف هذا الحساب. برجاء التواصل مع الدعم.");
+                        return;
+                    }
+
+                    if (user != null && user.IsFrozen)
+                    {
+                        await signInManager.SignOutAsync();
+                        context.Response.Redirect("/Account/Login?message=تم تجميد حسابك من قبل الإدارة");
+                        return;
+                    }
                 }
-            }
+            }   
 
             await _next(context);
         }

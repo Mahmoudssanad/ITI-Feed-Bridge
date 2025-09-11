@@ -3,8 +3,10 @@ using Feed_Bridge.Models.Data;
 using Feed_Bridge.Models.Entities;
 using Feed_Bridge.Models.Enums;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace Feed_Bridge.Controllers
 {
@@ -13,22 +15,24 @@ namespace Feed_Bridge.Controllers
     {
         private readonly AppDbContext _context;
         private readonly IDonationService _donationService;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public DeliveryController(AppDbContext context, IDonationService donationService)
+        public DeliveryController(AppDbContext context, IDonationService donationService, UserManager<ApplicationUser> userManager)
         {
             _context = context;
             _donationService = donationService;
+            _userManager = userManager;
         }
 
         [HttpGet]
         public async Task<IActionResult> Dashboard()
         {
             var totalOrders = await _context.Orders
-                .Where(o => o.Status == OrderStatus.Processing)
+                .Where(o => o.Status == OrderStatus.Approved)
                 .CountAsync();
 
             var completedOrders = await _context.Orders
-                .Where(o => o.Status == OrderStatus.Completed)
+                .Where(o => o.Status == OrderStatus.Delivered)
                 .CountAsync();
 
             var totalDonations = await _donationService.GetAllDonations();
@@ -49,14 +53,12 @@ namespace Feed_Bridge.Controllers
                 .Include(o => o.User)
                 .Include(o => o.OrderProducts)
                     .ThenInclude(op => op.Product)
-                    .Where(x => !x.User.IsDeleted)
-                //.Where(o => o.Status == OrderStatus.Processing || o.Status == OrderStatus.Completed)
+                    .Where(x => x.Status == OrderStatus.Approved)
                 .ToListAsync();
 
             ViewData["ActivePage"] = "Orders";
             return View(orders);
         }
-
 
         // صفحة التبرعات للعرض
         [HttpGet]
@@ -66,5 +68,38 @@ namespace Feed_Bridge.Controllers
             ViewData["ActivePage"] = "Donations";
             return View(donations); 
         }
+
+        [Authorize(Roles = "Delivery")]
+        [HttpPost]
+        public async Task<IActionResult> TakeOrder(int id)
+        {
+            var order = await _context.Orders.FindAsync(id);
+            if (order == null) return NotFound();
+
+            var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            order.DeliveryId = currentUserId;   // حفظ مين الدليفري
+            order.Status = OrderStatus.Assigned;
+            order.UpdatedAt = DateTime.Now;
+
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Orders");
+        }
+
+
+        [Authorize(Roles = "Delivery")]
+        public async Task<IActionResult> MarkDelivered(int id)
+        {
+            var order = await _context.Orders.FindAsync(id);
+            if (order == null || order.Status != OrderStatus.Assigned)
+                return BadRequest("الطلب غير صالح للتوصيل");
+
+            order.Status = OrderStatus.Delivered;
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Orders");
+        }
+
     }
 }

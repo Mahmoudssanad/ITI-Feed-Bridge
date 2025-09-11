@@ -7,7 +7,7 @@ namespace Feed_Bridge.Models.Entities
     {
         public int Id { get; set; }
         public decimal Quantity { get; set; }
-        public OrderStatus Status { get; set; }
+        public OrderStatus Status { get; set; } = OrderStatus.Pending;
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
 
@@ -19,6 +19,10 @@ namespace Feed_Bridge.Models.Entities
         [ForeignKey("User")]
         public string? UserId { get; set; }
         public ApplicationUser? User { get; set; }
+
+        [ForeignKey("Delivery")]
+        public string? DeliveryId { get; set; }
+        public ApplicationUser? Delivery { get; set; }
 
         public List<OrderProduct> OrderProducts { get; set; } = new List<OrderProduct>();
     }
