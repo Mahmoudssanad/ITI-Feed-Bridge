@@ -30,9 +30,9 @@ namespace Feed_Bridge.Services
                 .ToListAsync();
         }
 
-        public async Task< Donation> GetDonationById(int id)
+        public async Task<Donation> GetDonationById(int id)
         {
-            return await _context.Donations.FirstOrDefaultAsync(d=>d.Id == id);
+            return await _context.Donations.FirstOrDefaultAsync(d => d.Id == id);
         }
 
         public async Task<decimal> GetTotalDonationsAmount()

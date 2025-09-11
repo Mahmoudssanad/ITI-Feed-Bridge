@@ -18,8 +18,10 @@
             <th>تاريخ الانتهاء</th>
             <th>الكمية</th>
             <th>الوصف</th>
-            <th>الحذف أو التعديل</th>
+            <th>الحذف</th>
             <th>تاريخ التبرع</th>
+            <th>اضافة للمنتجات</th>
+
         </tr>
     </thead>
     <tbody>
@@ -46,6 +48,13 @@
                     </form>
                 </td>
                 <td>@donation.CreatedAt.ToString("yyyy/MM/dd")</td>
+                <td>
+                    <form asp-controller="Product" asp-action="AddFromDonation" method="post">
+                        <input type="hidden" name="DonationId" value="@donation.Id" />
+                        <button type="submit" class="btn btn-success">اضافة</button>
+                    </form>
+                </td>
+
             </tr>
         }
     </tbody>

@@ -19,7 +19,7 @@ namespace Feed_Bridge.Controllers
         private readonly INotificationService _notificationService;
 
         public DonationController(IDonationService donationService,
-            UserManager<ApplicationUser> userManager,IWebHostEnvironment webHostEnvironment, IProductService productService, INotificationService notificationService)
+            UserManager<ApplicationUser> userManager, IWebHostEnvironment webHostEnvironment, IProductService productService, INotificationService notificationService)
         {
             _donationService = donationService;
             _userManager = userManager;
@@ -207,4 +207,3 @@ namespace Feed_Bridge.Controllers
 
 
 }
-
