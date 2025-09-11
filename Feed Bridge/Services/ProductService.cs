@@ -34,30 +34,7 @@ namespace Feed_Bridge.Services
 
 
 
-        //public async Task<IEnumerable<Product>> GetAllAsync(string category = null)
-        //{
-        //    var today = DateOnly.FromDateTime(DateTime.Now);
-
-        //    var query = _context.Products.AsQueryable();
-
-        //    // نفلتر حسب تاريخ الانتهاء
-        //    query = query.Where(x => x.ExpirDate > today);
-
-        //    // لو فيه كاتيجوري محدد نفلتر عليه
-        //    if (!string.IsNullOrEmpty(category) && Enum.TryParse<ProductCategory>(category, out var parsedCategory))
-        //    {
-        //        query = query.Where(x => x.Category == parsedCategory);
-        //    }
-
-        //    return await query.ToListAsync();
-        //}
-
-
-        //public async Task<IEnumerable<Product>> GetAllAsync()
-        //{
-        //    var today = DateOnly.FromDateTime(DateTime.Now);
-        //    return await _context.Products.Where(x => x.ExpirDate > today).ToListAsync();
-        //}
+        
         public async Task<Product?> GetByIdAsync(int id)
         {
             return await _context.Products
@@ -66,10 +43,7 @@ namespace Feed_Bridge.Services
         }
 
 
-        //public async Task<Product?> GetByIdAsync(int id)
-        //{
-        //    return await _context.Products.FindAsync(id);
-        //}
+        
 
         public async Task AddAsync(Product product)
         {
