@@ -165,7 +165,7 @@ namespace Feed_Bridge.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> EditHome(StaticPage model, IFormFile VideoFile)
+        public async Task<IActionResult> EditHome(StaticPage model, IFormFile? VideoFile)
         {
             if (!ModelState.IsValid)
                 return View(model);
