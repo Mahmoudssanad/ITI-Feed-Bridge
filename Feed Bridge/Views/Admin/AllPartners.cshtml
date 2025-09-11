@@ -33,7 +33,7 @@
                     <td>
                         <img src="@Url.Content(partner.ImageUrl)" alt="@partner.ImageUrl" style="width:150px; height:150px;" />
                     </td>
-                    <td><a href="@partner.RedirectUrl">زيارة الصفحة</a></td>
+                    <td><a href="@partner.RedirectUrl" target="_blank">زيارة الصفحة</a></td>
                     <td>
                         <form asp-action="Delete" asp-controller="Partner" method="post" style="display:inline;">
                             <input type="hidden" name="id" value="@partner.Id" />
