@@ -1,4 +1,4 @@
-using Feed_Bridge.IServices;
+﻿using Feed_Bridge.IServices;
 using Feed_Bridge.Middleware;
 using Feed_Bridge.Models.Data;
 using Feed_Bridge.Models.Entities;
@@ -30,6 +30,7 @@ builder.Services.AddScoped<EmailSender>();
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>().
     AddDefaultTokenProviders();
+
 
 
 builder.Services.AddScoped<IDonationService, DonationService>();

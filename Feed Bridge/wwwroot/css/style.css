@@ -147,7 +147,7 @@ header {
       display: block;
     }
 > div {
-    display: block;
+    display: flex;
 }
   }
 }
