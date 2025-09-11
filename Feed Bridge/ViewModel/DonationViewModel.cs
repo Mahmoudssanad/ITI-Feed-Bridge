@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Feed_Bridge.Models.Enums;
+using System.ComponentModel.DataAnnotations;
 
 namespace Feed_Bridge.ViewModel
 {
@@ -13,5 +14,7 @@ namespace Feed_Bridge.ViewModel
         public string Address { get; set; }
         public string Phone { get; set; }
         public string? Description { get; set; }
+        public ProductCategory Category { get; set; }
+
     }
 }

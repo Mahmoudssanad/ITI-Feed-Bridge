@@ -1,4 +1,6 @@
-﻿namespace Feed_Bridge.ViewModel
+﻿using Feed_Bridge.Models.Enums;
+
+namespace Feed_Bridge.ViewModel
 {
     public class EditProductViewModel
     {
@@ -11,6 +13,8 @@
         public string Address { get; set; }
         public string Phone { get; set; }
         public string? Description { get; set; }
+        public ProductCategory Category { get; set; }
+
 
         // الصورة
         public IFormFile? Image { get; set; }
