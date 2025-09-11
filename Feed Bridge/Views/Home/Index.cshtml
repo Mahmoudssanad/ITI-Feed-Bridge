@@ -20,6 +20,17 @@
     .hidden-rev .feedback-card{
 		margin-bottom: 50px;
     }
+
+    .partner-logos div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+	}
+    .partner-logos div a {
+        margin-top: 10px;
+        text-decoration: none;
+        color: white;
+			font-weight: bold;}
 </style>
 
 <section class="hero">
@@ -69,12 +80,24 @@
                 {
                     <div>
                         <img src="@Url.Content(partner.ImageUrl)" alt="@partner.Name" style="width:150px; height:150px; background-color:white;" />
+                        <a href="@Url.Content(partner.RedirectUrl)">@partner.Name</a>
                     </div>
                 }
             }
             else
             {
-                <p>لا يوجد شركاء بعد</p>
+                <div>
+                    <img src="~/imgs/anon.jpg" style="width:150px; height:150px; background-color:white;" />
+                </div>
+                <div>
+                    <img src="~/imgs/anon.jpg" style="width:150px; height:150px; background-color:white;" />
+                </div>
+                <div>
+                    <img src="~/imgs/anon.jpg" style="width:150px; height:150px; background-color:white;" />
+                </div>
+                <div>
+                    <img src="~/imgs/anon.jpg" style="width:150px; height:150px; background-color:white;" />
+                </div>
             }
         </div>
     </div>

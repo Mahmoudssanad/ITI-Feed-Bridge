@@ -4,6 +4,7 @@ using Feed_Bridge.ViewModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 
 namespace Feed_Bridge.Controllers
@@ -126,25 +127,84 @@ namespace Feed_Bridge.Controllers
             await _donationService.DeleteDonation(id);
             return RedirectToAction("GetAll");
         }
-
+        // -------- GET: Edit --------
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
-            var donation = await _donationService.GetDonationById(id);
-            if (donation == null) return NotFound();
+            var product = await _productService.GetByIdAsync(id);
+            if (product == null) return NotFound();
 
-            return View(donation);
-        }//view not done
+            var donation = product.Donation;
+            if (donation == null) return BadRequest("هذا المنتج غير مرتبط بتبرع");
 
+            var viewModel = new EditProductViewModel
+            {
+                Id = product.Id,
+                Name = product.Name,
+                ExpirDate = product.ExpirDate,
+                Quantity = product.Quantity,
+                Address = donation.Address,
+                Phone = donation.Phone,
+                Description = donation.Description,
+                ExistingImageUrl = product.ImgURL
+            };
+
+            return View(viewModel); // يفتح نفس الفيو Edit.cshtml
+        }
+
+        // -------- POST: Edit --------
         [HttpPost]
-        public async Task<IActionResult> Edit(Donation donation)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(EditProductViewModel model)
         {
-            if (!ModelState.IsValid) return View(donation);
+            if (!ModelState.IsValid)
+                return View(model); // لو فيه خطأ يرجع لنفس الفيو
 
-            await _donationService.UpdateDonation(donation);
-            return RedirectToAction("GetAll");
-        }// View not done
+            var product = await _productService.GetByIdAsync(model.Id);
+            if (product == null) return NotFound();
 
+            var donation = product.Donation;
+            if (donation == null) return BadRequest("هذا المنتج غير مرتبط بتبرع");
 
+            // تحديث المنتج
+            product.Name = model.Name;
+            product.ExpirDate = model.ExpirDate;
+            product.Quantity = model.Quantity;
+
+            // تحديث التبرع
+            donation.Address = model.Address;
+            donation.Phone = model.Phone;
+            donation.Description = model.Description;
+
+            // رفع صورة جديدة لو فيه
+            if (model.Image != null)
+            {
+                var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads");
+                if (!Directory.Exists(uploadsFolder))
+                    Directory.CreateDirectory(uploadsFolder);
+
+                var uniqueFileName = Guid.NewGuid() + Path.GetExtension(model.Image.FileName);
+                var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await model.Image.CopyToAsync(stream);
+                }
+
+                product.ImgURL = uniqueFileName;
+            }
+
+            // حفظ التعديلات
+            await _productService.UpdateAsync(product);
+
+            TempData["SuccessMessage"] = "تم تعديل المنتج بنجاح";
+
+            return View(model);
+        }
     }
+
+
+
+
 }
+
