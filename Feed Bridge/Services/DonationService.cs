@@ -1,7 +1,6 @@
 ﻿using Feed_Bridge.IServices;
 using Feed_Bridge.Models.Data;
 using Feed_Bridge.Models.Entities;
-using Feed_Bridge.ViewModel;
 using Microsoft.EntityFrameworkCore;
 
 namespace Feed_Bridge.Services
@@ -9,6 +8,7 @@ namespace Feed_Bridge.Services
     public class DonationService : IDonationService
     {
         private readonly AppDbContext _context;
+
         public DonationService(AppDbContext appDbContext)
         {
             _context = appDbContext;
@@ -21,18 +21,22 @@ namespace Feed_Bridge.Services
             await _context.Donations.AddAsync(donation);
             await _context.SaveChangesAsync();
         }
+
         public async Task<IEnumerable<Donation>> GetAllDonations()
         {
             return await _context.Donations
-                .Include(d => d.User) // هنا بنعمل Include علشان يجيب بيانات اليوزر
-                .Include(x => x.Product)
-                .Where(x => !x.User.IsDeleted)
+                .Include(d => d.User)     // جلب بيانات المتبرع
+                .Include(d => d.Product)  // جلب المنتج المرتبط (لو موجود)
+                .Where(d => !d.User.IsDeleted) // لو عندك خاصية IsDeleted
                 .ToListAsync();
         }
 
-        public async Task<Donation> GetDonationById(int id)
+        public async Task<Donation?> GetDonationById(int id)
         {
-            return await _context.Donations.FirstOrDefaultAsync(d => d.Id == id);
+            return await _context.Donations
+                .Include(d => d.User)
+                .Include(d => d.Product)
+                .FirstOrDefaultAsync(d => d.Id == id);
         }
 
         public async Task<decimal> GetTotalDonationsAmount()
@@ -62,6 +66,7 @@ namespace Feed_Bridge.Services
                 existingDonation.Address = donation.Address;
                 existingDonation.Phone = donation.Phone;
                 existingDonation.Description = donation.Description;
+                existingDonation.Status = donation.Status; // ✅ تحديث الحالة
 
                 _context.Donations.Update(existingDonation);
                 await _context.SaveChangesAsync();

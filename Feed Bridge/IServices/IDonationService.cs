@@ -10,5 +10,7 @@ namespace Feed_Bridge.IServices
         Task<decimal> GetTotalDonationsAmount();
         Task DeleteDonation(int id);
         Task UpdateDonation(Donation donation);
+
+
     }
 }
