@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using Feed_Bridge.Models.Enums;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Feed_Bridge.Models.Entities
 {
@@ -14,6 +15,8 @@ namespace Feed_Bridge.Models.Entities
         public string? Description { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime? updatedAt { get; set; } = DateTime.UtcNow;
+        public ProductCategory Category { get; set; }
+
 
         [ForeignKey("User")]
         public string UserId { get; set; }

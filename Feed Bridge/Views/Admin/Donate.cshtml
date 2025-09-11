@@ -20,8 +20,12 @@
             <th>الوصف</th>
             <th>الحذف</th>
             <th>تاريخ التبرع</th>
+<<<<<<< HEAD
             <th>اضافة للمنتجات</th>
 
+=======
+            <th>التصنيف</th>
+>>>>>>> 6147f23672d67d43061df3cf782a08c5fe4bd662
         </tr>
     </thead>
     <tbody>
@@ -43,11 +47,12 @@
                 <td>@donation.Quantity</td>
                 <td>@donation.Description</td>
                 <td>
-                    <form asp-action="Delete" asp-controller="" asp-route-id="@donation.Id" method="post">
+                    <form asp-action="Delete" asp-controller="Donation" asp-route-id="@donation.Id" method="post">
                         <button type="submit" class="btn btn-danger">حذف</button>
                     </form>
                 </td>
                 <td>@donation.CreatedAt.ToString("yyyy/MM/dd")</td>
+<<<<<<< HEAD
                 <td>
                     <form asp-controller="Product" asp-action="AddFromDonation" method="post">
                         <input type="hidden" name="DonationId" value="@donation.Id" />
@@ -55,6 +60,9 @@
                     </form>
                 </td>
 
+=======
+                <td>@donation.Category</td>
+>>>>>>> 6147f23672d67d43061df3cf782a08c5fe4bd662
             </tr>
         }
     </tbody>

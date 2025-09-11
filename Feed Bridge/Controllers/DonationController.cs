@@ -79,6 +79,7 @@ namespace Feed_Bridge.Controllers
                 Address = model.Address,
                 Phone = model.Phone,
                 Description = model.Description,
+                Category = model.Category
             };
             await _donationService.Add(donation, user.Id);
 
@@ -88,7 +89,9 @@ namespace Feed_Bridge.Controllers
                 ImgURL = donation.ImgURL,
                 ExpirDate = donation.ExpirDate,
                 Quantity = donation.Quantity,
-                DonationId = donation.Id, // عشان نعرف إن المنتج ده مرتبط بتبرع
+                DonationId = donation.Id,
+                Category = donation.Category
+                // عشان نعرف إن المنتج ده مرتبط بتبرع
             };
             await _productService.AddAsync(product);
             var admins = await _userManager.GetUsersInRoleAsync("Admin");
@@ -118,15 +121,44 @@ namespace Feed_Bridge.Controllers
             TempData["SuccessMessage"] = "تمت التبرع بنجاح";
 
             return RedirectToAction("Create");
-        } //view Done
-
-        //[Authorize(Roles ="Admin")]
-        [HttpPost]
+        }
+        [HttpGet]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int id)
         {
-            await _donationService.DeleteDonation(id);
-            return RedirectToAction("GetAll");
+            var Donation = await _productService.GetByIdAsync(id);
+            if (Donation == null)
+                return NotFound();
+
+            return View(Donation);
         }
+
+        // POST: Delete
+        [HttpPost, ActionName("Delete")] // هنا بقول للـ routing اعتبرها Delete برضه
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            try
+            {
+                await _productService.DeleteAsync(id);
+                TempData["SuccessMessage"] = "تم حذف المنتج بنجاح";
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = "حصل خطأ أثناء الحذف: " + ex.Message;
+            }
+
+            return RedirectToAction("Products", "Admin");
+        }//view Done
+
+        //[Authorize(Roles ="Admin")]
+        //[HttpPost]
+        //public async Task<IActionResult> Delete(int id)
+        //{
+        //    await _donationService.DeleteDonation(id);
+        //    return RedirectToAction("GetAll");
+        //}
         // -------- GET: Edit --------
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
@@ -170,11 +202,14 @@ namespace Feed_Bridge.Controllers
             product.Name = model.Name;
             product.ExpirDate = model.ExpirDate;
             product.Quantity = model.Quantity;
+            product.Category = model.Category;
+
 
             // تحديث التبرع
             donation.Address = model.Address;
             donation.Phone = model.Phone;
             donation.Description = model.Description;
+            product.Category = model.Category;
 
             // رفع صورة جديدة لو فيه
             if (model.Image != null)

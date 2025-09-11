@@ -1,6 +1,7 @@
 ﻿using Feed_Bridge.IServices;
 using Feed_Bridge.Models.Data;
 using Feed_Bridge.Models.Entities;
+using Feed_Bridge.Models.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace Feed_Bridge.Services
@@ -13,12 +14,50 @@ namespace Feed_Bridge.Services
         {
             _context = context;
         }
-
-        public async Task<IEnumerable<Product>> GetAllAsync()
+        public async Task<IEnumerable<Product>> GetAllAsync(string category = null)
         {
             var today = DateOnly.FromDateTime(DateTime.Now);
-            return await _context.Products.Where(x => x.ExpirDate > today).ToListAsync();
+
+            var query = _context.Products.AsQueryable();
+
+            // فلترة حسب تاريخ الانتهاء
+            query = query.Where(x => x.ExpirDate > today);
+
+            // فلترة حسب الكاتيجوري (ignore case)
+            if (!string.IsNullOrEmpty(category) && Enum.TryParse<ProductCategory>(category, true, out var parsedCategory))
+            {
+                query = query.Where(x => x.Category == parsedCategory);
+            }
+
+            return await query.ToListAsync();
         }
+
+
+
+        //public async Task<IEnumerable<Product>> GetAllAsync(string category = null)
+        //{
+        //    var today = DateOnly.FromDateTime(DateTime.Now);
+
+        //    var query = _context.Products.AsQueryable();
+
+        //    // نفلتر حسب تاريخ الانتهاء
+        //    query = query.Where(x => x.ExpirDate > today);
+
+        //    // لو فيه كاتيجوري محدد نفلتر عليه
+        //    if (!string.IsNullOrEmpty(category) && Enum.TryParse<ProductCategory>(category, out var parsedCategory))
+        //    {
+        //        query = query.Where(x => x.Category == parsedCategory);
+        //    }
+
+        //    return await query.ToListAsync();
+        //}
+
+
+        //public async Task<IEnumerable<Product>> GetAllAsync()
+        //{
+        //    var today = DateOnly.FromDateTime(DateTime.Now);
+        //    return await _context.Products.Where(x => x.ExpirDate > today).ToListAsync();
+        //}
         public async Task<Product?> GetByIdAsync(int id)
         {
             return await _context.Products
