@@ -1,6 +1,7 @@
 ﻿using Feed_Bridge.IServices;
 using Feed_Bridge.Models.Entities;
 using Feed_Bridge.Models.Enums;
+using Feed_Bridge.ViewModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -69,28 +70,104 @@ namespace Feed_Bridge.Controllers
             return RedirectToAction("Products", "Admin");
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
+        //public async Task<IActionResult> Edit(int id)
+        //{
+        //    var product = await _productService.GetByIdAsync(id);
+        //    if (product == null) return NotFound();
+
+        //    return View(product);
+        //}
+
+        //[HttpPost]
+        //[Authorize(Roles = "Admin")]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Edit(int id, Product product)
+        //{
+        //    if (id != product.Id) return NotFound();
+
+        //    if (ModelState.IsValid)
+        //    {
+        //        await _productService.UpdateAsync(product);
+        //        return RedirectToAction(nameof(Index));
+        //    }
+        //    return View(product);
+        //}
+        [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
             var product = await _productService.GetByIdAsync(id);
             if (product == null) return NotFound();
 
-            return View(product);
+            var donation = product.Donation;
+            if (donation == null) return BadRequest("هذا المنتج غير مرتبط بتبرع");
+
+            var viewModel = new EditProductViewModel
+            {
+                Id = product.Id,
+                Name = product.Name,
+                ExpirDate = product.ExpirDate,
+                Quantity = product.Quantity,
+                Address = donation.Address,
+                Phone = donation.Phone,
+                Description = donation.Description,
+                ExistingImageUrl = product.ImgURL
+            };
+
+            return View(viewModel); // يفتح نفس الفيو Edit.cshtml
         }
 
+        // -------- POST: Edit --------
         [HttpPost]
-        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, Product product)
+        public async Task<IActionResult> Edit(EditProductViewModel model)
         {
-            if (id != product.Id) return NotFound();
+            if (!ModelState.IsValid)
+                return View(model); // لو فيه خطأ يرجع لنفس الفيو
 
-            if (ModelState.IsValid)
+            var product = await _productService.GetByIdAsync(model.Id);
+            if (product == null) return NotFound();
+
+            var donation = product.Donation;
+            if (donation == null) return BadRequest("هذا المنتج غير مرتبط بتبرع");
+
+            // تحديث المنتج
+            product.Name = model.Name;
+            product.ExpirDate = model.ExpirDate;
+            product.Quantity = model.Quantity;
+            
+
+
+            // تحديث التبرع
+            donation.Address = model.Address;
+            donation.Phone = model.Phone;
+            donation.Description = model.Description;
+            product.Category = model.Category;
+
+            // رفع صورة جديدة لو فيه
+            if (model.Image != null)
             {
-                await _productService.UpdateAsync(product);
-                return RedirectToAction(nameof(Index));
+                var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads");
+                if (!Directory.Exists(uploadsFolder))
+                    Directory.CreateDirectory(uploadsFolder);
+
+                var uniqueFileName = Guid.NewGuid() + Path.GetExtension(model.Image.FileName);
+                var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await model.Image.CopyToAsync(stream);
+                }
+
+                product.ImgURL = uniqueFileName;
             }
-            return View(product);
+
+            // حفظ التعديلات
+            await _productService.UpdateAsync(product);
+
+            TempData["SuccessMessage"] = "تم تعديل المنتج بنجاح";
+
+            return View(model);
         }
     }
 }
