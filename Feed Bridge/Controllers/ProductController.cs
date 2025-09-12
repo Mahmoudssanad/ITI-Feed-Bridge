@@ -68,5 +68,29 @@ namespace Feed_Bridge.Controllers
             TempData["SuccessMessage"] = " تم حذف المنتج بنجاح";
             return RedirectToAction("Products", "Admin");
         }
+
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> Edit(int id)
+        {
+            var product = await _productService.GetByIdAsync(id);
+            if (product == null) return NotFound();
+
+            return View(product);
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "Admin")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, Product product)
+        {
+            if (id != product.Id) return NotFound();
+
+            if (ModelState.IsValid)
+            {
+                await _productService.UpdateAsync(product);
+                return RedirectToAction(nameof(Index));
+            }
+            return View(product);
+        }
     }
 }

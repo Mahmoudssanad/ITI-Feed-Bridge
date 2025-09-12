@@ -62,6 +62,7 @@ namespace Feed_Bridge.Controllers
                 .Include(o => o.User) // لو عايز تعرض بيانات المستخدم
                 .Include(o => o.OrderProducts)
                     .ThenInclude(op => op.Product)
+                    .Where(x => x.Status == OrderStatus.Pending)
                 .ToListAsync();
 
             return View(orders);
@@ -296,6 +297,17 @@ namespace Feed_Bridge.Controllers
             return RedirectToAction("AllUsers");
         }
 
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> TrackDeliveries()
+        {
+            var orders = await _context.Orders
+                .Include(o => o.Delivery)
+                .Where(x => x.Status == OrderStatus.Delivered || x.Status == OrderStatus.Assigned || x.Status == OrderStatus.Approved) // الطلبات اللي ليها دليفري
+                .OrderByDescending(o => o.UpdatedAt)
+                .ToListAsync();
 
+            ViewData["ActivePage"] = "TrackDelivery";
+            return View(orders);
+        }
     }
 }

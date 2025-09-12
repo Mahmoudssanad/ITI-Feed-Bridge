@@ -45,7 +45,6 @@ namespace Feed_Bridge.Controllers
             return View();
         }
 
-        // صفحة الطلبات للتوصيل
         [HttpGet]
         public async Task<IActionResult> Orders()
         {
@@ -53,6 +52,7 @@ namespace Feed_Bridge.Controllers
                 .Include(o => o.User)
                 .Include(o => o.OrderProducts)
                     .ThenInclude(op => op.Product)
+                    // هيتشال من الصفحه order هيظهر بس الطلبات اللي متوافق عليها من الادمن لو حد من الدليفري اخد ال  
                     .Where(x => x.Status == OrderStatus.Approved)
                 .ToListAsync();
 
@@ -87,7 +87,6 @@ namespace Feed_Bridge.Controllers
             return RedirectToAction("Orders");
         }
 
-
         [Authorize(Roles = "Delivery")]
         public async Task<IActionResult> MarkDelivered(int id)
         {
@@ -98,7 +97,23 @@ namespace Feed_Bridge.Controllers
             order.Status = OrderStatus.Delivered;
             await _context.SaveChangesAsync();
 
-            return RedirectToAction("Orders");
+            return RedirectToAction("MyOrders");
+        }
+
+        [Authorize(Roles = "Delivery")]
+        public async Task<IActionResult> MyOrders()
+        {
+            var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            var myOrders = await _context.Orders
+                .Include(o => o.User)
+                .Include(o => o.OrderProducts).ThenInclude(op => op.Product)
+                .Where(o => o.DeliveryId == currentUserId &&
+                            (o.Status == OrderStatus.Assigned || o.Status == OrderStatus.Delivered))
+                .ToListAsync();
+
+            ViewData["ActivePage"] = "Deliveries";
+            return View(myOrders);
         }
 
     }

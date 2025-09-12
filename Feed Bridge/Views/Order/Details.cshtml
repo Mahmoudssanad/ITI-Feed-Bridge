@@ -2,66 +2,66 @@
 @model Feed_Bridge.Models.Entities.Order
 
 <div class="container mt-5">
-    <div class="order-card shadow-sm p-4 rounded">
+    <div class="order-card shadow-sm p-4 rounded bg-white border">
+
         <!-- Order Header -->
         <div class="text-center mb-4">
-            <h2 class="fw-bold text-success">📝 تفاصيل الطلب رقم @Model.Id</h2>
-            <p><strong>الحالة:</strong> <span class="status-text">@Model.Status</span></p>
-            <p><strong>تاريخ الإنشاء:</strong> @Model.CreatedAt.ToString("yyyy/MM/dd HH:mm")</p>
+            <h2 class="fw-bold text-success mb-3">📝 تفاصيل الطلب رقم @Model.Id</h2>
+
+            <p class="mb-2">
+                <strong>الحالة:</strong>
+                @if (Model.Status == OrderStatus.Pending)
+                {
+                    <span class="badge bg-warning text-dark px-3 py-2">قيد المراجعة</span>
+                }
+                else if (Model.Status == OrderStatus.Approved)
+                {
+                    <span class="badge bg-success px-3 py-2">تمت الموافقة</span>
+                }
+                else if (Model.Status == OrderStatus.Rejected)
+                {
+                    <span class="badge bg-danger px-3 py-2">مرفوض</span>
+                }
+                else if (Model.Status == OrderStatus.Assigned)
+                {
+                    <span class="badge bg-primary px-3 py-2">قيد التوصيل</span>
+                }
+                else if (Model.Status == OrderStatus.Delivered)
+                {
+                    <span class="badge bg-dark px-3 py-2">تم التوصيل</span>
+                }
+            </p>
+
+            <p class="text-muted"><strong>تاريخ الإنشاء:</strong> @Model.CreatedAt.ToString("yyyy/MM/dd HH:mm")</p>
         </div>
 
         <!-- Order Products Table -->
-        <table class="table table-hover text-center align-middle">
-            <thead class="table-success">
-                <tr>
-                    <th>الصورة</th>
-                    <th>اسم المنتج</th>
-                    <th>الكمية</th>
-                    <th>الحاله</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model.OrderProducts)
-                {
+        <div class="table-responsive">
+            <table class="table table-hover text-center align-middle">
+                <thead class="table-success">
                     <tr>
-                        <td>
-                            <img src="~/uploads/@(item.Product?.ImgURL ?? "img.png")"
-                                 alt="@item.Product?.Name"
-                                 class="product-img" />
-                        </td>
-                        <td>@item.Product?.Name</td>
-                        <td class="fw-bold">@item.Quantity</td>
-                        <td>
-                        @*     @if (item.Status == OrderStatus.Pending) *@
-                        @*     { *@
-                        @*         <span class="badge bg-warning">قيد المراجعة</span> *@
-                        @*     } *@
-                        @*     else if (order.Status == OrderStatus.Approved) *@
-                        @*     { *@
-                        @*         <span class="badge bg-success">تمت الموافقة</span> *@
-                        @*     } *@
-                        @*     else if (order.Status == OrderStatus.Rejected) *@
-                        @*     { *@
-                        @*         <span class="badge bg-danger">مرفوض</span> *@
-                        @*     } *@
-                        @*     else if (order.Status == OrderStatus.Assigned) *@
-                        @*     { *@
-                        @*         <span class="badge bg-primary">قيد التوصيل</span> *@
-                        @*     } *@
-                        @*     else if (order.Status == OrderStatus.Delivered) *@
-                        @*     { *@
-                        @*         <span class="badge bg-dark">تم التوصيل</span> *@
-                        @*     } *@
-                        </td>
+                        <th>الصورة</th>
+                        <th>اسم المنتج</th>
+                        <th>الكمية</th>
                     </tr>
-                }
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.OrderProducts)
+                    {
+                        <tr>
+                            <td>
+                                <img src="~/uploads/@(item.Product?.ImgURL ?? "img.png")"
+                                     alt="@item.Product?.Name"
+                                     class="product-img rounded shadow-sm"
+                                     style="width: 70px; height: 70px; object-fit: cover;" />
+                            </td>
+                            <td class="fw-semibold">@item.Product?.Name</td>
+                            <td class="fw-bold text-primary">@item.Quantity</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
 
-    <div class="text-center mt-4">
-        <a asp-controller="Product" asp-action="Index" class="btn btn-primary">
-            ⬅️ عودة للمنتجات
-        </a>
-       
     </div>
 </div>
