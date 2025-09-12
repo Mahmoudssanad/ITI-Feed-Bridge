@@ -165,6 +165,35 @@ namespace Feed_Bridge.Controllers
 
             return View(model);
         }
+        [HttpGet]
+        public async Task<IActionResult> DeletedUsers()
+        {
+            var users = await _userManager.Users
+                .Where(u => u.IsDeleted) 
+                .ToListAsync();
+
+            var model = new List<UserWithRoleVM>();
+
+            foreach (var user in users)
+            {
+                var roles = await _userManager.GetRolesAsync(user);
+
+                model.Add(new UserWithRoleVM
+                {
+                    UserId = user.Id,
+                    UserName = user.UserName,
+                    Email = user.Email,
+                    ImgUrl = user.ImgUrl,
+                    Roles = roles,
+                    IsFrozen = user.IsFrozen,
+                    IsDeleted = user.IsDeleted,
+                    DeletedBy = user.DeletedBy
+                });
+            }
+
+            return View(model); // اعمل View بنفس شكل AllUsers أو نسخة خاصة للمحذوفين
+        }
+
 
         [HttpGet]
         public async Task<IActionResult> AllPartners()

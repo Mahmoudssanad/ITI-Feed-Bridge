@@ -127,6 +127,12 @@
                         <p>كل المشتركين</p>
                     </a>
                 </li>
+                <li class="@(ViewData["ActivePage"] as string == "DeletedUsers" ? "active" : "")">
+                    <a asp-controller="Admin" asp-action="DeletedUsers">
+                        <span class="material-symbols-outlined"> groups </span>
+                        <p>كل المحذوفين</p>
+                    </a>
+                </li>
                 <li class="@(ViewData["ActivePage"] as string == "AllParteners" ? "active" : "")">
                     <a asp-controller="Admin" asp-action="AllPartners">
                         <span class="material-symbols-outlined"> groups </span>

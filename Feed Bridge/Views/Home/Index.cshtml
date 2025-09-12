@@ -150,7 +150,9 @@
                     @foreach (var item in hiddenReviews)
                     {
                         <div class="feedback-card">
-                            <img src="@Url.Content(item.User.ImgUrl)"  style="width:50px; height:50px; border:2px solid #1cba7f" />
+                            <img src="@Url.Content(item.User.ImgUrl??"~/imgs/anon.jpg")"
+                                    style="width:50px; height:50px; border:2px solid #1cba7f" />
+
                             <p class="feedback-text">@item.FeedBackMsg</p>
                             <div class="feedback-stars">
                                 @for (int i = 0; i < item.StarsNumber; i++)

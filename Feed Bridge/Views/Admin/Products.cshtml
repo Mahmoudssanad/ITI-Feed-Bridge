@@ -5,7 +5,10 @@
     ViewData["ActivePage"] = "Products";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+</head>
 <h1 class="mb-4">قائمة المنتجات</h1>
 
 <table class="table table-hover table-bordered text-center">
@@ -47,13 +50,12 @@
                     </td>
 
                     <td>
-                        <form asp-action="Delete" asp-controller="Product" method="post" style="display:inline">
+                        <form asp-action="Delete" asp-controller="Product" method="post" style="display:inline" id="deleteForm-@product.Id">
                             <input type="hidden" name="id" value="@product.Id" />
-                            <button type="submit" class="btn btn-danger" onclick="return confirm('هل أنت متأكد من الحذف؟')">
+                            <button type="button" class="btn btn-danger" onclick="confirmDelete('@product.Id')">
                                 حذف
                             </button>
                         </form>
-                        
                     </td>
                     <td>
                         <a asp-action="Edit" asp-controller="Product" asp-route-id="@product.Id">
@@ -73,3 +75,40 @@
         }
     </tbody>
 </table>
+
+@section Scripts {
+    <script>
+        function confirmDelete(id) {
+            Swal.fire({
+                title: 'هل أنت متأكد؟',
+                text: "لا يمكنك التراجع بعد الحذف!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#bb2d3b',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'نعم، احذف',
+                cancelButtonText: 'إلغاء'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById('deleteForm-' + id).submit();
+                }
+            });
+        }
+    </script>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <script>
+            Swal.fire({
+                toast: true,
+                position: 'top-end',
+                icon: 'success',
+                title: '@TempData["SuccessMessage"]',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true
+            });
+        </script>
+    }
+}
+

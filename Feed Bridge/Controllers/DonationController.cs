@@ -148,7 +148,7 @@ namespace Feed_Bridge.Controllers
                 UserId = donation.UserId
             });
 
-            TempData["SuccessMessage"] = " تم قبول التبرع وإضافته للمنتجات.";
+            
             return RedirectToAction("Donate", "Admin");
         }
 
