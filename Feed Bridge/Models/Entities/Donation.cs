@@ -6,6 +6,7 @@ namespace Feed_Bridge.Models.Entities
     public class Donation
     {
         public int Id { get; set; }
+
         public string Name { get; set; }
         public string? ImgURL { get; set; }
         public DateOnly ExpirDate { get; set; }
@@ -17,10 +18,13 @@ namespace Feed_Bridge.Models.Entities
         public DateTime? updatedAt { get; set; } = DateTime.UtcNow;
         public ProductCategory Category { get; set; }
 
+        // 🟢 حالة التبرع (مطلوبة عشان قبول / رفض التبرع)
+        public DonationStatus Status { get; set; } = DonationStatus.Pending;
 
         [ForeignKey("User")]
         public string UserId { get; set; }
         public ApplicationUser User { get; set; }
+
         public List<Product> Product { get; set; } = new List<Product>();
     }
 }

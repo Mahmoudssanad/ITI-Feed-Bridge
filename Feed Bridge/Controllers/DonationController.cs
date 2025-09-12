@@ -1,11 +1,10 @@
 ﻿using Feed_Bridge.IServices;
 using Feed_Bridge.Models.Entities;
+using Feed_Bridge.Models.Enums;
 using Feed_Bridge.ViewModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System.Security.Claims;
 
 namespace Feed_Bridge.Controllers
 {
@@ -13,38 +12,43 @@ namespace Feed_Bridge.Controllers
     public class DonationController : Controller
     {
         private readonly IDonationService _donationService;
+        private readonly IProductService _productService;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IWebHostEnvironment _env;
-        private readonly IProductService _productService;
         private readonly INotificationService _notificationService;
 
-        public DonationController(IDonationService donationService,
-            UserManager<ApplicationUser> userManager,IWebHostEnvironment webHostEnvironment, IProductService productService, INotificationService notificationService)
+        public DonationController(
+            IDonationService donationService,
+            IProductService productService,
+            UserManager<ApplicationUser> userManager,
+            IWebHostEnvironment env,
+            INotificationService notificationService)
         {
             _donationService = donationService;
-            _userManager = userManager;
-            _env = webHostEnvironment;
             _productService = productService;
+            _userManager = userManager;
+            _env = env;
             _notificationService = notificationService;
         }
 
-        //[Authorize(Roles ="Admin")]
-        [HttpGet] // for the admin to display all donations
+        // 🟢 عرض كل التبرعات (للأدمن فقط)
+        [HttpGet]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAll()
         {
-            ViewData["ActivePage"] = "Donors";
+            ViewData["ActivePage"] = "Donate";
             var donations = await _donationService.GetAllDonations();
             return View(donations);
         }
 
 
+        // 🟢 إنشاء تبرع (من المستخدم)
         [HttpGet]
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Donation/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(DonationViewModel model)
@@ -56,7 +60,7 @@ namespace Feed_Bridge.Controllers
             if (user == null)
                 return Unauthorized();
 
-            // معالجة رفع الصورة
+            // رفع الصورة
             string? fileName = null;
             if (model.Image != null)
             {
@@ -69,7 +73,7 @@ namespace Feed_Bridge.Controllers
                 }
             }
 
-            // تحويل ViewModel → Entity
+            // إنشاء التبرع (في وضع Pending)
             var donation = new Donation
             {
                 Name = model.Name,
@@ -79,21 +83,12 @@ namespace Feed_Bridge.Controllers
                 Address = model.Address,
                 Phone = model.Phone,
                 Description = model.Description,
-                Category = model.Category
+                Category = model.Category,
+                Status = DonationStatus.Pending, // ⬅️ حالة التبرع
             };
             await _donationService.Add(donation, user.Id);
 
-            var product = new Product
-            {
-                Name = donation.Name,
-                ImgURL = donation.ImgURL,
-                ExpirDate = donation.ExpirDate,
-                Quantity = donation.Quantity,
-                DonationId = donation.Id,
-                Category = donation.Category
-                // عشان نعرف إن المنتج ده مرتبط بتبرع
-            };
-            await _productService.AddAsync(product);
+            // إرسال إشعار للأدمن
             var admins = await _userManager.GetUsersInRoleAsync("Admin");
             foreach (var admin in admins)
             {
@@ -106,140 +101,95 @@ namespace Feed_Bridge.Controllers
                 });
             }
 
-            var deliveries = await _userManager.GetUsersInRoleAsync("Delivery");
-            foreach (var delivery in deliveries)
-            {
-                await _notificationService.AddNotificationAsync(new Notification
-                {
-                    Title = "تبرع جديد للتوصيل",
-                    Description = $"{user.UserName} تبرع بمنتج {donation.Name}",
-                    RedirectUrl = Url.Action("Donations", "Delivery"),
-                    UserId = delivery.Id
-                });
-            }
-
-            TempData["SuccessMessage"] = "تمت التبرع بنجاح";
-
+            TempData["SuccessMessage"] = "تم إرسال التبرع بنجاح وسيقوم الأدمن بمراجعته.";
             return RedirectToAction("Create");
         }
-        [HttpGet]
+
+        // 🟢 قبول التبرع (Admin فقط)
+        [HttpPost]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> Accept(int id)
+        {
+            var donation = await _donationService.GetDonationById(id);
+            if (donation == null) return NotFound();
+
+            // ✅ لو التبرع مش في حالة Pending ما ينفعش يتقبل تاني
+            if (donation.Status != DonationStatus.Pending)
+            {
+                TempData["ErrorMessage"] = "هذا التبرع تمت مراجعته بالفعل.";
+                return RedirectToAction("Donate", "Admin");
+            }
+
+            donation.Status = DonationStatus.Accepted;
+            await _donationService.UpdateDonation(donation);
+
+            // ✅ قبل إضافة المنتج نتأكد إنه مش مضاف بالفعل
+            var productExists = await _productService.GetByDonationId(donation.Id);
+            if (productExists == null)
+            {
+                var product = new Product
+                {
+                    Name = donation.Name,
+                    ImgURL = donation.ImgURL,
+                    ExpirDate = donation.ExpirDate,
+                    Quantity = donation.Quantity,
+                    DonationId = donation.Id,
+                    Category = donation.Category
+                };
+                await _productService.AddAsync(product);
+            }
+
+            // إشعار للمتبرع
+            await _notificationService.AddNotificationAsync(new Notification
+            {
+                Title = "تم قبول التبرع",
+                Description = $"تم قبول تبرعك ({donation.Name}) وإضافته إلى المنتجات.",
+                RedirectUrl = Url.Action("Index", "Product"),
+                UserId = donation.UserId
+            });
+
+            TempData["SuccessMessage"] = " تم قبول التبرع وإضافته للمنتجات.";
+            return RedirectToAction("Donate", "Admin");
+        }
+
+        // 🟢 رفض التبرع (Admin فقط)
+        [HttpPost]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> Reject(int id)
+        {
+            var donation = await _donationService.GetDonationById(id);
+            if (donation == null) return NotFound();
+
+            if (donation.Status != DonationStatus.Pending)
+            {
+                TempData["ErrorMessage"] = "هذا التبرع تمت مراجعته بالفعل.";
+                return RedirectToAction("Donate", "Admin");
+            }
+
+            donation.Status = DonationStatus.Rejected;
+            await _donationService.UpdateDonation(donation);
+
+            await _notificationService.AddNotificationAsync(new Notification
+            {
+                Title = "تم رفض التبرع",
+                Description = $"نأسف، تم رفض تبرعك ({donation.Name}).",
+                RedirectUrl = Url.Action("Create", "Donation"),
+                UserId = donation.UserId
+            });
+
+            TempData["ErrorMessage"] = " تم رفض التبرع.";
+            return RedirectToAction("Donate", "Admin");
+        }
+
+
+        // 🟢 حذف التبرع (Admin فقط)
+        [HttpPost]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int id)
         {
-            var Donation = await _productService.GetByIdAsync(id);
-            if (Donation == null)
-                return NotFound();
-
-            return View(Donation);
-        }
-
-        // POST: Delete
-        [HttpPost, ActionName("Delete")] // هنا بقول للـ routing اعتبرها Delete برضه
-        [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            try
-            {
-                await _productService.DeleteAsync(id);
-                TempData["SuccessMessage"] = "تم حذف المنتج بنجاح";
-            }
-            catch (Exception ex)
-            {
-                TempData["ErrorMessage"] = "حصل خطأ أثناء الحذف: " + ex.Message;
-            }
-
-            return RedirectToAction("Products", "Admin");
-        }//view Done
-
-        //[Authorize(Roles ="Admin")]
-        //[HttpPost]
-        //public async Task<IActionResult> Delete(int id)
-        //{
-        //    await _donationService.DeleteDonation(id);
-        //    return RedirectToAction("GetAll");
-        //}
-        // -------- GET: Edit --------
-        [HttpGet]
-        public async Task<IActionResult> Edit(int id)
-        {
-            var product = await _productService.GetByIdAsync(id);
-            if (product == null) return NotFound();
-
-            var donation = product.Donation;
-            if (donation == null) return BadRequest("هذا المنتج غير مرتبط بتبرع");
-
-            var viewModel = new EditProductViewModel
-            {
-                Id = product.Id,
-                Name = product.Name,
-                ExpirDate = product.ExpirDate,
-                Quantity = product.Quantity,
-                Address = donation.Address,
-                Phone = donation.Phone,
-                Description = donation.Description,
-                ExistingImageUrl = product.ImgURL
-            };
-
-            return View(viewModel); // يفتح نفس الفيو Edit.cshtml
-        }
-
-        // -------- POST: Edit --------
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(EditProductViewModel model)
-        {
-            if (!ModelState.IsValid)
-                return View(model); // لو فيه خطأ يرجع لنفس الفيو
-
-            var product = await _productService.GetByIdAsync(model.Id);
-            if (product == null) return NotFound();
-
-            var donation = product.Donation;
-            if (donation == null) return BadRequest("هذا المنتج غير مرتبط بتبرع");
-
-            // تحديث المنتج
-            product.Name = model.Name;
-            product.ExpirDate = model.ExpirDate;
-            product.Quantity = model.Quantity;
-            product.Category = model.Category;
-
-
-            // تحديث التبرع
-            donation.Address = model.Address;
-            donation.Phone = model.Phone;
-            donation.Description = model.Description;
-            product.Category = model.Category;
-
-            // رفع صورة جديدة لو فيه
-            if (model.Image != null)
-            {
-                var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads");
-                if (!Directory.Exists(uploadsFolder))
-                    Directory.CreateDirectory(uploadsFolder);
-
-                var uniqueFileName = Guid.NewGuid() + Path.GetExtension(model.Image.FileName);
-                var filePath = Path.Combine(uploadsFolder, uniqueFileName);
-
-                using (var stream = new FileStream(filePath, FileMode.Create))
-                {
-                    await model.Image.CopyToAsync(stream);
-                }
-
-                product.ImgURL = uniqueFileName;
-            }
-
-            // حفظ التعديلات
-            await _productService.UpdateAsync(product);
-
-            TempData["SuccessMessage"] = "تم تعديل المنتج بنجاح";
-
-            return View(model);
+            await _donationService.DeleteDonation(id);
+            TempData["SuccessMessage"] = "تم حذف التبرع بنجاح";
+            return RedirectToAction("Donate", "Admin");
         }
     }
-
-
-
-
 }
-

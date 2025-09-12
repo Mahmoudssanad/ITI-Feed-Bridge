@@ -52,7 +52,7 @@
 
                         @if (product.Quantity > 0)
                         {
-                            <form class="add-to-cart-form" data-product-id="@product.Id">
+                            <form class="add-to-cart-form" asp-action="Index" asp-controller="Cart" data-product-id="@product.Id">
                                 <button type="submit" class="btn add-to-cart-btn">اضف الي السلة</button>
                             </form>
                         }
@@ -72,16 +72,81 @@
         }
     </div>
 </section>
-
 @section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        // نضع القيمة المختارة في select بعد الريلود (بدون منطق معقد داخل option)
-        document.addEventListener("DOMContentLoaded", function () {
-            var selected = "@selectedCategory";
-            if (selected) {
-                var sel = document.getElementById("categorySelect");
-                if (sel) sel.value = selected;
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer);
+                toast.addEventListener('mouseleave', Swal.resumeTimer);
             }
         });
+
+        $(document).on("submit", ".add-to-cart-form", function (e) {
+            e.preventDefault();
+
+            let productId = $(this).data("product-id");
+
+            $.post("/Cart/Add", { productId: productId, quantity: 1 }, function (data) {
+                if (data.success) {
+                    Toast.fire({
+                        icon: 'success',
+                        title: data.message
+                    });
+                } else {
+                    Toast.fire({
+                        icon: 'error',
+                        title: data.message
+                    });
+                }
+            });
+        });
     </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 2000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer);
+                    toast.addEventListener('mouseleave', Swal.resumeTimer);
+                }
+            });
+
+            $(document).on("submit", ".add-to-cart-form", function (e) {
+                e.preventDefault();
+
+                let productId = $(this).data("product-id");
+
+                $.post("/Cart/Add", { productId: productId, quantity: 1 }, function (data) {
+                    if (data.success) {
+                        Toast.fire({
+                            icon: 'success',
+                            title: data.message
+                        });
+                    } else {
+                        Toast.fire({
+                            icon: 'error',
+                            title: data.message
+                        });
+                    }
+                });
+            });
+	</script>
+}
+
+
+@section FooterSection {
+    @await Html.PartialAsync("_Footer")
 }
