@@ -92,6 +92,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUmVwb3J0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Admin/TrackDeliveries.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVHJhY2tEZWxpdmVyaWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Cart/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -104,12 +108,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVsaXZlcnlcRG9uYXRpb25zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Delivery/MyDonations.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVsaXZlcnlcTXlEb25hdGlvbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Delivery/MyOrders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVsaXZlcnlcTXlPcmRlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Delivery/Orders.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVsaXZlcnlcT3JkZXJzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Donation/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9uYXRpb25cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Donation/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9uYXRpb25cRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Donation/GetAll.cshtml]
@@ -134,6 +150,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Partner/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydG5lclxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Product/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Back-end/MVC Projects/Hackathon ITI/Feed Bridge/Feed Bridge/Views/Product/Index.cshtml]

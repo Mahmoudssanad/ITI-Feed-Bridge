@@ -31,6 +31,15 @@ namespace Feed_Bridge.Services
                 .ToListAsync();
         }
 
+        public async Task<IEnumerable<Donation>> GetAllAcceptedDonations()
+        {
+            return await _context.Donations
+                .Include(d => d.User)     // جلب بيانات المتبرع
+                .Include(d => d.Product)  // جلب المنتج المرتبط (لو موجود)
+                .Where(d => !d.User.IsDeleted && d.Status == Models.Enums.DonationStatus.Accepted) // لو عندك خاصية IsDeleted
+                .ToListAsync();
+        }
+
         public async Task<Donation?> GetDonationById(int id)
         {
             return await _context.Donations

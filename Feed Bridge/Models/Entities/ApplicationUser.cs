@@ -27,6 +27,7 @@ namespace Feed_Bridge.Models.Entities
 
         public List<Review> Reviews { get; set; } = new List<Review>();
 
+        public List<Donation> Deliveries { get; set; } = new List<Donation>();
 
     }
 }

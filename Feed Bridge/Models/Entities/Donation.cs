@@ -15,7 +15,7 @@ namespace Feed_Bridge.Models.Entities
         public string Phone { get; set; }
         public string? Description { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-        public DateTime? updatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime? UpdatedAt { get; set; } = DateTime.UtcNow;
         public ProductCategory Category { get; set; }
 
         // 🟢 حالة التبرع (مطلوبة عشان قبول / رفض التبرع)
@@ -24,6 +24,10 @@ namespace Feed_Bridge.Models.Entities
         [ForeignKey("User")]
         public string UserId { get; set; }
         public ApplicationUser User { get; set; }
+
+        [ForeignKey("Delivery")]
+        public string? DeliveryId { get; set; }
+        public ApplicationUser? Delivery { get; set; }
 
         public List<Product> Product { get; set; } = new List<Product>();
     }

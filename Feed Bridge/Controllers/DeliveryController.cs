@@ -64,7 +64,7 @@ namespace Feed_Bridge.Controllers
         [HttpGet]
         public async Task<IActionResult> Donations()
         {
-            var donations = await _donationService.GetAllDonations();
+            var donations = await _donationService.GetAllAcceptedDonations();
             ViewData["ActivePage"] = "Donations";
             return View(donations); 
         }
@@ -85,6 +85,24 @@ namespace Feed_Bridge.Controllers
             await _context.SaveChangesAsync();
 
             return RedirectToAction("Orders");
+        }
+
+        [Authorize(Roles = "Delivery")]
+        [HttpPost]
+        public async Task<IActionResult> TakeDonation(int id)
+        {
+            var donation = await _context.Donations.FindAsync(id);
+            if (donation == null) return NotFound();
+
+            var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            donation.DeliveryId = currentUserId;   // حفظ مين الدليفري
+            donation.Status = DonationStatus.Assigned;
+            donation.UpdatedAt = DateTime.Now;
+
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Donations");
         }
 
         [Authorize(Roles = "Delivery")]
@@ -116,5 +134,33 @@ namespace Feed_Bridge.Controllers
             return View(myOrders);
         }
 
+        [Authorize(Roles = "Delivery")]
+        public async Task<IActionResult> MyDonations()
+        {
+            var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            var donations = await _context.Donations
+                .Include(d => d.User)
+                .Include(d => d.Product)
+                .Where(d => d.DeliveryId == currentUserId
+                            && (d.Status == DonationStatus.Assigned || d.Status == DonationStatus.Delivered))
+                .ToListAsync();
+
+            ViewData["ActivePage"] = "Donations";
+            return View(donations);
+        }
+
+        [Authorize(Roles = "Delivery")]
+        public async Task<IActionResult> MarkAsTaken(int id)
+        {
+            var donation = await _context.Donations.FindAsync(id);
+            if (donation == null)
+                return BadRequest("التبرع غير صالح للاستلام");
+
+            donation.Status = DonationStatus.Delivered;
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("MyDonations");
+        }
     }
 }
