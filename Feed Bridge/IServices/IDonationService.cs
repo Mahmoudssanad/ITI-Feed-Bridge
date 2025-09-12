@@ -6,6 +6,7 @@ namespace Feed_Bridge.IServices
     {
         Task Add(Donation donation, string userId);
         Task<IEnumerable<Donation>> GetAllDonations();
+        Task<IEnumerable<Donation>> GetAllAcceptedDonations();
         Task<Donation> GetDonationById(int id);
         Task<decimal> GetTotalDonationsAmount();
         Task DeleteDonation(int id);

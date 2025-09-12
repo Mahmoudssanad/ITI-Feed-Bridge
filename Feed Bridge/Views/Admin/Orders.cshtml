@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Feed_Bridge.Models.Entities.Order>
+﻿@using Feed_Bridge.Models.Enums
+@model IEnumerable<Feed_Bridge.Models.Entities.Order>
 
 @{
     ViewData["Title"] = "الطلبات";
@@ -13,6 +14,7 @@
         <tr >
             <th>المستخدم</th>
             <th>الحالة</th>
+            <th>اجراءات</th>
             <th>المنتجات</th>
             <th>وقت الطلب</th>
             <th>كل الطلبات </th>
@@ -33,6 +35,25 @@
                         </a>
                     </td>
                     <td>@order.Status</td>
+                    <td>
+                        @if (order.Status == OrderStatus.Pending)
+                        {
+                            <a asp-action="Approve" asp-route-id="@order.Id" class="btn btn-success btn-sm">
+                                موافقة
+                            </a>
+                            <a asp-action="Reject" asp-route-id="@order.Id" class="btn btn-danger btn-sm">
+                                رفض
+                            </a>
+                        }
+                        else if (order.Status == OrderStatus.Approved)
+                        {
+                            <span class="badge bg-success">تمت الموافقة على الطلب</span>
+                        }
+                        else if (order.Status == OrderStatus.Rejected)
+                        {
+                            <span class="badge bg-danger">تم رفض الطلب</span>
+                        }
+                    </td>
                     <td>
                         <ul>
                             @foreach (var op in order.OrderProducts)

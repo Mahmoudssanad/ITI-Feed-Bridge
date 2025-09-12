@@ -1,6 +1,7 @@
 ﻿using Feed_Bridge.IServices;
 using Feed_Bridge.Models.Data;
 using Feed_Bridge.Models.Entities;
+using Feed_Bridge.Models.Enums;
 using Feed_Bridge.ViewModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -61,9 +62,36 @@ namespace Feed_Bridge.Controllers
                 .Include(o => o.User) // لو عايز تعرض بيانات المستخدم
                 .Include(o => o.OrderProducts)
                     .ThenInclude(op => op.Product)
+                    .Where(x => x.Status == OrderStatus.Pending)
                 .ToListAsync();
 
             return View(orders);
+        }
+
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> Approve(int id)
+        {
+            var order = await _context.Orders.FindAsync(id);
+            if (order == null) return NotFound();
+
+            order.Status = OrderStatus.Approved;
+            await _context.SaveChangesAsync();
+
+            // TODO: ابعت Notification / Email للمستخدم
+            return RedirectToAction("Orders");
+        }
+
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> Reject(int id)
+        {
+            var order = await _context.Orders.FindAsync(id);
+            if (order == null) return NotFound();
+
+            order.Status = OrderStatus.Rejected;
+            await _context.SaveChangesAsync();
+
+            // TODO: ابعت Notification / Email للمستخدم
+            return RedirectToAction("Orders");
         }
 
         [HttpGet] 
@@ -97,13 +125,23 @@ namespace Feed_Bridge.Controllers
             return View(products);
         }
 
+        public async Task<IActionResult> DeleteProduct(int id)
+        {
+            var product = await _context.Products.FirstOrDefaultAsync(x => x.Id == id);
+            _context.Products.Remove(product);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("products");
+        }
+
         [HttpGet]
         public async Task<IActionResult> AllUsers()
         {
             var currentUser = await _userManager.GetUserAsync(User);
 
             var users = await _userManager.Users
-                .Where(u => u.Id != currentUser.Id && !u.IsDeleted) // استبعد المستخدم الحالي (الأدمن)
+                // && !u.IsDeleted <= لو مش عاوزه يظهر المستخدمين اللي محذوفين اكتب 
+                .Where(u => u.Id != currentUser.Id) 
                 .ToListAsync();
 
             var model = new List<UserWithRoleVM>();
@@ -259,6 +297,17 @@ namespace Feed_Bridge.Controllers
             return RedirectToAction("AllUsers");
         }
 
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> TrackDeliveries()
+        {
+            var orders = await _context.Orders
+                .Include(o => o.Delivery)
+                .Where(x => x.Status == OrderStatus.Delivered || x.Status == OrderStatus.Assigned || x.Status == OrderStatus.Approved) // الطلبات اللي ليها دليفري
+                .OrderByDescending(o => o.UpdatedAt)
+                .ToListAsync();
 
+            ViewData["ActivePage"] = "TrackDelivery";
+            return View(orders);
+        }
     }
 }

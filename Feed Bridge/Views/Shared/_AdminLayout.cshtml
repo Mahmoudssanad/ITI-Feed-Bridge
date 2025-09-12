@@ -139,6 +139,12 @@
                         <p>التحكم في الواجهه </p>
                     </a>
                 </li>
+                <li class="@(ViewData["ActivePage"] as string == "TrackDelivery" ? "active" : "")">
+                    <a asp-controller="Admin" asp-action="TrackDeliveries">
+                        <span class="material-symbols-outlined"> groups </span>
+                        <p>تتبع التوصيلات </p>
+                    </a>
+                </li>
                 <li>
                     <form asp-controller="Account" asp-action="Logout" method="post" class="d-flex align-items-center">
                         <button type="submit" class="btn btn-link text-danger text-decoration-none d-flex align-items-center" style="padding:0;">

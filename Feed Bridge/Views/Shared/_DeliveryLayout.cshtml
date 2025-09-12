@@ -81,6 +81,18 @@
                         <p>التبرعات</p>
                     </a>
                 </li>
+                <li class="@(ViewData["ActivePage"] as string == "Deliveries" ? "active" : "")">
+                    <a asp-controller="Delivery" asp-action="MyOrders">
+                        <span class="material-symbols-outlined"> favorite </span>
+                        <p>التوصيلات الخاصه بي</p>
+                    </a>
+                </li>
+                <li class="@(ViewData["ActivePage"] as string == "Donations" ? "active" : "")">
+                    <a asp-controller="Delivery" asp-action="MyDonations">
+                        <span class="material-symbols-outlined"> favorite </span>
+                        <p>التوصيلات الخاصه بالتبرعات</p>
+                    </a>
+                </li>
                 <form asp-controller="Account" asp-action="Logout" method="post" style="display:inline;">
                     <button type="submit" class="btn btn-primary" style="background-color:#1cba7f;border:none;color:white;">
                         تسجيل خروج

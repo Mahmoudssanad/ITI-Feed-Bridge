@@ -56,6 +56,7 @@ namespace Feed_Bridge.Controllers
 
             return RedirectToAction("Details", "Order", new { id = order.Id });
         }
+
         public async Task<IActionResult> Details(int id)
         {
             var user = await _userManager.GetUserAsync(User);
@@ -77,23 +78,6 @@ namespace Feed_Bridge.Controllers
 
             return View(order);
         }
-
-
-        //public async Task<IActionResult> Details(int id)
-        //{
-        //    var user = await _userManager.GetUserAsync(User);
-        //    if (user == null)
-        //        return RedirectToAction("Login", "Account");
-
-        //    var order = await _orderService.GetOrderByIdAsync(id);
-
-        //    if (order == null || order.UserId != user.Id)
-        //    {
-        //        return NotFound(); // تأمين إن المستخدم يشوف بس طلباته
-        //    }
-
-        //    return View(order);
-        //}
 
         public async Task<IActionResult> History(string? userId)
         {

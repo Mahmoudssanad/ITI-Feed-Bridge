@@ -2,10 +2,10 @@
 {
     public enum OrderStatus
     {
-        Pending,
-        Processing,
-        Completed,
-        Canceled,
-        Failed
+        Pending,    // في انتظار موافقة الأدمن
+        Approved,   // تمت الموافقة من الأدمن
+        Rejected,   // مرفوض
+        Assigned,   // استلمه الدليفري
+        Delivered   // تم التوصيل
     }
 }

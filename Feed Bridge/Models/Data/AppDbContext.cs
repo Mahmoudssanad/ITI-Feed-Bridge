@@ -55,6 +55,18 @@ namespace Feed_Bridge.Models.Data
             builder.Entity<OrderProduct>().HasOne(x => x.Product)
                 .WithMany(x => x.OrderProducts).HasForeignKey(x => x.ProductId);
 
+            builder.Entity<Donation>()
+                .HasOne(d => d.Delivery)
+                .WithMany(u => u.Deliveries)
+                .HasForeignKey(d => d.DeliveryId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<Donation>()
+                .HasOne(d => d.User)
+                .WithMany(u => u.Donnations)
+                .HasForeignKey(d => d.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
+
             builder.Entity<Order>()
                 .HasOne(o => o.User)
                 .WithMany(u => u.Orders)

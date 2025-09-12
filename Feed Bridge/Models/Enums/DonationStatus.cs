@@ -4,6 +4,8 @@
     {
         Pending ,   // في انتظار المراجعة
         Accepted,  // مقبول
-        Rejected   // مرفوض
+        Rejected,  // مرفوض
+        Assigned,   // مرفوض
+        Delivered   // مرفوض
     }
 }
