@@ -24,7 +24,7 @@ builder.Services.Configure<SecurityStampValidatorOptions>(options =>
 
 
 builder.Services.AddScoped<IReviewService, ReviewService>();
-builder.Services.AddScoped<EmailSender>();
+//builder.Services.AddScoped<EmailSender>();
 
 
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
@@ -63,6 +63,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.UseStaticFiles();
 app.UseHttpsRedirection();
 app.UseRouting();
 app.UseAuthentication();

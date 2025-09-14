@@ -93,11 +93,14 @@
                         <p>التوصيلات الخاصه بالتبرعات</p>
                     </a>
                 </li>
-                <form asp-controller="Account" asp-action="Logout" method="post" style="display:inline;">
-                    <button type="submit" class="btn btn-primary" style="background-color:#1cba7f;border:none;color:white;">
-                        تسجيل خروج
-                    </button>
-                </form>
+                <li>
+                    <form asp-controller="Account" asp-action="Logout" method="post" class="d-flex align-items-center">
+                        <button type="submit" class="btn btn-link text-danger text-decoration-none d-flex align-items-center" style="padding:0;">
+                            <span class="material-symbols-outlined me-1">logout</span>
+                            الخروج
+                        </button>
+                    </form>
+                </li>
             </ul>
         </div>
 
