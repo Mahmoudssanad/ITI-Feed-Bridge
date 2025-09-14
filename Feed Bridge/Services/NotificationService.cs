@@ -27,20 +27,31 @@ namespace Feed_Bridge.Services
                 .OrderByDescending(n => n.CreatedAt)
                 .ToListAsync();
         }
-        public async Task<int> GetUnreadCountAsync(string userId)
+        public async Task MarkAllAsReadAsync(string userId)
         {
-            return await _context.Notifications.CountAsync(n => n.UserId == userId && !n.IsRead);
-        }
+            var notifications = await _context.Notifications
+                                              .Where(n => n.UserId == userId && !n.IsRead)
+                                              .ToListAsync();
 
-        public async Task MarkAsReadAsync(int id)
-        {
-            var notification = await _context.Notifications.FindAsync(id);
-            if (notification != null && !notification.IsRead)
+            if (notifications.Any())
             {
-                notification.IsRead = true;
+                foreach (var notif in notifications)
+                {
+                    notif.IsRead = true;
+                }
+
                 await _context.SaveChangesAsync();
             }
         }
 
+        // إضافة إشعار جديد
+      
+
+        // جلب عدد الإشعارات غير المقروءة
+        public async Task<int> GetUnreadCountAsync(string userId)
+        {
+            return await _context.Notifications
+                                 .CountAsync(n => n.UserId == userId && !n.IsRead);
+        }
     }
 }

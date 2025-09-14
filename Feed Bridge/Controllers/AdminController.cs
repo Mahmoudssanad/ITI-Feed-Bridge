@@ -68,27 +68,72 @@ namespace Feed_Bridge.Controllers
             return View(orders);
         }
 
+        //[Authorize(Roles = "Admin")]
+        //public async Task<IActionResult> Approve(int id)
+        //{
+        //    var order = await _context.Orders.FindAsync(id);
+        //    if (order == null) return NotFound();
+
+        //    order.Status = OrderStatus.Approved;
+        //    await _context.SaveChangesAsync();
+
+        //    // TODO: ابعت Notification / Email للمستخدم
+        //    return RedirectToAction("Orders");
+        //}
+        
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> Approve(int id)
+        public async Task<IActionResult> Approve(
+     int id,
+     [FromServices] INotificationService notificationService)
         {
             var order = await _context.Orders.FindAsync(id);
             if (order == null) return NotFound();
 
+            // تعديل حالة الأوردر
             order.Status = OrderStatus.Approved;
             await _context.SaveChangesAsync();
 
-            // TODO: ابعت Notification / Email للمستخدم
+            // إنشاء Notification
+            var notification = new Notification
+            {
+                UserId = order.UserId, // صاحب الأوردر
+                Title = "تمت الموافقة على طلبك",
+                Description = $"تم قبول الأوردر رقم {order.Id} بواسطة الادمن",
+                CreatedAt = DateTime.Now,
+                RedirectUrl = $"/Order/Details/{order.Id}", // الرابط اللي المستخدم هيدخل عليه
+                IsRead = false
+            };
+
+            await notificationService.AddNotificationAsync(notification);
+
+            // ترجع للـ Orders page بعد الموافقة
             return RedirectToAction("Orders");
         }
 
+
+       
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> Reject(int id)
+        public async Task<IActionResult> Reject(int id, [FromServices] INotificationService notificationService)
+
         {
             var order = await _context.Orders.FindAsync(id);
             if (order == null) return NotFound();
 
             order.Status = OrderStatus.Rejected;
             await _context.SaveChangesAsync();
+            var notification = new Notification
+            {
+                UserId = order.UserId, // صاحب الأوردر
+                Title = "تم رفض  طلبك",
+                Description = $"تم رفض الأوردر رقم {order.Id} بواسطة الادمن",
+                CreatedAt = DateTime.Now,
+                RedirectUrl = $"/Order/Details/{order.Id}", // الرابط اللي المستخدم هيدخل عليه
+                IsRead = false
+            };
+
+            await notificationService.AddNotificationAsync(notification);
+
+
 
             // TODO: ابعت Notification / Email للمستخدم
             return RedirectToAction("Orders");

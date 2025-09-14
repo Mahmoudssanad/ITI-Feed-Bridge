@@ -1,0 +1,33 @@
+﻿@model List<Feed_Bridge.Models.Entities.Notification>
+
+<ul class="list-group m-0">
+    @if (Model.Any())
+    {
+        foreach (var n in Model)
+        {
+            <br />
+            if (n.Description.Contains("نأسف"))
+            {
+                <li class="list-group-item @(n.IsRead ? "" : "fw-bold")" style="cursor:pointer; color:red;" onclick="window.location='@n.RedirectUrl'">
+                    @n.Description
+                    <br />
+                    <small class="text-muted">@n.CreatedAt.ToString("g")</small>
+                </li>
+            }
+            else
+            {
+                <li class="list-group-item @(n.IsRead ? "" : "fw-bold")" style="cursor:pointer;" onclick="window.location='@n.RedirectUrl'">
+                    @n.Description
+                    <br />
+                    <small class="text-muted">@n.CreatedAt.ToString("g")</small>
+                </li>
+            }
+            <br />  <hr />
+
+        }
+    }
+    else
+    {
+        <li class="list-group-item">لا توجد إشعارات</li>
+    }
+</ul>

@@ -65,16 +65,42 @@
                 <li><a asp-controller="Home" asp-action="Index" asp-fragment="about">عن الموقع</a></li>
             }
         </ul>
-
         <div class="header-icons">
-
-
+     
             @if (User.IsInRole("User"))
             {
-                <a asp-controller="Cart" asp-action="Index">
-                    <span class="material-symbols-outlined">shopping_cart</span>
+                <a asp-controller="Cart" asp-action="Index" style="margin-left:15px;">
+                    <span class="material-symbols-outlined" style="font-size:28px;">shopping_cart</span>
+                </a>
+                <!-- 🔔 Notification Wrapper -->
+                <a asp-controller="User" asp-action="Notifications" style="margin-left:15px; position:relative; display:inline-block;" id="notificationLink">
+                    <span class="material-symbols-outlined" style="font-size:28px; cursor:pointer;">
+                        notifications
+                    </span>
+                    <!-- عداد الإشعارات -->
+                    <span id="notificationCount"
+                          style="position:absolute; top:-5px; right:-5px; background:red; color:white; border-radius:50%; padding:2px 6px; font-size:12px; display:none;">
+                    </span>
+                    <span id="notifDropdown"
+                          style="
+                 display:none;
+                 position:absolute;
+                 top:35px;        /* تحت الجرس مباشرة */
+                 right:0;         /* ملاصق لليمين */
+                 width:300px;
+                 max-height:400px;
+                 overflow-y:auto;
+                 background:white;
+                 border:1px solid #ccc;
+                 box-shadow:0px 4px 10px rgba(0,0,0,0.1);
+                 border-radius:8px;
+                 z-index:999;
+                 padding:10px;
+             ">                </span>
                 </a>
             }
+
+        </div>
 
 
             @if (User.Identity != null && User.Identity.IsAuthenticated)
@@ -93,8 +119,6 @@
                 <a asp-controller="Account" asp-action="Login">تسجيل الدخول</a>
             }
 
-        </div>
-
     </header>
 
     <!-- ✅ هنا المحتوى بيتغير -->
@@ -109,6 +133,57 @@
 
     @* Footer section *@
     @await RenderSectionAsync("FooterSection", required: false)
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+            const notificationLink = document.getElementById("notificationLink");
+            const notifDropdown = document.getElementById("notifDropdown");
+            const notificationCount = document.getElementById("notificationCount");
+
+            // عند الضغط على أيقونة الجرس
+            notificationLink.addEventListener("click", function(e) {
+                e.preventDefault();
+
+                // toggle عرض الـ dropdown
+                notifDropdown.style.display = notifDropdown.style.display === "block" ? "none" : "block";
+
+                // نخفي عداد الإشعارات الأحمر فور الضغط
+                notificationCount.style.display = "none";
+
+                // تعليم كل الإشعارات كمقروءة
+                fetch('/User/MarkAllNotificationsAsRead', { method: 'POST' })
+                    .catch(err => console.error(err));
+
+                // تحميل محتوى البارشال من السيرفر
+                fetch(notificationLink.getAttribute("href"))
+                    .then(response => response.text())
+                    .then(html => { notifDropdown.innerHTML = html; })
+                    .catch(err => console.error(err));
+            });
+
+            // تحديث عداد الإشعارات كل 10 ثواني
+            async function loadCount() {
+                try {
+                    const res = await fetch('/User/UnreadCount');
+                    const count = await res.json();
+
+                    if (count > 0) {
+                        notificationCount.textContent = count;
+                        notificationCount.style.display = "inline";
+                    } else {
+                        notificationCount.style.display = "none";
+                    }
+                } catch (err) {
+                    console.error(err);
+                }
+            }
+
+            setInterval(loadCount, 10000); // تحديث كل 10 ثواني
+            loadCount(); // تحميل أولي عند التحميل
+        });
+    </script>
+
+
 </body>
 
 </html>
