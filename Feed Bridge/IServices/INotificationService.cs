@@ -7,6 +7,7 @@ namespace Feed_Bridge.IServices
         Task AddNotificationAsync(Notification notification);
         Task<List<Notification>> GetUserNotificationsAsync(string userId);
         Task<int> GetUnreadCountAsync(string userId);
-        Task MarkAsReadAsync(int id);
+        //Task MarkAsReadAsync(int id);
+        Task MarkAllAsReadAsync(string userId);
     }
 }

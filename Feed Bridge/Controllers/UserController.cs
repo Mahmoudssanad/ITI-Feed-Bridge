@@ -1,4 +1,5 @@
-﻿using Feed_Bridge.Models.Entities;
+﻿using Feed_Bridge.IServices;
+using Feed_Bridge.Models.Entities;
 using Feed_Bridge.ViewModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -12,11 +13,16 @@ namespace Feed_Bridge.Controllers
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly INotificationService _notificationService; // ✅ Injection
 
-        public UserController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
+        public UserController(
+            UserManager<ApplicationUser> userManager,
+            SignInManager<ApplicationUser> signInManager,
+            INotificationService notificationService) // ✅ Constructor injection
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _notificationService = notificationService;
         }
 
         [HttpGet]
@@ -89,12 +95,12 @@ namespace Feed_Bridge.Controllers
             var user = await _userManager.GetUserAsync(User);
             if (user == null) return RedirectToAction("Login");
 
-            //user.ImgUrl = model.ImgUrl;
             if (model.BirthDate.HasValue)
                 user.BirthDate = DateOnly.FromDateTime(model.BirthDate.Value);
 
             user.UserName = model.FullName;
             user.PhoneNumber = model.PhoneNumber;
+
             if (model.ImgFile != null)
             {
                 string uploadPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads");
@@ -109,7 +115,6 @@ namespace Feed_Bridge.Controllers
                     await model.ImgFile.CopyToAsync(stream);
                 }
 
-                // تحديث الصورة
                 user.ImgUrl = "/uploads/" + fileName;
             }
 
@@ -141,7 +146,6 @@ namespace Feed_Bridge.Controllers
             {
                 await _signInManager.SignOutAsync();
 
-                // بحتفظ بايميل غير قابل للاستخدام في الداتابيز عشان لو المستخدم حب انه يسجل تاني بنفس اليميل والباسورد بس هيعمله حساب جديد
                 user.Email = user.Email + ".deleted." + Guid.NewGuid();
                 user.NormalizedEmail = user.Email.ToUpper();
                 user.UserName = user.UserName + ".deleted." + Guid.NewGuid();
@@ -179,7 +183,7 @@ namespace Feed_Bridge.Controllers
         {
             if (!ModelState.IsValid) return View(model);
 
-            if(model.CurrentPassword == model.Password)
+            if (model.CurrentPassword == model.Password)
             {
                 ModelState.AddModelError("", "كلمة المرور الجديدة يجب ان تكون مختلفه عن كلمه المرور القديمه");
                 return View(model);
@@ -195,12 +199,11 @@ namespace Feed_Bridge.Controllers
             if (user == null)
                 return RedirectToAction("Login", "Account");
 
-            // الطريقة الصحيحة لاستخدام Identity
             var result = await _userManager.ChangePasswordAsync(user, model.CurrentPassword, model.Password);
 
             if (result.Succeeded)
             {
-                await _signInManager.RefreshSignInAsync(user); // يجدد السيشن
+                await _signInManager.RefreshSignInAsync(user);
                 return RedirectToAction("Login", "Account");
             }
 
@@ -210,6 +213,46 @@ namespace Feed_Bridge.Controllers
             }
 
             return View(model);
+        }
+
+        // ✅ جلب إشعارات اليوزر (تقدرِ تعرضيه في الجرس)
+        [HttpGet]
+        public async Task<IActionResult> Notifications()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null) return Unauthorized();
+
+            var notifications = await _notificationService.GetUserNotificationsAsync(user.Id);
+            return PartialView("_NotificationsPartial", notifications);
+        }
+        [HttpPost]
+        [Route("MarkAllNotificationsAsRead")]
+        public async Task<IActionResult> MarkAllNotificationsAsRead()
+        {
+            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+
+            if (!string.IsNullOrEmpty(userId))
+            {
+                await _notificationService.MarkAllAsReadAsync(userId);
+            }
+
+            return Ok();
+        }
+
+        // لجلب عداد الإشعارات غير المقروءة
+        [HttpGet]
+        [Route("UnreadCount")]
+        public async Task<IActionResult> UnreadCount()
+        {
+            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            int count = 0;
+
+            if (!string.IsNullOrEmpty(userId))
+            {
+                count = await _notificationService.GetUnreadCountAsync(userId);
+            }
+
+            return Json(count);
         }
     }
 }
