@@ -107,21 +107,22 @@
     <div class="stats-container">
         <div class="stats-card">
             <span class="material-symbols-outlined"> schedule </span>
-            <p class="stats-num">+999</p>
+            <p class="stats-num" data-target="999">0</p>
             <p>فرص التبرع المتاحه</p>
         </div>
         <div class="stats-card">
             <span class="material-symbols-outlined"> sentiment_satisfied </span>
-            <p class="stats-num">+100</p>
+            <p class="stats-num" data-target="100">0</p>
             <p>الفرص المكتمله</p>
         </div>
         <div class="stats-card">
             <span class="material-symbols-outlined"> favorite </span>
-            <p class="stats-num">+1299</p>
+            <p class="stats-num" data-target="1299">0</p>
             <p>العمليات التبرعيه</p>
         </div>
     </div>
 </section>
+
 
 <section class="feedback-section">
     <div class="feedback-container">
@@ -265,6 +266,42 @@
         });
     }
 </script>
+<script>
+    const counters = document.querySelectorAll('.stats-num');
+
+    const startCounting = (counter) => {
+        const target = +counter.getAttribute('data-target'); // الهدف النهائي
+        let count = 0;
+        const speed = target / 500; // سرعة العد (كل ما تزود الرقم يزيد البطء)
+
+        const updateCounter = () => {
+            if (count < target) {
+                count += Math.ceil(speed);
+                counter.textContent = "+" + count;
+                requestAnimationFrame(updateCounter);
+            } else {
+                counter.textContent = "+" + target; // يوقف عند الرقم النهائي
+            }
+        };
+
+        updateCounter();
+    };
+
+    // عشان يبدأ لما يظهر في الشاشة (مش من أول تحميل الصفحة)
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                startCounting(entry.target);
+                observer.unobserve(entry.target); // يتوقف بعد ما يخلص
+            }
+        });
+    }, { threshold: 0.5 });
+
+    counters.forEach(counter => {
+        observer.observe(counter);
+    });
+</script>
+
 
 @section FooterSection {
     @await Html.PartialAsync("_Footer")
