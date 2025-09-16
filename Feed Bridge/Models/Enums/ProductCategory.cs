@@ -2,12 +2,12 @@
 {
     public enum ProductCategory
     {
-        Fruits,  
-        Vegetables,
-        Legumes,
-        Bakery,
-        Dairy,
-        Oils,
-        Other
+        فواكه,  
+        خضروات,
+        بقوليات,
+        مخلل,
+        ألبان,
+        زيوت,
+        اخر
     }
 }

@@ -68,23 +68,10 @@ namespace Feed_Bridge.Controllers
             return View(orders);
         }
 
-        //[Authorize(Roles = "Admin")]
-        //public async Task<IActionResult> Approve(int id)
-        //{
-        //    var order = await _context.Orders.FindAsync(id);
-        //    if (order == null) return NotFound();
 
-        //    order.Status = OrderStatus.Approved;
-        //    await _context.SaveChangesAsync();
-
-        //    // TODO: ابعت Notification / Email للمستخدم
-        //    return RedirectToAction("Orders");
-        //}
         
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> Approve(
-     int id,
-     [FromServices] INotificationService notificationService)
+        public async Task<IActionResult> Approve(int id,[FromServices] INotificationService notificationService)
         {
             var order = await _context.Orders.FindAsync(id);
             if (order == null) return NotFound();
