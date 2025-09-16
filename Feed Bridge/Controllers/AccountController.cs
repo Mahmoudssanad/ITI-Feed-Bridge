@@ -75,6 +75,11 @@ namespace Feed_Bridge.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
+            if(model.Email == null)
+            {
+                ModelState.AddModelError("Email", "البريد الإلكتروني مطلوب");
+                return View(model);
+            }
             var existingUser = await _userManager.FindByEmailAsync(model.Email);
             if (existingUser != null)
             {

@@ -34,22 +34,22 @@
             </div>
 
             <div class="group">
-                <input asp-for="ExpirDate" type="date" class="form-control" />
+                <input asp-for="ExpirDate" type="date" class="form-control" readonly />
                 <span asp-validation-for="ExpirDate" class="text-danger" style="color:red;"></span>
 
-                <input asp-for="Quantity" type="number" min="1" placeholder="الكمية ..." class="form-control" />
+                <input asp-for="Quantity" type="number" min="1" placeholder="الكمية ..." class="form-control" readonly/>
                 <span asp-validation-for="Quantity" class="text-danger" style="color:red;"></span>
             </div>
 
             <div class="group">
-                <input asp-for="Address" placeholder="العنوان ..." class="form-control" />
+                <input asp-for="Address" placeholder="العنوان ..." class="form-control"  readonly/>
                 <span asp-validation-for="Address" class="text-danger" style="color:red;"></span>
 
-                <input asp-for="Phone" placeholder="رقم الهاتف ..." class="form-control" />
+                <input asp-for="Phone" placeholder="رقم الهاتف ..." class="form-control" readonly/>
                 <span asp-validation-for="Phone" class="text-danger " style="color:red;"></span>
             </div>
 
-            <input asp-for="Description" class="donationDescription form-control" placeholder="وصف التبرع ..." />
+            <input asp-for="Description" class="donationDescription form-control" placeholder="وصف التبرع ..." readonly/>
             <span asp-validation-for="Description" class="text-danger"></span>
             <div asp-validation-summary="All" class="text-denger" style="color:red;"></div>
 
