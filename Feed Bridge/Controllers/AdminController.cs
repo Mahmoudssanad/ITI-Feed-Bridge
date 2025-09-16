@@ -98,7 +98,7 @@ namespace Feed_Bridge.Controllers
             {
                 UserId = order.UserId, // صاحب الأوردر
                 Title = "تمت الموافقة على طلبك",
-                Description = $"تم قبول الأوردر رقم {order.Id} بواسطة الادمن",
+                Description = $"تم قبول الأوردر رقم {order.Id} بواسطة الادمن و سيتم التواصل معك من قبل الطيار",
                 CreatedAt = DateTime.Now,
                 RedirectUrl = $"/Order/Details/{order.Id}", // الرابط اللي المستخدم هيدخل عليه
                 IsRead = false
@@ -186,7 +186,7 @@ namespace Feed_Bridge.Controllers
 
             var users = await _userManager.Users
                 // && !u.IsDeleted <= لو مش عاوزه يظهر المستخدمين اللي محذوفين اكتب 
-                .Where(u => u.Id != currentUser.Id) 
+                .Where(u => u.Id != currentUser.Id && !u.IsDeleted) 
                 .ToListAsync();
 
             var model = new List<UserWithRoleVM>();

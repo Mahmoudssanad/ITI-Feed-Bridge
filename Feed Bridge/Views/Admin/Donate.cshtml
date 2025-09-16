@@ -92,3 +92,20 @@
         }
     </tbody>
 </table>
+
+                            @section Scripts {
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <script>
+            Swal.fire({
+                toast: true,
+                position: 'top-end',
+                icon: 'success',
+                title: '@TempData["ErrorMessage"]',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true
+            });
+        </script>
+    }
+}

@@ -28,20 +28,22 @@
     }
 
 
-    @if (User.Identity.IsAuthenticated &&
-    User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value == Model.Id)
-    {
-        <div class="heading">
-            <p class="section-title">بيانات المستخدم</p>
-            <a style="color: white;" asp-action="EditProfile" asp-controller="User" class="edit-button btn">تعديل</a>
-        </div>
-    }
-    @if (User.IsInRole("User"))
-    {
-        <div class="heading">
-            <a style="color: white;" asp-action="History" asp-controller="Order" asp-route-userId="@Model.Id" class="edit-button btn">طلباتي</a>
-        </div>
-    }
+    <div class="heading">
+        @if (User.Identity.IsAuthenticated &&
+                User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value == Model.Id)
+        {
+            
+                <p class="section-title">بيانات المستخدم</p>
+                <a style="color: white;" asp-action="EditProfile" asp-controller="User" class="edit-button btn">تعديل</a>
+            
+        }
+        @if (User.IsInRole("User"))
+        {
+            
+                <a style="color: white;" asp-action="History" asp-controller="Order" asp-route-userId="@Model.Id" class="edit-button btn">طلباتي</a>
+            
+        }
+    </div>
     
 
     <!-- صورة البروفايل -->
@@ -115,7 +117,9 @@
         {
             <div class="sub-heading">
 
-                <a asp-controller="User" asp-action="ChangePassword" class="btn confirm-btn">تغيير كلمة المرور</a>
+                <a asp-controller="User" asp-action="ChangePassword" class="btn confirm-btn" style="color:white;">
+                    <b>تغيير كلمة المرور</b>
+                    </a>
             </div>
         }
 
@@ -124,8 +128,8 @@
             @if (User.Identity.IsAuthenticated &&
             User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value == Model.Id && !User.IsInRole("Admin"))
             {
-                <a asp-controller="User" asp-action="DeleteAccount" class="btn confirm-btn" style="background-color:red;">
-                    حذف الحساب
+                <a asp-controller="User" asp-action="DeleteAccount" class="btn confirm-btn" style="background-color:red; color:White;">
+                    <b>حذف الحساب</b>
                 </a>
             }
         </div>

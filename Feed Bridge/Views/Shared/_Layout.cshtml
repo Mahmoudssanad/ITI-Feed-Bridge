@@ -100,9 +100,6 @@
                 </a>
             }
 
-        </div>
-
-
             @if (User.Identity != null && User.Identity.IsAuthenticated)
             {
                 <!-- تعديل الرابط ليستخدم asp-controller و asp-action -->
@@ -118,6 +115,11 @@
                 <!-- المستخدم غير مسجل -->
                 <a asp-controller="Account" asp-action="Login">تسجيل الدخول</a>
             }
+
+        </div>
+
+
+            
 
     </header>
 

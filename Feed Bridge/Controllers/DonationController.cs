@@ -143,7 +143,7 @@ namespace Feed_Bridge.Controllers
             await _notificationService.AddNotificationAsync(new Notification
             {
                 Title = "تم قبول التبرع",
-                Description = $"تم قبول تبرعك ({donation.Name}) وإضافته إلى المنتجات.",
+                Description = $"تم قبول تبرعك ({donation.Name}) وإضافته إلى المنتجات و سيتم التواصل معك من قبل الطيار.",
                 RedirectUrl = Url.Action("Index", "Product"),
                 UserId = donation.UserId
             });
@@ -188,7 +188,6 @@ namespace Feed_Bridge.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             await _donationService.DeleteDonation(id);
-            TempData["SuccessMessage"] = "تم حذف التبرع بنجاح";
             return RedirectToAction("Donate", "Admin");
         }
 

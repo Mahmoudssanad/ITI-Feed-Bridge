@@ -33,7 +33,7 @@ namespace Feed_Bridge.Controllers
         public async Task<IActionResult> Create()
         {
             var donors = await _userManager.Users
-        .Where(u => u.Supports.Any() ||  u.Donnations.Any()) // اللي تبرعوا بس
+        .Where(u => (u.Supports.Any() ||  u.Donnations.Any() ) && !u.IsDeleted) // اللي تبرعوا بس
         .ToListAsync();
             
             var vm = new ReportViewModel
