@@ -163,7 +163,7 @@ namespace Feed_Bridge.Controllers
                 new { token, email = user.Email }, Request.Scheme);
 
             // إعداد الإيميل من appsettings.json
-            var smtpEmail = _config["Smtp:Username"];
+            var smtpEmail = _config["Smtp:Email"];
             var smtpPassword = _config["Smtp:Password"];
 
             var fromAddress = new MailAddress(smtpEmail, "FeedBridge Support");

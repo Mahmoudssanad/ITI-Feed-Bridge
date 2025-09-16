@@ -7,8 +7,9 @@ namespace Feed_Bridge.ViewModel
         public string Email { get; set; }
         public string Token { get; set; }
 
-        [Compare("ConfirmPassword", ErrorMessage = "كلمه المرور غير متطابقه")]
+      
         public string Password { get; set; }
+        [Compare("ConfirmPassword", ErrorMessage = "كلمه المرور غير متطابقه")]
         public string ConfirmPassword { get; set; }
     }
 }
