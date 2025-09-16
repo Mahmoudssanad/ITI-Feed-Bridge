@@ -15,16 +15,22 @@ namespace Feed_Bridge.Services
 
         public async Task SendEmailAsync(string email, string subject, string htmlMessage)
         {
-            var smtpClient = new SmtpClient(_config["Smtp:Host"])
+            var smtpHost = _config["Smtp:Host"];
+            var smtpPort = int.Parse(_config["Smtp:Port"]);
+            var smtpEmail = _config["Smtp:Email"];
+            var smtpPassword = _config["Smtp:Password"];
+            var fromEmail = _config["Smtp:From"] ?? smtpEmail; 
+
+            var smtpClient = new SmtpClient(smtpHost)
             {
-                Port = int.Parse(_config["Smtp:Port"]),
-                Credentials = new NetworkCredential(_config["Smtp:Username"], _config["Smtp:Password"]),
+                Port = smtpPort,
+                Credentials = new NetworkCredential(smtpEmail, smtpPassword),
                 EnableSsl = true,
             };
 
             var mailMessage = new MailMessage
             {
-                From = new MailAddress(_config["Smtp:From"], "FeedBridge"),
+                From = new MailAddress(fromEmail, "FeedBridge Support"), 
                 Subject = subject,
                 Body = htmlMessage,
                 IsBodyHtml = true,

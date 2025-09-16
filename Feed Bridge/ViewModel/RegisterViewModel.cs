@@ -18,9 +18,9 @@ namespace Feed_Bridge.ViewModel
         [Display(Name = "كلمه المرور")]
         [Required(ErrorMessage = "كلمة المرور مطلوبة")]
         [DataType(DataType.Password)]
-        [Compare("ConfirmPassword", ErrorMessage = "كلمة السر غير متطابقة")]
+       
         public string Password { get; set; }
-
+        [Compare("Password", ErrorMessage = "كلمة السر غير متطابقة")]
         [Display(Name = "تأكيد كلمه المرور")]
         [Required(ErrorMessage = "تأكيد كلمة المرور مطلوب")]
         [DataType(DataType.Password)]
@@ -29,6 +29,7 @@ namespace Feed_Bridge.ViewModel
         [Display(Name = "رقم الهاتف")]
         public string? PhoneNumber { get; set; }
 
+        [Required(ErrorMessage = "تاريح الميلاد  مطلوب")]
         [Display(Name = "تاريخ الميلاد")]
         public DateOnly BirthDate { get; set; }
 
