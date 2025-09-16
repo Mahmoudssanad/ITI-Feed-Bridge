@@ -27,8 +27,6 @@ namespace Feed_Bridge.Services
                 existing.Content1 = content.Content1;
                 existing.Content2 = content.Content2;
                 existing.VideoUrl = content.VideoUrl;
-                existing.PartenerBackgroundImageUrl = content.PartenerBackgroundImageUrl;
-                existing.HomePageBackgroundImageUrl = content.HomePageBackgroundImageUrl;
                 existing.UserId = content.UserId;
             }
             else
