@@ -113,7 +113,7 @@ namespace Feed_Bridge.Controllers
             var donation = await _donationService.GetDonationById(id);
             if (donation == null) return NotFound();
 
-            // ✅ لو التبرع مش في حالة Pending ما ينفعش يتقبل تاني
+            //  لو التبرع مش في حالة Pending ما ينفعش يتقبل تاني
             if (donation.Status != DonationStatus.Pending)
             {
                 TempData["ErrorMessage"] = "هذا التبرع تمت مراجعته بالفعل.";
@@ -123,7 +123,7 @@ namespace Feed_Bridge.Controllers
             donation.Status = DonationStatus.Accepted;
             await _donationService.UpdateDonation(donation);
 
-            // ✅ قبل إضافة المنتج نتأكد إنه مش مضاف بالفعل
+            //  قبل إضافة المنتج نتأكد إنه مش مضاف بالفعل
             var productExists = await _productService.GetByDonationId(donation.Id);
             if (productExists == null)
             {

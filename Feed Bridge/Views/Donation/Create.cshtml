@@ -1,7 +1,23 @@
 ﻿@model Feed_Bridge.ViewModel.DonationViewModel
+@{
+    var today = DateTime.UtcNow;
+}
 <style>
     .upload-img:hover {
         cursor: pointer;
+    }
+    .group{
+        position:relative;
+    }
+    .group label{
+        left: -104px;
+        position: relative;
+        top: -16px;
+        z-index: 999;
+    }
+    .spec{
+        position: relative;
+        left: 84px;
     }
 </style>
 
@@ -31,19 +47,19 @@
             <input asp-for="Name" placeholder="اسم المنتج  ..." class="form-control" />
             <span asp-validation-for="Name" class="text-danger" style="color:red;"></span>
 
-            <!-- 🟢 Dropdown لاختيار الكاتيجوري -->
             <div class="form-group mt-2 mb-2">
                 <label asp-for="Category">اختر التصنيف</label>
                 <select asp-for="Category" asp-items="Html.GetEnumSelectList<Feed_Bridge.Models.Enums.ProductCategory>()" class="form-control"></select>
                 <span asp-validation-for="Category" class="text-danger"></span>
             </div>
-            <!-- نهاية الكاتيجوري -->
 
-            <div class="group">
-                <input asp-for="ExpirDate" type="date" class="form-control" />
+
+            <div class="group spec">
+                <label asp-for="ExpirDate"></label>
+                <input asp-for="ExpirDate" type="date" class="form-control" min="@today.ToString("yyyy-MM-dd")" />
                 <span asp-validation-for="ExpirDate" class="text-danger" style="color:red;"></span>
 
-                <input asp-for="Quantity" type="number" min="1" placeholder="الكمية ..." class="form-control" />
+                <input asp-for="Quantity" type="number" min="1" placeholder="الكمية ..." class="form-control" style=" position: relative; left: -56px;" />
                 <span asp-validation-for="Quantity" class="text-danger" style="color:red;"></span>
             </div>
 

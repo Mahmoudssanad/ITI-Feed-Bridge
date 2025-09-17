@@ -27,7 +27,7 @@ namespace Feed_Bridge.Services
             return await _context.Donations
                 .Include(d => d.User)     // جلب بيانات المتبرع
                 .Include(d => d.Product)  // جلب المنتج المرتبط (لو موجود)
-                .Where(d => !d.User.IsDeleted) // لو عندك خاصية IsDeleted
+                .Where(d => !d.User.IsDeleted && d.Status == Models.Enums.DonationStatus.Pending) // لو عندك خاصية IsDeleted
                 .ToListAsync();
         }
 

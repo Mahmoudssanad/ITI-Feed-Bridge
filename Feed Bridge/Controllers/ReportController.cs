@@ -135,7 +135,7 @@ namespace Feed_Bridge.Controllers
             ModelState.AddModelError("", "Error");
             // لو فيه مشكلة نرجع القائمة تاني
             model.Donors = await _userManager.Users
-                .Where(u => u.Supports.Any())
+                .Where(u => (u.Supports.Any() || u.Donnations.Any()) && !u.IsDeleted)
                 .ToListAsync();
 
             return View(model);

@@ -157,14 +157,7 @@ namespace Feed_Bridge.Controllers
             return View(products);
         }
 
-        public async Task<IActionResult> DeleteProduct(int id)
-        {
-            var product = await _context.Products.FirstOrDefaultAsync(x => x.Id == id);
-            _context.Products.Remove(product);
-            await _context.SaveChangesAsync();
-
-            return RedirectToAction("products");
-        }
+        
 
         [HttpGet]
         public async Task<IActionResult> AllUsers()
@@ -189,9 +182,9 @@ namespace Feed_Bridge.Controllers
                     Email = user.Email,
                     ImgUrl = user.ImgUrl,
                     Roles = roles,
-                    IsFrozen = user.IsFrozen, // ✅ ربط الحالة من قاعدة البيانات
-                    IsDeleted = user.IsDeleted, // ✅ ربط الحالة من قاعدة البيانات
-                    DeletedBy = user.DeletedBy // ✅ ربط الحالة من قاعدة البيانات
+                    IsFrozen = user.IsFrozen, //  ربط الحالة من قاعدة البيانات
+                    IsDeleted = user.IsDeleted, //  ربط الحالة من قاعدة البيانات
+                    DeletedBy = user.DeletedBy //  ربط الحالة من قاعدة البيانات
                 });
             }
 
