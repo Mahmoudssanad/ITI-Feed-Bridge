@@ -2,6 +2,8 @@
 
 @{
     ViewData["Title"] = "تسجيل حساب جديد";
+    var today = DateTime.UtcNow;
+
 }
 <style>
     .upload-img {
@@ -43,6 +45,13 @@
         border-radius: 10px;
         object-fit: cover;
     }
+
+    .form-control {
+        border: none;
+    }
+    .form-control input{
+            background-color: #33c58d35;
+    }
 </style>
 <div class="container">
     <div class="register" dir="rtl">
@@ -51,7 +60,8 @@
             <p class="fw-bold">إنشاء حساب</p>
         </div>
 
-        <form asp-action="Register" asp-controller="Account" method="post" id="register-form" class="register-form" enctype="multipart/form-data" >
+
+        <form asp-action="Register" asp-controller="Account" method="post" id="register-form" class="register-form" enctype="multipart/form-data">
 
             <div asp-validation-summary="ModelOnly" class="text-danger mb-3" style="color:red;"></div>
 
@@ -63,7 +73,7 @@
                 </div>
                 <div class="form-control flex-fill">
                     <label asp-for="BirthDate" class="form-label"></label>
-                    <input asp-for="BirthDate" type="date" class="form-control" />
+                    <input asp-for="BirthDate" type="date" class="form-control" max="@today.ToString("yyyy-MM-dd")" />
                     <span asp-validation-for="BirthDate" class="text-danger" style="color:red;"></span>
                 </div>
             </div>
@@ -133,4 +143,5 @@
             }
         });
     </script>
+
 }

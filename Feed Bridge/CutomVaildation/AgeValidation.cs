@@ -18,9 +18,9 @@ namespace Feed_Bridge.CutomVaildation
 
             var result = today.Year - birthdate.Year;
 
-            if (result < 14)
+            if (result < 18)
             {
-                return new ValidationResult("age must be greater than 14 year");
+                return new ValidationResult("يجب الا يقل العمر عن 18");
             }
 
             return ValidationResult.Success;

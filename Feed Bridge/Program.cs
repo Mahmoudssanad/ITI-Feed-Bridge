@@ -22,9 +22,13 @@ builder.Services.Configure<SecurityStampValidatorOptions>(options =>
     options.ValidationInterval = TimeSpan.Zero;
 });
 
+builder.Services.Configure<IdentityOptions>(options =>
+{
+    options.SignIn.RequireConfirmedEmail = true;
+});
+
 
 builder.Services.AddScoped<IReviewService, ReviewService>();
-//builder.Services.AddScoped<EmailSender>();
 
 
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()

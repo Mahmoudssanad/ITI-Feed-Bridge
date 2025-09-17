@@ -8,6 +8,9 @@
             margin: 0 20px; 
         }
 
+        .form-control {
+            border: none;
+        }
     </style>
 </head>
 
@@ -50,3 +53,23 @@
 @section FooterSection {
     @await Html.PartialAsync("_Footer")
 } *@
+
+
+@section Scripts {
+   
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <script>
+            Swal.fire({
+                toast: true,
+                position: 'top-end',
+                icon: 'success',
+                title: '@TempData["SuccessMessage"]',
+                showConfirmButton: false,
+                timer: 5000,
+                timerProgressBar: true
+            });
+        </script>
+    }
+}
