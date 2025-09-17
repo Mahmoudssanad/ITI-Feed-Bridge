@@ -1,4 +1,5 @@
-﻿using Feed_Bridge.Models.Entities;
+﻿using Feed_Bridge.IServices;
+using Feed_Bridge.Models.Entities;
 using Feed_Bridge.Services;
 using Feed_Bridge.ViewModel;
 using Microsoft.AspNetCore.Authorization;
@@ -15,16 +16,20 @@ namespace Feed_Bridge.Controllers
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IConfiguration _config;
+        private readonly IEmailService _emailService;
+
 
         public AccountController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             RoleManager<IdentityRole> roleManager,
+            IEmailService emailService,
             IConfiguration config)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _roleManager = roleManager;
+            _emailService = emailService;
             _config = config;
         }
 
@@ -118,18 +123,49 @@ namespace Feed_Bridge.Controllers
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    // أي مستخدم جديد بياخد Role "User" تلقائي
                     await _userManager.AddToRoleAsync(user, "User");
 
-                    await _signInManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("Index", "Home");
+                    var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                    var confirmationLink = Url.Action(
+                        "ConfirmEmail",
+                        "Account",
+                        new { userId = user.Id, token = token },
+                        protocol: HttpContext.Request.Scheme);
+
+                    await _emailService.SendEmailAsync(
+                        user.Email,
+                        "تأكيد البريد الإلكتروني - FeedBridge",
+                        $"<p>من فضلك قم بتأكيد حسابك بالضغط على <a href='{confirmationLink}'>هذا الرابط</a>.</p>");
+
+                    TempData["SuccessMessage"] = "✅ تم إرسال رسالة تأكيد إلى بريدك الإلكتروني. برجاء مراجعة البريد والضغط على الرابط لتفعيل الحساب.";
+                    return RedirectToAction("Login", "Account");
+
                 }
+
+
 
                 foreach (var error in result.Errors)
                     ModelState.AddModelError("", error.Description);
             }
 
             return View(model);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> ConfirmEmail(string userId, string token)
+        {
+            if (userId == null || token == null)
+                return RedirectToAction("Index", "Home");
+
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+                return NotFound("User not found");
+
+            var result = await _userManager.ConfirmEmailAsync(user, token);
+            if (result.Succeeded)
+                return View("ConfirmEmailSuccess"); // اعمل View بسيطة تقول "تم تأكيد البريد"
+            else
+                return View("Error");
         }
 
         // ---------------- Logout ----------------

@@ -24,15 +24,18 @@ namespace Feed_Bridge.Controllers
             _userManager = userManager;
         }
 
+
         [HttpGet]
         public async Task<IActionResult> Dashboard()
         {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
             var totalOrders = await _context.Orders
-                .Where(o => o.Status == OrderStatus.Approved)
+                .Where(o => o.Status == OrderStatus.Assigned && o.DeliveryId == userId)
                 .CountAsync();
 
             var completedOrders = await _context.Orders
-                .Where(o => o.Status == OrderStatus.Delivered)
+                .Where(o => o.Status == OrderStatus.Delivered && o.DeliveryId == userId)
                 .CountAsync();
 
             var totalDonations = await _donationService.GetAllDonations();

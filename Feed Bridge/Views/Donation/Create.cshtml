@@ -1,4 +1,7 @@
 ﻿@model Feed_Bridge.ViewModel.DonationViewModel
+@{
+    var today = DateTime.UtcNow;
+}
 <style>
     .upload-img:hover {
         cursor: pointer;
@@ -27,20 +30,20 @@
             </label>
 
 
+           
+                <input asp-for="Name" placeholder="اسم المنتج  ..." class="form-control" />
+                <span asp-validation-for="Name" class="text-danger" style="color:red;"></span>
 
-            <input asp-for="Name" placeholder="اسم المنتج  ..." class="form-control" />
-            <span asp-validation-for="Name" class="text-danger" style="color:red;"></span>
-
-            <!-- 🟢 Dropdown لاختيار الكاتيجوري -->
-            <div class="form-group mt-2 mb-2">
-                <label asp-for="Category">اختر التصنيف</label>
-                <select asp-for="Category" asp-items="Html.GetEnumSelectList<Feed_Bridge.Models.Enums.ProductCategory>()" class="form-control"></select>
-                <span asp-validation-for="Category" class="text-danger"></span>
-            </div>
-            <!-- نهاية الكاتيجوري -->
+                <div class="form-group mt-2 mb-2">
+                    <label asp-for="Category">اختر التصنيف</label>
+                    <select asp-for="Category" asp-items="Html.GetEnumSelectList<Feed_Bridge.Models.Enums.ProductCategory>()" class="form-control"></select>
+                    <span asp-validation-for="Category" class="text-danger"></span>
+                </div>
+           
 
             <div class="group">
-                <input asp-for="ExpirDate" type="date" class="form-control" />
+                <label asp-for="ExpirDate"></label>
+                <input asp-for="ExpirDate" type="date" class="form-control" min="@today.ToString("yyyy-MM-dd")" />
                 <span asp-validation-for="ExpirDate" class="text-danger" style="color:red;"></span>
 
                 <input asp-for="Quantity" type="number" min="1" placeholder="الكمية ..." class="form-control" />

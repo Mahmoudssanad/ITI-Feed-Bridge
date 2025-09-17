@@ -1,18 +1,18 @@
 ﻿@using Feed_Bridge.Models.Enums
-@model IEnumerable<Feed_Bridge.Models.Entities.Order>
+@model IEnumerable<Feed_Bridge.Models.Entities.Donation>
 
 @{
-    ViewData["Title"] = "تتبع التوصيلات";
-    Layout = "_AdminLayout"; 
+    ViewData["Title"] = "تتبع التبرعات";
+    Layout = "_AdminLayout"; // لو عندك Layout خاص بالادمن
 }
 
-<h2 class="mb-4">📦 تتبع التوصيلات</h2>
+<h2 class="mb-4">📦 تتبع التبرعات</h2>
 
 <div class="table-responsive shadow-sm rounded">
     <table class="table table-striped table-hover align-middle text-center">
         <thead class="table-dark">
             <tr>
-                <th>رقم الطلب</th>
+                <th>رقم التبرع</th>
                 <th>الدليفري</th>
                 <th>تاريخ التعيين</th>
                 <th>الحالة</th>
@@ -21,19 +21,17 @@
         <tbody>
             @if (Model != null && Model.Any())
             {
-                foreach (var order in Model)
+                foreach (var donation in Model)
                 {
                     <tr>
                         <td>
-                            <a asp-action="Details" asp-controller="Order" asp-route-id="@order.Id" class="fw-bold text-decoration-none">
-                                #@order.Id
-                            </a>
+                            #@donation.Id
                         </td>
                         <td>
-                            @if (order.Delivery != null)
+                            @if (donation.Delivery != null)
                             {
-                                <a asp-action="Profile" asp-controller="User" asp-route-id="@order.Delivery.Id" class="text-decoration-none">
-                                    <i class="bi bi-person-circle"></i> @order.Delivery.UserName
+                                <a asp-action="Profile" asp-controller="User" asp-route-id="@donation.Delivery.Id" class="text-decoration-none">
+                                    <i class="bi bi-person-circle"></i> @donation.Delivery.UserName
                                 </a>
                             }
                             else
@@ -42,9 +40,9 @@
                             }
                         </td>
                         <td>
-                            @if (order.UpdatedAt != null)
+                            @if (donation.UpdatedAt != null)
                             {
-                                @order.UpdatedAt.ToString("yyyy-MM-dd HH:mm")
+                                @donation.UpdatedAt.ToString()
                             }
                             else
                             {
@@ -52,22 +50,22 @@
                             }
                         </td>
                         <td>
-                            @switch (order.Status)
+                            @switch (donation.Status)
                             {
-                                case OrderStatus.Assigned:
+                                case DonationStatus.Assigned:
                                     <span class="badge bg-warning text-dark">قيد التوصيل</span>
                                     ;
                                     break;
-                                case OrderStatus.Delivered:
-                                    <span class="badge bg-success">تم التوصيل</span>
+                                case DonationStatus.Delivered:
+                                    <span class="badge bg-success">تم الاستلام</span>
                                     ;
                                     break;
-                                case OrderStatus.Approved:
+                                case DonationStatus.Accepted:
                                     <span class="badge bg-primary">موافق عليه ولم يتم اخذه من قبل موصل </span>
                                     ;
                                     break;
                                 default:
-                                    <span class="badge bg-secondary">@order.Status</span>
+                                    <span class="badge bg-secondary">@donation.Status</span>
                                     ;
                                     break;
                             }

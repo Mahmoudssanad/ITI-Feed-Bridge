@@ -370,5 +370,18 @@ namespace Feed_Bridge.Controllers
             ViewData["ActivePage"] = "TrackDelivery";
             return View(orders);
         }
+
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> TrackDonations()
+        {
+            var orders = await _context.Donations
+                .Include(o => o.Delivery)
+                .Where(x => x.Status == DonationStatus.Delivered || x.Status == DonationStatus.Assigned || x.Status == DonationStatus.Accepted) // الطلبات اللي ليها دليفري
+                .OrderByDescending(o => o.UpdatedAt)
+                .ToListAsync();
+
+            ViewData["ActivePage"] = "TrackDonation";
+            return View(orders);
+        }
     }
 }
